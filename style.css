@@ -1,0 +1,232 @@
+:root {
+  /* 顏色變數 */
+  --card: #ffffff; /* 底色純白 */
+  --tone: #4285f4; /* 主題色藍色 */
+  --tone-g: #a9bee1; /* 加深藍灰 */
+  --lc: #5ab0ff; /* 淺藍 */
+  --dc: #004b8d; /* 深藍 */
+  --lbg: #f7fbff; /* 淺藍(背景) */
+  --dbg: #e7efff; /* 深藍(背景) */
+  --text: #202124; /* 文字 */
+  --muted: #666666;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#btn-back-to-top {
+  position: fixed; /* 固定定位 */
+  bottom: 20px; /* 距離底部 20px */
+  right: 20px; /* 距離右邊 20px */
+  display: none; /* 預設隱藏 */
+  width: 60px; /* 寬度 */
+  height: 60px; /* 高度 */
+  z-index: 1000; /* 確保在最上層 */
+  opacity: 0.3; /* 設定半透明 (0.0 ~ 1.0) */
+  transition: opacity 0.3s; /* 滑鼠移上去時有過渡效果 */
+}
+
+/* 滑鼠移上去時變深 */
+#btn-back-to-top:hover {
+  opacity: 0.7;
+}
+
+.header {
+  text-align: center;
+  padding: 28px 16px;
+  background: linear-gradient(-45deg, #ffffff, #f4f2ff); /* 漸層背景 */
+  border-bottom: 1px solid #e6eefc;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.8em;
+  border-bottom: 2px solid var(--dc);
+  padding-bottom: 5px;
+}
+
+p#heading {
+  margin: 8px 0;
+  color: #555;
+}
+
+body {
+  background-color: #f6f6f6;
+  margin: 12px;
+  font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+  color: #020202;
+  line-height: 1.6;
+}
+
+.nav {
+  background: var(--card);
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(16, 24, 40, 0.06);
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  gap: 8px;
+  flex-wrap: wrap; /* 換行 */
+}
+
+.nav h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.nav a:hover /* 滑鼠懸停 */ {
+  background: var(--tone-g);
+  border-color: var(--tone);
+  color: #1967d2;
+}
+.dropdown-scrollable {
+  max-height: 400px;
+  overflow-y: auto;
+}
+img {
+  width: fit-content;
+  max-width: 100%;
+  max-height: 500px;
+  display: block;
+  margin: 0 auto;
+}
+/* main content card */
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 20px; /* 內距 */
+}
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px; /* 內距 */
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+.card-title {
+  color: var(--dc);
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(to right, #004b8d 0%, #002b6d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin-top: 30px;
+  border-bottom-style: solid;
+  background-color: #fdfdff;
+  background-image: linear-gradient(to right, #4285f4 0%, #167cb6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+h4 {
+  line-height: normal;
+  font-size: 1.1em;
+}
+
+p {
+  line-height: 1.7;
+  color: #020202;
+}
+p::selection {
+  color: #004b8d;
+  background-color: #a9bee1;
+}
+code {
+  color: var(--muted);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+thead th {
+  background-color: var(--dbg);
+  color: var(--dc);
+  font-weight: bold;
+}
+th,
+td {
+  border: 1px solid #e3e7ef;
+  padding: 12px 16px;
+  text-align: center;
+  vertical-align: top;
+}
+tr:nth-child(even) {
+  background-color: var(--lbg);
+}
+tfoot {
+  background-color: #e8f0fe;
+}
+
+/* footer */
+.footer {
+  text-align: center;
+  background: linear-gradient(-45deg, #ffffff, #f4f2ff);
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 20px 10px;
+}
+.formula {
+  background: #f7fbff;
+  padding: 8px;
+  margin: 4px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border-left: 3px solid var(--lc);
+  font-family: "Consolas", monospace;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.formula-dark {
+  background: #e7efff;
+  padding: 8px;
+  margin: 4px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border-left: 3px solid var(--dc);
+  font-family: "Consolas", monospace;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.formula-red {
+  background: #fff1f1; /* 背景色 */
+  padding: 8px; /* 內距 */
+  border-radius: 8px;
+  border-left: 3px solid #d32f2f; /* 邊框色 */
+  font-family: "Consolas", monospace;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* responsive */
+@media (max-width: 640px) {
+  .nav {
+    gap: 6px;
+    padding: 10px; /* 內距 */
+  }
+  .nav button {
+    padding: 8px 12px; /* 內距(上下,左右) */
+    font-size: 14px;
+  }
+  .container {
+    padding: 12px; /* 內距 */
+  }
+}

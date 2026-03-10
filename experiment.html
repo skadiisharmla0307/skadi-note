@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <title>普化實驗</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Favicons -->
+    <link href="picture_other/favicon-32x32.png" rel="icon" />
+    <link href="picture_other/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      ul {
+        padding-top: 5px;
+        padding-left: 15px;
+      }
+      ol {
+        padding-left: 20px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+          ]
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">課程筆記整理</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calculus.html">微積分</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chemistry.html">普通化學</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="experiment.html">普化實驗</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="energy.html">能源工程概論</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="statics.html">靜力學</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="phoenix_code.html">網頁程式設計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="octave.html">基礎程式設計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="minerals.html">礦物與生活</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="card">
+        <h2>普化實驗</h2>
+        <p>節錄部分預報文字內容</p>
+      </section>
+      <section class="card">
+        <h2>實驗一：氮氣莫耳體積</h2>
+        <h3>目的</h3>
+        <p>在室溫、室壓下產生氮氣，求出一莫耳氮氣在標準狀態下之體積</p>
+        <h3>原理</h3>
+        <p>利用胺基磺酸與亞硝酸鈉反應，在室溫室壓下產生氮氣，推算 STP 下氮氣莫耳體積</p>
+        <div class="formula">
+          \[NO_{2(aq)}^- + H_2NSO_{3}H_{(s)} \rightarrow HSO_{4(aq)}^- + H_2O_{(l)} + N_{2(g)} \quad ---(1)\]
+        </div>
+        <p>透過理想氣體方程式，假設壓力、溫度、氣體莫耳數及體積皆不相同的二種狀況，其中只有理想氣體常數是定值</p>
+        <div class="formula">$$\frac{P_1 V_1}{n_1 T_1} = \frac{P_2 V_2}{n_2 T_2} \quad ---(2)$$</div>
+        <p>將 0°C (273.15 K)、1 atm、1 莫耳等參數代入，與室溫下產生的氮氣關係如下</p>
+        <div class="formula">
+          $$\frac{1 \times V_{STP}}{1 \times 273.15} = \frac{P_{N_2} V_{N_2}}{n_{N_2} T_2} \quad ---(3)$$
+        </div>
+        <p>
+          其中 $P_{N_2}$、$V_{N_2}$、$n_{N_2}$
+          分別為所產生氮氣之壓力、體積、莫耳數。因壓力與體積不易測量，利用其他容易測量的參數取代：氮氣壓力以室壓減去水的飽和蒸氣壓之值取代，氮氣體積以實驗中所測得水體積
+          $\Delta V$ 取代
+        </p>
+        <div class="formula">
+          $$\frac{1 \times V_{STP}}{1 \times 273.15} = \frac{P_{N_2} V_{N_2}}{n_{N_2} T_2} = \frac{(P_{atm} - P_{H_2O})
+          \times \Delta V}{n_{N_2} \times T_2} \quad ---(4)$$
+        </div>
+        <h3>藥品</h3>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>品名</th>
+                <th>化學式</th>
+                <th>分子量 (g/mol)</th>
+                <th>密度 (g/cm³)</th>
+                <th>沸點/熔點 (°C)</th>
+                <th>溶解度 (g/100mL)</th>
+                <th>外觀</th>
+                <th>毒性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>胺基磺酸</td>
+                <td>\(H_2NSO_3H\)</td>
+                <td>97.1</td>
+                <td>2.15</td>
+                <td>— / 200 (分解)</td>
+                <td>14.7</td>
+                <td>無味白色晶體</td>
+                <td>有腐蝕性、嚴重眼睛、腐蝕</td>
+              </tr>
+              <tr>
+                <td>亞硝酸鈉</td>
+                <td>\(NaNO_2\)</td>
+                <td>69</td>
+                <td>2.17</td>
+                <td>320 (分解) / 271</td>
+                <td>82</td>
+                <td>無味白色或微黃色粉末</td>
+                <td>吞食有害、嚴重眼睛刺激</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>實驗器材</h3>
+        <p>
+          三角瓶 (250mL)、大燒杯 (500mL)、量筒、小玻璃試管、抽氣過濾瓶
+          (500mL)、長玻璃連接管、短玻璃連接管、黃色橡皮管、夾子、鑷子、溫度計、鐵夾
+        </p>
+        <h3>實驗步驟</h3>
+        <ol>
+          <li>
+            參考實驗器材架設圖，將實驗裝置架好
+            <ul>
+              <li>可在三角燒瓶中放入空的小試管，練習使小試管靠在玻璃瓶壁不傾倒</li>
+              <li>需將玻璃連接管外壁沾濕，以旋轉方式插入塞子的孔洞（注意力道）</li>
+              <li>調整玻璃連接管高度時，應使用抹布包住玻璃管，以旋轉方式調整</li>
+            </ul>
+          </li>
+          <li>
+            將橡皮管 A 拆下，在抽氣過濾瓶及大燒瓶中裝水，並讓橡皮管 B
+            與長玻璃連接管中充滿水，調整過濾瓶與燒杯相對位置，確認水能在管路中自由流動後，夾緊鐵夾
+            <ul>
+              <li>
+                檢查管路中水的流動性時，需注意橡皮管 B
+                在燒杯端的開口，長玻璃連接管在抽氣過濾瓶端的開口都要在水面下，管路中無空氣
+              </li>
+            </ul>
+          </li>
+          <li>
+            取小試管，秤重記錄小試管質量，取約 1~1.1g
+            胺基磺酸固體加入小試管中，秤重記錄總質量，並由此計算試管中胺基磺酸質量
+          </li>
+          <li>秤取約 1~1.1g 亞硝酸鈉固體，記錄質量後，倒入三角燒瓶中，再加入 50ml 去離子水，將固體溶解混合均勻</li>
+          <li>
+            參考實驗器材架設圖，利用鑷子將裝有胺基磺酸的試管放入三角燒瓶中
+            <ul>
+              <li>注意不可讓試管傾倒，並將塞子小心塞緊（一旦傾倒立刻以大量清水清洗後重做）</li>
+            </ul>
+          </li>
+          <li>
+            鬆開鐵夾，調整大燒杯高度，使燒杯水面與抽氣過濾瓶水面等高
+            <ul>
+              <li>此步驟令瓶內壓力與大氣壓相同</li>
+            </ul>
+          </li>
+          <li>將橡皮管 B 用鐵夾夾緊，再將大燒杯中的水倒掉，秤量燒杯空重</li>
+          <li>
+            傾倒三角燒瓶中的小試管，令燒瓶中的亞硝酸鈉溶液與試管的胺基磺酸反應，觀察氣體產生後，將鐵夾鬆開，夾在玻璃連接管上，使抽氣過濾瓶中的水順利排入大燒杯中，等待至不再有氣體產生
+            <ul>
+              <li>避免劇烈搖晃燒瓶產生大量氣體；氣體產生量減少時輕搖燒瓶使其反應完全</li>
+              <li>副反應發生會產生紅棕色有毒氣體 \(NO_2\)</li>
+              <li>反應過程注意讓橡皮管 B 出口埋在排出的水面下，避免空氣進入</li>
+            </ul>
+          </li>
+          <li>
+            以水浴冷卻三角燒瓶，待瓶溫下降至與室溫相同，調整大燒杯與抽氣過濾瓶中水面高度，使二者相同，使裝置中密閉系統的壓力回到室壓，將鐵夾夾緊
+          </li>
+          <li>秤量燒杯與排出水的總質量，計算燒杯中水的體積</li>
+          <li>
+            測量並記錄反應後三角燒瓶內的水溫，以及當時室溫與室壓
+            <ul>
+              <li>實驗完成後，儘快將燒瓶中反應物混入水槽中沖水，以免 \(NO_2\) 釋出</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+      <section class="card">
+        <h2>實驗二：利用依數性質決定可溶性物質分子量之測定</h2>
+        <h3>目的</h3>
+        <p>利用稀薄溶液凝固點下降量 \(\Delta T_f\)，決定化合物的分子量</p>
+        <h3>原理</h3>
+        <p>
+          依照拉午耳定律，由非揮發性、非電解質的化合物溶於揮發性溶劑中所形成的溶液，於定溫下，溶液的蒸氣壓等於純溶劑的蒸氣壓與該溶劑在溶液中莫耳分率的乘積
+        </p>
+        <div class="formula">\[P_1 = X_1 \cdot P_1^o \quad ---(1)\]</div>
+        <p>
+          其中 $P_1$ 為溶液內溶劑的蒸氣壓，$P_1^o$ 為純溶劑蒸氣壓，$X_1$
+          為溶劑在溶液中的莫耳分率。與蒸氣壓有關之溶液依數性質，會隨溶劑與溶質的比例發生變化，以溶液的凝固點下降為例
+        </p>
+        <div class="formula">\[\Delta T = K_f \cdot m \quad ---(2)\]</div>
+        <p>
+          其中 \(\Delta T\) 為凝固點下降量，\(K_f\) 為凝固點下降常數，\(m\)
+          為溶質的重量莫耳濃度。對於一分子量未知之化合物，可製備一濃度已知之溶液，利用式(2)測量該溶液凝固點下降量，求得未知物分子量。假設實驗中秤取
+          \(x\) g 的化合物，溶於 \(y\) g 的溶劑中，\(M_w\) 為化合物分子量，則：
+        </p>
+        <div class="formula">
+          \[\Delta T = K_f \times \frac{\frac{x}{M_w}}{\frac{y}{1000}} \quad , \quad M_w = K_f \cdot \frac{1000 \cdot
+          x}{\Delta T \cdot y} \quad ---(3)\]
+        </div>
+        <h3>藥品</h3>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>品名</th>
+                <th>化學式</th>
+                <th>分子量 (g/mol)</th>
+                <th>密度 (g/cm³)</th>
+                <th>沸點/熔點 (°C)</th>
+                <th>溶解度 (g/100mL-H2O)</th>
+                <th>外觀</th>
+                <th>毒性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>環己烷</td>
+                <td>\(C_6H_{12}\)</td>
+                <td>84.16</td>
+                <td>0.7739 (液)<br />0.996 (固)</td>
+                <td>80.7 / 6.5</td>
+                <td>難溶 (≈0.05)</td>
+                <td>無色透明液體，汽油味</td>
+                <td>吞食有害，中樞神經抑制</td>
+              </tr>
+              <tr>
+                <td>萘</td>
+                <td>\(C_{10}H_8\)</td>
+                <td>128.17</td>
+                <td>1.14</td>
+                <td>218 / 80.2</td>
+                <td>難溶 (≈0.3)</td>
+                <td>白色片狀固體，有味</td>
+                <td>吞食有害，嚴重眼睛刺激</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>實驗器材</h3>
+        <p>電子數字型溫度計、凝固點測定裝置、500mL 燒杯、夾子、鐵夾、冰</p>
+
+        <h3>實驗步驟</h3>
+        <h4>Part A 環己烷冷卻曲線之建立</h4>
+        <ol>
+          <li>
+            取一玻璃大試管，於試管上、下兩端各綁一條橡皮筋，將此試管套在另一玻璃大試管，內部大試管套上有孔橡皮塞，孔中插入攪拌鋼絲及溫度探測棒。設置好可先將裝置拆開，取出內部大試管
+          </li>
+          <li>將內試管洗淨、烘乾、冷卻後，放在小燒杯中秤重，記錄重量。倒入 13mL 環己烷 (約 10g)，再秤重記錄質量</li>
+          <li>
+            將裝有環己烷之試管外壁擦拭乾淨，放回另一大試管中，以三叉夾固定於鐵架上。調整攪拌鋼絲使能圍繞溫度探測棒並利於攪拌。溫度探測棒放在溶液中央位置，準備冰浴
+          </li>
+          <li>取適量冰塊放入燒杯中，加水 (水與冰體積比約 1:2)，冰水的高度需高於內部試管中液面高度</li>
+          <li>
+            冷卻時間以一秒一次的速度上下攪拌溶液，並不時以玻璃棒翻攪冷卻系統。當溫度降至 10°C 時，每 15s
+            記錄一次溫度，記錄小數點第一位。當溫度穩定不變時，再記錄 1~2 min
+          </li>
+        </ol>
+
+        <h4>Part B 含未知物環己烷溶液冷卻曲線之建立</h4>
+        <ol>
+          <li>取出內試管，待環己烷回溫</li>
+          <li>秤取約 0.1g 未知物，記錄精密重量，再倒入裝有環己烷的試管中混合，以攪拌鋼絲攪拌使未知物完全溶解</li>
+          <li>
+            將試管外壁擦拭乾淨 (無水氣)，放入大試管中，重複步驟 3 到步驟
+            5，測定混合溶液冷卻過程之溫度變化。溫度呈穩定緩慢下降時，再持續記錄 1~2 min
+            <ul>
+              <li>冷卻過程開始前應重新更換冰水浴</li>
+              <li>環己烷為易燃有機化合物，實驗後應倒於回收桶</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+      <section class="card">
+        <h2>實驗三：利用氧化還原反應提取純物質</h2>
+        <h3>目的</h3>
+        <p>利用氧化還原反應，分離溶液中的銀離子及銅離子</p>
+        <h3>原理</h3>
+        <p>
+          透過化學變化分離銅、銀離子的混合物，並進行銅、銀與鋅離子的定性分析。在第一部份的分離實驗中先利用銅線將溶液中的銀置換出，再利用鋅將溶液中的銅置換出。
+        </p>
+
+        <p>
+          <strong>分離流程圖：</strong><br />
+          銅/銀離子混合液 <br />
+          &emsp; ├─ \(Ag\) 固體 (析出) <br />
+          &emsp; └─ 銅離子溶液 <br />
+          &emsp;&emsp;&emsp; ├─ \(Cu\) 固體 (析出) <br />
+          &emsp;&emsp;&emsp; └─ 溶液
+        </p>
+
+        <p>
+          在第二部分的實驗進行離子的定性分析：透過銀離子與氯離子反應產生氯化銀白色沉澱，檢查溶液中是否含銀離子。而銅離子會與少量氨水反應生成
+          \(Cu(OH)_2\) 淺藍色膠狀沉澱，加入過量氨水則形成深藍色 \(Cu(NH_3)_4^{2+}\)
+          錯離子，由顏色檢測溶液中是否含銅離子。將反應所得的金屬轉變為銀離子，可藉由上述的反應來檢驗分離出的金屬銀是否有銅離子殘留，判斷分離純化是否完善。加氨水溶液呈鹼性，鋅離子會先形成白色
+          \(Zn(OH)_2\) 沉澱，加入過量氨水則形成 \(Zn(NH_3)_4^{2+}\)，沉澱消失。
+        </p>
+
+        <h3>藥品</h3>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>品名</th>
+                <th>化學式</th>
+                <th>分子量 (g/mol)</th>
+                <th>密度 (g/cm³)</th>
+                <th>沸點/熔點 (°C)</th>
+                <th>溶解度 (g/100mL-H2O)</th>
+                <th>外觀</th>
+                <th>毒性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>硝酸銀</td>
+                <td>\(AgNO_3\)</td>
+                <td>169.87</td>
+                <td>4.35 (s)</td>
+                <td>440 / 209.7</td>
+                <td>122</td>
+                <td>無色固體</td>
+                <td>具腐蝕性，加熱分解產生 \(NO_2\) 有毒氣體</td>
+              </tr>
+              <tr>
+                <td>硝酸銅</td>
+                <td>\(Cu(NO_3)_2\)</td>
+                <td>187.56</td>
+                <td>3.05 (s)</td>
+                <td>170 (分解) / 114.5 (三水)</td>
+                <td>138 (三水)</td>
+                <td>藍色晶體 (三水)</td>
+                <td>強氧化性，產生眼睛、皮膚刺激</td>
+              </tr>
+              <tr>
+                <td>硝酸鋅</td>
+                <td>\(Zn(NO_3)_2\)</td>
+                <td>189.38</td>
+                <td>2.065 (六水)</td>
+                <td>125 (六水) / 36.4 (六水)</td>
+                <td>184.3 (六水)</td>
+                <td>無色結晶</td>
+                <td>強氧化性，引起眼睛、皮膚刺激</td>
+              </tr>
+              <tr>
+                <td>鹽酸</td>
+                <td>\(HCl_{(aq)}\)</td>
+                <td>36.46</td>
+                <td>1.18~1.20 (濃)</td>
+                <td>108~110 / —</td>
+                <td>—</td>
+                <td>無色溶液 (有強烈臭味、煙霧)</td>
+                <td>強腐蝕性，強烈刺激眼睛、皮膚、呼吸道</td>
+              </tr>
+              <tr>
+                <td>硝酸</td>
+                <td>\(HNO_{3(aq)}\)</td>
+                <td>63.01</td>
+                <td>1.42 (濃)</td>
+                <td>121.6 / —</td>
+                <td>—</td>
+                <td>無色液體</td>
+                <td>強氧化性、腐蝕性，接觸可灼傷</td>
+              </tr>
+              <tr>
+                <td>硫酸</td>
+                <td>\(H_2SO_{4(aq)}\)</td>
+                <td>98.08</td>
+                <td>1.84 (濃)</td>
+                <td>337 / —</td>
+                <td>—</td>
+                <td>無色至微黃液體</td>
+                <td>強腐蝕、脫水性，嚴重皮膚灼傷</td>
+              </tr>
+              <tr>
+                <td>氨水</td>
+                <td>\(NH_4OH_{(aq)}\)</td>
+                <td>17.03 (s)</td>
+                <td>
+                  0.73 (g) <br />
+                  0.91~0.95 (aq)
+                </td>
+                <td>37.7 / -77.5</td>
+                <td>—</td>
+                <td>無色液體</td>
+                <td>產生眼睛、皮膚刺激、腐蝕</td>
+              </tr>
+              <tr>
+                <td>鋅粉</td>
+                <td>\(Zn\)</td>
+                <td>65.38</td>
+                <td>7.14</td>
+                <td>907 / 419.5</td>
+                <td>不溶於水</td>
+                <td>灰白色金屬光澤粉末或顆粒</td>
+                <td>粉塵對呼吸道有害</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>實驗器材</h3>
+        <p>試管、燒杯、量筒、玻棒、蒸發皿、溫度計、電熱板加熱攪拌器、水浴鍋、漏斗、濾紙、紅色石蕊試紙</p>
+
+        <h3>實驗步驟</h3>
+        <h4>Part A 銅銀離子之分離</h4>
+        <ol>
+          <li>
+            取 \(15mL\) \(0.1M\) \(AgNO_{3(aq)}\) 放入燒杯，另取 \(15mL\) \(0.1M\) \(Cu(NO_3)_{2(aq)}\) 放入同一燒杯中
+          </li>
+          <li>
+            取約 \(15cm\) 長銅線，用砂紙將表面磨光纏繞成線圈，浸入步驟 (1) 的混合液中
+            <ul>
+              <li>可留一小段把手，掛在燒杯上使反應結束後較好處理</li>
+            </ul>
+          </li>
+          <li>反應 \(30min\) 後，搖晃線圈使沾附在線圈上的固體完全脫落 (反應完全約 \(1.5hr\))</li>
+          <li>以傾析法將液體倒入另一燒杯，分別收集反應燒杯中的固體及液體</li>
+          <li>
+            以 \(2mL\) \(6M\) 的 \(NH_{3(aq)}\) 清洗固體再用 \(5mL\)
+            去離子水清洗固體，重複二到三次直到洗滌的溶液不再呈現深藍色為止
+            <ul>
+              <li>清洗固體應將大塊固體打破，充分洗淨</li>
+              <li>洗滌廢液應棄置於重金屬廢液回收筒中</li>
+            </ul>
+          </li>
+          <li>秤量並記錄乾燥蒸發皿重量後，將洗淨的固體轉移至蒸發皿，烘乾冷卻後稱重</li>
+          <li>重複烘乾、稱重直到重量不再改變，記錄固體重量並計算回收率</li>
+          <li>取少量固體置於試管中，加入 5 滴 \(6M\) \(HNO_{3(aq)}\)，水浴加熱至固體完全溶解</li>
+          <li>滴入過量 \(6M\) \(NH_{3(aq)}\)，混合均勻後觀察溶液是否呈淡藍色</li>
+          <li>取步驟 (4) 所得液體，加入約 \(0.3g\) 鋅粉，攪拌至反應完全</li>
+          <li>用傾析法去除液體，取固體置於燒杯中</li>
+          <li>
+            以 \(3mL\) \(6M\) \(H_2SO_{4(aq)}\) 洗滌固體，再以 \(3mL\) 去離子水清洗，重複此步驟直到加 \(H_2SO_{4(aq)}\)
+            清洗不再產生氣泡為止
+          </li>
+          <li>以重力過濾法收集固體</li>
+        </ol>
+
+        <h4>Part B 銅、銀、及鋅離子的定性分析</h4>
+        <ol>
+          <li>
+            取 3 支試管，各加入 \(0.5mL\) \(0.1M\) 的 \(AgNO_{3(aq)}\)、\(Cu(NO_3)_{2(aq)}\)、\(Zn(NO_3)_{2(aq)}\)
+            溶液，逐漸滴入 \(6M\) \(HCl_{(aq)}\) 於各個試管中，混合均勻後觀察其變化，直到加入的 \(HCl_{(aq)}\) 的體積達
+            \(1mL\) 為止
+          </li>
+          <li>另取 3 支試管，重複上述步驟，改滴入 \(6M\) \(NH_{3(aq)}\)</li>
+        </ol>
+      </section>
+      <section class="card">
+        <h2>實驗四：維他命 C 之定量分析</h2>
+        <h3>目的</h3>
+        <p>測定維他命錠劑與市售果汁中維他命 C 的含量</p>
+        <h3>原理</h3>
+        <p>
+          維他命 C，又稱抗壞血酸，是個很好的還原劑。實驗將利用其氧化還原特性，以滴定方式決定維他命錠劑中的維他命 C
+          含量。 實驗中利用碘酸鉀 (\(KIO_3\))
+          溶液做為滴定劑，在酸性環境中與碘離子反應產生碘分子，產生的碘分子會立即與維他命 C 反應而被消耗。 當溶液中維他命
+          C 完全反應完畢，碘分子會與碘離子形成
+          \(I_3^-\)，再與澱粉指示劑結合產生藍黑色錯合物。因此達滴定終點時，溶液成藍黑色，所消耗碘酸鉀體積可以依其化學當量關係，計算藥錠或果汁中維他命
+          C 含量。
+        </p>
+
+        <div class="formula">\[IO_3^- + 5I^- + 6H^+ \longrightarrow 3I_2 + 3H_2O \quad ---(1)\]</div>
+        <div class="formula">\[C_6H_8O_6 + I_2 \longrightarrow C_6H_6O_6 + 2I^- + 2H^+ \quad ---(2)\]</div>
+
+        <h3>藥品</h3>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>品名</th>
+                <th>化學式</th>
+                <th>分子量 (g/mol)</th>
+                <th>密度 (g/cm³)</th>
+                <th>沸點/熔點 (°C)</th>
+                <th>溶解度 (g/100mL)</th>
+                <th>外觀</th>
+                <th>毒性/安全性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>碘化鉀</td>
+                <td>\(KI\)</td>
+                <td>166</td>
+                <td>3.12</td>
+                <td>1330 (分解) / 681</td>
+                <td>144 (\(20^\circ C\))</td>
+                <td>白色晶體或粉末</td>
+                <td>低毒性，大量攝入影響甲狀腺，產生眼睛皮膚刺激</td>
+              </tr>
+              <tr>
+                <td>碘酸鉀</td>
+                <td>\(KIO_3\)</td>
+                <td>214</td>
+                <td>3.89</td>
+                <td>— / 560 (分解)</td>
+                <td>4.8 (\(20^\circ C\))</td>
+                <td>無色或白色結晶粉末</td>
+                <td>具中毒性及氧化性，誤食引起甲狀腺、腎臟損傷</td>
+              </tr>
+              <tr>
+                <td>鹽酸 (1M)</td>
+                <td>\(HCl_{(aq)}\)</td>
+                <td>36.46</td>
+                <td>1.018</td>
+                <td>\(\approx 100\) / \(\approx -30\)</td>
+                <td>72 (\(20^\circ C\))</td>
+                <td>無色透明液體，具刺激性酸味</td>
+                <td>為強酸，強腐蝕性，吸入或接觸皮膚、眼睛造成灼傷</td>
+              </tr>
+              <tr>
+                <td>澱粉粉 (starch)</td>
+                <td>\((C_6H_{10}O_5)_n\)</td>
+                <td>\(\approx 162n\)</td>
+                <td>\(\approx 1.50\)</td>
+                <td>— / \(\approx 200\)~\(220\) (分解)</td>
+                <td>白色無味細粉，加水呈半透明白色</td>
+                <td>—</td>
+                <td>無毒、可食用 (食品及成分)</td>
+              </tr>
+              <tr>
+                <td>維他命 C (抗壞血酸)</td>
+                <td>\(C_6H_8O_6\)</td>
+                <td>176.12</td>
+                <td>\(\approx 1.65\)</td>
+                <td>\(\approx 190^\circ C\) (分解)</td>
+                <td>33 (在 \(H_2O\), \(20^\circ C\))</td>
+                <td>白色結晶性粉末，具有酸味</td>
+                <td>可食用。結構含內酯環與多個羥基，其還原性強，能形成氫鍵，在氧化還原反應中活躍</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>※ 維他命 C 錠需經過磨碎、溶解、及樣品溶液配製，稱為樣品製備。</p>
+
+        <h3>實驗器材</h3>
+        <p>研缽及棒、移液吸管 (10mL)、安全吸球、定量瓶 (100mL)、滴定管、三角燒瓶、超音波震盪器</p>
+
+        <h3>實驗步驟</h3>
+        <h4>Part A 錠劑中維他命 C 含量之測定</h4>
+        <ol>
+          <li>取 1 片維他命 C 錠，秤重並精密紀錄質量。比較質量與標示劑量之差異。</li>
+          <li>
+            以研缽及棒磨碎錠劑，將粉末轉移至燒杯中，加入 50mL 去離子水，充分攪拌溶解後，以超音波震盪器震盪 5 min。
+            <ul>
+              <li>為了準確測定維他命 C 含量，研缽中殘留粉末應以去離子水沖洗後加入燒杯中。</li>
+            </ul>
+          </li>
+          <li>
+            將步驟 2 的溶液轉置 100mL
+            的定量瓶中，以少量去離子水潤洗燒杯數次，潤洗之溶液應併入定量瓶中。加水稀釋至刻度，混合均勻後備用。
+          </li>
+          <li>
+            取一乾淨、10mL 移液吸管，以少量步驟 3 維他命 C 溶液潤洗後，精密吸取 10mL 維他命 C 溶液加入三角燒瓶中。
+          </li>
+          <li>秤取 \(0.3g\) \(KI\)、\(2mL\) 之 \(1M\) \(HCl_{(aq)}\) 及 \(1mL\) 的澱粉指示劑加入三角燒瓶中。</li>
+          <li>
+            以 \(0.01M\) 的 \(KIO_3\) 溶液滴定至終點，記錄滴定體積至 \(0.01mL\)。
+            <ul>
+              <li>滴定前須依正確步驟潤洗滴定管並裝填溶液。</li>
+            </ul>
+          </li>
+          <li>重複步驟 4~5，並進行第二次滴定。</li>
+          <li>計算錠劑中維他命 C 含量。</li>
+        </ol>
+
+        <h4>Part B 市售果汁之測定</h4>
+        <ol>
+          <li>自備果汁一瓶。(以不含果肉的淡色果汁為佳，所需體積約為 220mL)</li>
+          <li>精密吸取 100mL 果汁加入三角燒瓶中。</li>
+          <li>秤取 \(0.3g\) \(KI\)、\(2mL\) 之 \(1M\) \(HCl_{(aq)}\) 及 \(1mL\) 的澱粉指示劑加入三角燒瓶中。</li>
+          <li>以 \(0.01M\) 的 \(KIO_3\) 溶液滴定至終點，記錄滴定體積至 \(0.01mL\)。</li>
+          <li>重複步驟 3~4，進行第二次果汁之測定。</li>
+          <li>計算 100mL 果汁中維他命 C 的含量。</li>
+        </ol>
+      </section>
+      <section class="card">
+        <h2>實驗五：以沉澱滴定法測定醬油氯離子含量</h2>
+        <h3>目的</h3>
+        <p>測定市售醬油氯離子含量，進而估計其中的氯化鈉含量</p>
+
+        <h3>原理</h3>
+        <p>
+          醬油中的氯離子 (\(Cl^-\)) 易與銀離子 (\(Ag^+\)) 反應產生白色氯化銀 (\(AgCl\)) 沉澱。實驗採用返滴定法 (Back
+          titration)：先在含 \(Cl^-\) 的溶液中加入過量 \(AgNO_3\)，過濾去除 \(AgCl\) 沉澱後，殘留的 \(Ag^+\) 以硫氰化鉀
+          (\(KSCN\)) 溶液滴定，使用 \(Fe^{3+}\) 作為指示劑。
+        </p>
+        <div class="formula">\[Ag^+(aq) + SCN^-(aq) \rightleftharpoons AgSCN(s) \quad ---(1)\]</div>
+        <div class="formula">
+          \[Fe^{3+}(aq) + SCN^-(aq) \rightleftharpoons [FeSCN]^{2+}(aq) \quad (\text{橙紅色錯離子}) \quad ---(2)\]
+        </div>
+        <p>
+          透過顏色變化判斷是否達到滴定終點，並記錄消耗的 \(KSCN\) 溶液體積。利用反應式中化學當量關係，先算出溶液中殘留的
+          \(Ag^+\) 量，而加入的 \(AgNO_3\) 總莫耳數則由其已知濃度及體積計算得出，兩者之差值即為與 \(Cl^-\)
+          反應之銀離子量，進而求得 \(Cl^-\) 的含量。
+        </p>
+
+        <h3>藥品</h3>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>品名</th>
+                <th>化學式</th>
+                <th>分子量 (g/mol)</th>
+                <th>密度 (g/cm³)</th>
+                <th>沸點/熔點 (°C)</th>
+                <th>溶解度 (g/100mL-H2O)</th>
+                <th>外觀</th>
+                <th>毒性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>硫氰化鉀</td>
+                <td>\(KSCN\)</td>
+                <td>97.18</td>
+                <td>1.886</td>
+                <td>500 / 173.2</td>
+                <td>177 (\(0^\circ C\))</td>
+                <td>白色結晶固體，易潮解</td>
+                <td>吞食有毒，產生 \(H_2S\) 氣體，嚴重皮膚眼睛刺激</td>
+              </tr>
+              <tr>
+                <td>硝酸銀</td>
+                <td>\(AgNO_3\)</td>
+                <td>169.87</td>
+                <td>4.35</td>
+                <td>444 / 212</td>
+                <td>122 (\(0^\circ C\))</td>
+                <td>無色或白色透明晶體，見光易分解</td>
+                <td>強腐蝕性、氧化性，皮膚眼睛灼傷、刺激</td>
+              </tr>
+              <tr>
+                <td>鐵指示劑 (硫酸鐵銨)</td>
+                <td>\(NH_4Fe(SO_4)_2 \cdot 12H_2O\)</td>
+                <td>482.19</td>
+                <td>1.71</td>
+                <td>230 / 37</td>
+                <td>124</td>
+                <td>淡紫色結晶體</td>
+                <td>低毒性但具刺激性</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>實驗器材</h3>
+        <p>定量瓶 (100mL)、玻棒、滴定管、移液吸管 (10mL)、三角燒瓶、安全吸球、燒杯、玻璃漏斗、濾紙</p>
+
+        <h3>實驗步驟</h3>
+        <ol>
+          <li>取 \(0.5mL\) 醬油加入 \(100mL\) 定量瓶中，加去離子水稀釋到刻度</li>
+          <li>取 \(10mL\) 稀釋後的醬油加入燒杯中</li>
+          <li>取 \(5mL\)、\(0.2M\) 的 \(AgNO_{3(aq)}\)，加入步驟 2 的樣品中，混合均勻並觀察紀錄燒杯中溶液變化</li>
+          <li>進行重力過濾，取濾液。過濾時燒杯及濾紙需以去離子水洗滌，確認將所有銀離子洗淨並收集至濾液中</li>
+          <li>
+            在步驟 4 的樣品溶液中加入 \(1mL\) 的 \(Fe^{3+}\) 指示劑，以 \(KSCN\)
+            溶液滴定。滴定時會出現白色沉澱。持續滴定至溶液變為橙紅色，且搖晃 \(15\) 秒後溶液不褪色即達滴定終點
+            <ul>
+              <li>滴定結束所產生的廢液及沉澱物含重金屬，應倒入含重金屬廢液回收筒中</li>
+            </ul>
+          </li>
+          <li>重複步驟 2 至步驟 5，進行第二次滴定，紀錄達滴定終點時所消耗 \(KSCN\) 之體積至 \(0.01mL\)</li>
+          <li>由所消耗 \(KSCN\) 之體積計算醬油中氯離子的含量</li>
+        </ol>
+      </section>
+      <section class="card">
+        <h2>實驗六：碘鐘實驗 - 反應級數之測定</h2>
+        <h3>目的</h3>
+        <p>利用碘鐘反應 (Iodine Clock Reaction) 測定過硫酸根與碘離子反應之速率定律式、反應速率常數及反應活化能</p>
+
+        <h3>原理</h3>
+        <p>化學反應速率受濃度與溫度影響。對於過硫酸根離子 (\(S_2O_8^{2-}\)) 與碘離子 (\(I^-\)) 之氧化還原反應：</p>
+        <div class="formula">\[S_2O_8^{2-}(aq) + 3I^-(aq) \rightarrow 2SO_4^{2-}(aq) + I_3^-(aq) \quad ---(1)\]</div>
+        <p>
+          其速率定律式可表示為：\(R = k[S_2O_8^{2-}]^m [I^-]^n\)。 本實驗利用加入定量的硫代硫酸鈉 (\(Na_2S_2O_3\))
+          及澱粉指示劑，將產生的碘分子 (\(I_3^-\)) 立即還原回碘離子：
+        </p>
+        <div class="formula">\[I_3^-(aq) + 2S_2O_3^{2-}(aq) \rightarrow 3I^-(aq) + S_4O_6^{2-}(aq) \quad ---(2)\]</div>
+        <p>
+          當 \(Na_2S_2O_3\) 消耗完畢，剩餘的 \(I_3^-\) 會與澱粉反應生成藍黑色錯合物。藉由測量溶液變色所需的時間 \(\Delta
+          t\)，可求得反應速率。 此外，利用阿瑞尼亞方程式 (Arrhenius Equation)
+          探討反應速率與溫度之關係，進而求出反應活化能 \(E_a\)：
+        </p>
+        <div class="formula">
+          \[k = A \cdot e^{-\frac{E_a}{RT}} \quad \text{或} \quad \ln k = -\frac{E_a}{R} \left(\frac{1}{T}\right) + \ln
+          A \quad ---(3)\]
+        </div>
+
+        <h3>藥品</h3>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>品名</th>
+                <th>化學式</th>
+                <th>分子量 (g/mol)</th>
+                <th>密度 (g/cm³)</th>
+                <th>沸點/熔點 (°C)</th>
+                <th>溶解度 (g/100mL-H2O)</th>
+                <th>外觀</th>
+                <th>毒性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>碘化鉀</td>
+                <td>\(KI\)</td>
+                <td>166.00</td>
+                <td>3.12</td>
+                <td>1330 / 681</td>
+                <td>144 (\(20^\circ C\))</td>
+                <td>白色晶體或粉末</td>
+                <td>低毒性，產生眼睛皮膚刺激</td>
+              </tr>
+              <tr>
+                <td>過硫酸鉀</td>
+                <td>\(K_2S_2O_8\)</td>
+                <td>270.32</td>
+                <td>2.48</td>
+                <td>100 (分解) / —</td>
+                <td>5.2 (\(20^\circ C\))</td>
+                <td>無色至白色粉末或晶體</td>
+                <td>強氧化劑，具刺激性及過敏性</td>
+              </tr>
+              <tr>
+                <td>硫代硫酸鈉</td>
+                <td>\(Na_2S_2O_3 \cdot 5H_2O\)</td>
+                <td>248.18</td>
+                <td>1.73</td>
+                <td>100 / 48.5</td>
+                <td>70.1 (\(20^\circ C\))</td>
+                <td>無色透明單斜晶體</td>
+                <td>低毒性，對呼吸道及眼睛有刺激性</td>
+              </tr>
+              <tr>
+                <td>硝酸鉀</td>
+                <td>\(KNO_3\)</td>
+                <td>101.10</td>
+                <td>2.11</td>
+                <td>400 (分解) / 334</td>
+                <td>32 (\(20^\circ C\))</td>
+                <td>無色透明斜方晶體或白色粉末</td>
+                <td>強氧化劑，吞食有害</td>
+              </tr>
+              <tr>
+                <td>硫酸銨</td>
+                <td>\((NH_4)_2SO_4\)</td>
+                <td>132.14</td>
+                <td>1.77</td>
+                <td>280 / 235</td>
+                <td>75.4 (\(20^\circ C\))</td>
+                <td>白色斜方晶體</td>
+                <td>低毒性，對黏膜有刺激性</td>
+              </tr>
+              <tr>
+                <td>澱粉液</td>
+                <td>\((C_6H_{10}O_5)_n\)</td>
+                <td>\(\approx 162n\)</td>
+                <td>—</td>
+                <td>— / —</td>
+                <td>不溶於冷水，溶於熱水</td>
+                <td>半透明白色溶液</td>
+                <td>無毒</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>實驗器材</h3>
+        <p>燒杯 (100mL)、量筒 (10mL)、移液吸管 (10mL)、安全吸球、計時器、溫度計、水浴鍋</p>
+
+        <h3>實驗步驟</h3>
+        <h4>Part A 反應級數與速率常數之測定</h4>
+        <ol>
+          <li>
+            依實驗設計之濃度配置 5 組不同的反應溶液。
+            <ul>
+              <li>注意每組實驗之離子強度需保持恆定（使用 \(KNO_3\) 與 \((NH_4)_2SO_4\) 調節）。</li>
+            </ul>
+          </li>
+          <li>取 A 瓶裝入 \(KI\)、\(Na_2S_2O_3\)、澱粉液及 \(KNO_3\)；B 瓶裝入 \(K_2S_2O_8\) 與 \((NH_4)_2SO_4\)。</li>
+          <li>將 B 瓶快速倒入 A 瓶中，同時啟動計時器，並不斷攪拌溶液。</li>
+          <li>記錄溶液由無色轉變為藍黑色的瞬間時間 \(\Delta t\)，並測量反應混合液之初溫。</li>
+          <li>重複上述步驟完成 5 組實驗。</li>
+        </ol>
+
+        <h4>Part B 反應活化能之測定</h4>
+        <ol>
+          <li>
+            選擇 Part A 中之某一組濃度配置，分別在室溫、\(10^\circ C\)、\(20^\circ C\)、\(30^\circ C\) 下進行反應。
+            <ul>
+              <li>需使用冰浴或溫水浴將 A、B 兩瓶預冷/預熱至目標溫度，並維持 5~10 分鐘後再混合。</li>
+            </ul>
+          </li>
+          <li>混合後繼續維持恆溫，記錄變色時間 \(\Delta t\)。</li>
+          <li>作 \(\ln k\) 對 \(1/T\) 之作圖，由斜率計算反應活化能 \(E_a\)。</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="footer">© 作者 林育田 黃欣荃</footer>
+    <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">
+      <i class="bi bi-arrow-up"></i> ↑
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 取得按鈕元件
+      let mybutton = document.getElementById("btn-back-to-top");
+
+      // 當使用者捲動網頁時，觸發 scrollFunction
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block"; // 顯示按鈕
+        } else {
+          mybutton.style.display = "none"; // 隱藏按鈕
+        }
+      }
+
+      // 當使用者點擊按鈕時，回到頂端
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // 平滑捲動效果
+        });
+      }
+    </script>
+  </body>
+</html>

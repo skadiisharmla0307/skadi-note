@@ -1,0 +1,1546 @@
+<!doctype html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>基礎程式設計</title>
+        <!-- Favicons -->
+        <link href="picture_other/favicon-32x32.png" rel="icon" />
+        <link href="picture_other/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ]
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">課程筆記整理</a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculus.html">微積分</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chemistry.html">普通化學</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experiment.html">普化實驗</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="energy.html">能源工程概論</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="statics.html">靜力學</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="phoenix_code.html">網頁程式設計</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link active dropdown-toggle"
+                                href="octave.html"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                基礎程式設計
+                            </a>
+                            <ul
+                                class="dropdown-menu dropdown-scrollable"
+                                style="overflow-y: auto"
+                                aria-labelledby="navbarDropdown">
+                                <li><h3 class="dropdown-item-text">章節目錄</h3></li>
+                                <li class="dropdown-header">- CH02 基本運算 -</li>
+                                <li><a class="dropdown-item" href="#2-1">2-1 簡單運算</a></li>
+                                <li><a class="dropdown-item" href="#2-2">2-2 變數</a></li>
+                                <li><a class="dropdown-item" href="#2-3">2-3 複數函數</a></li>
+                                <li><a class="dropdown-item" href="#2-4">2-4 三角函數</a></li>
+                                <li><a class="dropdown-item" href="#2-5">2-5 指數函數</a></li>
+                                <li><a class="dropdown-item" href="#2-6">2-6 算數函數</a></li>
+                                <li class="dropdown-header">- CH03 陣列與運算 -</li>
+                                <li><a class="dropdown-item" href="#3-1">3-1 簡易陣列</a></li>
+                                <li><a class="dropdown-item" href="#3-2">3-2 點積與叉積</a></li>
+                                <li><a class="dropdown-item" href="#3-3">3-3 簡易運算</a></li>
+                                <li><a class="dropdown-item" href="#3-4">3-4 標準陣列</a></li>
+                                <li><a class="dropdown-item" href="#3-5">3-5 陣列控制</a></li>
+                                <li><a class="dropdown-item" href="#7_13">3-6 陣列排序</a></li>
+                                <li><a class="dropdown-item" href="#3-7">3-7 陣列搜尋</a></li>
+                                <li><a class="dropdown-item" href="#3-8">3-8 陣列控制函數</a></li>
+                                <li class="dropdown-header">- CH04 關係與邏輯運算 -</li>
+                                <li><a class="dropdown-item" href="#4-1">4-1 M函數</a></li>
+                                <li><a class="dropdown-item" href="#4-2">4-2 有用的函數</a></li>
+                                <li><a class="dropdown-item" href="#4-3">4-3 關係運算</a></li>
+                                <li><a class="dropdown-item" href="#4-4">4-4 邏輯運算</a></li>
+                                <li><a class="dropdown-item" href="#4-5">4-5 函數</a></li>
+                                <li class="dropdown-header">- CH05 控制流程 -</li>
+                                <li><a class="dropdown-item" href="#5-1">5-1 for迴圈</a></li>
+                                <li><a class="dropdown-item" href="#5-2">5-2 while迴圈</a></li>
+                                <li><a class="dropdown-item" href="#5-3">5-3 if</a></li>
+                                <li><a class="dropdown-item" href="#5-4">5-4 switch~case</a></li>
+                                <li class="dropdown-header">- CH06 M檔案函數 -</li>
+                                <li><a class="dropdown-item" href="#6-1">6-1 eval</a></li>
+                                <li><a class="dropdown-item" href="#6-2">6-2 feval</a></li>
+                                <li><a class="dropdown-item" href="#6-3">6-3 自定函數</a></li>
+                                <li><a class="dropdown-item" href="#6-4">6-4 遞迴</a></li>
+                                <li class="dropdown-header">- CH07 矩陣代數 -</li>
+                                <li><a class="dropdown-item" href="#7-1">7-1 矩陣基本運算</a></li>
+                                <li><a class="dropdown-item" href="#7-2">7-2 矩陣函數</a></li>
+                                <li><a class="dropdown-item" href="#7-3">7-3 矩陣變換函數</a></li>
+                                <li><a class="dropdown-item" href="#7-4">7-4 線性方程式</a></li>
+                                <li class="dropdown-header">- CH08 二維圖形 -</li>
+                                <li><a class="dropdown-item" href="#8-1">8-1 plot</a></li>
+                                <li><a class="dropdown-item" href="#8-2">8-2 label & axes box</a></li>
+                                <li><a class="dropdown-item" href="#8-3">8-3 axis & zoom</a></li>
+                                <li><a class="dropdown-item" href="#8-4">8-4 多重繪圖</a></li>
+                                <li><a class="dropdown-item" href="#8-5">8-5 特殊繪圖</a></li>
+                                <li><a class="dropdown-item" href="#8-6">8-6 fplot 與ezplot</a></li>
+                                <li class="dropdown-header">- CH09 二維圖形 -</li>
+                                <li><a class="dropdown-item" href="#9-1">9-1 線條圖</a></li>
+                                <li><a class="dropdown-item" href="#9-2">9-2 網格圖</a></li>
+                                <li><a class="dropdown-item" href="#9-3">9-3 表面圖</a></li>
+                                <li><a class="dropdown-item" href="#9-4">9-4 觀察點</a></li>
+                                <li><a class="dropdown-item" href="#9-5">9-5 等高線圖</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="minerals.html">礦物與生活</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container">
+            <section class="card">
+                <h2>基礎程式設計</h2>
+                <p>節錄第二章至第九章內容</p>
+            </section>
+
+            <section class="card" id="2-1">
+                <h2>2-1 簡單運算</h2>
+                <h3>format</h3>
+                <p>用於控制數值的顯示格式</p>
+                <ul>
+                    <li>format <b>short</b>: 5位有效數字</li>
+                    <li>format <b>long</b>: 15位有效數字</li>
+                    <li>format <b>short e</b>: 科學記號, 5位有效數字</li>
+                    <li>format <b>long e</b>: 科學記號, 15位有效數字</li>
+                    <li>format <b>short g</b>: 自動選擇是否科學記號</li>
+                    <li>format <b>long g</b>: 同上, 變為15位有效數字</li>
+                    <li>format <b>bank</b>: 顯示兩位小數</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; format short<br />
+                    &gt;&gt; pi+3<br />
+                    ans = 6.1416
+                    <hr />
+                    &gt;&gt; format short e<br />
+                    &gt;&gt; pi-3<br />
+                    ans = 1.4159e-01
+                    <hr />
+                    &gt;&gt; format long e<br />
+                    &gt;&gt; pi/3<br />
+                    ans = 1.047197551196598e+00
+                    <hr />
+                    &gt;&gt; format short g<br />
+                    &gt;&gt; pi^2<br />
+                    ans = 9.8696
+                    <hr />
+                    &gt;&gt; format long g<br />
+                    &gt;&gt; pi*3<br />
+                    ans = 9.424777960769379
+                    <hr />
+                    &gt;&gt; format bank<br />
+                    &gt;&gt; pi\3<br />
+                    ans = 0.95
+                </section>
+            </section>
+            <section class="card" id="2-2">
+                <h2>2-2 變數</h2>
+                <p>
+                    大小寫不同, 開頭必須為字母, 最多31個字元賦予變數數值. 在clear之前, 命令視窗(Command
+                    Window)會記住其數值
+                </p>
+                <h3>特殊變數</h3>
+                <ul>
+                    <li>eps: 傳回最精確的浮點值</li>
+                </ul>
+                <section class="formula">&gt;&gt; format short<br />&gt;&gt; eps<br />ans = 2.2204e-16</section>
+                <ul>
+                    <li>i, j: 虛數</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; i<br />ans = 0.0000+1.0000i<br />&gt;&gt; j<br />ans = 0.0000+1.0000i
+                </section>
+                <ul>
+                    <li>inf: 無限大</li>
+                </ul>
+                <section class="formula">&gt;&gt; inf<br />ans = Inf</section>
+                <ul>
+                    <li>nan: 不是一個數值</li>
+                </ul>
+                <section class="formula">&gt;&gt; nan<br />ans = NaN</section>
+                <ul>
+                    <li>intmax: 回傳整數類別的最大值<br /></li>
+                    <li>intmin: 回傳整數類別的最小值</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; x=intmax('int8')<br />
+                    x = 127
+                    <hr />
+                    &gt;&gt; x=intmax('int32')<br />
+                    x = 2147483647
+                    <hr />
+                    &gt;&gt;x=intmin('int8')<br />
+                    x = -128
+                </section>
+                <p>程式碼敘述的最後加上;號代表敘述結束, 命令視窗不會顯示數值</p>
+                <section class="formula">
+                    &gt;&gt; format short<br />
+                    &gt;&gt; a=2;<br />
+                    &gt;&gt; b=31;<br />
+                    &gt;&gt; c=1847;<br />
+                    &gt;&gt; a*b*c<br />
+                    ans = 114514
+                </section>
+            </section>
+            <section class="card" id="2-3">
+                <h2>2-3 複數函數</h2>
+                <p>a + bi 是直角座標表示</p>
+                <section class="formula">
+                    &gt;&gt; format short<br />
+                    &gt;&gt; a=3;<br />
+                    &gt;&gt; b=4;<br />
+                    &gt;&gt; c=a+b*i<br />
+                    c = 3 + 4i<br />
+                    &gt;&gt; c=a+b*j<br />
+                    c = 3 + 4i
+                </section>
+                <ul>
+                    <li>abs：絕對值</li>
+                    <li>angle：徑度相位角以角度表示，必須乘上180 / pi</li>
+                    <li>complex(a, b)：複數函數，a 為實數部分，b 為虛數部分</li>
+                    <li>conj()：取共軛複數</li>
+                    <li>real：取實數部分</li>
+                    <li>imag：取虛數部分</li>
+                    <li>isreal：是否為實數，若真回傳值1，否則回傳值0</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; abs(c)<br />
+                    ans = 5
+                    <hr />
+                    &gt;&gt; angle(c)<br />
+                    ans = 0.9273<br />
+                    &gt;&gt; angle(c)*180/pi<br />
+                    ans = 53.1301
+                    <hr />
+                    &gt;&gt; complex(a,b)<br />
+                    ans = 3 + 4i
+                    <hr />
+                    &gt;&gt; conj(c)<br />
+                    ans = 3 - 4i
+                    <hr />
+                    &gt;&gt; real(c)<br />
+                    ans = 3
+                    <hr />
+                    &gt;&gt; imag(c)<br />
+                    ans = 4
+                    <hr />
+                    &gt;&gt; isreal(a)<br />
+                    ans = 1<br />
+                    &gt;&gt; isreal(c)<br />
+                    ans = 0
+                </section>
+            </section>
+
+            <section class="card" id="2-4">
+                <h2>2-4 三角函數</h2>
+                <p>以sin函數舉例</p>
+                <ul>
+                    <li>sin(x): 弳度x 取sin值</li>
+                    <li>sind(x): 角度 x 度取sin值</li>
+                    <li>sinpi(x): x * pi 取sin值</li>
+                    <li>asin(x): x 取sin<sup>-1</sup>值</li>
+                    <li>asind(x): 角度 x 度取sin<sup>-1</sup>值</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; sin(pi/6)<br />
+                    ans = 0.5000
+                    <hr />
+                    &gt;&gt; sind(30)<br />
+                    ans = 0.5000
+                    <hr />
+                    &gt;&gt; sinpi(1/6)<br />
+                    ans = 0.5000
+                    <hr />
+                    &gt;&gt; asin(0.5)<br />
+                    ans = 0.5236
+                    <hr />
+                    &gt;&gt; asind(0.5)<br />
+                    ans = 30.000
+                </section>
+            </section>
+
+            <section class="card" id="2-5">
+                <h2>2-5 指數函數</h2>
+                <p>(待補充)</p>
+            </section>
+
+            <section class="card" id="2-6">
+                <h2>2-6 算數函數</h2>
+                <p>(待補充)</p>
+            </section>
+            <section class="card" id="3-1">
+                <h2>3-1 簡易陣列</h2>
+                <p>
+                    x=[a,b,c,d] or x=[a b c d] : 產生任意元素列向量<br />
+                    x=[a;b;c;d] : 產生任意元素行向量<br />
+                    x = x' : row向量與行column向量互換
+                </p>
+                <section class="formula">
+                    &gt;&gt; x=[1, 2, 3; 4, 5, 6; 7, 8, 9]<br />
+                    x =<br />
+                    &nbsp;&nbsp;&nbsp;1 2 3<br />
+                    &nbsp;&nbsp;&nbsp;4 5 6<br />
+                    &nbsp;&nbsp;&nbsp;7 8 9<br />
+                    &gt;&gt; x=x'<br />
+                    x =<br />
+                    &nbsp;&nbsp;&nbsp;1 4 7<br />
+                    &nbsp;&nbsp;&nbsp;2 5 8<br />
+                    &nbsp;&nbsp;&nbsp;3 6 9
+                </section>
+                <ul>
+                    <li>x = first : last</li>
+                </ul>
+                <p>從first開始,每次遞增1到last</p>
+                <ul>
+                    <li>x = first : n : last</li>
+                </ul>
+                <p>從first開始,每次以n值遞增到last</p>
+                <section class="formula">
+                    &gt;&gt; x=1:5<br />
+                    x =<br />
+                    &nbsp;&nbsp;&nbsp;1 2 3 4 5<br /><br />
+                    &gt;&gt; x=1:2:9<br />
+                    x =<br />
+                    &nbsp;&nbsp;&nbsp;1 3 5 7 9
+                </section>
+                <ul>
+                    <li>x = linspace(first,last,n)</li>
+                </ul>
+                <p>列向量x, 從first開始,到last結束, 有n個元素</p>
+                <ul>
+                    <li>x = logspace(first,last,n)</li>
+                </ul>
+                <p>列向量x, 從10<sup>first</sup>開始,到10<sup>last</sup>結束, 有n個元素</p>
+                <section class="formula">
+                    &gt;&gt; linspace(1,5,3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 3 5<br /><br />
+                    &gt;&gt; logspace(1,5,3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;10 1000 100000
+                </section>
+            </section>
+
+            <section class="card" id="3-2">
+                <h2>3-2 點積與叉積</h2>
+                <ul>
+                    <li>dot(a,b): 兩向量a,b之內積</li>
+                    <li>cross(a,b): 兩向量a,b之外積</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; a= [1 2 3];<br />
+                    &gt;&gt; b=[4 5 6];<br />
+                    &gt;&gt; dot(a,b)<br />
+                    ans = 32<br />
+                    &gt;&gt; cross(a,b)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;-3 6 -3
+                </section>
+            </section>
+
+            <section class="card" id="3-3">
+                <h2>3-3 簡易運算</h2>
+                <ul>
+                    <li>A + c 純量相加</li>
+                    <li>A - c 純量相減</li>
+                    <li>A * c 純量相乘</li>
+                    <li>A / c 純量相除</li>
+                    <li>A + B 陣列相加</li>
+                    <li>A - B 陣列相加</li>
+                    <li>A .* B 陣列相乘(同位置元素相乘)</li>
+                    <li>A ./ B 陣列右相除</li>
+                    <li>A .\ B 陣列左相除</li>
+                    <li>A .^ B 陣列次方</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; A=[1 2 3 4;5 6 7 8];<br />
+                    &gt;&gt; B=[1 1 1 1;2 2 2 2];<br />
+                    &gt;&gt; A+B<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;2 3 4 5<br />
+                    &nbsp;&nbsp;&nbsp;7 8 9 10<br /><br />
+                    &gt;&gt;A-B<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0 1 2 3<br />
+                    &nbsp;&nbsp;&nbsp;3 4 5 6<br /><br />
+                    &gt;&gt; A.*B <br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 2 3 4<br />
+                    &nbsp;&nbsp;&nbsp;10 12 14 16<br /><br />
+                    &gt;&gt; A./B<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1.0000 2.0000 3.0000 4.0000<br />
+                    &nbsp;&nbsp;&nbsp;2.5000 3.0000 3.5000 4.0000<br /><br />
+                    &gt;&gt; A.\B<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1.0000 0.5000 0.3333 0.2500<br />
+                    &nbsp;&nbsp;&nbsp;0.4000 0.3333 0.2857 0.2500<br /><br />
+                    &gt;&gt; A.^B<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 2 3 4<br />
+                    &nbsp;&nbsp;&nbsp;25 36 49 64
+                </section>
+            </section>
+
+            <section class="card" id="3-4">
+                <h2>3-4 標準陣列</h2>
+                <h3>ones, zeros</h3>
+                <ul>
+                    <li>ones(n): 由1組成的n×n矩陣</li>
+                    <li>zeros(n): 由0組成的n×n矩陣</li>
+                    <li>ones(r, c): 由1組成的r×c矩陣</li>
+                    <li>zeros(r, c): 由0組成的r×c矩陣</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; ones(3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 1 1<br />
+                    &nbsp;&nbsp;&nbsp;1 1 1<br />
+                    &nbsp;&nbsp;&nbsp;1 1 1<br /><br />
+                    &gt;&gt; zeros(3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0<br /><br />
+                    &gt;&gt; ones(2,3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 1 1<br />
+                    &nbsp;&nbsp;&nbsp;1 1 1<br /><br />
+                    &gt;&gt; zeros(2,3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0
+                </section>
+                <h3>random 與 diag</h3>
+                <ul>
+                    <li>rand(n): 由0~1的亂數組成的n×n矩陣</li>
+                    <li>rand(r, c): 由0~1的亂數組成的r×c矩陣</li>
+                    <li>randn(n): 由亂數(含負數)組成的n×n矩陣</li>
+                    <li>randn(r, c): 由亂數(含負數)組成的r×c矩陣</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; rand(2)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0.1404 0.7879<br />
+                    &nbsp;&nbsp;&nbsp;0.1826 0.3719<br /><br />
+                    &gt;&gt; rand(2,3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0.075614 0.953349 0.155306<br />
+                    &nbsp;&nbsp;&nbsp;0.388347 0.730895 0.989118<br /><br />
+                    &gt;&gt; randn(2)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;-0.9353 -1.5979<br />
+                    &nbsp;&nbsp;&nbsp;-1.2564 0.5329<br /><br />
+                    &gt;&gt; randn(2,3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0.612376 -0.624871 0.090714<br />
+                    &nbsp;&nbsp;&nbsp;-0.722252 0.852230 -1.952485
+                </section>
+
+                <ul>
+                    <li>diag(a:b): 建立主對角矩陣</li>
+                    <li>diag(a:b,k): 建立偏移對角矩陣</li>
+                </ul>
+
+                <section class="formula">
+                    &gt;&gt; diag(1:3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 0 0<br />
+                    &nbsp;&nbsp;&nbsp;0 2 0<br />
+                    &nbsp;&nbsp;&nbsp;0 0 3<br /><br />
+                    &gt;&gt; diag(1:3,1)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0 1 0 0<br />
+                    &nbsp;&nbsp;&nbsp;0 0 2 0<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0 3<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0 0<br /><br />
+                </section>
+            </section>
+
+            <section class="card" id="3-5">
+                <h2>3-5 陣列控制</h2>
+                <p>待補充</p>
+            </section>
+
+            <section class="card" id="3-6">
+                <h2>3-6 陣列排序</h2>
+                <p>待補充</p>
+            </section>
+
+            <section class="card" id="3-7">
+                <h2>3-7 陣列搜尋</h2>
+                <p>待補充</p>
+            </section>
+
+            <section class="card" id="3-8">
+                <h2>3-8 陣列控制函數</h2>
+                <p>flipud(x): 將x陣列上下顛倒</p>
+                <p>fliplr(x): 將x陣列左右顛倒</p>
+                <p>rot90(x): 將x陣列逆時針旋轉90度</p>
+                <p>rot90(x,n): 將x陣列逆時針旋轉n*90度</p>
+                <p>diag(x): 顯示x陣列對角線</p>
+                <p>reshape(x,n,m): 將x陣列重新排列成n列m行</p>
+                <p>triu(x): 顯示x陣列右上部, 其餘設定為0</p>
+                <p>tril(x): 顯示x陣列左下部, 其餘設定為0</p>
+                <p>knor(x,y): 顯示x陣列各元素乘上y陣列</p>
+                <p>repmat(x,[m,n]): 顯示x陣列, 重複為m列n行</p>
+                <section class="formula">
+                    &gt;&gt; x=[1 -2;3 4]<br />
+                    x =<br />
+                    &nbsp;&nbsp;&nbsp;1 -2<br />
+                    &nbsp;&nbsp;&nbsp;3 4
+                    <hr />
+
+                    &gt;&gt; flipud(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;3 4<br />
+                    &nbsp;&nbsp;&nbsp;1 -2
+                    <hr />
+
+                    &gt;&gt; fliplr(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;-2 1<br />
+                    &nbsp;&nbsp;&nbsp;4 3
+                    <hr />
+
+                    &gt;&gt; rot90(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;-2 4<br />
+                    &nbsp;&nbsp;&nbsp;1 3
+                    <hr />
+
+                    &gt;&gt; rot90(x,3)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;3 1<br />
+                    &nbsp;&nbsp;&nbsp;4 -2
+                    <hr />
+
+                    &gt;&gt; diag(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1<br />
+                    &nbsp;&nbsp;&nbsp;4
+                    <hr />
+
+                    &gt;&gt; reshape(x,1,4)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 3 -2 4<br /><br />
+                    &gt;&gt; reshape(x,4,1)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1<br />
+                    &nbsp;&nbsp;&nbsp;3<br />
+                    &nbsp;&nbsp;&nbsp;-2<br />
+                    &nbsp;&nbsp;&nbsp;4
+                    <hr />
+                    &gt;&gt; triu(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 -2<br />
+                    &nbsp;&nbsp;&nbsp;0 4
+                    <hr />
+                    &gt;&gt; tril(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 0<br />
+                    &nbsp;&nbsp;&nbsp;3 4
+                    <hr />
+                    &gt;&gt;repmat(x,[2,3])<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 -2 1 -2 1 -2<br />
+                    &nbsp;&nbsp;&nbsp;3 &nbsp;4 3 &nbsp;4 3 &nbsp;4<br />
+                    &nbsp;&nbsp;&nbsp;1 -2 1 -2 1 -2<br />
+                    &nbsp;&nbsp;&nbsp;3 &nbsp;4 3 &nbsp;4 3 &nbsp;4
+                </section>
+            </section>
+
+            <section class="card" id="4-1">
+                <h2>4-1 M函數</h2>
+                <p>
+                    M檔案是Octave的程式檔, 裡面可以寫指令、函數、迴圈或運算. Script檔(文字檔)較為常見.
+                    透過編輯(Editor)視窗, 可以創立New Script
+                </p>
+            </section>
+
+            <section class="card" id="4-2">
+                <h2>4-2 有用的函數</h2>
+                <h3>beep</h3>
+                <p>發出「嗶」聲(系統提示音)</p>
+                <h3>input</h3>
+                <p>要求使用者輸入資料</p>
+                <h3>disp</h3>
+                <p>顯示文字或變數內容</p>
+                <h3>echo on / echo off</h3>
+                <p>顯示或隱藏執行中的程式碼。</p>
+                <h3>pause</h3>
+                <p>暫停程式執行,可選擇暫停秒數.無參數版需手動按任意鍵繼續</p>
+                <h3>waitforbuttonpress</h3>
+                <p>暫停程式直到使用者在圖形視窗中按鍵盤或滑鼠.</p>
+            </section>
+
+            <section class="card" id="4-3">
+                <h2>4-3 關係運算</h2>
+                <ul>
+                    <li>&lt; (小於)</li>
+                    <li>&lt;= (小於等於)</li>
+                    <li>&gt; (大於)</li>
+                    <li>&gt;= (大於等於)</li>
+                    <li>== (等於)</li>
+                    <li>~= (不等於)</li>
+                </ul>
+                <p>函式成立輸出1, 不成立輸出0</p>
+                <section class="formula">
+                    &gt;&gt; a=1;<br />
+                    &gt;&gt; b=2;<br />
+                    &gt;&gt; a&gt;b<br />
+                    ans = 0<br />
+                    &gt;&gt; a&lt;b<br />
+                    ans = 1<br />
+                    &gt;&gt; a&lt;=b<br />
+                    ans = 1<br />
+                    &gt;&gt; a&gt;=b<br />
+                    ans = 0<br />
+                    &gt;&gt; a==b<br />
+                    ans = 0<br />
+                    &gt;&gt; a~=b<br />
+                    ans = 1
+                </section>
+            </section>
+
+            <section class="card" id="4-4">
+                <h2>4-4 邏輯運算</h2>
+                <ul>
+                    <li>&(and, 且): 符號兩邊同時成立</li>
+                    <li>|(or, 或): 符號至少一邊成立</li>
+                    <li>~(not, 非)</li>
+                </ul>
+                <p>函式成立輸出1, 不成立輸出0</p>
+                <section class="formula">
+                    &gt;&gt; x=3<br />
+                    x = 3<br />
+                    &gt;&gt; y=4<br />
+                    y = 4
+                    <hr />
+                    &gt;&gt; (x&gt;0)&(y&gt;0)<br />
+                    ans = 1
+                    <hr />
+                    &gt;&gt; (x&gt;0)|(y&gt;0)<br />
+                    ans = 1<br />
+                    &gt;&gt; (x&gt;0)|(y&lt;0)<br />
+                    ans = 1<br />
+                    &gt;&gt; (x&lt;0)|(y&lt;0)<br />
+                    ans = 0
+                    <hr />
+                    &gt;&gt; ~(x&gt;0)<br />
+                    ans = 0<br />
+                    &gt;&gt; ~(x&lt;0)<br />
+                    ans = 1
+                </section>
+            </section>
+
+            <section class="card" id="4-5">
+                <h2>4-5 函數</h2>
+                <ul>
+                    <li>all(x): 逐行檢查陣列x, 全部不為零元素, 輸出1</li>
+                    <li>any(x): 逐行檢查陣列x, 有不為零元素, 輸出1</li>
+                    <li>find(x): 檢查陣列x, 有不為零元素的位置</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; x=[0 1 2;3 0 4;5 6 0]<br />
+                    x =<br />
+                    &nbsp;&nbsp;&nbsp;0 1 2<br />
+                    &nbsp;&nbsp;&nbsp;3 0 4<br />
+                    &nbsp;&nbsp;&nbsp;5 6 0<br /><br />
+                    &gt;&gt; all(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;0 0 0<br /><br />
+
+                    &gt;&gt; any(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;1 1 1<br /><br />
+                    &gt;&gt; find(x)<br />
+                    ans =<br />
+                    &nbsp;&nbsp;&nbsp;2<br />
+                    &nbsp;&nbsp;&nbsp;3<br />
+                    &nbsp;&nbsp;&nbsp;4<br />
+                    &nbsp;&nbsp;&nbsp;6<br />
+                    &nbsp;&nbsp;&nbsp;7<br />
+                    &nbsp;&nbsp;&nbsp;8
+                </section>
+                <ul>
+                    <li>isfinite(y): 檢查陣列y, 元素值為有限值, 輸出1</li>
+                    <li>isinf(y): 檢查陣列y, 元素值為無限值, 輸出1</li>
+                    <li>isnan(y): 檢查陣列y, 元素值為非數值, 輸出1</li>
+                    <li>isnumeric(y): 檢查陣列y, 元素值為數據, 輸出1</li>
+                    <li>isempty(y): 檢查陣列y, 元素值為空陣列, 輸出1</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; y=[inf 2 3;4 nan 6;7 8 0]<br />
+                    y =<br />
+                    &nbsp;&nbsp;Inf&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3<br />
+                    &nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;NaN&nbsp;&nbsp;6<br />
+                    &nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;0<br /><br />
+
+                    &gt;&gt; isfinite(y)<br />
+                    ans =<br />
+                    0 1 1<br />
+                    1 0 1<br />
+                    1 1 1<br /><br />
+
+                    &gt;&gt; isinf(y)<br />
+                    ans =<br />
+                    1 0 0<br />
+                    0 0 0<br />
+                    0 0 0<br /><br />
+
+                    &gt;&gt; isnan(y)<br />
+                    ans =<br />
+                    0 0 0<br />
+                    0 1 0<br />
+                    0 0 0<br /><br />
+
+                    &gt;&gt; isnumeric(y)<br />
+                    ans = 1<br />
+                    &gt;&gt; isempty(y)<br />
+                    ans = 0<br />
+                </section>
+                <ul>
+                    <li>ischar(z): 檢查陣列z, 元素值為字串陣列, 輸出1</li>
+                </ul>
+                <section class="formula">
+                    &gt;&gt; z='string'<br />
+                    z = string<br />
+                    &gt;&gt; ischar(z)<br />
+                    ans = 1
+                </section>
+            </section>
+            <section class="card" id="5-1">
+                <h2>5-1 for迴圈</h2>
+                <h3>基本用法</h3>
+                <p>for迴圈會讓變數在特定範圍依序取一組值, 重複執行區塊內的指令</p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        for x = 0:2:10<br />
+                        &nbsp;&nbsp;&nbsp;disp(x)<br />
+                        end
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        0<br />
+                        2<br />
+                        4<br />
+                        6<br />
+                        8<br />
+                        10
+                    </p>
+                </section>
+
+                <h3>巢狀迴圈</h3>
+                <p>可以在一個迴圈裡再放另一個迴圈，用來處理矩陣或多維資料</p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        for i = 1:3 <br />
+                        &nbsp;&nbsp;&nbsp;for j = 1:2<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disp(['i=' num2str(i) ', j=' num2str(j)])
+                        <code>num2str用來把數值(number)轉成文字(string)</code><br />
+                        &nbsp;&nbsp;&nbsp;end<br />
+                        end
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        i=1, j=1<br />
+                        i=1, j=2<br />
+                        i=2, j=1<br />
+                        i=2, j=2<br />
+                        i=3, j=1<br />
+                        i=3, j=2
+                    </p>
+                </section>
+            </section>
+            <section class="card" id="5-2">
+                <h2>5-2 while迴圈</h2>
+                <p>while迴圈會在條件為rue時, 重複執行區塊內的程式碼. 只要條件仍為真, 程式就會持續執行</p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        i = 1;&nbsp;&nbsp;<code>while迴圈初始值設為0</code><br />
+                        while i &lt;= 5&nbsp;&nbsp;<code>條件式i小於等於5</code><br />
+                        &nbsp;&nbsp;&nbsp;disp(i)<br />
+                        &nbsp;&nbsp;&nbsp;i = i + 1;<br />
+                        end
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        1<br />
+                        2<br />
+                        3<br />
+                        4<br />
+                        5
+                    </p>
+                </section>
+            </section>
+
+            <section class="card" id="5-3">
+                <h2>5-3 if</h2>
+                <p>if 判斷某個條件是否成立, 若為真(true), 則執行對應區塊</p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        for i = 1:5 <br />
+                        &nbsp;&nbsp;&nbsp;if mod(i, 2) == 0
+                        <code>若能被 2 整除 → 偶數</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disp([num2str(i) ' 是偶數']);
+                        <code>將數字轉字串再連接</code><br />
+                        &nbsp;&nbsp;&nbsp;else
+                        <code>否則 → 奇數</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disp([num2str(i) ' 是奇數']); <br />
+                        &nbsp;&nbsp;&nbsp;end<br />
+                        end
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        1 是奇數<br />
+                        2 是偶數<br />
+                        3 是奇數<br />
+                        4 是偶數<br />
+                        5 是奇數
+                    </p>
+                </section>
+            </section>
+
+            <section class="card" id="5-4">
+                <h2>5-4 switch~case</h2>
+                <p>switch–case用來依照「條件值」執行不同的程式區塊, 類似多重if ... elseif ... else的功能</p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        for n =(1:5);
+                        <code>數字1~5</code><br />
+                        is_prime = true;
+                        <code>先假設是質數</code><br />
+                        if n &lt;= 1<br />
+                        &nbsp;&nbsp;&nbsp;is_prime = false;
+                        <code>1 以下不是質數</code><br />
+                        else<br />
+                        &nbsp;&nbsp;&nbsp;for i = 2:(n-1)
+                        <code>檢查從 2 到 n-1</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch mod(n, i)
+                        <code>將 n 對 i 取餘數</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 0
+                        <code>若餘數為0</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is_prime = false;
+                        <code>表示能整除, 即n不是質數</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;
+                        <code>提前結束</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise
+                        <code>其他情況(餘數非0)</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
+                        <code>不做事, 繼續下一次迴圈</code><br />
+                        &nbsp;&nbsp;&nbsp;end<br />
+                        end<br />
+
+                        switch is_prime<br />
+                        &nbsp;&nbsp;&nbsp;case true<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disp([num2str(n) ' 是質數']);<br />
+                        &nbsp;&nbsp;&nbsp;case false<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disp([num2str(n) ' 不是質數']);<br />
+                        &nbsp;&nbsp;&nbsp;end<br />
+                        end
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        1 不是質數<br />
+                        2 是質數<br />
+                        3 是質數<br />
+                        4 不是質數<br />
+                        5 是質數
+                    </p>
+                </section>
+            </section>
+
+            <section class="card" id="6-1">
+                <h2>6-1 eval</h2>
+                <p>eval會把字串作一段Octave程式來執行</p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        eval('a = 5; b = 7; c = a + b';)<br />
+                        disp(c);
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>12</p>
+                </section>
+                <p></p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        for i = 1:3<br />
+                        &nbsp;&nbsp;&nbsp; eval(['x' num2str(i) ' = i^2;']);
+                        <code>字串變成 x1=1, x2=4, x3=9並執行</code><br />
+                        end<br />
+                        disp(x1)<br />
+                        disp(x2)<br />
+                        disp(x3)
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        1<br />
+                        4<br />
+                        9
+                    </p>
+                </section>
+            </section>
+
+            <section class="card" id="6-2">
+                <h2>6-2 feval</h2>
+                <p>
+                    feval用於以函數名稱(或函數變數)呼叫函數<br />
+                    <code>y = feval(函數名稱, 參數1, 參數2, ...);</code>
+                </p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        k= feval('sin', pi/2);<br />
+                        disp(k)
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>1</p>
+                </section>
+            </section>
+
+            <section class="card" id="6-3">
+                <h2>6-3 自定函數</h2>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        function [sum1,sum2,sum3]=mysum123(x,y)
+                        <code>輸出參數為sum1、sum2、sum3, 輸入參數為x、y, 函數名稱為mysum123</code><br />
+                        sum1=x+y; <code>設定輸出參數sum1</code><br />
+                        sum2=x^2+y^2; <code>設定輸出參數sum2</code><br />
+                        sum3=x^3+y^3; <code>設定輸出參數sum3</code><br />
+                        end
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        &gt;&gt; [a,b,c]=mysum123(3,4)<br />
+                        a = 7<br />
+                        b = 25<br />
+                        c = 91
+                    </p>
+                </section>
+                <p>
+                    輸入參數可以為陣列或矩陣型態的變數<br />
+                    如<code>m = 1:2:5, n = 2:2:6</code>
+                </p>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        &gt;&gt; m=1:2:5<br />
+                        m =<br />
+                        &nbsp;&nbsp;&nbsp;1 3 5<br /><br />
+                        &gt;&gt; n=2:2:6<br />
+                        n =<br />
+                        &nbsp;&nbsp;&nbsp;2 4 6<br /><br />
+                        &gt;&gt; [a,b,c]=mysum123(m,n)<br />
+                        a =<br />
+                        &nbsp;&nbsp;&nbsp;3 7 11<br /><br />
+                        b =<br />
+                        &nbsp;&nbsp;&nbsp;5 25 61<br /><br />
+                        c =<br />
+                        &nbsp;&nbsp;&nbsp;9 91 341
+                    </p>
+                </section>
+            </section>
+            <section class="card" id="6-4">
+                <h2>6-4 遞迴</h2>
+                <p>遞迴函式是在函式內部呼叫自己本身的函式. 每次呼叫都會處理問題的一部分, 直到達到終止條件才停止</p>
+                <p>以階乘函數(n!)為例</p>
+                <section class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        function f = factorial(n)<br />
+                        &nbsp;&nbsp;&nbsp;if n == 0 || n == 1 <code>終止條件</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = 1<br />
+                        &nbsp;&nbsp;&nbsp;else<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = n * factorial(n - 1) <code>遞迴呼叫</code><br />
+                        &nbsp;&nbsp;&nbsp;end<br />
+                        end
+                    </p>
+                </section>
+                <section class="formula">
+                    <code>% command window</code>
+                    <p>
+                        &gt;&gt; disp(factorial(5))<br />
+                        f = 1<br />
+                        f = 2<br />
+                        f = 6<br />
+                        f = 24<br />
+                        f = 120<br />
+                        120
+                    </p>
+                </section>
+            </section>
+            <section class="card" id="7-1">
+                <h2>7-1 矩陣基本運算</h2>
+                <ul>
+                    <li>A': 矩陣軛轉置</li>
+                    行列互換, 還會取虛部的共軛
+                    <li>A ^ n: 乘冪</li>
+                    數學意義為N個矩陣A相乘
+                    <li>inv(A): 反矩陣</li>
+                    得一矩陣 $B$ 使得 $A \times B = I$
+                    <li>det(A): 矩陣行列式</li>
+                    得出det(A) = 0即矩陣A無反矩陣
+                    <li>expm(A): 矩陣的指數</li>
+                    <li>logm(A): 矩陣的對數</li>
+                    $得一矩陣 B 且 e^B = A$
+                    <li>sqrtm(A): 矩陣的開平方根</li>
+                    $得一矩陣B 且 B \times B = A$
+                </ul>
+            </section>
+            <section class="card" id="7-2">
+                <h2>7-2 矩陣函數</h2>
+                <ul>
+                    <li>[ ]: 空矩陣</li>
+                    <li>zeros(n): n × n 全0 矩陣</li>
+                    <li>ones(n): n × n 全1 矩陣</li>
+                    <li>eye(n): n × n 單位矩陣</li>
+                    <li>rand(n): n × n 隨機矩陣</li>
+                    <li>randn(n): n × n 常態分佈隨機矩陣</li>
+                </ul>
+                <p>
+                    若括號裡為(m,n) , 會產生對應的 m × n矩陣<br />
+                    若括號裡為(m,n,p) , 會產生對應的 m × n × p 多層矩陣(3D)
+                </p>
+            </section>
+            <section class="card" id="7-3">
+                <h2>7-3 矩陣變換函數</h2>
+                <ul>
+                    <li>reshape(): 矩陣總個數不變, 改變行數和列數</li>
+                    <li>repmat(): 將矩陣依指定行、列數擴展</li>
+                    <li>fliplr(): 矩陣左右翻轉</li>
+                    <li>flipud(): 矩陣上下翻轉</li>
+                    <li>rot90(): 矩陣逆時針旋轉90 度</li>
+                    <li>rot90(a, n): 矩陣逆時針旋轉n×90 度</li>
+                </ul>
+                <div class="formula">
+                    <code>% command window</code>
+                    &gt;&gt; A = [1, 2; 3, 4]<br />
+                    &nbsp;&nbsp;&nbsp;A =<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4<br /><br />
+
+                    &gt;&gt; reshape(A, 1, 4)<br />
+                       ans =<br />
+                          1   3   2   4<br /><br />
+
+                    &gt;&gt; repmat(A, 2, 1)<br />
+                       ans =<br />
+                          1   2<br />
+                          3   4<br />
+                          1   2<br />
+                          3   4<br /><br />
+
+                    &gt;&gt; fliplr(A)<br />
+                       ans =<br />
+                          2   1<br />
+                          4   3<br /><br />
+
+                    &gt;&gt; flipud(A)<br />
+                       ans =<br />
+                          3   4<br />
+                          1   2<br /><br />
+
+                    &gt;&gt; rot90(A)<br />
+                       ans =<br />
+                          2   4<br />
+                          1   3<br /><br />
+
+                    &gt;&gt; rot90(A, 2)<br />
+                       ans =<br />
+                          4   3<br />
+                          2   1<br /><br />
+                </div>
+            </section>
+            <section class="card" id="7-4">
+                <h2>7-4 線性方程式</h2>
+                <p>求解 線性方程組 ($Ax = b$) 的函數會使用到<br />x = linsolve(A, b)</p>
+                <p>以下聯立方程做舉例 $$\begin{cases} 3x + 2y = 7 \\ 1x + 4y = 9 \end{cases}$$</p>
+                <div class="formula">
+                    <code>% command window</code>
+                    <p>
+                        &gt;&gt; A = [3, 2; 1, 4];<br />
+                        &gt;&gt; b = [7; 9];<br />
+                        &gt;&gt; x = linsolve(A, b)<br />
+                        &gt;&gt; x =<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br /><br />
+                    </p>
+                </div>
+            </section>
+            <section class="card" id="8-1">
+                <h2>8-1 plot</h2>
+                <ul>
+                    <li>plot(x, y, S): 以S方式顯示(x、y)曲線圖形. S為字元字串, 包括Color、Marker、LineStyle</li>
+                    <li>plot(x1, y1, S1, x2, y2, S2): 以S 方式顯示(x1、 y1)，(x2、y2)兩組曲線圖形</li>
+                    <li>x = init : step : stop: 線性陣列範圍</li>
+                    <li>linspace(begin, end, data no): 線性陣列範圍</li>
+                    <li>logspace(begin, end, data no): 對數陣列範圍</li>
+                </ul>
+                <div class="formula">
+                    <p>
+                        &gt;&gt; x = 1 : 2 : 9<br />
+                        &nbsp;&nbsp;&nbsp;x =<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;9<br />
+                    </p>
+                    <hr />
+                    <p>
+                        &gt;&gt; x = linspace(1, 10, 4)<br />
+                        &nbsp;&nbsp;&nbsp;x =<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;10<br />
+                    </p>
+                    <hr />
+                    <p>
+                        &gt;&gt; x = logspace(0, 2, 3)<br />
+                        &nbsp;&nbsp;&nbsp;x =<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;100
+                    </p>
+                </div>
+                <h3>範例:</h3>
+                <div class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        clc<br />
+                        clear<br />
+                        x = linspace(0, 2*pi, 21);<br />
+                        y1 = cos(x);<br />
+                        y2 = sin(x);<br />
+                        plot(x, y1, 'bo-',x,y2,'rs:');
+                    </p>
+                </div>
+                <img src="pivture_octave/8-1.jpg" />
+            </section>
+            <section class="card" id="8-2">
+                <h2>8-2 label & axes box</h2>
+                <ul>
+                    <li>grid on/off: 座標方格標示/隱藏</li>
+                    <li>title: 圖表標題</li>
+                    <li>xlabel(' text '):x 軸名稱</li>
+                    <li>ylabel(' text '):y 軸名稱</li>
+                    <li>text(x 位置, y 位置, ' text '):圖表(x, y)位置標示名稱</li>
+                    <li>axis([xbegin, xend, ybegin, yend]): 座標軸的限制範圍</li>
+                    <li>box on/off: 圖表邊框顯示/隱藏</li>
+                </ul>
+                <h3>範例</h3>
+                <div class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        x = linspace(-1, 1, 500);<br />
+                        y1 = sqrt(abs(x)) + sqrt(1 - x.^2);<br />
+                        y2 = sqrt(abs(x)) - sqrt(1 - x.^2);<br />
+                        plot(x, y1, 'r-', x, y2, 'r-');<br />
+                        xlabel('x');<br />
+                        ylabel('y');<br />
+                        axis([-1,1,-1,2]);<br />
+                        title('Heart Curve: y = \sqrt{|x|} \pm \sqrt{1-x^2}');
+                    </p>
+                </div>
+                <img src="pivture_octave/8-2.jpg" />
+            </section>
+            <section class="card" id="8-3">
+                <h2>8-3 axis & zoom</h2>
+                <ul>
+                    <li>axis auto: 預設座標軸刻度</li>
+                    <li>axis tight: 以數據限制為座標軸刻度</li>
+                    <li>axis ij: 座標軸為矩陣模式. x 軸從左而右遞增, y 軸從上而下遞增</li>
+                    <li>axis xy: 座標軸為直角座標模式. x 軸從左而 右遞增, y 軸從下而上遞增</li>
+                    <li>axis equal:　座標軸刻度增量相同</li>
+                    <li>axis square: 座標軸圖形視窗為正方形</li>
+                    <li>axis normal: 將目前的座標軸刻度恢復到全尺寸</li>
+                    <li>axis on/off: 座標軸的文字標記、背景是否顯示</li>
+                </ul>
+                <ul>
+                    <li>zoom on: 開啟交互式縮放. 滑鼠左鍵放大, 右鍵縮小</li>
+                    <li>zoom out: 將圖形還原到原始的全覽視角</li>
+                    <li>zoom xon: 限制僅能縮放 X 軸</li>
+                    <li>zoom yon: 限制僅能縮放 Y 軸</li>
+                </ul>
+            </section>
+            <section class="card" id="8-4">
+                <h2>8-4 多重繪圖</h2>
+                <ul>
+                    <li>clf: 清除目前視窗中的所有內容, 但保留視窗</li>
+                    <li>close: 關閉目前的繪圖視窗</li>
+                    <li>close all: 關閉所有開啟中的繪圖視窗</li>
+                    <li>hold on: 保留目前的圖形, 之後執行的 plot 指令會直接「疊加」在原圖上, 不會覆蓋舊圖</li>
+                    <li>hold off: 關閉疊加模式</li>
+                    <li>subplot(m, n, p): 將一個視窗切割成m × n的網格, 並將圖畫在第 p 個格子裡</li>
+                    <li>legend('Data 1', 'Data 2'): 依照畫圖的順序為線條加上圖例標籤</li>
+                    <li>legend off: 隱藏目前圖形上的圖例</li>
+                </ul>
+                <h3>範例</h3>
+                <div class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        close all; % 先關閉舊視窗<br />
+                        x = linspace(0, 2*pi, 50);<br /><br />
+
+                        subplot(2, 1, 1); % 畫在上半部<br />
+                        plot(x, sin(x), 'b-');<br />
+                        legend('Sin Wave');<br /><br />
+
+                        subplot(2, 1, 2); % 畫在下半部<br />
+                        plot(x, cos(x), 'r--');<br />
+                        legend('Cos Wave');<br /><br />
+                    </p>
+                </div>
+                <img src="pivture_octave/8-4.jpg" />
+            </section>
+
+            <!--
+            <section class="card" id="8-5">
+                <h2>8-5 特殊繪圖</h2>
+                <p>(範圍沒上到, 有時間再補充)</p>
+            </section>
+
+            <section class="card" id="8-6">
+                <h2>8-6 fplot 與ezplot</h2>
+                <p>(範圍沒上到, 有時間再補充)</p>
+            </section>
+            -->
+
+            <section class="card" id="9-1">
+                <h2>9-1 線條圖</h2>
+                <p>plot3(x1,yi,z1,S1,x2,y2,z2,S2): 於三維空間以字串命令控制多重繪圖與樣式</p>
+                <h3>範例</h3>
+                <div class="formula-dark">
+                    <code>%editor</code>
+                    <p>
+                        t = linspace(0, 10*pi);<br />
+                        y1 = sin(t); y2 = cos(t);<br />
+                        plot3(t, y1, y2);<br />
+                        <code>% 繪製 3D 座標：X軸為時間 t，Y軸為 sin(t)，Z軸為 cos(t) </code><br />
+                        xlabel('t'); ylabel('sin(t)'); zlabel('cos(t)'); % 為三個軸分別加上標籤。<br />
+                        grid on; % 開啟 3D 網格線, 方便觀察空間位置<br />
+                        axis tight; % 將座標軸縮放至剛好包覆所有數據, 消除空白邊界
+                    </p>
+                </div>
+                <img src="pivture_octave/9-1.jpg" />
+                <div class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        t = 0 : 0.05 : 16*pi;<br />
+                        x = exp(-0.05*t).*sin(t);<br />
+                        y = exp(-0.05*t).*cos(t);<br />
+                        z = t;<br /><br />
+
+                        <code>% 繪製原始 3D 螺旋線</code><br />
+                        plot3(x, y, z, 'LineWidth', 2);<br />
+                        grid on; axis tight; hold on;<br /><br />
+
+                        <code>% 投影到 Y-Z 平面 (設定 X = 1)</code><br />
+                        plot3(1*ones(size(x)), y, z, 'b-');<br /><br />
+
+                        <code>% 投影到 X-Z 平面 (設定 Y = 1)</code><br />
+                        plot3(x, 1*ones(size(y)), z, 'r-');<br /><br />
+
+                        <code>% 投影到 X-Y 平面 (設定 Z = 50)</code><br />
+                        plot3(x, y, 50*ones(size(z)), 'y-');<br />
+                        hold off;
+                    </p>
+                </div>
+                <img src="pivture_octave/9-1-2.jpg" />
+            </section>
+
+            <section class="card" id="9-2">
+                <h2>9-2 網格圖</h2>
+                <ul>
+                    <li>[X, Y, Z] = peaks(30)</li>
+                    是一個內建函數，會產生一個類似山峰的範例矩陣（30x30）, 常用於測試繪圖功能
+
+                    <li>[X, Y] = meshgrid(x,y)</li>
+                    將一維向量轉化為二維網格矩陣, X 矩陣儲存所有點的 x 座標, Y 矩陣儲存 y 座標
+
+                    <li>hidden off</li>
+                    關閉隱藏線消除, 使曲面變為「透明」, 可以看到被山峰遮住的後方網格線
+                </ul>
+                <ul>
+                    <li>mesh(X, Y, Z)</li>
+                    最基礎的 3D 網格圖, 線條有顏色, 但網格面是透明的
+
+                    <li>meshc(X, Y, Z)</li>
+                    即Mesh + Contour. 在網格圖的底部加上等高線
+
+                    <li>meshz(X, Y, Z)</li>
+                    即Mesh + Curtain: 在網格圖四周加上底座, 使其看起來像一個實體模型
+
+                    <li>waterfall(X, Y, Z)</li>
+                    瀑布圖, 只保留一個方向的網格線(通常是 X 方向), 產生像瀑布流動般的視覺效果
+                </ul>
+                <h3>範例</h3>
+                <div class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        [X, Y, Z] = peaks(25);<br /><br />
+                        subplot(2, 2, 1);<br />
+                        mesh(X, Y, Z);<br />
+                        title('mesh');<br /><br />
+
+                        subplot(2, 2, 2);<br />
+                        meshc(X, Y, Z);<br />
+                        title('meshc');<br /><br />
+
+                        subplot(2, 2, 3); <br />
+                        meshz(X, Y, Z);<br />
+                        title('meshz');<br /><br />
+                        subplot(2, 2, 4);<br />
+                        waterfall(X, Y, Z);<br />
+                        title('waterfall');
+                    </p>
+                </div>
+                <img src="pivture_octave/9-2.jpg" />
+            </section>
+
+            <section class="card" id="9-3">
+                <h2>9-3 表面圖</h2>
+                <ul>
+                    <li>surf(X, Y, Z)</li>
+                    繪製實體曲面, 預設會顯示黑色的網格線
+
+                    <li>surfc(X, Y, Z)</li>
+                    即Surf + Contour, 在實體曲面下方加上等高線投影
+
+                    <li>surfl(X, Y, Z)</li>
+                    即Surf with Lighting, 繪製帶有光源反射效果的曲面, 看起來更有金屬或塑膠的質感
+
+                    <li>surfnorm(X, Y, Z)</li>
+                    計算曲面每一點的法向量, 可在曲面上畫出向外指的箭頭, 顯示表面的垂直方向
+                </ul>
+                <ul>
+                    <li>shading faceted</li>
+                    為預設模式. 顯示網格線且每個網格面內部顏色統一
+
+                    <li>shading flat</li>
+                       每個網格面顏色統一, 但隱藏黑色的網格線
+
+                    <li>shading interp</li>
+                       插值著色. 隱藏網格線並透過顏色漸層使表面看起來非常平滑
+                    <li>colormap()</li>
+                    更改顏色配置
+                </ul>
+                <div class="formula-dark">
+                    <code>% editor</code>
+                    <p>
+                        [X, Y, Z] = peaks(30);<br /><br />
+                        subplot(2, 2, 1);<br />
+                        surf(X, Y, Z);<br />
+                        shading faceted;<br />
+                        colormap(gray);<br />
+                        title('Surf');<br /><br />
+
+                        subplot(2, 2, 2);<br />
+                        surfc(X, Y, Z);<br />
+                        shading flat;<br />
+                        title('Surf & contour & shading flat');<br /><br />
+
+                        subplot(2, 2, 3);<br />
+                        surfl(X, Y, Z);<br />
+                        shading interp;<br />
+                        title('Surface with Lighting & interp');<br /><br />
+
+                        subplot(2, 2, 4);<br />
+                        surfnorm(X, Y, Z);<br />
+                        title('Surfnorm');
+                    </p>
+                </div>
+                <img src="pivture_octave/9-3.jpg" />
+            </section>
+
+            <section class="card" id="9-4">
+                <h2>9-4 觀察點</h2>
+                <h3>view(az, el)</h3>
+                最常用的控制形式, 使用方位角與仰角來定義
+                <ul>
+                    <li>az (Azimuth, 方位角): 繞著 Z 軸旋轉的角度（以負 Y 軸為 0 度, 逆時針旋轉）</li>
+                    <li>el (Elevation, 仰角): 與 X-Y 平面的夾角</li>
+                </ul>
+                <h3>範例</h3>
+                <div class="formula-dark">
+                    [X, Y, Z] = peaks(30);<br /><br />
+
+                    subplot(2, 2, 1);<br />
+                    surf(X, Y, Z);<br />
+                    shading interp;<br />
+                    colormap(copper);<br />
+                    view(3); <code>% 切換到預設的 3D 視角(-37.5,30)</code><br />
+                    title('Surf 3D');<br /><br />
+
+                    subplot(2, 2, 2);<br />
+                    surf(X, Y, Z);<br />
+                    view(2); <code>% 切換到預設的 2D 俯視視角(0,90)</code><br />
+                    title('Surf 2D / x-y');<br /><br />
+
+                    subplot(2, 2, 3);<br />
+                    surf(X, Y, Z);<br />
+                    view(90, 0); <code>% 從 Y-Z 平面側面觀察</code><br />
+                    title('Surf y-z');<br />
+
+                    subplot(2, 2, 4);<br />
+                    surf(X, Y, Z);<br />
+                    view(0, 0); <code>% 從 X-Z 平面側面觀察</code><br /><br />
+                    title('Surf x-z');
+                </div>
+                <img src="pivture_octave/9-4.jpg" />
+            </section>
+
+            <section class="card" id="9-5">
+                <h2>9-5 等高線圖</h2>
+                <ul>
+                    <li>contour(X, Y, Z, n)</li>
+                    在 2D 平面上繪製 n 條等高線
+
+                    <li>contour3(X, Y, Z, n)</li>
+                    在 3D 空間中繪製 n 條等高線, 線條依照其 Z 值高度懸浮在空間中
+
+                    <li>contourf(X, Y, Z, n)</li>
+                    繪製填滿顏色的 2D 等高線圖, 視覺效果類似氣象局的降雨分布圖
+
+                    <li>pcolor(X, Y, Z)</li>
+                    偽彩色圖. 不會畫出線條, 而是直接根據 Z 值在網格點上著色（通常搭配 shading interp 使用） clabel(C, h)
+                    加上數值標籤
+                </ul>
+                <h3>範例</h3>
+                <div class="formula-dark">
+                    <p>
+                        [X, Y] = meshgrid(-15 : 0.5 : 15);<br />
+                        <code>% 使用 eps 防止分母為零</code><br />
+                        Z = (sin(X + eps) ./ (X + eps)) .* (sin(Y + eps) ./ (Y + eps));<br /><br />
+
+                        subplot(2, 2, 1);<br />
+                        contour(X, Y, Z, 15);<br />
+                        title('contour (15 lines)'); <br /><br />
+                        subplot(2, 2, 2);<br />
+                        contour3(X, Y, Z, 20);<br />
+                        title('contour3 (20 lines)');<br /><br />
+
+                        subplot(2, 2, 3);<br />
+                        pcolor(X, Y, Z);<br />
+                        shading interp; <code>% 讓顏色平滑過渡</code><br />
+                        title('pcolor with shading interp');<br /><br />
+
+                        subplot(2, 2, 4);<br />
+                        contourf(X, Y, Z, 10);<br />
+                        title('contourf (10 levels)');<br />
+                        colorbar; <code>% 顯示數值顏色尺標</code>
+                    </p>
+                </div>
+                <img src="pivture_octave/9-5.jpg" />
+            </section>
+        </main>
+        <footer class="footer">- 基礎程式設計 -</footer>
+        <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">
+            <i class="bi bi-arrow-up"></i> ↑
+        </button>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // 取得按鈕元件
+            let mybutton = document.getElementById("btn-back-to-top");
+
+            // 當使用者捲動網頁時，觸發 scrollFunction
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block"; // 顯示按鈕
+                } else {
+                    mybutton.style.display = "none"; // 隱藏按鈕
+                }
+            }
+
+            // 當使用者點擊按鈕時，回到頂端
+            mybutton.addEventListener("click", backToTop);
+
+            function backToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // 平滑捲動效果
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>網頁程式設計</title>
+    <!-- Favicons -->
+    <link href="picture_other/favicon-32x32.png" rel="icon" />
+    <link href="picture_other/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .gtpt:before {
+        content: "<";
+      }
+      .gtpt:after {
+        content: ">";
+      }
+
+      .formula-dark p code,
+      .formula p code {
+        color: var(--muted);
+      }
+      .formula-dark p code:before {
+        content: "<!-- ";
+      }
+      .formula-dark p code:after {
+        content: " -->";
+      }
+      .formula p code:before {
+        content: "/* ";
+      }
+      .formula p code:after {
+        content: " */";
+      }
+
+      .formula-dark .gtpt,
+      .formula-dark .internal,
+      .formula .internal {
+        color: #316ac2;
+      }
+      .formula-dark .inline,
+      .formula .inline {
+        color: #2ba637;
+      }
+      .formula-dark .inlineid,
+      .formula .inlineid {
+        color: #e29a1e;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">課程筆記整理</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calculus.html">微積分</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chemistry.html">普通化學</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experiment.html">普化實驗</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="energy.html">能源工程概論</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="statics.html">靜力學</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link active dropdown-toggle"
+                href="phoenix_code.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                網頁程式設計
+              </a>
+              <ul class="dropdown-menu dropdown-scrollable" style="overflow-y: auto" aria-labelledby="navbarDropdown">
+                <li><h3 class="dropdown-item-text">章節目錄</h3></li>
+                <li class="dropdown-header">- HTML -</li>
+                <li><a class="dropdown-item" href="#標頭區">標頭區</a></li>
+                <li><a class="dropdown-item" href="#網頁區塊結構">網頁區塊結構</a></li>
+                <li><a class="dropdown-item" href="#內容區">內容區</a></li>
+                <li><a class="dropdown-item" href="#字體設定">字體設定</a></li>
+                <li><a class="dropdown-item" href="#圖片、多媒體、超連結">圖片、多媒體、超連結</a></li>
+                <li><a class="dropdown-item" href="#清單">清單</a></li>
+                <li><a class="dropdown-item" href="#網頁表格">網頁表格</a></li>
+                <li class="dropdown-header">- CSS -</li>
+                <li><a class="dropdown-item" href="#文本屬性">文本屬性</a></li>
+                <li><a class="dropdown-item" href="#顏色與背景屬性">顏色與背景屬性</a></li>
+                <li><a class="dropdown-item" href="#尺寸屬性">尺寸屬性</a></li>
+                <li><a class="dropdown-item" href="#佈局屬性">佈局屬性</a></li>
+                <li><a class="dropdown-item" href="#邊距與邊框屬性">邊距與邊框屬性</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="octave.html">基礎程式設計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="minerals.html">礦物與生活</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="card">
+        <h2>網頁程式設計</h2>
+        <p>節錄Phoenix Code裡常用HTML標記與常用CSS屬性</p>
+      </section>
+
+      <section class="card">
+        <h2 id="標頭區">標頭區<small>(HTML)</small></h2>
+        <p>以<span class="gtpt">head</span>標籤包住內容, 用於設定文件</p>
+        <p><b>常用功能</b></p>
+        <ul>
+          <li><span class="gtpt">meta</span>網頁資訊</li>
+          <li><span class="gtpt">title</span>網頁標題</li>
+          <li><span class="gtpt">style</span>內部CSS</li>
+          <li><span class="gtpt">link</span>載入外部CSS、Google Fonts、網站圖示...</li>
+          <li><span class="gtpt">script</span>載入JavaScript...等</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">head</span><br />
+            <code>設定網頁的字元編碼, UTF-8 支援中文, 避免產生亂碼</code><br />
+            <span class="gtpt">meta <span class="inline">charset</span>=<span class="inlineid">"UTF-8"</span></span
+            ><br /><br />
+            <code>RWD:讓手機裝置能以正常比例顯示網站</code><br />
+            <span class="gtpt"
+              >meta <span class="inline">name</span>=<span class="inlineid">"viewport"</span>
+              <span class="inline">content</span>=<span class="inlineid"
+                >"width=device-width, initial-scale=1.0"</span
+              ></span
+            ><br /><br />
+            <code>網站標題(顯示在瀏覽器標籤上)</code><br />
+            <span class="gtpt">title</span>網站標題<span class="gtpt">/title</span><br /><br />
+            <code>外部CSS</code><br />
+            <span class="gtpt"
+              >link <span class="inline">rel</span>=<span class="inlineid">"stylesheet"</span>
+              <span class="inline">href</span>=<span class="inlineid">"style.css"</span></span
+            ><br /><br />
+            <code>內部 CSS</code><br />
+            <span class="gtpt">style</span><br />
+            body {<br />
+            &nbsp;&nbsp;color: <span class="inlineid">#020202</span>;<br />
+            &nbsp;&nbsp;line-height: <span class="inline">1.6</span>;<br />
+            }<br />
+            <span class="gtpt">/style</span><br />
+            <span class="gtpt">/head</span>
+          </p>
+        </section>
+      </section>
+
+      <section class="card">
+        <h2 id="網頁區塊結構">網頁區塊結構<small>(HTML)</small></h2>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>標籤</th>
+                <th style="width: 30%">語意</th>
+                <th>用途</th>
+                <th>預設 display</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th><span class="gtpt">header</span></th>
+                <td>頁面或文章開頭</td>
+                <td>LOGO、標題、主選單</td>
+                <td>block(會換行)</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">nav</span></th>
+                <td>導航</td>
+                <td>主選單、導覽列</td>
+                <td>block</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">main</span></th>
+                <td>主內容(唯一)</td>
+                <td>頁面核心內容(整個網頁只能有一個)</td>
+                <td>block</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">footer</span></th>
+                <td>頁尾</td>
+                <td>版權、聯絡方式、連結群組</td>
+                <td>block</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">article</span></th>
+                <td>可獨立內容(通常包含自己的header, footer)</td>
+                <td>文章、貼文、資訊卡</td>
+                <td>block</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">section</span></th>
+                <td>主題區塊</td>
+                <td>章節、主題內容</td>
+                <td>block</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">aside</span></th>
+                <td>側欄</td>
+                <td>補充資訊、廣告、工具欄</td>
+                <td>block</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">address</span></th>
+                <td>聯絡資訊</td>
+                <td>作者資訊、Email、地址</td>
+                <td>block</td>
+              </tr>
+
+              <tr>
+                <th><span class="gtpt">time</span></th>
+                <td>時間語意標籤</td>
+                <td>日期、時間、修改時間、發文時間...等</td>
+                <td>inline(不換行)</td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <td colspan="4"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <br />
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code><br />
+          <p>
+            <span class="gtpt">body</span><br />
+            &nbsp;&nbsp;<span class="gtpt">header</span>...<span class="gtpt">/header</span> <code>頁首</code><br />
+            &nbsp;&nbsp;<span class="gtpt">nav</span>...<span class="gtpt">/nav</span> <code>導覽列</code><br />
+            &nbsp;&nbsp;<span class="gtpt">aside</span>...<span class="gtpt">/aside</span> <code>側欄</code><br />
+            &nbsp;&nbsp;<span class="gtpt">main</span> <code>主內容</code><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">section</span>...<span class="gtpt">/section</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">section</span>...<span class="gtpt">/section</span><br />
+            &nbsp;&nbsp;<span class="gtpt">/main</span><br />
+            &nbsp;&nbsp;<span class="gtpt">article</span>...<span class="gtpt">/article</span><br />
+            &nbsp;&nbsp;<span class="gtpt">footer</span>...<span class="gtpt">/footer</span> <code>頁尾</code><br />
+            <span class="gtpt">/body</span>
+          </p>
+        </section>
+        <p>以上使用header, nav, main, footer, article, section, aside為例(沒有打出CSS的部分), 結構大致如下</p>
+        <br />
+        <img src="layout_structure.png" width="100%" />
+      </section>
+
+      <section class="card">
+        <h2 id="內容區">內容區<small>(HTML)</small></h2>
+        <h3><span class="gtpt">body</span></h3>
+        <p>為網頁的主要內容區</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">head</span>...<span class="gtpt">/head</span><br />
+            <span class="gtpt">body</span><br />
+            &nbsp;&nbsp;<span class="gtpt">h1</span>主標題<span class="gtpt">/h1</span><br />
+            &nbsp;&nbsp;<span class="gtpt">p</span>段落內容<span class="gtpt">/p</span><br />
+            <span class="gtpt">/body</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">h1</span>~<span class="gtpt">h6</span></h3>
+        <p>標題文字</p>
+        <h3><span class="gtpt">p</span></h3>
+        <p>段落文字, 用於呈現一般文本內容</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p><span class="gtpt">p</span>這是一段文字<span class="gtpt">/p</span></p>
+        </section>
+
+        <h3><span class="gtpt">br</span></h3>
+        <p>用於強制換行</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p><span class="gtpt">p</span>第一行<span class="gtpt">br</span>第二行<span class="gtpt">/p</span></p>
+        </section>
+
+        <h3><span class="gtpt">hr</span></h3>
+        <p>用於分隔內容或章節的水平線</p>
+        <p><b>常搭配CSS屬性</b></p>
+        <ul>
+          <li>border</li>
+          <li>height</li>
+          <li>margin</li>
+          <li>width</li>
+          <li>background-color</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">h2</span>標題<span class="gtpt">/h2</span><span class="gtpt">hr</span> <br /><span
+              class="gtpt"
+              >p</span
+            >段落內容<span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">!-- ... --</span></h3>
+        <p>用於註解, 不會顯示於瀏覽器上; 或拿來暫時關閉HTML程式碼片段(CSS要使用<code>/* 註解文字 */</code>)</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span><br />
+            &nbsp;&nbsp;...這段文字會顯示... <code>(註解用文字不顯示於瀏覽器)</code><br />
+            <span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">div</span></h3>
+        <p>區塊容器，用於布局或包住其他內容。</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <code>div包住的內容套用css</code><br />
+            <span class="gtpt">div <span class="inline">class</span>=<span class="inlineid">"header"</span></span
+            ><br />
+            &nbsp;&nbsp;<span class="gtpt">p</span>內容<span class="gtpt">/p</span><br />
+            <span class="gtpt">/div</span>
+          </p>
+        </section>
+        <section class="formula">
+          <code>CSS</code>
+          <p>
+            <code>內距外距設為10px</code><br />
+            .header { <br />
+            &nbsp;&nbsp;margin: 10px; <br />
+            &nbsp;&nbsp;padding: 10px; <br />}
+          </p>
+        </section>
+
+        <h3><span class="gtpt">span</span></h3>
+        <p>行內文字容器, 通常用於局部套用樣式。</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <code>span包住的內容二字體變白色</code><br />
+            <span class="gtpt">p</span>內容一<br />
+            &nbsp;&nbsp;<span class="gtpt"
+              >span <span class="inline">style</span>=<span class="inlineid">"color: white"</span></span
+            >內容二<span class="gtpt">/span</span><br />
+            <span class="gtpt">/p</span>
+          </p>
+        </section>
+      </section>
+
+      <section class="card">
+        <h2 id="字體設定">字體設定<small>(HTML)</small></h2>
+        <h3><span class="gtpt">em</span></h3>
+        <p>用於使文字呈現強調語氣, 預設以斜體顯示</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span><br />
+            &nbsp;&nbsp;...段落...<br />
+            &nbsp;&nbsp;<span class="gtpt">em</span>重點文字<span class="gtpt">/em</span><br />
+            &nbsp;&nbsp;...段落...<br />
+            <span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">i</span></h3>
+        <p>表示斜體, 用於表示專有名詞、術語...等</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span><span class="gtpt">i</span>一段斜體文字<span class="gtpt">/i</span
+            ><span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">center</span></h3>
+        <p>用於使文字、圖片、表格...等置中(過時屬性, 已被CSS取代)</p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span><span class="gtpt">center</span>置中這段文字<span class="gtpt">/center</span
+            ><span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">strong</span></h3>
+        <p>用於使文字呈現強調語氣, 預設以粗體顯示</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span><br />
+            &nbsp;&nbsp;...段落...<br />
+            &nbsp;&nbsp;<span class="gtpt">strong</span>一段加粗的重點文字<span class="gtpt">/strong</span><br />
+            &nbsp;&nbsp;...段落...<br />
+            <span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">b</span></h3>
+        <p>純粗體, 用於標題、裝飾、術語...等</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">h2</span><span class="gtpt">b</span>標題加粗<span class="gtpt">/b</span
+            ><span class="gtpt">/h2</span>
+          </p>
+        </section>
+        <h3>
+          <span class="gtpt">s</span>
+          <span class="gtpt">del</span>
+          <span class="gtpt">strike</span>
+        </h3>
+        <p>
+          皆用於呈現刪除線，&lt;s&gt; 表示內容不再正確/適用/有效, &lt;del&gt; 在語意上表示已刪除, &lt;strike&gt;
+          為視覺上的純刪除線(過時屬性, 已被CSS取代)
+        </p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span>原價<span class="gtpt">s</span>1000元<span class="gtpt">/s</span>優惠價800元<span
+              class="gtpt"
+              >/p</span
+            ><br />
+            <span class="gtpt">p</span><span class="gtpt">del</span>被刪除內容<span class="gtpt">/del</span>新內容<span
+              class="gtpt"
+              >/p</span
+            >
+          </p>
+        </section>
+
+        <h3><span class="gtpt">small</span></h3>
+        <p>用於使字體縮小, 常見於註解、版權說明...等</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span>...內容...<span class="gtpt">small</span>(註解)<span class="gtpt">/small</span
+            >...內容..<span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">u</span></h3>
+        <p>增加文字底線,常用於標示重要文字</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span><span class="gtpt">u</span>底線標註文字<span class="gtpt">/u</span
+            ><span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">mark</span></h3>
+        <p>用於標記/高亮文字, 預設為黃底黑字</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span><span class="gtpt">mark</span>底線標註文字<span class="gtpt">/mark</span
+            ><span class="gtpt">/p</span>
+          </p>
+        </section>
+
+        <h3><span class="gtpt">sup</span> <span class="gtpt">sub</span></h3>
+        <p>用於使文字變為上標/下標</p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">p</span>銨根: NH<span class="gtpt">sub</span>4<span class="gtpt">/sub</span
+            ><span class="gtpt">sup</span>+<span class="gtpt">/sup</span><span class="gtpt">/p</span>
+          </p>
+        </section>
+      </section>
+
+      <section class="card">
+        <h2 id="圖片、多媒體、超連結">圖片、多媒體、超連結...</h2>
+        <h3><span class="gtpt">img</span></h3>
+        <p>用於插入圖片, 預設為inline(不換行)</p>
+        <p><b>HTML屬性</b></p>
+        <ul>
+          <li>src: 圖片來源路徑或URL(必填)</li>
+          <li>alt 替代文字, 圖片無法顯示時顯示文字</li>
+          <li>width/height: 設定圖片寬高, 可用px或%</li>
+          <li>title:滑鼠移上顯示提示文字</li>
+          <li>loading 延遲加載圖片, 值為lazy或eager</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt"
+              >img <span class="inline">src</span>=<span class="inlineid">"picture.jpg"</span>
+              <span class="inline">alt</span>=<span class="inlineid">"小圖示"</span>
+              <span class="inline">width</span>=<span class="inlineid">"200"</span>
+              <span class="inline">title</span>=<span class="inlineid">"一段提示文字"</span> /</span
+            ><br />
+            <span class="gtpt"
+              >img <span class="inline">src</span>=<span class="inlineid">"picture.png"</span>
+              <span class="inline">alt</span>=<span class="inlineid">"一張圖片"</span> /</span
+            ><br />
+          </p>
+        </section>
+        <p>下圖為呈現在網頁上的樣子</p>
+        <img src="picture_phoenix/img.png" width="100%" />
+
+        <h3><span class="gtpt">audio</span></h3>
+        <p>用於播放音訊檔, 可搭配控制列、循環播放或延遲加載</p>
+        <p><b>HTML屬性</b></p>
+        <ul>
+          <li>src: 音訊來源檔案路徑或URL</li>
+          <li>controls: 顯示播放控制列</li>
+          <li>autoplay: 自動播放</li>
+          <li>loop: 循環播放</li>
+          <li>muted: 靜音</li>
+          <li>preload: 預載策略 (auto / metadata / none)</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">audio <span class="inline">controls</span></span
+            ><br />
+            &nbsp;&nbsp;<span class="gtpt"
+              >source <span class="inline">src</span>=<span class="inlineid">"audio.mp3"</span>
+              <span class="inline">type</span>=<span class="inlineid">"audio/mpeg"</span> /</span
+            ><br />
+            &nbsp;&nbsp;您的瀏覽器不支援音訊播放。<br />
+            <span class="gtpt">/audio</span><br />
+          </p>
+        </section>
+        <p>下列為播放效果示範</p>
+        <audio controls>
+          <source src="picture_phoenix/audio.mp3" type="audio/mp3" />
+          您的瀏覽器不支援音訊播放。
+        </audio>
+
+        <h3><span class="gtpt">video</span></h3>
+        <p>用於播放影片檔, 可控制播放、暫停、音量, 可搭配字幕</p>
+        <p><b>HTML屬性</b></p>
+        <ul>
+          <li>src: 影片來源檔案路徑或URL</li>
+          <li>controls: 顯示播放控制列</li>
+          <li>autoplay: 自動播放</li>
+          <li>loop: 循環播放</li>
+          <li>muted: 靜音</li>
+          <li>width/height: 設定影片尺寸</li>
+          <li>poster: 預覽圖片</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt"
+              >video <span class="inline">controls</span> <span class="inline">width</span>=<span class="inlineid"
+                >"100%"</span
+              >
+              <span class="inline">poster</span>=<span class="inlineid">"video.mp4"</span></span
+            ><br />
+            &nbsp;&nbsp;<span class="gtpt"
+              >source <span class="inline">src</span>=<span class="inlineid">"video.mp4"</span>
+              <span class="inline">type</span>=<span class="inlineid">"video/mp4"</span> /</span
+            ><br />
+            &nbsp;&nbsp;您的瀏覽器不支援影片播放。<br />
+            <span class="gtpt">/video</span><br />
+          </p>
+        </section>
+        <p>下列為影片播放效果示範</p>
+        <video controls width="100%" poster="video.mp4">
+          <source src="picture_phoenix/video.mp4" type="video/mp4" />
+          您的瀏覽器不支援影片播放。
+        </video>
+
+        <h3><span class="gtpt">iframe</span></h3>
+        <p>用於嵌入另一個 HTML 文件或網頁</p>
+        <p><b>HTML屬性</b></p>
+        <ul>
+          <li>src: 嵌入頁面網址</li>
+          <li>width/height: 設定尺寸</li>
+          <li>frameborder: 邊框控制(過時屬性)</li>
+          <li>allowfullscreen: 允許全螢幕</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt"
+              >iframe <span class="inline">title</span>=<span class="inlineid">"rickroll"</span>
+              <span class="inline">src</span>=<span class="inlineid">"https://www.youtube.com/embed/dQw4w9WgXcQ"</span>
+              <span class="inline">width</span>=<span class="inlineid">"100%"</span>
+              <span class="inline">height</span>=<span class="inlineid">"400px"</span>
+              <span class="inline">allowfullscreen</span> /</span
+            ><br />
+          </p>
+        </section>
+        <p>下列為嵌入網頁效果示範</p>
+        <iframe
+          title="rickroll"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          width="100%"
+          height="400px"
+          allowfullscreen></iframe>
+      </section>
+
+      <section class="card">
+        <h2 id="清單">清單<small>(HTML)</small></h2>
+        <h3><span class="gtpt">ul</span> <span class="gtpt">ol</span> <span class="gtpt">li</span> 網頁清單</h3>
+        <p>
+          <span class="gtpt"><b>ul</b></span> 為無序清單(unordered list), 以符號建立沒有順序的清單, 預設圖案為實心圓.
+          常用於功能列表、導覽列...等<br />
+          <span class="gtpt"><b>ol</b></span> 為有序清單(ordered list), 以數字或字母建立具有順序的清單, 預設為數字.
+          常用於步驟、流程、排名...等<br />
+          <span class="gtpt"><b>li</b></span> 為清單項目(list item), 無序跟有序清單裡的每個項目都要用<span class="gtpt"
+            >li</span
+          >表示. 項目裡可放入文字、圖片或p、div、span...等標籤
+        </p>
+        <p><b>範例</b></p>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">ul</span><br />
+            &nbsp;&nbsp;<span class="gtpt">li</span>項目<span class="gtpt">/li</span><br />
+            &nbsp;&nbsp;<span class="gtpt">li</span>項目<span class="gtpt">/li</span><br />
+            &nbsp;&nbsp;<span class="gtpt">li</span>項目<span class="gtpt">/li</span><br />
+            <span class="gtpt">/ul</span><br /><br />
+            <span class="gtpt">ol</span><br />
+            &nbsp;&nbsp;<span class="gtpt">li</span>項目一<span class="gtpt">/li</span><br />
+            &nbsp;&nbsp;<span class="gtpt">li</span>項目二<span class="gtpt">/li</span><br />
+            &nbsp;&nbsp;<span class="gtpt">li</span>項目三<span class="gtpt">/li</span><br />
+            <span class="gtpt">/ol</span>
+          </p>
+        </section>
+        <!--
+        <h3><span class="gtpt">dl</span> <span class="gtpt">dt</span> <span class="gtpt">dd</span></h3>
+        -->
+      </section>
+      <section class="card">
+        <h2 id="網頁表格">網頁表格<small>(HTML)</small></h2>
+        <h3><span class="gtpt">table</span></h3>
+        <p>為整個表格的容器, 用於包住整張表格</p>
+        <h3><span class="gtpt">tr</span> / <span class="gtpt">th</span> / <span class="gtpt">td</span></h3>
+        <p>
+          <span class="gtpt">tr</span>為表格列(table row) <br />
+          <span class="gtpt">td</span>為一般儲存格(table data), 用在大部分資料欄位 <br /><span class="gtpt">th</span
+          >為標題儲存格(table head), 預設為置中粗體 , 常用於欄位標題或列標題
+        </p>
+        <h3><span class="gtpt">caption</span></h3>
+        <p>為表格標題, 位於表格上方, 說明整張表格用途</p>
+        <h3><span class="gtpt">thead</span> / <span class="gtpt">tbody</span> / <span class="gtpt">tfoot</span></h3>
+        <p>
+          把表格分成三大區塊(可選用)<br />
+          <span class="gtpt">thead</span> 用於表格標題列<br />
+          <span class="gtpt">tbody</span> 用於主資料<br />
+          <span class="gtpt">tfoot</span> 用於總結、附註...等<br />
+        </p>
+        <h3><span class="gtpt">colgroup</span> / <span class="gtpt">col</span></h3>
+        <p>用於設定整欄欄位的屬性(style, ...)</p>
+        <h3>範例</h3>
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">style</span><br />
+            &nbsp;&nbsp;<span class="internal">table</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;width: <span class="inline">70%</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;border-collapse: <span class="inlineid">collapse</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;margin-top: <span class="inline">10px</span>;<br />
+            &nbsp;&nbsp;}<br />
+            <br />
+            &nbsp;&nbsp;<span class="internal">th</span>,<br />
+            &nbsp;&nbsp;<span class="internal">td</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;border: <span class="inline">1px</span> <span class="inlineid">solid</span>
+            <span class="inlineid">#ccc</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: <span class="inline">8px</span> <span class="inline">8px</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;text-align: <span class="inlineid">center</span>;<br />
+            &nbsp;&nbsp;}<br />
+            <br />
+            &nbsp;&nbsp;<span class="internal">th</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;background: <span class="inlineid">#e8f3ff</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;font-weight: <span class="inlineid">bold</span>;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;text-align: <span class="inlineid">center</span>;<br />
+            &nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;<span class="internal">div</span> {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;border: <span class="inline">1px</span> <span class="inlineid">solid</span>
+            <span class="inlineid">#ccc</span>;<br />
+            &nbsp;&nbsp;}<br />
+            <span class="gtpt">/style</span><br />
+            <span class="gtpt">table</span><br />
+            &nbsp;&nbsp;<code>表格標題</code><br />
+            &nbsp;&nbsp;<span class="gtpt">caption</span>小考成績表<span class="gtpt">/caption</span><br /><br />
+            &nbsp;&nbsp;<code>使第一欄寬度變成100px, 第二欄變成150px</code><br />
+            &nbsp;&nbsp;<span class="gtpt">colgroup</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt"
+              >col <span class="inline">style</span>=<span class="inlineid">"width: 100px"</span></span
+            >
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt"
+              >col <span class="inline">style</span>=<span class="inlineid">"width: 150px"</span></span
+            >
+            <br />
+            &nbsp;&nbsp;<span class="gtpt">/colgroup</span><br /><br />
+            &nbsp;&nbsp;<code>表格標題</code><br />
+            &nbsp;&nbsp;<span class="gtpt">thead</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">th</span>科目<span class="gtpt">/th</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">th</span>分數<span class="gtpt">/th</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">/tr</span><br />
+            &nbsp;&nbsp;<span class="gtpt">/thead</span><br /><br />
+            &nbsp;&nbsp;<code>科目跟分數資料</code><br />
+            &nbsp;&nbsp;<span class="gtpt">tbody</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">td</span>國文<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">td</span>88<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">/tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">td</span>英文<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">td</span>92<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">/tr</span><br />
+            &nbsp;&nbsp;<span class="gtpt">/tbody</span><br /><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>總結分數平均</code><br />
+            &nbsp;&nbsp;<span class="gtpt">tfoot</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">td</span>平均<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">td</span>90<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">/tr</span><br />
+            &nbsp;&nbsp;<span class="gtpt">/tfoot</span><br />
+            <span class="gtpt">/table</span><br />
+          </p>
+        </section>
+        <p>下圖為呈現在網頁上的樣子</p>
+        <img src="picture_phoenix/table.png" width="100%" />
+        <h3>補充</h3>
+        <p>下圖為同時使用colgroup與colspan在網頁上的樣子</p>
+        <img src="picture_phoenix/colspan.png" width="100%" />
+        <section class="formula-dark">
+          <code>HTML</code>
+          <p>
+            <span class="gtpt">table</span><br />
+            &nbsp;&nbsp;<span class="gtpt">colgroup</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt"
+              >col <span class="inline">style</span>=<span class="inlineid">"background: lightblue; width: 100px"</span>
+              /</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt"
+              >col <span class="inline">style</span>=<span class="inlineid"
+                >"background: lightgreen; width: 100px"</span
+              >
+              /</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt"
+              >col <span class="inline">style</span>=<span class="inlineid">"background: lightpink; width: 100px"</span>
+              /</span
+            ><br />
+            &nbsp;&nbsp;<span class="gtpt">/colgroup</span><br />
+            <br />
+            &nbsp;&nbsp;<span class="gtpt">tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">th</span>A<span class="gtpt">/th</span
+            ><span class="gtpt">th</span>B<span class="gtpt">/th</span><span class="gtpt">th</span>C<span class="gtpt"
+              >/th</span
+            ><br />
+            &nbsp;&nbsp;<span class="gtpt">/tr</span><br />
+            <br />
+            &nbsp;&nbsp;<span class="gtpt">tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>跨兩欄(A+B), 會套用第一與第二欄的樣式/寬度</code><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt"
+              >td <span class="inline">colspan</span>=<span class="inlineid">"2"</span></span
+            >跨兩欄<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt">td</span>普通欄<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;<span class="gtpt">/tr</span><br />
+            <br />
+            &nbsp;&nbsp;<span class="gtpt">tr</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<code>跨三欄(A+B+C), 會套用全部三欄樣式</code><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="gtpt"
+              >td <span class="inline">colspan</span>=<span class="inlineid">"3"</span></span
+            >跨三欄<span class="gtpt">/td</span><br />
+            &nbsp;&nbsp;<span class="gtpt">/tr</span><br />
+            <span class="gtpt">/table</span><br />
+          </p>
+        </section>
+      </section>
+
+      <section class="card">
+        <h2 id="文本屬性">文本屬性(CSS)</h2>
+        <h3>color</h3>
+        <p>用於設定文字顏色</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>色名（red, blue, black...）</li>
+          <li>十六進位色碼（#ff0000, #333333）</li>
+          <li>RGB/RGBA（rgb(255, 0, 0)、rgba(255, 0, 0, 0.63)）</li>
+          <li>HSL( hsl(120, 100%, 50%) )</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>文字顯示為亮藍色</code><br />
+            <span class="internal">p</span> {<br />
+            &nbsp;&nbsp;color: <span class="inlineid">#1a73e8</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>font-size</h3>
+        <p>用於設定字體大小</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>絕對單位: px, pt</li>
+          <li>相對單位: em(相對父元素), rem(相對根字體)、％</li>
+          <li>關鍵字:　small, medium, large</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>固定大小</code><br /><span class="internal">h1</span> {<br />
+            &nbsp;&nbsp;font-size: <span class="inline">24px</span>;<br />
+            }<br />
+            <code>比父元素大 1.2 倍</code><br />
+            <span class="internal">p</span> {<br />
+            &nbsp;&nbsp;font-size: <span class="inline">1.2em</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>font-family</h3>
+        <p>用於設定字體字型</p>
+        <p>
+          <b>格式</b><br />
+          font-family: "主字體", "候補字體", sans-serif;
+        </p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>瀏覽器會依序嘗試使用前面的字體，若無法載入就使用後面的</code><br />
+            <span class="internal">body</span> {<br />
+            &nbsp;&nbsp;font-family: <span class="inlineid">"Noto Sans TC"</span>,
+            <span class="inlineid">"Segoe UI"</span>, <span class="inlineid">sans-serif</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>font-weight</h3>
+        <p>用於設定字體粗細</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>關鍵字: normal、bold、lighter、bolder</li>
+          <li>數值: 100(極細)→ 900(極粗)</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <span class="internal">h1</span> {<br />
+            &nbsp;&nbsp;font-weight: <span class="inlineid">bold</span>;<br />
+            }<br />
+            <span class="internal">h2</span> {<br />
+            &nbsp;&nbsp;font-weight: <span class="inline">600</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>text-align</h3>
+        <p>用於設定文字水平對齊方式</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>left(靠左)</li>
+          <li>center(置中)</li>
+          <li>right(靠右)</li>
+          <li>justify(左右對齊)</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <span class="internal">h1</span> {<br />
+            &nbsp;&nbsp;text-align: <span class="inlineid">center</span>;<br />
+            }<br />
+            <span class="internal">p</span> {<br />
+            &nbsp;&nbsp;text-align: <span class="inlineid">justify</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>line-height</h3>
+        <p>用於設定行距</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>數值(如1.5 → 1.5倍字高)</li>
+          <li>長度(如24px)</li>
+          <li>百分比(如150%)</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>行距較寬, 易讀</code><br />
+            <span class="internal">p</span> {<br />
+            &nbsp;&nbsp;line-height: <span class="inline">1.8</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>text-decoration</h3>
+        <p>用於設定文字裝飾線</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>none(無裝飾)</li>
+          <li>underline(底線)</li>
+          <li>overline(上線)</li>
+          <li>line-through(刪除線)</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>移除超連結底線</code><br />
+            <span class="internal">a</span> {<br />
+            &nbsp;&nbsp;text-decoration: <span class="inlineid">none</span>;<br />
+            }<br />
+            <code>顯示刪除線</code><br />
+            <span class="internal">.del</span> {<br />
+            &nbsp;&nbsp;text-decoration: <span class="inlineid">line-through</span>;<br />
+            }<br />
+          </p>
+        </section>
+      </section>
+
+      <section class="card">
+        <h2 id="顏色與背景屬性">顏色與背景屬性(CSS)</h2>
+        <h3>background-color</h3>
+        <p>用於設定元素的背景顏色</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>色名（red, blue, black...）</li>
+          <li>十六進位色碼（#ff0000, #333333）</li>
+          <li>RGB/RGBA（rgb(255, 0, 0)、rgba(255, 0, 0, 0.63)）</li>
+          <li>HSL( hsl(120, 100%, 50%) )</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <span class="internal">section</span> {<br />
+            &nbsp;&nbsp;background-color: <span class="inlineid">#f0f0f0</span>;<br />
+            }
+          </p>
+        </section>
+
+        <h3>background-image</h3>
+        <p>用於設定元素的背景圖片</p>
+        <p><b>格式</b><br />background-image: url('圖片路徑');</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>元素背景顯示指定圖片</code><br />
+            <span class="internal">div</span> {<br />
+            &nbsp;&nbsp;background-image: <span class="inlineid">url('image.jpg')</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>background-size</h3>
+        <p>用於控制背景圖片的大小</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>auto: 保持圖片原始大小(預設值)</li>
+          <li>cover: 讓圖片完全覆蓋元素, 可能裁切部分圖片</li>
+          <li>contain: 讓圖片完整顯示在元素內, 可能出現空白</li>
+          <li>指定寬度與高度(如px, em, rem, %)</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>背景圖片完全覆蓋元素</code><br />
+            <span class="internal">div.cover</span> {<br />
+            &nbsp;&nbsp;background-image: <span class="inlineid">url('bg.jpg')</span>;<br />
+            &nbsp;&nbsp;background-size: <span class="inlineid">cover</span>;<br />
+            }<br />
+            <code>背景圖片完整顯示, 可能有空白</code><br />
+            <span class="internal">div.contain</span> {<br />
+            &nbsp;&nbsp;background-image: <span class="inlineid">url('bg.jpg')</span>;<br />
+            &nbsp;&nbsp;background-size: <span class="inlineid">contain</span>;<br />
+            }<br />
+            <code>自訂寬高</code><br />
+            <span class="internal">div.custom</span> {<br />
+            &nbsp;&nbsp;background-image: <span class="inlineid">url('bg.jpg')</span>;<br />
+            &nbsp;&nbsp;background-size: <span class="inline">150px</span> <span class="inline">100px</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>opacity</h3>
+        <p>用於設定元素透明度, 值從0(完全透明)到1(完全不透明)</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <span class="internal">div</span> {<br />
+            &nbsp;&nbsp;opacity: <span class="inline">0.5</span>;<br />
+            }<br />
+          </p>
+        </section>
+      </section>
+
+      <section class="card">
+        <h2 id="尺寸屬性">尺寸屬性(CSS)</h2>
+
+        <h3>width</h3>
+        <p>用於設定元素寬度(如px, %, em, rem, vw)</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>元素寬度固定 300px</code><br />
+            <span class="internal">div</span> {<br />
+            &nbsp;&nbsp;width: <span class="inline">300px</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>height</h3>
+        <p>用於設定元素高度(如px, %, em, rem, vh)</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>元素高度為視窗高度的 80%</code><br />
+            <span class="internal">div</span> {<br />
+            &nbsp;&nbsp;height: <span class="inline">80vh</span>;<br />
+            }<br />
+          </p>
+        </section>
+        <h3>max-width/min-width</h3>
+        <p>用於限制元素最大/最小寬度(如px, %, em, rem, vw)</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>元素寬度不會小於200px, 大於500px</code><br />
+            <span class="internal">div</span> {<br />
+            &nbsp;&nbsp;max-width: <span class="inline">500px</span>;<br />
+            &nbsp;&nbsp;min-width: <span class="inline">200px</span>;<br />
+            }<br />
+          </p>
+        </section>
+        <h3>max-height/min-height</h3>
+        <p>用於限制元素最大/最小高度(如px, %, em, rem, vh)</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>元素高度不會小於100px, 大於400px</code><br />
+            <span class="internal">div</span> {<br />
+            &nbsp;&nbsp;max-height: <span class="inline">400px</span>;<br />
+            &nbsp;&nbsp;min-height: <span class="inline">100px</span>;<br />
+            }<br />
+          </p>
+        </section>
+      </section>
+
+      <section class="card">
+        <h2 id="佈局屬性">佈局屬性(CSS)</h2>
+        <h3>display</h3>
+        <p>用於變更元素呈現方式</p>
+        <p><b>常見類型</b></p>
+        <ul>
+          <li>block(區塊元素): 會換行, 可設定寬高</li>
+          <li>inline(行內元素): 不換行, 寬高無效(隨內容)</li>
+          <li>inline-block(行內區塊): 不換行,但可設定寬高</li>
+          <li>none(隱藏元素): 完全不佔空間(和visibility: hidden不同)</li>
+          <li>flex(彈性盒模型): 子元素可自動排列,對齊換行</li>
+          <li>inline-flex(行內彈性盒): 與文字同行, 但具flex特性</li>
+          <li>grid(網格佈局): 以行列方式排列子元素</li>
+          <li>inline-grid(行內網格): 與文字同行, 但具 grid 特性</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <span class="internal">div</span> { display: <span class="inlineid">block</span>; }
+            <code>預設div為block</code><br />
+            <span class="internal">span</span> { display: <span class="inlineid">inline</span>; }
+            <code>預設span為inline</code><br />
+            <span class="internal">img</span> { display: <span class="inlineid">inline-block</span>; }
+            <code>常見圖像樣式</code><br />
+            <span class="internal">.hidden</span> { display: <span class="inlineid">none</span>; } <code>隱藏</code
+            ><br /><br />
+            <span class="internal">.container</span> {<br />
+            &nbsp;&nbsp;display: <span class="inlineid">flex</span>;<br />
+            &nbsp;&nbsp;justify-content: <span class="inlineid">center</span>; <code>水平置中</code><br />
+            &nbsp;&nbsp;align-items: <span class="inlineid">center</span>; <code>垂直置中</code><br />
+            }<br /><br />
+            <span class="internal">.grid</span> {<br />
+            &nbsp;&nbsp;display: <span class="inlineid">grid</span>;<br />
+            &nbsp;&nbsp;grid-template-columns: <span class="inline">1fr</span> <span class="inline">2fr</span>;<br />
+            &nbsp;&nbsp;gap: <span class="inline">10px</span>;<br />
+            }<br />
+          </p>
+        </section>
+        <h3>position</h3>
+        <p>用於控制元素在網頁中的定位方式</p>
+        <p><b>常用值</b></p>
+        <ul>
+          <li>static: 為預設值, 依照HTML結構自然排列(不脫離文件流)(top/right/bottom/left無效)</li>
+          <li>relative: 相對於原本位置微調, 不影響其他元素(不脫離文件流)</li>
+          <li>absolute: 從文件流中脫離, 根據父層或視窗絕對定位</li>
+          <li>fixed: 固定在畫面某處，滾動頁面時不會移動</li>
+          <li>sticky: 結合 relative 與 fixed，滾動到指定位置時固定</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>預設定位</code><br />
+            <span class="internal">div</span> {<br />
+            &nbsp;&nbsp;position: <span class="inlineid">static</span>;<br />
+            }<br /><br />
+            <code>向右下各移10px, 但原本位置仍保留</code><br />
+            <span class="internal">.box</span> {<br />
+            &nbsp;&nbsp;position: <span class="inlineid">relative</span>;<br />
+            &nbsp;&nbsp;top: <span class="inline">10px</span>;<br />
+            &nbsp;&nbsp;left: <span class="inline">10px</span>;<br />
+            }<br /><br />
+            <code>導覽列固定在頂端, 滾動頁面仍保持在畫面上</code><br />
+            <span class="internal">.navbar</span> {<br />
+            &nbsp;&nbsp;position: <span class="inlineid">fixed</span>;<br />
+            &nbsp;&nbsp;top: <span class="inline">0</span>;<br />
+            &nbsp;&nbsp;width: <span class="inline">100%</span>;<br />
+            }<br /><br />
+            <code>一開始隨頁面滾動(relative), 滾到距離頂端0px時會固定(fixed)</code><br />
+            <span class="internal">header</span> {<br />
+            &nbsp;&nbsp;position: <span class="inlineid">sticky</span>;<br />
+            &nbsp;&nbsp;top: <span class="inline">0</span>;<br />
+            &nbsp;&nbsp;background: <span class="inlineid">white</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>top/botttom/left/right</h3>
+        <p>在元素設定了position之後, 用於指定該元素相對於定位基準的距離, 常用於元素置中、固定按鈕、黏性導覽列</p>
+        <ul>
+          <li>top: 元素頂端距離基準頂端的距離, 數值為正時往下移動</li>
+          <li>bottom: 元素底端距離基準底端的距離, 數值為正時往上移動</li>
+          <li>left: 元素左邊距離基準左邊的距離, 數值為正時往右移動</li>
+          <li>right: 元素右邊距離基準右邊的距離, 數值為正時往左移動</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <span class="internal">.container</span> {<br />
+            &nbsp;&nbsp;position: <span class="inlineid">relative</span>;<br />
+            &nbsp;&nbsp;top: <span class="inline">20px</span>; <code>往下移 20px</code><br />
+            &nbsp;&nbsp;left: <span class="inline">40px</span>; <code>往右移 40px</code><br />
+            &nbsp;&nbsp;width: <span class="inline">100px</span>;<br />
+            &nbsp;&nbsp;height: <span class="inline">100px</span>;<br />
+            }<br /><br />
+            <code>.box根據最近的.container來定位, 距離上方10px, 右邊20px</code><br />
+            <span class="internal">.box</span> {<br />
+            &nbsp;&nbsp;position: <span class="inlineid">absolute</span>;<br />
+            &nbsp;&nbsp;top: <span class="inline">10px</span>;<br />
+            &nbsp;&nbsp;right: <span class="inline">20px</span>;<br />
+            &nbsp;&nbsp;width: <span class="inline">50px</span>;<br />
+            &nbsp;&nbsp;height: <span class="inline">50px</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>z-index</h3>
+        <p>
+          用來控制元素前後層級, 須搭配position才會生效, 數字越大越靠上層. 常用於彈出視窗、固定導覽列或側欄在內容上方
+        </p>
+        <p><b>比較規則(由低到高)</b></p>
+        <ol>
+          <li>背景與邊框</li>
+          <li>負的z-index</li>
+          <li>無z-index 的區塊</li>
+          <li>z-index: auto或0</li>
+          <li>正的z-index</li>
+          <li>新的stacking context(有自己的內部層級)</li>
+        </ol>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>固定側欄於左上角, 位於上層</code><br />
+            <span class="internal">.sidebar</span> {<br />
+            &nbsp;&nbsp;position: <span class="inlineid">fixed</span>;<br />
+            &nbsp;&nbsp;top: <span class="inline">0</span>;<br />
+            &nbsp;&nbsp;left: <span class="inline">0</span>;<br />
+            &nbsp;&nbsp;width: <span class="inline">180px</span>;<br />
+            &nbsp;&nbsp;height: <span class="inline">100vh</span>;<br />
+            &nbsp;&nbsp;padding: <span class="inline">20px</span>;<br />
+            &nbsp;&nbsp;box-sizing: <span class="inlineid">border-box</span>;<br />
+            &nbsp;&nbsp;z-index: <span class="inline">10</span>;<br />
+            }<br />
+            <code>主內容區, 在側欄下層</code><br />
+            <span class="internal">main</span> {<br />
+            &nbsp;&nbsp;margin-left: <span class="inline">180px</span>;<br />
+            &nbsp;&nbsp;padding: <span class="inline">20px</span>;<br />
+            &nbsp;&nbsp;background-color: <span class="inlineid">#ecf0f1</span>;<br />
+            &nbsp;&nbsp;z-index: <span class="inline">1</span>;<br />
+            }<br />
+          </p>
+        </section>
+
+        <h3>overflow</h3>
+        <p>用於決定當內容超出容器範圍時如何顯示. 使用overflow-x僅控制水平滾動; 使用overflow-y僅控制垂直滾動</p>
+        <p><b>常用值</b></p>
+        <ul>
+          <li>visible: 預設值. 超出的內容照常顯示, 不會被裁掉與滾動</li>
+          <li>hidden: 超出部分被裁切, 不顯示, 不滾動</li>
+          <li>scroll: 無論是否超出, 都出現滾動條</li>
+          <li>auto: 若內容超出, 才出現滾動條</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 id="邊距與邊框屬性">邊距與邊框屬性(CSS)</h2>
+        <h3>margin</h3>
+        <p>用於調整元素與外部其他元素的距離, 兩個垂直方向的margin會取最大值</p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>四邊相同</code><br />
+            margin: <span class="inline">20px</span>;<br />
+            <code>上下10px、左右30px</code><br />
+            margin: <span class="inline">10px</span> <span class="inline">30px</span>;<br />
+            <code>順序為上右下左</code><br />
+            margin: <span class="inline">10px</span> <span class="inline">15px</span> <span class="inline">5px</span>
+            <span class="inline">20px</span>;<br />
+            <code>常用於置中</code><br />
+            margin-left: <span class="inlineid">auto</span>;<br />
+          </p>
+        </section>
+
+        <h3>padding</h3>
+        <p>用於調整內容與邊框之間的距離, 可單獨設定每一邊</p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            padding-top: <span class="inline">10px</span>;<br />
+            padding-bottom: <span class="inline">5px</span>;<br />
+            <code>四邊相同</code><br />
+            padding: <span class="inline">10px</span>;<br />
+            <code>上下10px、左右20px</code><br />
+            padding: <span class="inline">10px</span> <span class="inline">20px</span>;<br />
+            <code>順序為上右下左</code><br />
+            padding: <span class="inline">10px</span> <span class="inline">15px</span> <span class="inline">5px</span>
+            <span class="inline">20px</span>;<br />
+          </p>
+        </section>
+
+        <h3>border</h3>
+        <p>用於產生邊框, 可單獨設定每一邊</p>
+        <p><b>常用值</b></p>
+        <ul>
+          <li>寬度(width): thin, medium, thick或數值(px, em...)</li>
+          <li>樣式(style): none(無邊框), solid(實線), dashed(虛線)...</li>
+          <li>顏色(color)</li>
+        </ul>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>四邊同寬, 上邊框單獨設定成5px灰色虛線</code><br />
+            <span class="internal">section</span> {<br />
+            &nbsp;&nbsp;border-width: <span class="inline">3px</span>;<br />
+            &nbsp;&nbsp;border-top: <span class="inline">5px</span> <span class="inlineid">dashed</span>
+            <span class="inlineid">#868686</span>;<br />
+            }<br />
+          </p>
+        </section>
+        <h3>border-radius</h3>
+        <p>用於產生邊框圓角, 可單獨設定每一角</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>使元素的四個角呈5px圓角</code><br />
+            <span class="internal">section</span> {<br />
+            &nbsp;&nbsp;border: <span class="inline">2px</span>;<br />
+            &nbsp;&nbsp;border-radius: <span class="inline">5px</span>;<br />
+            }<br />
+          </p>
+        </section>
+        <h3>box-shadow</h3>
+        <p>用於產生元素的陰影效果</p>
+        <p><b>常見值</b></p>
+        <ul>
+          <li>offset-x(必填): 水平位移陰影, 正值向右</li>
+          <li>offset-y(必填): 垂直位移陰影, 正值向下</li>
+          <li>blur-radius(選填): 模糊半徑, 數值越大陰影越模糊, 預設0</li>
+          <li>spread-radius(選填): 陰影擴散半徑, 正值讓陰影變大, 預設0</li>
+          <li>color(選填): 陰影顏色</li>
+          <li>inset(選填): 將陰影從外部改為內部陰影, 預設外陰影</li>
+        </ul>
+        <p><b>格式</b><br />box-shadow: (inset) offset-x offset-y (blur-radius) (spread-radius) (color);</p>
+        <p><b>範例</b></p>
+        <section class="formula">
+          <code>css</code>
+          <p>
+            <code>產生向右與向下各偏移5px, 模糊半徑為10px的黑色陰影</code><br />
+            <span class="internal">section</span> {<br />
+            &nbsp;&nbsp;width: <span class="inline">100px</span>;<br />
+            &nbsp;&nbsp;height: <span class="inline">100px</span>;<br />
+            &nbsp;&nbsp;background: <span class="inlineid">#4285f4</span>;<br />
+            &nbsp;&nbsp;box-shadow: <span class="inline">5px</span> <span class="inline">5px</span>
+            <span class="inline">10px</span> <span class="inlineid">black</span>;<br />
+            }<br />
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">- 網頁程式設計 -</footer>
+    <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">
+      <i class="bi bi-arrow-up"></i> ↑
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 取得按鈕元件
+      let mybutton = document.getElementById("btn-back-to-top");
+
+      // 當使用者捲動網頁時，觸發 scrollFunction
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block"; // 顯示按鈕
+        } else {
+          mybutton.style.display = "none"; // 隱藏按鈕
+        }
+      }
+
+      // 當使用者點擊按鈕時，回到頂端
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // 平滑捲動效果
+        });
+      }
+    </script>
+  </body>
+</html>

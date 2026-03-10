@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>能源工程概論</title>
+    <!-- Favicons -->
+    <link href="picture_other/favicon-32x32.png" rel="icon" />
+    <link href="picture_other/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">課程筆記整理</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calculus.html">微積分</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chemistry.html">普通化學</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experiment.html">普化實驗</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="energy.html">能源工程概論</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="statics.html">靜力學</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="phoenix_code.html">網頁程式設計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="octave.html">基礎程式設計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="minerals.html">礦物與生活</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="card">
+        <h2>能源工程概論</h2>
+        <a
+          href="https://www.canva.com/design/DAG6dCVfc6g/RdHMpWa2_BAg55BUNXMugg/view?utm_content=DAG6dCVfc6g&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h284de22e98"
+          style="
+            background: var(--card);
+            border: 1px solid #dadce0;
+            color: var(--text);
+            padding: 10px 18px; /* 內距(上下,左右) */
+            border-radius: 8px;
+            font-size: 15px;
+          "
+          >點擊以檢視簡報</a
+        >
+      </section>
+      <section class="card">
+        <h2>核能概述</h2>
+        <p>
+          至2020年底為例, 全球共有<b>448座</b>核反應爐運轉, 並提供了2553208GWh 的電力.
+          目前全球共有<b>54座</b>核反應爐在19個國家興建中, 未來將加入運轉. 台灣共有2座核電廠 ( 4座核反應爐 )
+          運轉中(核一廠2座核反應爐已除役，第4座核電廠已停止 興建 ), 2020年核能所提供的能源佔所進口能源的6.60%.
+          比起化石燃料, <b>核能儲存空間小, 不會排放空氣污染物至大氣</b> 但核能發電所排放的廢熱可能引起<b>熱污染</b>,
+          造成海洋生態浩劫 特別是<b>放射性核廢料的儲存及去處</b>, 目前已是極為棘手之問題
+        </p>
+        <p>
+          鈾同位素中, 鈾238(<sup>238</sup>U)在地球的含量約佔<b>99.3%</b> . 而鈾235僅佔<b>0.7%</b>,
+          因而鈾235的<b>提鍊及濃縮</b>便是核能應用的重要工作 . 如欲核能發電, <sup>235</sup>U的濃度需達<b>3%</b>左右,
+          其餘97%則是<sup>238</sup>U . 但如欲發展核武, <sup>235</sup>U的濃度則需超過90%方能產生核爆 . 換言之,
+          一般核電廠並不會發生核子爆炸的現象
+        </p>
+        <h2>核分裂與連鎖反應</h2>
+        <p>
+          核能發電的理論基礎為愛因斯坦的質能互換公式<br />
+          欲產生核分裂, 首要條件就是產生連鎖反應<br /><br /><b>核分裂反應</b>
+        </p>
+        <section class="formula">
+          n + <sup>235</sup><sub>92</sub>U =<sup>142</sup><sub>56</sub>Ba + <sup>91</sup><sub>56</sub>Kr + 3n
+        </section>
+        <p>臨界質量: 即產生連鎖反應所需的最小燃料質量 <br />鈾235約為15kg, 而鈽239則需9kg</p>
+        <img src="picture_energy/2_2.jpg" alt="連鎖反應圖" width="90%" />
+
+        <h2>核子反應爐</h2>
+
+        <h3><i>控制棒</i></h3>
+        <p>控制棒用於控制核分裂的反應程度 <br />常以硼化物製成, 置於爐心以吸收部分中子</p>
+
+        <p>
+          <b>若控制棒完全插入爐中, 反應爐將完全停止反應 <br />若控制棒完全抽出, 核分裂反應將十分激烈</b>
+        </p>
+
+        <h3><i>沸水式反應爐(Boiling Water Reactor, BWR)</i></h3>
+        <p>核電廠的中心部位為反應爐爐心 <br />爐心放置約含有35,000支的鈾燃料棒.</p>
+
+        <p>反應爐除了爐心, 亦包含大量水. 水具有兩個作用</p>
+        <ul>
+          <li><b>將核分裂所產生的熱能帶走</b></li>
+          <li><b>調節或降低核分裂所產生的中子能量</b></li>
+        </ul>
+        <p>
+          水受熱後形成約280°C, 68 atm的高壓蒸汽 <br />進而推動渦輪機發電 <br />其後再經冷凝成液態水以飼水形式送回容器中
+          <br />而產生的中子撞擊水分子的氫核後喪失大量能量而降低速度 <br />一般而言,
+          2MeV的中子在短時間撞擊18次的水分子後 <br />其能量將降至0.025eV
+        </p>
+        <img src="picture_energy/2_3.jpg" alt="沸水式反應爐" width="90%" />
+
+        <h3><i>壓水式反應爐(Pressurized Water Reactor, PWR)</i></h3>
+        <p>
+          爐心中水可被加熱至約315°C, 150 atm <br />因壓力足夠, 壓水式反應爐中的水始終為<b>液態</b>
+          <br />受熱的水流到<b>熱交換器</b>或<b>蒸汽產生器後</b> <br />將熱傳予另一迴路的水, 形成蒸汽推動渦輪機進而發電
+        </p>
+        <img src="picture_energy/2_3_2.jpg" alt="壓水式反應爐" width="90%" />
+      </section>
+      <section class="card">
+        <h2>太陽能</h2>
+        <p>
+          藉由太陽照射, 利用太陽光能量來轉換成電或熱 <br />為永久性能源, 使用時不會帶來污染與增加地球的熱負荷
+          <br />但其能量密度低, 又需考量時間與地區性 <br />且相較於化石燃料, 現階段設置費用與成本仍較高
+        </p>
+
+        <h2>太陽輻射</h2>
+        <p>太陽輻射以電磁波的形式傳到地球, 包括可見光、紫外線、紅外線等</p>
+        <img src="picture_energy/3_2.jpg" alt="光線波長圖對照圖" width="90%" />
+        <h3><i>太陽常數</i></h3>
+        <p>
+          指在地球大氣層頂垂直於太陽光方向上, 每平方公尺接收到的太陽能<br />下圖為不同波長太陽光在大氣層頂與地表的輻射強度圖
+          <br />得出 <b>太陽常數 G<sub>s</sub>=1353W/m<sup>2</sup></b
+          >(數值不受大氣吸收或散射影響)
+        </p>
+        <img src="picture_energy/3_2_3.jpg" alt="折線圖" width="70%" />
+
+        <p>
+          然而地面實際受到的輻射會因雲層、空氣、水蒸氣等吸收和散射影響<br />透過下圖得知大氣層和雲層會吸收或散射掉約 53%
+          的太陽能量 <br />地表實際接收到的太陽輻射能量只有 47% 左右
+        </p>
+        <img src="picture_energy/3_2_2.jpg" alt="輻射吸收散射圖" width="90%" />
+        <br /><br />
+        <h3><i>太陽能利用的潛力</i></h3>
+        <p>
+          以美國為例, 太陽常數為1353 W/m<sup>2</sup>，<br />假設太陽輻射到達地面的平均能量為600 W/m<sup>2</sup>, 即1520
+          Btu/ft<sup>2</sup><br />而美國總面積為3.615×10<sup>6</sup>平方英哩 <br />以日照8小時計,
+          美國一年可得到太陽能總量為5.6×10<sup>19</sup> Btu。 <br />美國2022年的總能源消耗量為9.2943×10<sup>16</sup> Btu
+          <br />該能量僅約為太陽能量的<b>六百分之一</b>而已 <br />如果美國能自太陽能中取得 0.17%的能量,
+          已足夠全國能量所需
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>水力發電</h2>
+        <h3><i>水力發電</i></h3>
+        <p>其基本原理是利用水位落差, 配合水輪發電機產生電力</p>
+        <p><b>優點</b></p>
+        <ul>
+          <li><b>沒有污染</b>性物質產生並排放到空氣中或水中<br />也沒有廢熱或熱污染的問題</li>
+          <li>水力發電廠的運輸只依賴<b>再生能源資源</b>(ex:水)<br />電廠運轉的生命期可達數十年, 且維護要求較少</li>
+          <li><b>可依據實際電力需求隨時進行調整</b><br />即使是尖峰負載也能符合電力調度要求</li>
+          <li>建立的水庫具有<b>多重功能</b><br />例如蓄水以供灌溉、防洪及提供都市飲水等</li>
+        </ul>
+        <p><b>缺點</b></p>
+        <ul>
+          <li>建立水壩會對<b>環境造成某種程度的衝擊</b><br />以及歷史人文景觀的改變與生態的破壞</li>
+          <li>
+            泥沙會堆積在水庫中而形成<b>淤泥</b> <br />因而水庫的壽命約50到200年之間
+            <br />淤泥所引發的問題目前為止尚無解決對策
+          </li>
+          <li>
+            水庫<b>下游人口將暴露在水壩潰堤所造成危害的風險中</b> <br />若發生天然災害 ( 如地震 ) 或人為破壞 ( 如戰爭 )
+            <br />其可能造成大量人口的傷亡及都市破壞
+          </li>
+        </ul>
+        <h3><i>水力發電廠之結構圖</i></h3>
+        <img src="picture_energy/4_1.jpg" alt="平板收集系統" width="90%" />
+        <h3><i>水力發電廠分類</i></h3>
+
+        <p><b>依照水位的高低分類</b></p>
+        <ul>
+          <li><b>低水頭</b>:水位低於30m</li>
+          <li><b>中水頭</b>:水位介於30~300m之間</li>
+          <li><b>高水頭</b>:水位高於300m</li>
+        </ul>
+        <p><b>依照裝置容量分類</b></p>
+        <ul>
+          <li><b>小型發電廠</b>:裝置容量小於25,000 kW</li>
+          <li><b>中型發電廠</b>:裝置容量介於25,000到250,000 kW</li>
+          <li><b>大型發電廠</b>:裝置容量大於250,000 kW</li>
+        </ul>
+        <p><b>水源運用的情況</b></p>
+        <ul>
+          <li>
+            <b>A.川流式發電廠</b>:<br />依河川<b>自然流量運轉</b> <br />河川流量大時, 輸出電力可達設計時全廠總容量
+            <br />當流量大於發電所需水量, 多餘的水將直接排放到下游 <br />河川流量小時,
+            可能只輸出全廠容量不到三分之一的電
+          </li>
+
+          <li>
+            <b>B.水庫式發電廠</b>:<br />其水庫蓄水量龐大<br />
+            可以吞沒一季或一年的洪水量供發電廠使用
+          </li>
+          <li>
+            <b>C.抽蓄式(揚水)發電廠</b>:<br />又稱<b>揚水式發電廠</b> <br />與其他發電廠的不同為必須有兩個相當大的儲水池
+            <br />分為在上游的<b>前池</b>, 以及在下游的<b>後池</b> <br />後池多利用尾水路外的河流, 構築欄河壩攔堵尾水<br />
+            <br />抽蓄發電利用深夜離峰供電時間所剩餘廉價之電力把下池的水抽回上池,
+            而於電力系統尖峰供電時間由上池放水發電, 成為價值較高之尖峰電力。
+          </li>
+          <li>
+            <b>D.調整池式發電廠</b>:<br />水量運用和川流發電廠相同，但蓄水量較川流式大 <br />蓄水量與自然流量配合,
+            可使全廠各機滿載運轉數小時
+          </li>
+        </ul>
+        <h3><i>水輪機種類</i></h3>
+        <p>
+          水輪機分為下推式(undershot)、側推式(breast)、 <br />上推式(overshot)、法蘭西式(Francis)及螺旋槳式(propeller)
+        </p>
+        <img src="picture_energy/4_1.jpg" alt="平板收集系統" width="90%" />
+        <p>現代水輪機將位能轉換成電能的效率約介於<b>80到90%</b>之間</p>
+        <hr />
+        <h2>海洋能轉換</h2>
+        <p>海洋能主要包含<b>海洋溫差 潮汐 海流 波浪 滲透壓</b></p>
+        <h3><i>海洋熱能轉換 (Ocean Thermal Energy Conversion，OTEC)</i></h3>
+        <p>
+          海洋面積佔據了整個地球表面的70% <br />其中熱帶及亞熱帶海洋的表層海水易受太陽照射而吸收熱能
+          <br />比較表層海水及水深1000公尺的水溫, 溫差約在<b>20~25℃</b>間 <br />海洋熱能轉換 即是利用自然海洋溫差
+          <br />以熱能轉換裝置將熱能轉換成電能 <br />故<b>海洋熱能轉換發電</b>又稱為<b>海洋溫差發電</b>
+        </p>
+        <p><b>優點</b></p>
+        <ul>
+          <li>溫差發電是<b>連續而穩定的輸出</b></li>
+          <li>發電過程產生的廢熱可以回收利用</li>
+          <li>來自太陽能, 是取之不盡用之不竭之能源</li>
+          <li>溫差發電過程產生<b>污染甚少</b>, 對環境破壞的也最小</li>
+          <li>發電廠往往建於海中, <b>對於居住環境沒有干擾</b></li>
+          <li>溫差發電可<b>伴生淡水</b>供食用及農業灌溉、養殖用</li>
+          <li>發電廠發出的電可就近設廠<br />製造淡水、食鹽、海產加工、製取氫氣</li>
+        </ul>
+        <p><b>缺點</b></p>
+        <p>
+          海洋溫差發電在技術上雖可行, 但因投資龐大且發電成本高昂與極深海冷水管路施工風險高等因素受限制,
+          因此尚未如風力、太陽光電及地熱等再生能源受到重視及實際應用.
+        </p>
+        <h3><i>全球海洋溫差分佈情形</i></h3>
+        <img src="picture_energy/4_2.jpg" alt="平板收集系統" width="90%" />
+        <h3><i>海洋熱能轉換系統</i></h3>
+        <p>依照工作流體的流動狀況，海洋熱能轉換系統可分成</p>
+        <ul>
+          <li>
+            <b>閉路式系統</b>: 利用表層海水讓低蒸發溫度之工作流體 <br />如<b>氨</b>、<b>丙烷</b>或<b>氟氯碳化物</b>蒸發,
+            使其推動渦輪機發電 <br />再利用海底下的深層冷海水冷卻工作流體<br /><b>冷凝成液體</b
+            >後以泵送到海水表層循環使用
+          </li>
+          <li>
+            <b>開路式系統</b>: 開路式系統中工作流體則是海水 <br />海面較溫熱的海水先除去<b>二氧化碳</b>等氣體後
+            <br />送入真空蒸發槽使海水變成蒸汽 <br />再以此蒸汽推動渦輪機以驅動發電機發電
+            <br />用過的蒸汽藉由海面下層低溫海水冷凝成冷水後排出
+          </li>
+        </ul>
+        <img src="picture_energy/4_2_2.jpg" alt="平板收集系統" width="90%" />
+        <h3><i>OTEC發電系統</i></h3>
+
+        <hr />
+        <h2>3_潮汐能</h2>
+        <p>
+          潮汐能來自地球－月亮－太陽系統彼此之間 <br />其<b>重力交互反應</b>所產生的動能與位能
+          <br />而月亮距地球較近，因而其對潮汐形成的影響又大於太陽 <br />若考慮月亮及太陽之質量與兩者和地球之距離
+          <br />可推估出月亮及太陽對潮汐的影響約為<b>68％：32%</b>
+        </p>
+        <p>
+          潮汐能複雜性主要因潮汐的變化程度會因時間而改變 <br />潮汐起伏的週期約<b>12.5小時</b>(12hr24min)
+          <br />一天約完成二個潮汐的循環
+        </p>
+        <p>
+          海岸每個月則會經歷一次<b>大潮</b>及一次<b>小潮</b> <br />月亮與太陽所引起之漲潮稱為<b>月潮</b>及<b>日潮</b>
+        </p>
+        <img src="picture_energy/4_3.jpg" alt="平板收集系統" width="90%" />
+      </section>
+    </main>
+    <footer class="footer">- 能源工程概論 -</footer>
+    <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">
+      <i class="bi bi-arrow-up"></i> ↑
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 取得按鈕元件
+      let mybutton = document.getElementById("btn-back-to-top");
+
+      // 當使用者捲動網頁時，觸發 scrollFunction
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block"; // 顯示按鈕
+        } else {
+          mybutton.style.display = "none"; // 隱藏按鈕
+        }
+      }
+
+      // 當使用者點擊按鈕時，回到頂端
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // 平滑捲動效果
+        });
+      }
+    </script>
+  </body>
+</html>

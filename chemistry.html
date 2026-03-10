@@ -1,0 +1,2730 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>普通化學</title>
+    <!-- Favicons -->
+    <link href="picture_other/favicon-32x32.png" rel="icon" />
+    <link href="picture_other/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .hightlight {
+        font-weight: bold;
+      }
+      ol {
+        padding: 5px;
+        list-style-position: inside;
+        list-style-type: lower-alpha;
+      }
+      ul ul {
+        padding-left: 15px;
+        list-style: circle;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+          ]
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">課程筆記整理</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calculus.html">微積分</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link active dropdown-toggle"
+                href="chemistry.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                普通化學
+              </a>
+              <ul class="dropdown-menu dropdown-scrollable" style="overflow-y: auto" aria-labelledby="navbarDropdown">
+                <li><h3 class="dropdown-item-text">章節目錄</h3></li>
+                <li><a class="dropdown-item" href="#7_1">7-1 電磁輻射</a></li>
+                <li><a class="dropdown-item" href="#7_2">7-2 質量的本質</a></li>
+                <li><a class="dropdown-item" href="#7_3">7-3 氫原子光譜</a></li>
+                <li><a class="dropdown-item" href="#7_4">7-4 波耳模型</a></li>
+                <li><a class="dropdown-item" href="#7_5">7-5 量子力學模型</a></li>
+                <li><a class="dropdown-item" href="#7_6">7-6 量子數</a></li>
+                <li><a class="dropdown-item" href="#7_7">7-7 軌域形狀與能量</a></li>
+                <li><a class="dropdown-item" href="#7_8">7-8 包利不相容原理</a></li>
+                <li><a class="dropdown-item" href="#7_9">7-9 多電子原子</a></li>
+                <li><a class="dropdown-item" href="#7_11">7-11 構築原理</a></li>
+                <li><a class="dropdown-item" href="#7_12">7-12 原子性質趨勢</a></li>
+                <li><a class="dropdown-item" href="#7_13">7-13 鹼金屬</a></li>
+                <li><a class="dropdown-item" href="#8_1">8-1 化學鍵類型</a></li>
+                <li><a class="dropdown-item" href="#8_2">8-2 電負度</a></li>
+                <li><a class="dropdown-item" href="#8_3">8-3 偶極矩</a></li>
+                <li><a class="dropdown-item" href="#8_4">8-4 離子與電子分布</a></li>
+                <li><a class="dropdown-item" href="#8_5">8-5 雙原子離子化合物</a></li>
+                <li><a class="dropdown-item" href="#8_6">8-6 共價鍵離子性</a></li>
+                <li><a class="dropdown-item" href="#8_8">8-8 共價鍵能</a></li>
+                <li><a class="dropdown-item" href="#8_9">8-9 局部電子模型</a></li>
+                <li><a class="dropdown-item" href="#8_10">8-10 路易斯結構</a></li>
+                <li><a class="dropdown-item" href="#8_11">8-11 八隅體例外</a></li>
+                <li><a class="dropdown-item" href="#8_12">8-12 共振</a></li>
+                <li><a class="dropdown-item" href="#9_1">9-1</a></li>
+                <li><a class="dropdown-item" href="#9_2">9-2 分子軌域</a></li>
+                <li><a class="dropdown-item" href="#9_3">9-3 同核雙原子分子</a></li>
+                <li><a class="dropdown-item" href="#10_1">10-1 物質型態</a></li>
+                <li><a class="dropdown-item" href="#10_2">10-2 分子間作用力</a></li>
+                <li><a class="dropdown-item" href="#10_3">10-3 液態</a></li>
+                <li><a class="dropdown-item" href="#10_4">10-4 固體結構與類型</a></li>
+                <li><a class="dropdown-item" href="#10_5">10-5 金屬鍵結與其結構</a></li>
+                <li><a class="dropdown-item" href="#10_6">10-6 共價網狀固體</a></li>
+                <li><a class="dropdown-item" href="#10_7">10-7 分子固體</a></li>
+                <li><a class="dropdown-item" href="#10_8">10-8 離子固體</a></li>
+                <li><a class="dropdown-item" href="#10_9">10-9 蒸氣壓與型態變化</a></li>
+                <li><a class="dropdown-item" href="#10_10">10-10 三相圖</a></li>
+                <li><a class="dropdown-item" href="#20_1">20-1 </a></li>
+                <li><a class="dropdown-item" href="#20_2">20-2 第1A族</a></li>
+                <li><a class="dropdown-item" href="#20_3">20-3 氫的化學性質</a></li>
+                <li><a class="dropdown-item" href="#20_4">20-4 第2A族</a></li>
+                <li><a class="dropdown-item" href="#20_5">20-5 第3A族</a></li>
+                <li><a class="dropdown-item" href="#20_6">20-6 第4A族</a></li>
+                <li><a class="dropdown-item" href="#20_7">20-7 第5A族</a></li>
+                <li><a class="dropdown-item" href="#20_8">20-8 氮的化學性質</a></li>
+                <li><a class="dropdown-item" href="#20_9">20-9 磷的化學性質</a></li>
+                <li><a class="dropdown-item" href="#20_10">20-10 第6A族(硒與釙)</a></li>
+                <li><a class="dropdown-item" href="#20_11">20-11 氧的化學性質</a></li>
+                <li><a class="dropdown-item" href="#20_12">20-12 硫的化學性質</a></li>
+                <li><a class="dropdown-item" href="#20_13">20-13 第7A族</a></li>
+                <li><a class="dropdown-item" href="#20_14">20-14 第8A族</a></li>
+                <li><a class="dropdown-item" href="#21_1">21-1 過渡金屬 - 概覽</a></li>
+                <li><a class="dropdown-item" href="#21_2">21-2 第一行過渡金屬</a></li>
+                <li><a class="dropdown-item" href="#21_3">21-3 配位化合物</a></li>
+                <li><a class="dropdown-item" href="#21_5">21-5 錯離子中的鍵結 - 局域電子模型</a></li>
+                <li><a class="dropdown-item" href="#21_6">21-6 晶體場模型</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="experiment.html">普化實驗</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="energy.html">能源工程概論</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="statics.html">靜力學</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="phoenix_code.html">網頁程式設計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="octave.html">基礎程式設計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="minerals.html">礦物與生活</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <section class="card">
+        <h2>普通化學</h2>
+        <p></p>
+      </section>
+      <section class="card" id="7_1">
+        <!--- (id 內部網頁超連結) --->
+        <h2>7-1 Electromagnetic Radiation 電子輻射</h2>
+        <ul>
+          <li>Wavelength 波長(λ)</li>
+          <li>Frequency 頻率(ν)</li>
+          <li>Speed of light 光速(c) ≈ 2.9979×10<sup>8</sup> m/s</li>
+        </ul>
+        <div class="formula">\[ λν = c \]</div>
+        波長(wave length )
+        <p>
+          長<br />
+          ↑ radio wave 無線電波 ≈ 10<sup>2</sup>(m)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;microwave 微波 ≈ 10<sup>-2</sup>(m)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;infrared 紅外線 ≈ 10<sup>-4</sup>(m)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visible light 可見光 380~780(nm)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ultraviolet 紫外線 10~380(nm)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X-ray X光 ≈ 10<sup>-10</sup>(m)<br />
+          ↓gamma ray γ射線 ≈ 10<sup>-12(m)</sup><br />
+          短
+        </p>
+        <img src="picture_chemistry/C7_1.png" alt="wave length" width="100%" />
+      </section>
+
+      <section class="card" id="7_2">
+        <h2>7-2 The Nature of Mass</h2>
+        <p>Planck's constant普朗克常數(h) = 6.626×10<sup>-34</sup>(J ⋅ s)</p>
+
+        <ul>
+          <li>electron 電子</li>
+          <li>photons 光子</li>
+          <li>Diffraction 繞射</li>
+        </ul>
+        <div class="formula">\[ \Delta E = nhν = n\frac{hc}{λ} \]</div>
+        <h3>The energy of a photon 光子能量</h3>
+        <div class="formula">\[ E_{photon} = hν = \frac{hc}{λ} \]</div>
+        <h3>Photoelectric effect 光電效應</h3>
+        <div class="formula">
+          \[ KE_{electron} = \frac{1}{2}mv^{2} = hν - hν_{0} \]<br /><small>m: mass of electron</small> <br /><small
+            >v: velocity of electron</small
+          >
+          <br /><small>hν: energy of incident photon</small> <br /><small
+            >hν<sub>0</sub>: energy required to remove electron from metal's surface</small
+          >
+        </div>
+        <h3>Mass-energy conservation 質能互換公式</h3>
+        <div class="formula">\[ E = mc^2 ,\quad m = \frac{E}{c^2} = \frac{\frac{hc}{λ}}{c²} = \frac{h}{λc} \]</div>
+        <h3>Matter wave 物質波</h3>
+        <div class="formula">\[ m = h/λv , λ = h/mv \]</div>
+      </section>
+
+      <section class="card" id="7_3">
+        <h2>7-3 The Atomic Spectrum of Hydrogen 氫原子光譜</h2>
+        <ul>
+          <li>Continuous spectrum(連續光譜)<br />白光穿過棱鏡後形成的光譜</li>
+        </ul>
+        <ul>
+          <li>Line spectrum(線光譜) <br />僅顯示某些特定波長的光譜</li>
+        </ul>
+        <div class="formula">
+          ΔE = hν = hc/λ <br /><small>E: change in energy</small> <br /><small>ν: frequency of light limit</small>
+          <br /><small>λ: wavelength of light limit</small>
+        </div>
+      </section>
+
+      <section class="card" id="7_4">
+        <h2>7-4 The Bohr Model 波耳模型</h2>
+        <h3>Bohr's model of the hydrogen atom 波耳氫原子模型</h3>
+        <h3>Hydrogen energy level 氫原子能階</h3>
+        <div class="formula">E = -2.18×10<sup>-18</sup>(Z<sup>2</sup>/n<sup>2</sup>)</div>
+        <h3>Electron transition 電子躍遷</h3>
+        <div class="formula">
+          ΔE = E<sub>f</sub> - E<sub>i</sub> = -2.18×10<sup>-18</sup>(1/n<sub>2</sub><sup>2</sup> - 1/n<sub>1</sub
+          ><sup>2</sup>)(J)
+        </div>
+      </section>
+
+      <section class="card" id="7_5">
+        <h2>7-5 The Quantum Mechanical Model of the Atom</h2>
+        <div class="formula">
+          Ĥψ = Eψ <br /><small
+            >ψ: wave funtion<br />
+            Ĥ: operator<br />
+            E: total energy of the atom</small
+          >
+        </div>
+        <h3>Heisenberg uncer-tainty principle 海森堡測不準原理</h3>
+        <div class="formula">
+          \[ \Delta x \cdot \Delta(mv) \ge \frac{h}{4\pi} \] <br /><small
+            >Δx: uncertainty in a particle’s position<br />
+            Δ(mυ): uncertainty in particle momentum</small
+          >
+        </div>
+      </section>
+
+      <section class="card" id="7_6">
+        <h2>7-6 Quantum Number 量子數</h2>
+        <ul>
+          <li>orbital 軌域</li>
+          <li>momentum 動量</li>
+        </ul>
+        <h3>Principal quantum number 主量子數(n)</h3>
+        <p>
+          relate to the size and energy of the orbital<br />
+          n = 1, 2, 3, ...
+        </p>
+        <h3>Angular momentum quantum number 角動量量子數(𝓵)</h3>
+        <p>relate to the shape ofatomic orbit-als <br />𝓵 = 0, 1, 2, ... (n-1)</p>
+        <div style="overflow: auto">
+          <table>
+            <tr>
+              <th>𝓵</th>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>letter used</th>
+              <td>s</td>
+              <td>p</td>
+              <td>d</td>
+              <td>f</td>
+              <td>g</td>
+            </tr>
+          </table>
+        </div>
+        <h3>Magnetic quantum number 磁量子數(m<sub>𝓵</sub>)</h3>
+        <p>
+          related to the orientation of an orbital in space relative to the other orbitals in the atom<br />m<sub
+            >𝓵</sub
+          >
+          = -𝓵, ..., 0, ..., 𝓵
+        </p>
+        <hr />
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>n</th>
+                <th>𝓵</th>
+                <th>sublevel designer</th>
+                <th>m<sub>𝓵</sub></th>
+                <th>numbers of orbitals</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>1s</td>
+                <td>0</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td rowspan="2">2</td>
+                <td>0</td>
+                <td>2s</td>
+                <td>0</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>2p</td>
+                <td>-1,0,1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td rowspan="3">3</td>
+                <td>0</td>
+                <td>3s</td>
+                <td>0</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>3p</td>
+                <td>-1,0,1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>3d</td>
+                <td>-2 ~ 2</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td rowspan="4">4</td>
+                <td>0</td>
+                <td>4s</td>
+                <td>0</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>4p</td>
+                <td>-1,0,1</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>4d</td>
+                <td>-2 ~ 2</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>4f</td>
+                <td>-3 ~ 3</td>
+                <td>7</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="7_7">
+        <h2>7-7 Orbital Shapes and Energy</h2>
+      </section>
+
+      <section class="card" id="7_8">
+        <h2>7-8 Electron Spin and the Pauli Principle</h2>
+        <h3>Electron spin quantum number 自旋量子數(m<sub>s</sub>)</h3>
+        <p>
+          related to the direction of electron spin<br />
+          ml<sub>s</sub> = +1/2 or -1/2
+        </p>
+        <h3>Paul exclusion priciple</h3>
+        <p>同個原子裡不會有兩個電子擁有一樣的四個量子數</p>
+      </section>
+
+      <section class="card" id="7_9">
+        <h2>7-9 Polyelectonic Atoms 多電子原子</h2>
+        <h3>Polyelectronic Atoms</h3>
+        <p>energy level order in polyelectronic atoms<br />E(ns)&gt;E(np)&gt;E(nd)&gt;E(nf)</p>
+        <h3>Penetration effect 穿透效應</h3>
+        <p>軌域較靠近原子核處, 能量較低, 電子優先填入</p>
+      </section>
+
+      <section class="card" id="7_11">
+        <h2>7-11 The Aufbau Principle and the Periodic Table</h2>
+        <ul>
+          <li>core electron 核電子</li>
+          <li>valence electrons 價電子</li>
+        </ul>
+        <h3>Aufbau principle 構築原理</h3>
+        <p>新增電子會先填入低能量軌域, 軌域填滿後才會填入更高能量軌域</p>
+        <img src="picture_chemistry/C7_11.png" alt="Be" width="100%" />
+        <h3>Hund's rule 洪德定律</h3>
+        <p>當電子排序在能量相同的不同軌域, 會優先佔據不同軌域且自旋方向相同</p>
+        <img src="picture_chemistry/C7_11_2.png" alt="C" width="100%" />
+      </section>
+
+      <section class="card" id="7_12">
+        <h2>7-12 Periodic Trends in Atomics Properties</h2>
+        <h3>Ionization energy 游離能</h3>
+        <p>從原子移出一個電子所需的能量</p>
+        <section class="formula">X<sub>(g)</sub> &rarr; X<sup>+</sup><sub>(g)</sub> + e<sup>-</sup></section>
+        <p>
+          the first ionization energy (I<sub>1</sub>)<br />
+          &rarr; 2A &gt; 3A, 5A &gt; 6A
+        </p>
+        <img src="picture_chemistry/C7_12.png" alt="first ionization energy" width="100%" />
+        <h3>electron affinity 電子親和力</h3>
+        <p>原子吸引電子結合成陰離子時的能量變化</p>
+        <section class="formula">X<sub>(g)</sub> + e<sup>-</sup> &rarr; X<sup>-</sup><sub>(g)</sub></section>
+        <h3>Aomic radius 原子半徑</h3>
+        <p>同一族, 原子序越大, 原子半徑越大<br />同個週期, 原子序越大, 原子半徑越小</p>
+        <img src="picture_chemistry/C7_12_2.png" width="100%" />
+      </section>
+
+      <section class="card" id="7_13">
+        <h2>7-13 The Properties of a Group: The Alkali Metals 鹼金屬</h2>
+        <p>
+          elements in the periodic table are divided into metals and nonmetals<br />
+          <b>metals</b> have low ionization energies<br />
+          <b>Nonmetals</b> have large ionization energies and negative electron affinities<br />
+          <b>Metalloids(semimetals)</b>: Elements that exhibit both metallic and nonmetallic properties​
+        </p>
+        <img src="picture_chemistry/C7_13.png" width="100%" />
+        <img src="picture_chemistry/C7_13_2.png" width="100%" />
+        <h3>The alkali metals 鹼金屬</h3>
+        <ul>
+          <li><b>Li, Na, K, Rb, Cs, and Fr</b></li>
+          <li>the <b>most chemically reactive</b> of the metal</li>
+          <li>react with nonmetals to form ionic solids</li>
+          <li>because of the small atomic radius of hydrogen, it exhibits nonmetallic properties.</li>
+        </ul>
+        <img src="picture_chemistry/C7_13_3.png" width="100%" />
+        <ul>
+          <li>alkaline earth metal 鹼土金屬</li>
+          <li>halogen 鹵素</li>
+          <li>noble gases 惰性氣體</li>
+        </ul>
+      </section>
+
+      <section class="card" id="8_1">
+        <h2>8-1 Types of Chemical Bonds</h2>
+        <ul>
+          <li>bond energy 鍵能</li>
+          <li>bond lengh 鍵長</li>
+          <li>ionic bonding 離子鍵</li>
+          <li>ionic compound 離子化合物</li>
+          <li>covalent Bonding 共價鍵</li>
+          <li>polar covalent Bonding 極性共價鍵</li>
+        </ul>
+
+        <h3>Coulomb's law</h3>
+        <p>用於計算一對離子間的能量</p>
+        <section class="formula">E = (2.31*10<sup>-19</sup> J• nm)(Q<sub>1</sub>Q<sub>2</sub>/r)</section>
+        <ul>
+          <li>r: 離子中心距離</li>
+          <li>Q1, Q2: 離子電荷數</li>
+        </ul>
+
+        <h3>interaction between two hydrogen atoms: important features(略)</h3>
+        <ul>
+          <li>net potential energy</li>
+          <li>kinetic energy</li>
+          <li>zero point of energy</li>
+          <li>very short distances</li>
+          <li>bond length</li>
+        </ul>
+        <hr />
+        <p>
+          Ex. What type of bond is formed when electrons are unequally shared by nuclei?<br />
+          a. Ionic<br />
+          b. covalent<br />
+          c. polar ionic<br />
+          <b>d. polar covalent</b><br />
+          e. none of the above
+        </p>
+      </section>
+
+      <section class="card" id="8_2">
+        <h2>8-2 Electronegativity 電負度</h2>
+        <p>分子中原子吸引共用電子的能力</p>
+        <p>
+          一個假想分子 HX<br />H 和 X 原子的相對電負性透過比較測得的 H—X 鍵能與預期的 H—X 鍵能後得出<br />實際鍵能與預期鍵能之差(Δ)由下列公式得出
+        </p>
+        <section class="formula">Δ = (H - X)<sub>act</sub> - (H - X)<sub>exp</sub></section>
+        <p>
+          若H和X的電負性相等, 即Δ = 0<br />
+          其電子均勻共享, 為非極性鍵<br />
+          若X的電負性大於H<br />
+          電子向 X 移動, 為極性鍵<br />
+          形成部分電荷: H δ<sup>+</sup>, X δ<sup>-</sup><br />
+          電負度差異越大, 離子性越高
+        </p>
+        <img src="picture_chemistry/C8_2.png" width="100%" />
+        <hr />
+        <p>
+          Ex. Which of the following elements forms the most ionic bond with chlorine?<br />
+          <b>a. K</b><br />
+          b. Al<br />
+          c. P<br />
+          d. Kr<br />
+          e. Br
+        </p>
+        <hr />
+        <p>
+          Ex. As a general pattern, electronegativity is inversely related to:<br />
+          a. ionization energy<br />
+          <b>b. atomic size</b><br />
+          c. the polarity of the atom<br />
+          d. the number of neutrons in the nucleu
+        </p>
+      </section>
+
+      <section class="card" id="8_3">
+        <h2>8-3 Bond Polarity and Dipole Moments 極性與偶極矩</h2>
+        <p>
+          bond dipole (鍵偶極) : 表示單一化學鍵的極性方向
+          <br />
+          molecular dipole 分子偶極 : 分子中所有鍵偶極的向量總和
+        </p>
+        <h3>dipole moments</h3>
+        <p></p>
+        <hr />
+        <p>
+          Ex. Which of the following is the most polar bond without being considered ionic?<br />
+          <b>a. C - O</b><br />
+          b. Mg - O<br />
+          c. N - O<br />
+          d. O - O<br />
+          e. O - F
+        </p>
+        <hr />
+        <p>
+          Ex. What is the correct order of the following bonds in terms of decreasing polarity? <br />
+          <b> a. N—Cl, P—Cl, As—Cl</b><br />
+          b. P—Cl, N—Cl, As—Cl<br />
+          c. As—Cl, N—Cl, P—Cl<br />
+          d. P—Cl, As—Cl, N—Cl<br />
+          e. As—Cl, P—Cl, N—Cl
+        </p>
+        <hr />
+        <p>
+          Ex. which case is the bond polarity incorrect?<br />
+          a. <sup>δ+</sup>H - F<sup>δ-</sup><br />
+          b. <sup>δ+</sup>K - O<sup>δ-</sup><br />
+          c. <sup>δ+</sup>Mg - H<sup>δ-</sup><br />
+          <b>d.<sup>δ+</sup>Cl - I<sup>δ-</sup></b
+          ><br />
+          e. δ<sup>+</sup>Si - S<sup>δ-</sup><br />
+        </p>
+      </section>
+
+      <section class="card" id="8_4">
+        <h2>8-4 Ions: Electron Configurations and Sizes 離子 電子分布與尺寸</h2>
+        <h3>Generalizations that apply to electron configurations in stable Compounds</h3>
+        <p>
+          共價鍵以電子共享的方式使兩邊原子形成八隅體<br />離子鍵使金屬原子失去電子, 非金屬原子獲得電子,
+          使兩個原子滿足八隅體
+        </p>
+        <ul>
+          <li>1A族失去1電子</li>
+          <li>2A族失去2電子</li>
+          <li>3A族失去3電子</li>
+          <li>7A族得到1電子</li>
+          <li>6A得到2電子</li>
+        </ul>
+        <h3>Ionic size</h3>
+        <p>
+          同個元素的半徑大小: 陽離子 &lt; 原子 &lt; 陰離子<br />
+          相同電子數的離子半徑大小: 價數低 &gt; 價數高
+        </p>
+        <hr />
+        Ex. Which of the following has the largest radius?<br />
+        <b>a. S<sup>2-</sup></b
+        ><br />
+        b.Cl<sup>-</sup><br />
+        c. Ar<sup></sup><br />
+        d. K<sup>+</sup><br />
+        e. Ca<sup>2+</sup><br />
+      </section>
+
+      <section class="card" id="8_5">
+        <h2>8-5 Effects in Binary Ionic Compounds</h2>
+        <ul>
+          <li>cation 陽離子</li>
+          <li>anion 陰離子</li>
+          <li>endothermic 吸熱</li>
+          <li>exothermic 放熱</li>
+        </ul>
+        <h3>Lattice energy 晶格能</h3>
+        <p>氣態離子之間形成離子固體的能量變化</p>
+        <section class="formula">
+          M<sup>+</sup><sub>(g)</sub> + X<sup>-</sup><sub>(g)</sub> &rarr; MX<sub>(s)</sub>
+        </section>
+        <img src="picture_chemistry/C8_5.png" width="100%" />
+        <p></p>
+        <p>晶格能以庫侖定律式表示</p>
+        <section class="formula">
+          <p>Lattice energy = k(Q<sub>1</sub>Q<sub>2</sub>/r)</p>
+          <ul>
+            <li>k: 比例常數</li>
+            <li>Q<sub>1</sub>Q<sub>2</sub>: 離子電荷數</li>
+            <li>r: 離子間最短距離</li>
+          </ul>
+        </section>
+        <p>晶格能與電荷大小成正比, 與離子間距離成反比</p>
+        <hr />
+        <p>
+          Ex.Which of the following ionic compounds has the largest lattice energy (i.e., the lattice energy most
+          favorable to a stable lattice)?<br />
+          a. CsI<br />
+          b. NaCl<br />
+          c. LiF<br />
+          d. CsF<br />
+          <b>e. MgO</b>
+        </p>
+      </section>
+
+      <section class="card" id="8_6">
+        <h2>8-6 Partial Ionic Character of Covalent Bonds</h2>
+        <img src="picture_chemistry/C8_6.png" width="100%" />
+      </section>
+
+      <section class="card" id="8_7">
+        <h2>8-7 The Covalent Chemical Bond: A Model</h2>
+      </section>
+
+      <section class="card" id="8_8">
+        <h2>8-8 Covalent Bond Energies and Chemical Reactions 共價鍵能與化學反應</h2>
+        <img src="picture_chemistry/C8_8.png" width="100%" />
+        <h3>Types of bonds</h3>
+        <p>鍵數增加, 鍵長減少</p>
+        <ul>
+          <li>single bond 單鍵</li>
+          <li>double bond 雙鍵</li>
+          <li>triple bond 三鍵</li>
+        </ul>
+        <img src="picture_chemistry/C8_8_2.png" width="100%" />
+        <h3>Enthalpy change for a reaction</h3>
+        <p>
+          bond energy 鍵能: 打斷一莫耳氣態分子間的特定化學鍵其所需能量, (恆為正值, 吸熱) 而形成鍵結時會釋放能量(放熱)
+        </p>
+        <section class="formula">
+          <p>&Delta;H = &sum;n &times; D(bonds broken) - &sum;n &times; D(bonds formed)</p>
+          <ul>
+            <li>Σ: Sum of terms</li>
+            <li>D: bond energy per mole of bonds, always has a positive sign</li>
+            <li>n: moles of a particular type of bond</li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="card" id="8_9">
+        <h2>8-9 The Localized Electron Bonding Model 局部電子鍵結模型</h2>
+        <ul>
+          <li>lone pair 孤對電子</li>
+          <li>bonding pair 鍵結電子</li>
+          <li>octet rule 八隅體</li>
+        </ul>
+        <h3>Localized electron(LE) model</h3>
+        <p>
+          利用路易斯結構描述分子中的價電子排列<br />
+          利用VSEPR預測分子的幾何構造<br />
+          描述原子用於共享電子或容納孤對電子的原子軌道類型
+        </p>
+      </section>
+
+      <section class="card" id="8_10">
+        <h2>8-10 Lewis Structures 路易斯結構</h2>
+        <p>
+          畫出價電子, 鍵結電子, 孤對電子的表示法<br />
+          分子中心原子電負度低 , 外圍電子電負度高<br />其滿足H的二隅體與C N O F的八隅體規則
+        </p>
+        <h3>Steps</h3>
+        <p>計算所有原子的價電子數總和, 用單鍵連接所有原子, 再用剩餘電子滿足八隅體規則</p>
+        <hr />
+        <p>
+          Which of the following does not contain at least one double bond in the Lewis structure?<br />
+          a. H<sub>2</sub>CO<br />
+          b. C<sub>2</sub>H<sub>4</sub><br />
+          c. CO<sub>2</sub><br />
+          <b>d. C<sub>3</sub>H<sub>8</sub></b>
+        </p>
+      </section>
+
+      <section class="card" id="8_11">
+        <h2>8-11 Exceptions to the Octet Rule 八隅體規則的例外</h2>
+        <p>
+          缺電子(incomplete octet): 中心原子少於8顆電子(ex: BF<sub>3</sub>)<br />
+          奇數電子(odd-electron): 價電子數之和為奇數(ex: NO)<br />
+          擴張八隅體(expented octet): 利用d軌域使中心原子多於8顆電子(ex: SF<sub>6</sub> , PCl<sub>5</sub> , I<sub>3</sub
+          ><sup>-</sup>
+        </p>
+        <hr />
+        <p>
+          Which of the following has a Lewis structure most like that of a. CO<sub>3</sub><sup>2-</sup> ?<br />
+          b. CO<sub>2</sub><br />
+          c. SO<sub>3</sub><sup>2-</sup><br />
+          <b>d. NO<sub>3</sub><sup>-</sup></b
+          ><br />
+          e. O<sub>3</sub><br />
+          NO<sub>2</sub>
+        </p>
+        <hr />
+        <p>
+          Ex. Which molecule or ion violates the octet rule?<br />
+          a. H<sub>2</sub>O<br />
+          b. NO<sub>3</sub><sup>-</sup><br />
+          c. PF<sub>3</sub><br />
+          <b>d. I<sub>3</sub><sup>-</sup></b
+          ><br />
+          e. None of these
+        </p>
+      </section>
+
+      <section class="card" id="8_12">
+        <h2>8-12 Resonance 共振</h2>
+        <h3>Resonance</h3>
+        <p>當單一路易斯結構式無法描述鍵結時, 以多個共振結構表示</p>
+        <h3>Formal charge 形式電荷</h3>
+        <p>用於評估路易斯結構的合理性</p>
+        <ul>
+          <li>形式電荷總和為0(中性分子)或總電荷(離子)</li>
+          <li>盡量使每個原子形式電荷接近</li>
+          <li>負的形式電荷應落在電負度最大的原子上</li>
+        </ul>
+        <p>Formal charge = 價電子數 - 孤對電子數 - 鍵結數</p>
+        <hr />
+        <p>
+          Ex. How many resonance structures does the molecule SO<sub>2</sub> have?<br />
+          <b>a. 0</b><br />
+          b. 1<br />
+          c. 2<br />
+          d. 3<br />
+          e. 4
+        </p>
+      </section>
+
+      <section class="card" id="8_13">
+        <h2>8-13 Molecular Structure: The VSEPR Model</h2>
+        <h3>The valence shell electron-pair repulsion 價殼層電子對互斥理論(VSEPR)</h3>
+        <div style="overflow: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>structure</th>
+                <th></th>
+                <th>bond angle</th>
+                <th>hybridization</th>
+                <th>example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>linear 直線</th>
+                <td>(AB₂)(AB₂E₃)</td>
+                <td>180°</td>
+                <td>sp</td>
+                <td>BeCl<sub>2</sub> I<sub>3</sub><sup>-</sup></td>
+              </tr>
+              <tr>
+                <th>trigonal planar 平面三角形</th>
+                <td>(AB₃)</td>
+                <td>120°</td>
+                <td>sp<sup>2</sup></td>
+                <td>BF<sub>3</sub></td>
+              </tr>
+              <tr>
+                <th>V-shaped 角形</th>
+                <td>(AB₂E)(AB₂E₂)</td>
+                <td></td>
+                <td></td>
+                <td>H<sub>2</sub>O</td>
+              </tr>
+              <tr>
+                <th>tetrahedral 四面體形</th>
+                <td>(AB₄)</td>
+                <td>109.5°</td>
+                <td>sp<sup>3</sup></td>
+                <td>CH<sub>4</sub></td>
+              </tr>
+              <tr>
+                <th>trigonal pyramidal 三角錐形</th>
+                <td>(AB₃E)</td>
+                <td></td>
+                <td></td>
+                <td>NH<sub>3</sub> NF<sub>3</sub></td>
+              </tr>
+              <tr>
+                <th>trigonal bipyramidal 雙三角錐形</th>
+                <td>(AB₅)</td>
+                <td>90° 120°</td>
+                <td></td>
+                <td>PCl<sub>5</sub></td>
+              </tr>
+              <tr>
+                <th>see-saw 蹺蹺板形</th>
+                <td>(AB₄E)</td>
+                <td></td>
+                <td></td>
+                <td>SF<sub>4</sub></td>
+              </tr>
+              <tr>
+                <th>T-shaped T字形</th>
+                <td>(AB₃E₂)(AB₃E₃)</td>
+                <td></td>
+                <td></td>
+                <td>XeOF<sub>2</sub></td>
+              </tr>
+              <tr>
+                <th>octahedral 八面體形</th>
+                <td>(AB₆)</td>
+                <td>90°</td>
+                <td></td>
+                <td>PCl<sub>6</sub><sup>-</sup></td>
+              </tr>
+              <tr>
+                <th>square pyramidal 方錐體</th>
+                <td>(AB₅E)</td>
+                <td></td>
+                <td></td>
+                <td>IF<sub>5</sub></td>
+              </tr>
+              <tr>
+                <th>square planar 平面四邊形</th>
+                <td>(AB₄E₂)</td>
+                <td>90°</td>
+                <td></td>
+                <td>XeF<sub>4</sub></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>The VSEPR model and multiple bonds</h3>
+        <p></p>
+        <hr />
+        <p>Ex. Which of the following molecules is polar?<br /></p>
+        <ol>
+          <li>XeF<sub>4</sub></li>
+          <li>XeF<sub>2</sub></li>
+          <li>BF<sub>3</sub></li>
+          <li class="hightlight">NF<sub>3</sub></li>
+        </ol>
+        <hr />
+        <p>Ex. Which of the following molecules does not have a dipole moment?<br /></p>
+        <ol>
+          <li>H<sub>2</sub>S</li>
+          <li>H<sub>2</sub>O</li>
+          <li class="hightlight">H<sub>2</sub>Xe</li>
+          <li>All of these have a dipole moment</li>
+          <li>None of these has a dipole moment</li>
+        </ol>
+
+        <hr />
+        <p>Ex. Which of the following molecules has a dipole moment?<br /></p>
+        <ol type="a">
+          <li>CF4</li>
+          <li class="hightlight">SF4</li>
+          <li>XeF4</li>
+          <li>All of these have a dipole moment</li>
+          <li>None of these has a dipole moment</li>
+        </ol>
+      </section>
+
+      <section class="card" id="9_1">
+        <h2>9-1 Hybridization and the Localized Electron Model</h2>
+        <h3>σ (Sigma) 鍵：</h3>
+        <p>軌域「頭對頭 (head-to-head)」重疊，電子密度集中在兩核之間。所有單鍵都是 σ 鍵。</p>
+
+        <h3>π (Pi) 鍵：</h3>
+        <p>平行的 p 軌域「肩並肩 (side-to-side)」重疊，電子密度在兩核連線的上方和下方。</p>
+
+        <ul>
+          <li>
+            2 對 (Linear) → sp
+            <img src="picture_chemistry/C9_1_5.png" width="100%" />
+            <img src="picture_chemistry/C9_1_6.png" width="100%" />
+          </li>
+          <li>
+            3 對 (Trigonal Planar) → sp<sup>2</sup>
+            <img src="picture_chemistry/C9_1_3.png" width="100%" />
+            <img src="picture_chemistry/C9_1_4.png" width="100%" />
+          </li>
+          <li>
+            4 對 (Tetrahedral) → sp<sup>3</sup>
+            <img src="picture_chemistry/C9_1.png" width="100%" />
+            <img src="picture_chemistry/C9_1_2.png" width="100%" />
+          </li>
+          <li>5 對 (Trigonal Bipyramidal) → dsp<sup>3</sup></li>
+          <li>6 對 (Octahedral) → d<sup>2</sup>sp<sup>3</sup></li>
+        </ul>
+      </section>
+
+      <section class="card" id="9_2">
+        <h2>9-2 The Moleculer Orbital Model</h2>
+        <ul>
+          <li>MO 理論：原子軌域 (AO) 結合成「分子軌域 (MO)」。</li>
+          <li>鍵結軌域 (Bonding MO)：能量比原 AO 低，有助於鍵結 (如 σ<sub>2p</sub>, π<sub>2p</sub>)。</li>
+          <li>反鍵結軌域 (Antibonding MO)：能量比原 AO 高，有礙於鍵結 (如 σ*<sub>2p</sub>, π*<sub>2p</sub>)。</li>
+          <li>
+            MO 能量圖 (MO Energy Diagram)：<br />
+            1. B<sub>2</sub>, C<sub>2</sub>, N<sub>2</sub> (有 s-p mixing)：π(2p) 在 σ(2p) 之下<br />
+            2. O<sub>2</sub>, F<sub>2</sub>, Ne<sub>2</sub> (無 s-p mixing)：σ(2p) 在 π(2p) 之下
+          </li>
+          <li>
+            鍵序 (Bond Order)：<br />
+            Bond Order = (1/2) × [ (鍵結電子數) − (反鍵結電子數) ]<br />
+            (鍵序越大，鍵越強，鍵長越短)
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="9_3">
+        <h2>9-3 Bonding in Homonuclear Diotomic Molecules</h2>
+
+        磁性 (Magnetism):<br />
+        <ul>
+          <li>順磁性 (Paramagnetic)：有未成對電子, 會被磁場吸引(如 B<sub>2</sub>, O<sub>2</sub>)</li>
+          <li>
+            反磁性 (Diamagnetic)：所有電子皆成對, 會被磁場微弱排斥(如 C<sub>2</sub>, N<sub>2</sub>, F<sub>2</sub>)
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="10_1">
+        <h2>10-1 Review of States of Matter</h2>
+        <ul>
+          <li>solid 固體</li>
+          <li>liquid 液體</li>
+          <li>gas 氣體</li>
+        </ul>
+      </section>
+
+      <section class="card" id="10_2">
+        <h2>10-2 Intramolecular Forces 分子間作用力</h2>
+        <ul>
+          <li>convalent bonding 共價鍵</li>
+          <li>ionic bonding 離子鍵</li>
+        </ul>
+        <h3>Dipole-dipole force 偶極-偶極力</h3>
+        <p>具有偶極矩(dipole moments)的分子之間的庫侖靜電力, 強度約為共價鍵或離子鍵的1%</p>
+        <h3>Hydrogen bonding 氫鍵</h3>
+        <p>
+          由氫原子跟高電負度原子(N、O、F)結合時形成. 因分子極性強, 且氫原子體積小, 分子間距離近.
+          使這種偶極-偶極力特別強, 稱為氫鍵
+        </p>
+        <p>H<sub>2</sub>O, HF因為分子間氫鍵, 使分子分離變為氣態的能量較大, 因此沸點較高</p>
+        <img src="picture_chemistry/C10_2.png" width="100%" />
+        <h3>London dispersion force 倫敦分散力</h3>
+        <p>
+          當電子繞著原子核運動時, 會產生瞬時的電子分布不均, 進而產生的瞬時偶極矩可以誘導相鄰原子產生類似的偶極矩,
+          導致原子間產生短暫且較弱的吸引力, 稱為倫敦分散力
+        </p>
+        <p>
+          <b>polarizability 極化率</b><br />
+          表示原子電子雲發生形變形成瞬時偶極矩的難易程度. 通常具有大量電子的原子, 即原子序越大, 極化率越大
+        </p>
+        <h3>Dipole-induced dipole force 偶極-誘導偶極力</h3>
+        <p>由極性分子上的偶極子會在鄰近的非極性分子的電子雲極化形成瞬時偶極矩, 此兩個分子間作用力稱為偶極-誘導偶極力</p>
+        <hr />
+        <p>EX. Which intermolecular force below is the strongest?​</p>
+        <ol>
+          <li class="hightlight">Dipole–dipole forces</li>
+          <li>London dispersion forces</li>
+          <li>Hydrogen bonding</li>
+        </ol>
+        <hr />
+        <p>Ex. Which one of the following is the strongest intermolecular force experienced by noble gases?</p>
+        <ol>
+          <li class="hightlight">London dispersion forces</li>
+          <li>Dipole–dipole attraction</li>
+          <li>Hydrogen bonding</li>
+          <li>Ion–ion interactions</li>
+        </ol>
+        <hr />
+        <p>
+          Ex. Methane (CH4) is a gas, but carbon tetrachloride (CCl4) is a liquid at room conditions<br />Which of the
+          following statements explains this phenomenon?
+        </p>
+        <ol>
+          <li>CCl4 is a polar molecule and CH4 is not</li>
+          <li>CCl4 and CH4 have different geometries and shapes</li>
+          <li>CH4 exhibits hydrogen bonding and CCl4 does not</li>
+          <li>Cl is more electronegative than H</li>
+          <li class="hightlight">None of these statements is correct</li>
+        </ol>
+        <hr />
+        <p>Ex. Which of the following species exhibits the strongest intermolecular forces?</p>
+        <ol>
+          <li>CH<sub>4</sub></li>
+          <li class="hightlight">H<sub>2</sub>O</li>
+          <li>N<sub>2</sub></li>
+          <li>CO</li>
+          <li>He</li>
+        </ol>
+      </section>
+
+      <section class="card" id="10_3">
+        <h2>10-3 The Liquad State</h2>
+        <ul>
+          <li>surface tention 表面張力</li>
+        </ul>
+        <h3>Capillary action 毛細現象</h3>
+        <ul>
+          <li>cohesive forces 內聚力</li>
+          <li>adhesive forces 附著力</li>
+        </ul>
+        <p>液體在細管中自發性上升的現象. 當內聚力大於附著力, 液面呈現凸起; 附著力大於內聚力, 液面呈凹狀</p>
+        <h3>viscosity 黏度</h3>
+        <p>衡量液體流動阻力的指標, 通常分子間作用力大且分子結構複雜的液體具有較高的黏度</p>
+      </section>
+
+      <section class="card" id="10_4">
+        <h2>10-4 An Introduction to Structures and Type of Solids</h2>
+        <ul>
+          <li>Amorphous solids 非晶體固體</li>
+          <li>
+            crystalline solids 晶體固體
+            <ul>
+              <li>simple cubic 簡單立方晶格</li>
+              <li>body centered cubic(bcc) 體心立方晶格</li>
+              <li>face centered cubic(fcc) 面心立方晶格</li>
+            </ul>
+          </li>
+          <li>unit cell 晶胞</li>
+          <li>lattice 晶格</li>
+        </ul>
+        <h3>X-Ray analysis of solids</h3>
+        <p>透過X射線繞射, 確定晶體固體的結構. 其中的平行光束在特定角度所產生的干涉現象可用於測定原子間距</p>
+        <img src="picture_chemistry/C10_4.png" width="100%" />
+        <p class="hightlight">Bragg Equation</p>
+        <section class="formula">\[ nλ = 2dsinθ \]</section>
+        <h3>Types of crystalline solids</h3>
+        <ul>
+          <li>ionic solids 離子固體</li>
+          <li>molecular solids 分子固體</li>
+          <li>
+            atomic solids 原子固體
+            <ul>
+              <li>metallic solids 金屬固體</li>
+              <li>network solids 共價網狀固體</li>
+              <li>Group 8A</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="10_5">
+        <h2>10-5 Structures and Bonding in Metal</h2>
+        <h3>closest packing 最密堆積</h3>
+        <p></p>
+        <p class="hightlight">hexagonal closest packed (hcp) 六方最密堆積</p>
+        <p>aba式排列, 第三層的球直接位於第一層球的上方</p>
+        <img src="picture_chemistry/C10_5.png" width="100%" />
+        <img src="picture_chemistry/C10_5_2.png" width="100%" />
+        <p class="hightlight">cubic closest packed (ccp) 立方最密堆積</p>
+        <p>abc式排列, 第三層的球體不會覆蓋第一層的球體</p>
+        <img src="picture_chemistry/C10_5_3.png" width="100%" />
+        <img src="picture_chemistry/C10_5_4.png" width="100%" />
+        <h3>Packing efficienty 堆積效率</h3>
+        <p>原子數*原子體積/晶格體積</p>
+        <section class="formula">
+          <p>\( \text{simple cubic} \)</p>
+          <p>\( \Rightarrow \frac{4}{3} \pi r^{3} \div (2r)^{3} = \frac{\pi}{6} \approx 0.52 \)</p>
+          <p>\( \text{body centered cubic} \)</p>
+          <p>
+            \( \Rightarrow 2*(\frac{4}{3} \pi r^{3}) \div (\frac{4r}{\sqrt{3}})^{3} = \frac{\sqrt{3} \pi}{8} \approx
+            0.68 \)
+          </p>
+          <p>\( \text{face centered cubic} \)</p>
+          <p>
+            \( \Rightarrow 4*(\frac{4}{3} \pi r^{3}) \div (2 \sqrt{2} r)^{3} = \frac{\sqrt{2} \pi}{6} \approx 0.74 \)
+          </p>
+        </section>
+        <br />
+        <img src="picture_chemistry/C10_5_5.png" width="100%" />
+        <ul>
+          <li>election sea model 電子海模型</li>
+          <li>Band Model or Molecular Orbital (MO) Model</li>
+        </ul>
+        <img src="picture_chemistry/C10_5_6.png" width="100%" />
+        <h3>Metal alloys 合金</h3>
+        <ul>
+          <li>Substitutional alloy 置換型合金</li>
+          部分主體金屬原子被尺寸相似的其他金屬原子所取代
+          <li>Interstitial alloy 填隙型合金</li>
+          在最密堆積的金屬結構中, 部分間隙被小型原子佔據
+        </ul>
+        <img src="picture_chemistry/C10_5_7.png" />
+      </section>
+
+      <section class="card" id="10_6">
+        <h2>10-6 Carbon and Silicon: Network Atomic Solids</h2>
+        <h3>Network solids</h3>
+        <p>含有方向性共價鍵的原子固體</p>
+        <ul>
+          <li>本質上易碎(Brittle in nature)</li>
+          <li>不是有效的熱和電導體(Ineffective conductors of heat and electricity)</li>
+        </ul>
+        <h3>Diamond (鑽石)</h3>
+        <p>每個碳原子被其他碳原子以四面體排列方式環繞, 由 sp<sup>3</sup> 混成碳原子軌域重疊而成</p>
+        <img src="picture_chemistry/C10_6_2.png" />
+        <p>石墨 (Graphite) 可以在 2800°C 的溫度下施加 150,000 atm 的壓力轉化為鑽石</p>
+        <p><b>分子軌域模型 (MO model)</b></p>
+        <p>
+          填充能階(filled levels)與淨空能階(empty levels)之間存在較大能隙(large gap), 電子轉移(electron transfer)困難,
+          為不良導體
+        </p>
+        <img src="picture_chemistry/C10_6.png" />
+        <h3>Graphite (石墨)</h3>
+        <ul>
+          <li>黑色, 為熱和電的導體(conductor of heat and electricity)</li>
+          <li>結構基於碳原子層, 排列成稠合的六元環 (fused six-membered rings)。</li>
+          <li>同一層的每個碳原子被另外三個碳原子以平面三角排列圍繞,鍵角為120度</li>
+        </ul>
+        <img src="picture_chemistry/C10_6_3.png" />
+        <p><b>局部電子模型(localized electron model)</b></p>
+        <p>每個碳原子上的三個 sp<sup>3</sup> 軌域與其他三個碳原子形成 σ 鍵, 剩餘一個 2p 未混成軌域垂直於層平面</p>
+        <img src="picture_chemistry/C10_6_4.png" width="100%" />
+        <h3>Silicon (矽)</h3>
+        <ul>
+          <li>構成地殼化合物的重要成分</li>
+          <li>不同於碳基化合物的長鏈C-C鍵, 穩定的矽化合物包含帶有矽氧鍵S-O的鏈狀結構</li>
+          <li>二氧化矽(Silica, SiO<sub>2</sub>)為最基本的矽氧化合物</li>
+        </ul>
+        <img src="picture_chemistry/C10_6_5.png" />
+        <p>SiO<sub>2</sub>的矽原子通過與四個氧原子形成單鍵，滿足八隅體規則 (octet rule)</p>
+        <h3>Silicates (矽酸鹽)</h3>
+        <p>
+          與SiO<sub>2</sub>相關的化合物, 但其氧矽比大於2:1, 需要陽離子平衡負電荷.
+          因此矽酸鹽含有金屬陽離子和矽氧陰離子(silicon–oxygen anions)
+        </p>
+        <p><b>glass</b></p>
+        <ul>
+          <li>SiO<sub>2</sub>被加熱到1600°C以上並迅速冷卻時形成的無定形固體(amorphous solid)</li>
+          <li>均勻的、非結晶的冷凍溶液 (frozen solution)</li>
+          <li>普通玻璃是在二氧化矽熔體中加入Na<sub>2</sub>CO<sub>3</sub>等物質後冷卻而成</li>
+          <li>性能根據添加劑 (additives) 的不同而變化</li>
+        </ul>
+        <img src="picture_chemistry/C10_6_6.png" width="100%" />
+        <h3>Ceramics (陶瓷)</h3>
+        <p>由黏土(clay)在高溫焙燒下硬化製成的非金屬材料, 具有堅固、易碎以及耐熱和耐化學侵蝕的特性</p>
+        <p><b>黏土的結構</b></p>
+        <p>
+          由水和二氧化碳對礦物長石的風化作用形成. 而當黏土乾燥時, 這些薄片會相互交錯鎖定, 在焙燒 (firing) 過程中,
+          矽酸鹽和陽離子(cations) 形成玻璃狀物質, 將高嶺石晶體結合起來
+        </p>
+        <ul>
+          <li>長石(feldspar): 一種鋁矽酸鹽(aluminosilicate), 風化後形成高嶺石</li>
+          <li>
+            高嶺石(kaolinite): 由微小的薄片組成, 實驗式為Al<sub>2</sub>Si<sub>2</sub>O<sub>5</sub>(OH)<sub>4</sub>
+          </li>
+        </ul>
+        <p><b>陶瓷的用途</b></p>
+        <ul>
+          <li>用於製造噴射發動機和汽車發動機</li>
+          <li>可以通過添加少量有機聚合物(organic polymers)來獲得柔性陶瓷</li>
+          <li>有機聚合物用於生產耐用的發動機零件、柔性超導線和微電子設備、以及義肢裝置</li>
+        </ul>
+        <h3>Semiconductors (半導體)</h3>
+        <p>
+          矽的能隙較小, 在室溫下少量電子可以躍遷到導帶, 使矽成為半導體.
+          在升高溫度或參雜其他元素時電導率(conductivity)增加
+        </p>
+        <p><b>類型</b></p>
+        <ul>
+          <li>n 型半導體 (n-type semiconductor)</li>
+          通過用比主晶體 (host crystal) 原子擁有更多價電子的原子進行摻雜(doping), 從而提高電導率的物質
+          <li>p 型半導體 (p-type semiconductor)</li>
+          用比主晶體原子擁有更少價電子的原子進行摻雜的半導體。
+        </ul>
+        <p>
+          n 型和 p 型半導體可以連接起來形成 p–n 接面 (p–n junction). 構成出色的整流器 (rectifier).
+          <br />整流器: 將交流電 (alternating current) 轉換為脈動直流電 (pulsating direct current) 的裝置。
+        </p>
+        <div>
+          <img src="picture_chemistry/C10_6_7.png" width="100%" />
+        </div>
+      </section>
+      <section class="card" id="10_7">
+        <h2>10-7 Molecular Solids 分子固體</h2>
+        <h3>特徵</h3>
+        <ul>
+          <li>分子內部具有強烈的共價鍵結, 而分子之間則為弱鍵結</li>
+          <li>分子間作用力(intermolecular forces)取決於分子的性質</li>
+          <li>不具有偶極矩(dipole moment)的分子擁有倫敦分散力(London dispersion forces)</li>
+          <li>當有可能形成氫鍵時, 具有偶極矩的分子會展現出更大的分子間作用力</li>
+        </ul>
+      </section>
+
+      <section class="card" id="10_8">
+        <h2>10-8 Ionic Solids 離子固體</h2>
+        <p>離子固體為穩定且高熔點的物質, 由帶相反電荷離子間較強的靜電力維繫在一起</p>
+        <ul>
+          <li>二元離子固體(binary ionic solids)的結構可以通過最密堆積球體(hcp or ccp)來解釋</li>
+          <li>堆積球體旨在最大化靜電吸引力與最小化帶相同電荷離子之間的排斥力</li>
+        </ul>
+        <h3>Types of Holes in Closest Packed Structures</h3>
+        <p><b>Trigonal holes</b></p>
+        <ul>
+          <li>由同一層中的三個球體形成</li>
+        </ul>
+        <img src="picture_chemistry/C10_8.png" />
+        <p><b>Tetrahedral holes</b></p>
+        <ul>
+          <li>當一個球體位於相鄰層的三個球體形成的凹坑中時形成</li>
+          <li>在最密堆積結構中, 四面體孔的數量是堆積陰離子數量的兩倍</li>
+        </ul>
+        <img src="picture_chemistry/C10_8_2.png" />
+        <p><b>Octahedral holes</b></p>
+        <ul>
+          <li>於最密堆積結構中相鄰層的兩組三個球體之間形成</li>
+        </ul>
+        <img src="picture_chemistry/C10_8_3.png" />
+        <h3>Types and properties of solids</h3>
+        <img src="picture_chemistry/C10_8_4.png" />
+        <br />
+        <hr />
+        <p>
+          Ex. A certain metal fluoride crystallizes in such a way that the fluoride ions occupy simple cubic lattice
+          sites, while the metal atoms occupy the body centers of half the cubes
+          <br />
+          What is the formula for this metal fluoride?​
+        </p>
+
+        <ol>
+          <li class="hightlight">MF<sub>2</sub></li>
+          <li>M<sub>2</sub>F</li>
+          <li>MF</li>
+          <li>MF<sub>6</sub></li>
+          <li>MF<sub>8</sub></li>
+        </ol>
+        <hr />
+        <p>Ex. Which of the following statements is incorrect?​</p>
+        <ol>
+          <li>Ionic solids generally have high melting points</li>
+          <li>Ionic solids are insulators</li>
+          <li>The binding forces in a molecular solid include London dispersion forces</li>
+          <li class="hightlight">Molecular solids generally have high melting points</li>
+        </ol>
+        <hr />
+        <p>
+          A certain metal fluoride crystallizes in such a way that the fluoride ions occupy simple cubic lattice sites,
+          while the metal ions occupy the body centers of half the cubes​
+          <br />
+          Which of the following could be the metal ion?
+        </p>
+        <ol>
+          <li class="hightlight">The calcium ion</li>
+          <li>The sodium ion</li>
+          <li>The iron(III) ion</li>
+          <li>The vanadium(IV) ion</li>
+          <li>Any of these ions</li>
+        </ol>
+      </section>
+
+      <section class="card" id="10_9">
+        <h2>10-9 Vapor Pressure and Changes of State 蒸氣壓與型態變化</h2>
+        <h3>Vaporization/Evaporation (汽化/蒸發)</h3>
+        <ul>
+          <li>為液體分子逸出液體表面形成氣體的過程</li>
+          <li>需要能量來克服分子間作用力,本質上是吸熱(endothermic)</li>
+          <li>汽化熱 (\(\Delta H_{\text{vap}}\)): 在1atm壓力下蒸發1莫耳液體所需的能量</li>
+        </ul>
+        <h3>蒸氣壓 (Vapor Pressure)</h3>
+        <p>當冷凝速率等於蒸發速率時, 液體或蒸氣的量不再發生淨變化, 此時系統為動態平衡</p>
+        <ul>
+          <li>平衡點 (equilibrium): 液體或蒸氣的量不再發生淨變化的點</li>
+          <li>冷凝 (condensation): 氣體變成液體的過程</li>
+          <li>平衡蒸氣壓 (equilibrium vapor pressure): 在平衡狀態下蒸氣的壓力</li>
+        </ul>
+        <img src="picture_chemistry/C10_9.png" />
+        <h3>Measurement of Vapor Pressure</h3>
+        <p>蒸氣壓可以根據汞柱高度的變化來確定</p>
+        <div class="formula">\[ P_{\text{vapor}}=P_{\text{atmosphere}}-P_{\text{Hg column}} \]</div>
+        <h3>Vapor Pressure and Liquids</h3>
+        <ul>
+          <li>具有高蒸氣壓的液體是易揮發的(volatile)</li>
+          <li>在開放環境中蒸發發生得很快</li>
+          <li>液體中分子間作用力的大小決定了它的蒸氣壓</li>
+          <li>具有較大莫耳質量(g/mol)的物質具有相對較低的蒸氣壓</li>
+          <li>蒸氣壓隨溫度顯著增加</li>
+          <li>分子必須具有足夠的動能來克服分子間作用力</li>
+        </ul>
+        <h3>Vapor Pressure versus Temperature 蒸氣壓對溫度曲線</h3>
+        <div class="formula">
+          <p>\[ \displaystyle \ln (P_{vap}) = -\frac{\Delta H_{vap}}{R}\left( \frac{1}{T}\right) + C \]</p>
+        </div>
+        <ul>
+          <li>\( \text{T}\) - 溫度 - 單位為克耳文 (Kelvin).</li>
+          <li>\(\Delta H_{\text{vap}}\) - 汽化焓 - (Enthalpy of vaporization)</li>
+          <li>\( \text{R}\) - 通用氣體常數 (Universal gas constant)</li>
+          <li>\( \text{C}\) - 給定液體的特徵常數 (Constant characteristic of a given liquid)</li>
+        </ul>
+        <h3>The Clausius–Clapeyron equation</h3>
+        <p>
+          已知 \(\Delta H_{\text{vap}}\) 和某溫度下的 \(P_{\text{vap}}\) 值時, 就可以計算出另一溫度下的
+          \(P_{\text{vap}}\) 值. 在溫度 \(T_{1}\) 和 \(T_{2}\) 下
+        </p>
+        <div class="formula">
+          <p>
+            \[ \displaystyle \text{ln}\left(\frac{P_{\text{vap},T_{2}}}{P_{\text{vap},T_{1}}}\right)=\frac{\Delta
+            H_{\text{vap}}}{R}\left(\frac{1}{T_{1}}-\frac{1}{T_{2}}\right)\]
+          </p>
+        </div>
+        <h3>Sublimation 昇華</h3>
+        <p>
+          固體也具有蒸氣壓, 而固體不經過液態直接變為氣態的過程則稱為昇華. 如乾冰 (dry ice) 和碘 (iodine)會有昇華現象.
+        </p>
+        <h3>Changes of State</h3>
+        <img src="picture_chemistry/C10_9_2.png" />
+        <ul>
+          <li>加熱曲線 (heating curve): 在能量以恆定速率添加的過程中, 溫度隨時間變化的圖</li>
+          <li>熔點(melting point): 固體和液體具有相同蒸氣壓時的溫度</li>
+          <li>熔化熱/熔解焓(heat of fusion / enthalpy of fusion): 固體在熔點時的焓變</li>
+          <li>正常沸點 (normal boiling point) 液體蒸氣壓為 1 atm 時的溫度</li>
+          <li>正常熔點 (normal melting point) 在 1 atm 壓力下, 固態和液態蒸氣壓相同的溫度</li>
+          <li>過冷(supercooled): 溫度低於熔點時, 分子卻沒有達到固態所需的有序度, 因此仍為液態</li>
+          <li>
+            過熱(superheated): 液體中的蒸氣壓&gt;大氣壓, 其氣泡在液體中形成, 並在到達表面之前破裂, 導致突沸 (bumping)
+          </li>
+        </ul>
+        <hr />
+        <p>Ex. Which of the following would you expect to have the lowest vapor pressure?</p>
+        <ol>
+          <li>CH<sub>3</sub>OCH<sub>3</sub></li>
+          <li>CH<sub>3</sub>CH<sub>2</sub>OH</li>
+          <li>CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub></li>
+          <li>CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub></li>
+          <li class="hightlight">H<sub>2</sub>O</li>
+        </ol>
+        <hr />
+        <p>Ex. What is the vapor pressure of water at 70°C?</p>
+        <ol>
+          <li>5.00 atm</li>
+          <li>1.20 atm</li>
+          <li>1.00 atm</li>
+          <li class="hightlight">0.31 atm</li>
+        </ol>
+      </section>
+      <section class="card" id="10_10">
+        <h2>10-10 Phase Diagrams 三相圖</h2>
+        <p>表示物質的相態(phases) 隨溫度和壓力變化的一種方法</p>
+        <ul>
+          <li>三相點 (Triple point)</li>
+          所有三個相 (phases) 同時存在的溫度
+          <li>臨界點 (Critical point)</li>
+          由臨界壓力和臨界溫度定義的點
+          <li>臨界壓力 (Critical pressure)</li>
+          在臨界溫度下產生液化所需的壓力
+          <li>臨界溫度 (Critical temperature)</li>
+          超過後無論施加多大壓力, 蒸氣都無法液化時的溫度
+        </ul>
+        <img src="picture_chemistry/C10_10.png" />
+        <ul>
+          <li>\(T_{m}\) - 正常熔點</li>
+          <li>\(T_{3}\) 和 \(P_{3}\) - 三相點</li>
+          <li>\(T_{b}\) - 正常沸點</li>
+          <li>\(T_{c}\) - 臨界溫度</li>
+          <li>\(P_{c}\) - 臨界壓力</li>
+        </ul>
+        <h3>Phase Diagram for Water - Observations</h3>
+        <p>
+          在施加壓力時, 體積會減小\( \Rightarrow \)固體/液體邊界線具有負斜率 (negative slope) \( \Rightarrow \)
+          同質量的冰比同質量的液態水體積更大
+        </p>
+        <h3>Van der Waals Equation 凡得瓦方程式</h3>
+        <p>
+          修正「動力學分子理論」(kinetic molecular theory) 中所做的假設,需考慮氣體的粒子間吸引力 (interparticle
+          attractions). 加入了凡得瓦常數\( \text{ a } \)修正
+        </p>
+        <div class="formula">\[ \displaystyle P_{\text{ideal}} = P_{\text{obs}} + a\left(\frac{n}{V}\right)^{2}\]</div>
+      </section>
+
+      <section class="card">
+        <h2 id="20_1">20-1 Survey of the Representative Elements</h2>
+        <h3>Reviewing the periodic table</h3>
+        <ul>
+          <li>代表元素 (representative elements): 化學性質由價層的 s 和 p 電子決定 指定為第1A族至第8A族</li>
+          <li>過渡金屬 (transition metals): 對應於填充 d 軌域產生. 位於週期表的中心</li>
+          <li>鑭系元素 (lanthanides): 對應於填充 4f 軌域</li>
+          <li>錒系元素 (actinides): 對應於填充 5f 軌域</li>
+          <li>類金屬 (metalloids / semimetals): 週期表中金屬和非金屬分界線沿線的元素.同時展現金屬和非金屬的特性</li>
+        </ul>
+
+        <h3>Differentiating Metals from Nonmetals</h3>
+        <p><b>Metals</b></p>
+        <ul>
+          <li>通過失去價電子 (valence electrons)形成陽離子 (cations)</li>
+          <li>表現出前一個週期 (preceding period)惰性氣體 (noble gas)的電子組態</li>
+        </ul>
+        <p><b>Nonmetals</b></p>
+        <ul>
+          <li>通過獲得電子形成陰離子 (anions)</li>
+          <li>表現出與其在同一週期的惰性氣體的電子組態</li>
+        </ul>
+
+        <h3>Atomic Size and Group Anomalies</h3>
+        <p>同一族中的第一個元素與第二個元素因原子半徑的差異, 導致第一個元素表現出不同的性質</p>
+        <p><b>Group 1A</b></p>
+        <ul>
+          <li>氫 (Hydrogen) 是非金屬, 鋰 (lithium) 是活潑金屬 (active metal)</li>
+          <li>氫可以與非金屬形成共價鍵(covalent bonds)</li>
+          <li>第 1A 族的其他成員通過失去價電子, 與非金屬形成離子化合物中的 1<sup>+</sup> 陽離子 </li>
+        </ul>
+        <p><b>Group 2A</b></p>
+        <ul>
+          <li>除氧化鈹 (beryllium oxide)是兩性 (amphoteric)外, 鹼土金屬氧化物均為鹼性 (basic)</li>
+          <li>除氧化鈹具有相當大的共價特性外, 所有2A 族金屬氧化物都是具高度離子性的</li>
+        </ul>
+        <p><b>Group 3A</b></p>
+        <p>硼 (Boron) 表現為非金屬, 有時表現為類金屬 (semimetal). 而所有其他 3A 族元素均為活潑金屬</p>
+        <p><b>Group 4A</b></p>
+        <p>
+          碳 (Carbon) 和矽 (silicon) 具有不同的化學性質. 碳化合物包含 C—C 鍵鏈, 但矽化合物主要包含 Si—O 鍵, 即形成 \(\pi
+          \) 鍵的能力不同 
+        </p>
+        <p><b>Group 5A</b></p>
+        <ul>
+          <li>元素氮以雙原子分子 N<sub>2</sub> 形式存在, 但元素磷形成更大的原子聚集體</li>
+          <li>N 可以形成強 \(\pi \) 鍵, 但 P 不能</li>
+        </ul>
+        <p><b>Group 6A</b></p>
+        <ul>
+          <li>元素氧以具有雙鍵的 O<sub>2</sub> 分子形式存在, 這是其最穩定的形式</li>
+          <li>硫原子形成僅包含單鍵的更大聚集體</li>
+        </ul>
+        <p><b>Group 7A</b></p>
+        <ul>
+          <li>氟 (Fluorine)的電子親和力小於氯 (chlorine)</li>
+          <li>氟 2p 軌域的小尺寸導致較大的電子間排斥力</li>
+        </ul>
+
+        <h3>Abundance</h3>
+        <p>約四分之一的元素自然存在於其游離態 (free states). 其餘大多數元素以化合態 (combined state) 存在</p>
+        <p><b>The 18 Most Abundant Elements in the Earth's Crust, Oceans, and Atmosphere</b></p>
+        <img src="picture_chemistry/C20_1.png" />
+        <p><b>Abundance of Elements in the Human Body</b></p>
+        <img src="picture_chemistry/C20_1_2.png" />
+
+        <h3>Preparation</h3>
+        <p><b>冶金學 (Metallurgy)</b></p>
+        <ul>
+          <li>從礦石中提取金屬的過程</li>
+          <li>涉及將離子還原為其元素金屬</li>
+          <li>碳是最常用的還原劑 (reducing agent)</li>
+        </ul>
+        <p><b>metal</b></p>
+        <p>大多數活潑金屬使用電解 (electrolysis) 來還原</p>
+        <p><b>oxygen and nitrogen</b></p>
+        <ul>
+          <li>通過液化的方式轉化為液體</li>
+          <li>液化 (liquefaction): 基於氣體膨脹時會冷卻的原理</li>
+          <li>因液態氮和氧沸點不同, 可通過蒸餾液態空氣來分離</li>
+        </ul>
+        <p><b> hydrogen</b></p>
+        <p>可透過電解水與分解天然氣的甲烷生成</p>
+        <p><b>sulfur</b></p>
+        <p>元素形式存在於地下, 通過弗拉施法 (Frasch process) 回收</p>
+        <p><b>halogens</b></p>
+        <p>通過鹵化物鹽 (halide salts) 中陰離子的氧化獲得</p>
+      </section>
+
+      <section class="card">
+        <h2 id="20_2">20-2 The Group 1A Elements</h2>
+        <h3>Alkali Metals 鹼金屬</h3>
+        <ul>
+          <li>除了氫以外, 具有 ns<sup>1</sup> 價電子組態的元素</li>
+          <li>會與H<sub>2</sub>劇烈反應釋放H<sub>2</sub></li>
+          <li>對於神經和肌肉的正常運作至關重要(Na<sup>+</sup> 和 K<sup>+</sup>)</li>
+        </ul>
+        <div class="formula">\[ 2M(s) + 2H_{2}O(l) \rightarrow 2M^{+}(aq) + 2OH^{-}(aq) + H_{2}(g) \]</div>
+        <h3>Sources and Methods of Preparation of Alkali Metals</h3>
+        <img src="picture_chemistry/C20_2.png" />
+        <h3>Selected Reactions of the Alkali Metals</h3>
+        <img src="picture_chemistry/C20_2_2.png" />
+        <h3>Selected Physical Properties of the Alkali Metals</h3>
+        <img src="picture_chemistry/C20_2_3.png" />
+        <br />
+        <hr />
+        <p>Ex. Which of the following elements is the strongest reducing agent in the gas phase?</p>
+        <ol>
+          <li>Li</li>
+          <li>Na</li>
+          <li>K</li>
+          <li>Rb</li>
+          <li class="hightlight">Cs</li>
+        </ol>
+        <hr />
+        <p>
+          Ex. Which ions are very important for the proper functioning of biologic systems, such as nerves and muscles?
+        </p>
+        <ol>
+          <li>Alkaline earth metal ions</li>
+          <li class="hightlight">Alkali metal ions</li>
+          <li>Oxygen ions</li>
+          <li>Sulfur ions</li>
+          <li>Nitrogen ions</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_3">20-3 The Chemistry of Hydrogen</h2>
+        <h3>Physical Properties</h3>
+        <ul>
+          <li>無色、無臭的氣體, 由 H<sub>2</sub> 分子組成</li>
+          <li>低莫耳質量(molar mass) 且無極性 (nonpolarity)</li>
+          <li>低沸點 (–235°C)與低熔點 (–260°C)</li>
+          <li>高度易燃 (Highly flammable), H<sub>2</sub>佔空氣體積 18% 至 60% 時具爆炸性</li>
+        </ul>
+         
+        <h3>Sources</h3>
+        <p>在金屬催化劑 (鎳, nickel) 存在下, 甲烷與水在高溫 (800–1000°C) 和高壓 (10–50 atm) 下反應產生 H<sub>2</sub></p>
+        <div class="formula">\[ CH_4 (g) + H_2O \xrightarrow[catalyst]{heat, pressue} CO(g) + 3H_{2}(g) \]</div>
+        <ul>
+          <li>電解水可生產純氫氣</li>
+          <li>汽油生產的副產品 : 具有高分子量的碳氫化合物被裂解 (cracked), 以生產可用作汽車燃料的較小分子</li>
+        </ul>
+
+        <h3>Use</h3>
+        <ul>
+          <li>用於哈伯法 (Haber process) 生產氨</li>
+          <li>
+            不飽和植物油的氫化 (Hydrogenation of unsaturated vegetable oils): 氫大量用於產生碳-碳單鍵 (single bonds)
+          </li>
+        </ul>
+
+        <h3>Hydrogen and Hydrides</h3>
+        <p>氫化物 (Hydrides): 為含有氫的二元化合物 , 分類為離子氫化物、共價氫化物和金屬（填隙）氫化物</p>
+        <p><b>離子型（鹽狀）氫化物 (Ionic (Saltlike) Hydrides) </b></p>
+        <ul>
+          <li>當氫與 1A 族和 2A族結合時形成. Ex: LiH、CaH</li>
+          <li>氫化物離子 H<sup>+</sup> 作為強還原劑</li>
+          <li>因1s 軌域中存在 2 個電子而產生較大電子間排斥力</li>
+          <li>原子核將帶有 +1 的淨電荷</li>
+        </ul>
+        <p>離子型氫化物溶於水時會產生劇烈反應並生成氫氣</p>
+        <div class="formula">\[ LiH(s) + H_2O \rightarrow H_2(g) + Li^{+}(aq) + OH^{-}(aq) \]</div>
+        <p><b>共價氫化物 (Covalent Hydrides)</b></p>
+        <ul>
+          <li>當氫與其他非金屬結合時形成. Ex: HCl、CH<sub>4</sub>和NH<sub>3</sub></li>
+          <li>最重要的共價氫化物 - 水(H<sub>2</sub>O)</li>
+        </ul>
+        <p><b>水的不尋常性質 (Unusual Properties of Water)</b></p>
+        <ul>
+          <li>高沸點 (High boiling point)</li>
+          <li>較大汽化熱 (heat of vaporization) 和熱容 (heat capacity)</li>
+          <li>液態密度高於固態密度(冰的開放結構最大限度地形成氫鍵)</li>
+          <li>離子和極性物質的優良溶劑</li>
+          <li>生命過程的有效介質</li>
+        </ul>
+
+        <p><b>金屬（填隙）氫化物 (Metallic (Interstitial) Hydrides) </b></p>
+        <p>
+          由過渡金屬晶體用氫氣處理時形成, 氫分子在金屬表面解離 (dissociate)並遷移到晶體結構中佔據填隙,
+          這種結合方式表現為固溶體而非真正化合物
+        </p>
+        <p>
+          非化學計量氫化物 (nonstoichiometric hydrides) 的組成隨著金屬暴露於氫氣的時間長短而變化
+          <br />
+          加熱時會以氣體形式失去大部分吸收的氫, 為儲存氫氣以用作便攜式燃料提供了可能性
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 id="20_4">20-4 The Group 2A Elements</h2>
+        <h3>Alkaline Earth Metals 鹼土金屬</h3>
+        <ul>
+          <li>價電子組態為 ns<sup>2</sup> 的元素</li>
+          <li>失去兩個價電子以形成含有 M<sup>2+</sup> 陽離子的離子化合物</li>
+          <li>因其氧化物呈鹼性而被稱為鹼土金屬( 例外: 氧化鈹 BeO)</li>
+          <li>活性較強的鹼土金屬會與H<sub>2</sub>O劇烈反應釋放H<sub>2</sub></li>
+        </ul>
+        <div class="formula">\[ M(s) + 2H_{2}O(l) \rightarrow M^{2+}(aq) + 2OH^{-}(aq) + H_{2}(g) \]</div>
+        <p>在 25°C 時: Ca、Sr和 Ba 與水反應劇烈. Be 和 Mg 沒有反應, 但 Mg 會與沸水反應</p>
+        <h3>Importance</h3>
+        <p><b>鈣 (Calcium, Ca)</b></p>
+        <ul>
+          <li>存在於組成骨骼和牙齒的結構礦物質中</li>
+        </ul>
+        <p><b>鎂 (Magnesium, Mg)</b></p>
+        <ul>
+          <li>在代謝和肌肉功能中至關重要</li>
+          <li>因其低密度和中等強度，是種實用的結構材料</li>
+        </ul>
+        <h3>Selected Reactions of the Alkaline Earth Metals</h3>
+        <img src="picture_chemistry/C20_4.png" />
+        <h3>Selected Physical Properties, Sources, and Methods of Preparation</h3>
+        <img src="picture_chemistry/C20_4_2.png" />
+        <h3>Ion Exchange</h3>
+        <ul>
+          <li>硬水 (Hard water): 含有 Ca<sup>2+</sup> 和 Mg<sup>2+</sup> 的天然水</li>
+          <li>硬水會與肥皂反應產生沉澱, 影響洗滌劑作用</li>
+          <li>透過陽離子交換樹酯, 硬水中的Ca<sup>2+</sup> 和 Mg<sup>2+</sup>與樹酯結合, 進而軟化水質</li>
+          <li>陽離子交換樹脂 (Ion-exchange resin): 具有多個離子位點的巨大分子</li>
+        </ul>
+        <img src="picture_chemistry/C20_4_3.png" />
+        <br />
+        <hr />
+        <p>Ex. Which of the following ions interfere(s) with the action of detergents in hard water?</p>
+        <ol>
+          <li>Na<sup>+</sup></li>
+          <li>Ca<sup>2+</sup></li>
+          <li>Mg<sup>2+</sup></li>
+          <li class="hightlight">Ca<sup>2+</sup> and Mg<sup>2+</sup></li>
+          <li>Na<sup>+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup></li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_5">20-5 The Group 3A Elements</h2>
+        價電子組態為ns<sup>2</sup>np<sup>1</sup>. 位在同族的原子量越大時, 金屬特性逐漸增加
+        <h3>Selected Physical Properties, Sources, and Methods of Preparation</h3>
+        <img src="picture_chemistry/C20_5.png" />
+        <h3>Selected Reactions of the Group 3A Elements</h3>
+        <img src="picture_chemistry/C20_5_2.png" />
+        <h3>Boron 硼</h3>
+        <p>與其他元素形成共價化合物</p>
+        <p>
+          硼烷 (Boranes): 硼的共價氫化物化合物 <br />極度缺電子,使其具高反應性, 會與氧氣發生放熱反應.
+          曾被考慮作為美國太空計畫中火箭的潛在燃料
+        </p>
+        <h3>Aluminum 鋁</h3>
+        <ul>
+          <li>地球上最豐富的金屬</li>
+          <li>具有金屬特性. 外觀有光澤, 可傳導熱和電</li>
+          <li>
+            與非金屬形成共價鍵. 導致Al<sub>2</sub>O<sub>3</sub>的兩性性質 (amphoteric nature) . 和
+            Al<sub>2</sub>(H<sub>2</sub>O)<sub>6</sub><sup>3+</sup> 的酸性性質
+          </li>
+        </ul>
+        <div class="formula">\[ Al(H_2O)_6^{3+}(aq) \rightleftharpoons Al(OH)(H_2O)_5^{2+}(aq) + H^+(aq)\]</div>
+        <h3>Gallium 鎵</h3>
+        <ul>
+          <li>異常低的熔點(29.8°C), 沸點約2400°C</li>
+          <li>因液態範圍溫度大, 可用於溫度計中</li>
+          <li>化學性質與鋁相似, 像是Ga<sub>2</sub>O為兩性物質</li>
+        </ul>
+        <h3>Indium and Thallium</h3>
+        <p><b>Indium 銦</b></p>
+        <p>化學性質與鋁和鎵相似. 已知含有 1<sup>+</sup>和 3<sup>+</sup> 離子的化合物</p>
+        <p><b>Thallium 鉈</b></p>
+        <p>化學性質完全是金屬性</p>
+        <h3>Inert pair effect 惰性電子對效應</h3>
+        <p></p>
+        <hr />
+        <p>Ex. Which of the following is the most abundant metal on earth? Calcium</p>
+        <ol>
+          <li>Iron</li>
+          <li>Copper</li>
+          <li class="hightlight">Aluminum</li>
+          <li>Zinc</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_6">20-6 The Group 4A Elements</h2>
+        <p>
+          價電子組態為ns<sup>2</sup>np<sup>2</sup>. 包括:碳-生命必需分子的基本組成部分. 矽-構成了地質世界的基礎元素 
+        </p>
+        <h3>Properties</h3>
+        <ul>
+          <li>可與非金屬形成四個共價鍵, 形成四面體分子. 其中心原子為sp<sup>3</sup>混成(hybridized)</li>
+          <li>例子: CH<sub>4</sub>, SiF<sub>4</sub>, GeBr<sub>4</sub>, SnCl<sub>4</sub>, and PbCl<sub>4</sub></li>
+          <li>碳的化學性質以碳-碳鍵為主導; 矽的化學性質以矽-氧鍵為主導</li>
+          <li>即碳形成 \(\pi \) 鍵有所差異. 解釋了 CO<sub>2</sub>和 SiO<sub>2</sub>的不同結構和性質</li>
+        </ul>
+        <h3>Selected Physical Properties, Sources, and Methods of Preparation</h3>
+        <img src="picture_chemistry/C20_6.png" />
+        <h3>Group 4A Elements</h3>
+        <p><b>Carbon 碳</b></p>
+        <ul>
+          <li>元素以石墨、鑽石和C<sub>60</sub>的同素異形體形式存在</li>
+          <li>於有機化學中扮演重要角色</li>
+        </ul>
+        <p><b>Silicon 矽</b></p>
+        <p>為類金屬 (Semimetal), 廣泛分布於二氧化矽 (silica) 和矽酸鹽 (silicates) 中</p>
+        <p><b>Germanium 鍺</b></p>
+        <p>為稀有元素且為類金屬 , 用於製造電晶體 (transistors) 及半導體</p>
+        <p><b>Tin 錫</b></p>
+        <p>柔軟的銀白色金屬, 常用於合金以及作為鋼鐵的保護塗層</p>
+
+        <p>錫的同素異形體 (Allotropes of tin):</p>
+        <ul>
+          <li>白錫 (White tin) - 在常溫下穩定</li>
+          <li>灰錫 (Gray tin) - 在 13.2°C 以下的溫度穩定</li>
+          <li>脆錫 (Brittle tin) - 存在於 161°C 以上的溫度</li>
+        </ul>
+        <p>錫疫 (Tin disease): 當暴露於低溫時，錫會變成粉末狀的灰色並崩解</p>
+        <p><b>Lead 鉛</b></p>
+        <ul>
+          <li>於方鉛礦 (Galena, PbS)中提取, 熔點低, 具毒性</li>
+          <li>早在西元前3000年就被應用. 現代常用於鉛酸電池</li>
+        </ul>
+        <h3>Selected Reactions</h3>
+        <img src="picture_chemistry/C20_5_2.png" />
+        <hr />
+        <p>Ex. What is the largest commercial use of lead?</p>
+        <ol>
+          <li>Gasoline</li>
+          <li>Protective coatings for steel</li>
+          <li>Semiconductors</li>
+          <li>Paints</li>
+          <li class="hightlight">Batteries used in automobiles</li>
+        </ol>
+        <hr />
+        <p>Ex. Order the following bonds from highest to lowest bond energy​</p>
+        <ol>
+          <li>C—C, Si—Si, Si—O</li>
+          <li class="hightlight">Si—O, C—C, Si—Si</li>
+          <li>Si—Si, Si—O, C—C</li>
+          <li>Si—O, Si—Si, C—C</li>
+          <li>C—C, Si—O, Si—Si</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_7">20-7 The Group 5A Elements</h2>
+        <ul>
+          <li>價電子組態為ns<sup>2</sup>np<sup>3</sup></li>
+          <li>氮 (Nitrogen) 和磷 (phosphorus)為非金屬, 能與活潑金屬形成含有3-陰離子的鹽</li>
+          <li>鉍 (Bismuth) 和銻 (antimony) 表現出金屬特性, 容易失去電子形成陽離子</li>
+        </ul>
+        <h3>Covalent Bonds</h3>
+        <p>5A族能形成涉及 3、5 或 6 個共價鍵的分子或離子</p>
+        <ul>
+          <li>VSEPR 模型結構 - 角錐形 (Pyramidal)。</li>
+          <li style="list-style-type: none">
+            <ul>
+              <li>具有三個共價鍵與一對孤對電子 如NH<sub>3</sub>、PH<sub>3</sub>和 AsCl<sub>3</sub>...等</li>
+            </ul>
+          </li>
+          <li>VSEPR 模型 - 三角雙錐 (Trigonal bipyramidal)</li>
+          <li style="list-style-type: none">
+            <ul>
+              <li>具有五個共價鍵的分子</li>
+              <li>氮因其原子半徑小而無法形成</li>
+              <li>中心原子是dsp<sup>3</sup>混成</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Selected Physical Properties, Sources, and Methods of Preparation</h3>
+        <img src="picture_chemistry/C20_7.png" />
+        <hr />
+        <p>Ex. Which of the following elements has the smallest electronegativity(電負度) value?</p>
+        <ol>
+          <li>N</li>
+          <li>P</li>
+          <li>As</li>
+          <li class="hightlight">Sb</li>
+        </ol>
+        <hr />
+        <p>Ex. What is the correct molecular structure for PCl<sub>5</sub>(g)?</p>
+        <ol>
+          <li class="hightlight">Trigonal bipyramidal</li>
+          <li>Trigonal planar</li>
+          <li>Tetrahedral</li>
+          <li>Octahedral</li>
+          <li>None of these</li>
+        </ol>
+        <hr />
+        <p>Ex. The ability of the Group 5A elements to form _____ greatly decreases after nitrogen</p>
+        <ol>
+          <li>molecules with five covalent bonds</li>
+          <li class="hightlight">pi bonds</li>
+          <li>larger molecules with single bonds</li>
+          <li>molecules with four covalent bonds</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_8">20-8 The Chemistry of Nitrogen</h2>
+        <ul>
+          <li>元素態的氮均以具有強三鍵 (941 kJ/mol) 的 N<sub>2</sub>分子形式存在</li>
+          <li>N<sub>2</sub>分子不活潑, 在正常條件下可以與幾乎所有其他元素共存而不發生反應</li>
+        </ul>
+        <h3>A Thermodynamic Perspective 熱力學觀點</h3>
+        <p>因其三鍵的穩定性, 使大多數含有氮的二元化合物在分解為其元素態時會發生放熱反應.</p>
+        <div class="formula">
+          \[ N_2O(g) \rightarrow N_2(g) + \frac{1}{2}O_2(g) \quad \Delta H^{\circ}=-82kJ \] \[ NO(g) \rightarrow
+          \frac{1}{2}N_2(g) + \frac{1}{2}O_2(g) \quad \Delta H^{\circ}=-90kJ \] \[ N_2H_4(g) \rightarrow N_2(g) +
+          2H_2(g) \quad \Delta H^{\circ}=95kJ \] \[ NH_3(g) \rightarrow \frac{1}{2}N_2(g) + \frac{3}{2}H_2(g) \quad
+          \Delta H^{\circ}=+46kJ \]
+        </div>
+        <p>在氨 (ammonia) 中, 將分子分解為其組成元素需要能量, 使得氨比其組成元素更穩定</p>
+        <h3>Nitrogen-Based Explosives 氮基炸藥</h3>
+        <p>N<sub>2</sub> 具有的穩定性是這類炸藥威力的來源之一</p>
+        <p><b>硝化甘油 Nitroglycerin (C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub>)</b></p>
+        <p>當受到突然衝擊或點燃時, 會迅速且放熱地分解，從而引起爆炸. 4 莫耳的液態硝化甘油即可產生 29 莫耳的氣態產物</p>
+        <div class="formula">
+          \[ 4\text{C}_{3}\text{H}_{5}\text{N}_{3}\text{O}_{9}(l)\rightarrow
+          12\text{CO}_{2}(g)+10\text{H}_{2}\text{O}(g)+6\text{N}_{2}(g)+\text{O}_{2}(g)+\text{Energy} \]
+        </div>
+        <p><b> 三硝基甲苯 (Trinitrotoluene, TNT)</b></p>
+        <p>在常溫下為固體, 2 莫耳的固態 TNT 能產生 20 莫耳的氣態產物和能量</p>
+        <div class="formula">
+          \[ 2\text{C}_{7}\text{H}_{5}\text{N}_{3}\text{O}_{6}(s)\rightarrow
+          12\text{CO}(g)+5\text{H}_{2}(g)+3\text{N}_{2}(g)+2\text{C}(s)+\text{Energy}\]
+        </div>
+        <h3>Nitrogen Fixation 固氮作用</h3>
+        <p>將N<sub>2</sub> 轉化為其他含氮化合物的過程</p>
+        <p><b>哈伯法製氨 (The Haber Process) </b></p>
+        <ul>
+          <li>在大約 400°C 的溫度和約 250 atm 的壓力下進行</li>
+          <li>使用固態氧化鐵混合少量氧化鋁和氧化鉀作為催化劑</li>
+        </ul>
+        <p><b>固氮作用與燃燒 (Nitrogen Fixation and Combustion)</b></p>
+        <p>
+          當空氣中的氮氣被吸入汽車發動機, 會與氧氣以顯著的速率反應形成一氧化氮 (nitric oxide).
+          一氧化氮進一步與氧氣反應形成二氧化氮 (nitrogen dioxide)
+        </p>
+        <p><b>自然界中的固氮作用 (Nitrogen Fixation in Nature)</b></p>
+        <p>
+          閃電提供能量來破壞空氣中的 N<sub>2</sub> 和 O<sub>2</sub> 分子. 產生高活性的氮原子和氧原子, 原子進一步與其他
+          N<sub>2</sub> 和 O<sub>2</sub> 反應形成氮氧化物, 最終變為硝酸鹽 (nitrates).
+        </p>
+        <p><b>固氮細菌 (Nitrogen-fixing bacteria)</b></p>
+        <p>
+          容易將氮氣轉化為對植物有用的氨和其他含氮化合物. 居住在植物的根瘤 (root nodules) 中, 能夠在土壤溫度和 1 atm
+          壓力下產生 NH<sub>3</sub>
+        </p>
+        <h3>Nitrogen Hydrides 氮氫化物</h3>
+        <p>
+          <b>氨 (Ammonia) - NH<sub>3</sub></b>
+        </p>
+        <ul>
+          <li>具刺激性氣味的有毒無色氣體</li>
+          <li>用於化肥</li>
+          <li>VSEPR 模型結構: 金字塔型</li>
+          其氮原子上有一對孤對電子, 且具有三個極性的 N-H 鍵. 其結構導致高度分子間作用力, 在液態下具有強大的氫鍵作用
+          <li>高沸點</li>
+          沸點為 -33.4°C (相對於分子量相近的物質而言較高)
+          <li>表現為鹼性</li>
+          與酸反應產生銨鹽(Ammonium salts). 例如與鹽酸反應生成氯化銨
+          <li style="list-style: none"><div class="formula">\[ NH_3(g) + HCl(g) \rightarrow NH_4Cl(s) \]</div></li>
+        </ul>
+        <p>
+          <b>聯氨/肼 (Hydrazine) - N<sub>2</sub>H<sub>4</sub></b>
+        </p>
+        <img src="picture_chemistry/C20_8.png" />
+        <br />
+        <ul>
+          <li>無色液體, 帶有類似氨的氣味</li>
+          <li>每個氮原子為 sp<sup>3</sup> 混成軌域, 鍵角接近 109.5°</li>
+          <li>沸點/凝固點: 113.5°C / 2°C</li>
+          較高的沸點顯示極性的聯氨分子之間存在顯著的氫鍵作用, 即有較大分子間作用力
+          <li>
+            用途:
+            <ul>
+              <li>火箭推進劑（燃料）</li>
+              <li>製造塑料的發泡劑（吹氣劑）</li>
+              <li>生產農業殺蟲劑 / 農藥</li>
+              <li>與鹵素發生劇烈反應</li>
+            </ul>
+          </li>
+          <li>
+            取代聯氨 (Substituted Hydrazines)
+            <ul>
+              <li>化合物中一個或多個氫原子被其他基團取代, 基本用作火箭燃料</li>
+              <li>範例: 甲基聯氨 (Monomethylhydrazine)</li>
+              <li><img src="picture_chemistry/C20_8_2.png" /></li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Nitrogen Oxides 氮的氧化物</h3>
+        <p>氮能形成一系列的氧化物, 其氧化態範圍從 +1 到 +5</p>
+        <ul>
+          <li>\(+1\) : 一氧化二氮 (\(N_{2}O\)) — 俗稱笑氣</li>
+          <li>\(+2\) : 一氧化氮 (\(NO\))</li>
+          <li>\(+3\) : 三氧化二氮 (\(N_{2}O_{3}\))</li>
+          <li>\(+4\) : 二氧化氮 (\(NO_{2}\)) 或 四氧化二氮 (\(N_{2}O_{4}\))</li>
+          <li>\(+5\) : 五氧化二氮 (\(N_{2}O_{5}\)) </li>
+        </ul>
+        <p><b>一氧化二氮 (Dinitrogen Monoxide) - N<sub>2</sub>O</b></p>
+        <ul>
+          <li>脂溶性高</li>
+          <li>應用在溫和的麻醉劑</li>
+          <li>應用於氣霧劑罐（噴霧罐）中的推進劑</li>
+          <li>可由土壤中的微生物產生</li>
+          <li>吸收紅外線輻射來調控地球大氣（溫室氣體效應）</li>
+        </ul>
+        <p><b>一氧化氮 (Nitrogen Monoxide) - NO</b></p>
+        <ul>
+          <li>在正常條件下為無色氣體</li>
+          <li>為生物系統中的調節劑（信號分子）</li>
+          <li>
+            在實驗室中, 通過 6M 的硝酸與銅反應生成
+            <div class="formula">
+              \[ 8H^+(aq) + 2NO_3^-(aq) + 3Cu(s) \rightarrow 3Cu^{2+}(aq) + 4H_2O(l) + 2NO(g) \]
+            </div>
+          </li>
+
+          <li>一氧化氮在空氣中會立即被氧氣 (\(O_{2}\)) 氧化成紅棕色的二氧化氮 (\(NO_{2}\))</li>
+          <li>
+            在熱力學上被認為是不穩定的, 會分解形成一氧化二氮與二氧化氮
+            <div class="formula">\[ 3NO(g) \rightarrow N_2O(g) + NO_2(g) \]</div>
+          </li>
+          <li>
+            一氧化氮的結構 - 分子軌域模型 (Molecular Orbital Model)
+            <ul>
+              <li>含有奇數個電子</li>
+              <li>其鍵級（Bond order）為 2.5</li>
+              <li>
+                由於 NO 擁有一個高能電子，它極易被氧化形成亞硝醯離子 NO<sup>+</sup>. 即移除一個反鍵電子（Antibonding
+                electron）
+              </li>
+              <li>生成的離子 NO<sup>+</sup> 鍵結強度應比 NO 更強（鍵級從 2.5 增加至 3）</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Oxyacids of Nitrogen - Nitric Acid(硝酸)</h3>
+        <ul>
+          <li>無色、發煙的液體, 具有刺激性氣味</li>
+          <li>沸點為83°C</li>
+          <li>用於製造氮基爆炸物和硝酸銨 (化肥)</li>
+          <li>通過奧斯瓦爾德製程 (Ostwald process) 進行商業化生產</li>
+        </ul>
+        <img src="picture_chemistry/C20_8_3.png" />
+        <p><b>奧斯瓦爾德製程 (Ostwald Process)</b></p>
+        <p>淨反應: \(NH_{3}+2O_{2}\longrightarrow HNO_{3}+H_{2}O\)</p>
+        <div class="formula">
+          \[ 4NH_{3}(g)+5O_{2}(g)\xrightarrow{Pt/Rh, 900^\circ C}4NO(g)+6H_{2}O(g) \quad \Delta H^\circ =-905KJ \] \[
+          2NO(g)+O_{2}(g)\xrightarrow{25^{\circ}C} 2NO_{2}(g)\quad \Delta H ^\circ =-113KJ \] \[
+          3NO_{2}(g)+H_{2}O(l)\rightarrow 2HNO_{3}(aq)+NO(g) \quad \Delta H ^\circ =-139KJ\]
+        </div>
+        <p><b>硝酸的濃度與性質 </b></p>
+        <ul>
+          <li>初始濃度: 奧斯瓦爾德製程生產的硝酸水溶液質量百分比濃度約為 50%</li>
+          <li>提純: 可通過蒸餾提高到 68% 通過使用濃硫酸處理(脫水)提高到 95%</li>
+          <li>穩定性: 在陽光下會分解</li>
+        </ul>
+        <hr />
+        <p>Ex. Nitrogen fixation:</p>
+        <ol>
+          <li>is used to manufacture ammonia</li>
+          <li class="hightlight">transforms elemental nitrogen into nitrogen-containing compounds</li>
+          <li>is used to recover sulfur from underground deposits</li>
+          <li>is used to produce nitric acid</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_9">20-9 The Chemistry of Phosphorus</h2>
+        <h3>Phosphorus and Nitrogen</h3>
+        <ul>
+          <li>氮具備較大的電負度</li>
+          <li>磷原子的尺寸較大</li>
+          <li>氮具形成強 \(\pi \) 鍵的能力： 氮傾向於形成三鍵（如 \(N\equiv N\)），而磷則傾向於形成單鍵</li>
+          <li>磷具有可利用的空價 \(d\) 軌域, 使磷能形成擴充價殼層（如 \(PCl_{5}\)）</li>
+        </ul>
+        <h3>Allotropes of Phosphorus 磷的同素異形體</h3>
+        <p><b>白磷 (White phosphorus)</b></p>
+        <ul>
+          <li>包含四面體結構的 \(P_{4}\) 分子</li>
+          <li>具有高度活性且有劇毒</li>
+          <li>與空氣接觸會立即自燃起火, 通常儲存於水中以隔絕空氣</li>
+        </ul>
+        <p><b>黑磷 (Black phosphorus)</b></p>
+        <ul>
+          <li>具有晶體結構（常與石墨烯/黑磷烯類比）</li>
+          <li>活性較低（最穩定的同素異形體）</li>
+          <li>透過在高壓下加熱白磷或紅磷獲得</li>
+        </ul>
+        <p><b>紅磷 (Red phosphorus) </b></p>
+        <ul>
+          <li>無定形結構（Amorphous）, 包含 \(P_{4}\) 單元組成的鏈狀結構</li>
+          <li>性質較穩定,　常見於火柴盒側面的摩擦面</li>
+          <li>在 1 大氣壓、隔絕空氣的條件下加熱白磷獲得</li>
+        </ul>
+        <h3>Phosphides 磷化物</h3>
+        <p>
+          含有 \(P^{3-}\) 陰離子的離子化合物. 如磷化鈉 (\(Na_{3}P\)) 和 磷化鈣 (\(Ca_{3}P_{2}\)).
+          <br />磷化鹽類會與水發生劇烈反應, 產生磷化氫
+        </p>
+        <div class="formula">
+          \[2\text{Na}_3\text{P}(s) + 6\text{H}_2\text{O}(l) \rightarrow 2\text{PH}_3(g) + 6\text{Na}^+(aq) +
+          6\text{OH}^-(aq)\]
+        </div>
+        <p>磷化氫 (\(PH_{3}\)) : 無色、有毒的氣體, 其化學結構與氨類似, 具金字塔型結構, 鍵角為 \(94^{\circ }\)</p>
+        <h3>Phosphorus Oxides 磷的氧化物</h3>
+        <p>磷與氧氣反應生成的氧化物中, 磷的氧化態主要為 \(+5\) 和 \(+3\)</p>
+        <ul>
+          <li>三氧化二磷 (\(P_{4}O_{6}\)): 由元素磷在有限的氧氣供應下燃燒而成</li>
+          <li>五氧化二磷 (\(P_{4}O_{10}\)): 在氧氣充足(過量)時生成</li>
+        </ul>
+        <img src="picture_chemistry/C20_9.png" />
+        <h3>Phosphorus Oxyacids - Phosphoric Acid(磷酸)</h3>
+        <ul>
+          <li>Diprotic acid: 二元酸</li>
+          <li>Monoprotic acid: 一元酸</li>
+        </ul>
+        <p><b>正磷酸 (Orthophosphoric Acid)</b></p>
+        <ul>
+          <li>
+            為五氧化二磷 (\(P_{4}O_{10}\)) 與水反應後的產物
+            <div class="formula">\[ P_4O_{10}(s) + 6H_2O(l) \rightarrow 4H_3PO_4(aq) \]</div>
+          </li>
+          <li>純磷酸 (\(H_{3}PO_{4}\)) 為白色固體</li>
+          <li>熔點\(42^{\circ }C\)</li>
+          <li>為弱酸（第一段解離常數 \(K_{a1}\approx 10^{-2}\)）。</li>
+          <li>是極弱的氧化劑（不易發生還原反應）</li>
+        </ul>
+        <p><b>亞磷酸 (Phosphorus Acid)</b></p>
+        <ul>
+          <li>為三氧化二磷 (\(P_{4}O_{6}\)) 與水反應後的產物</li>
+          <li>屬於二元酸(分子式的三個 \(H\),僅有兩個可解離)</li>
+        </ul>
+        <p><b>次磷酸 (Hypophosphorus Acid)</b></p>
+        <ul>
+          <li>屬於一元酸 (僅有一個 \(H\) 可解離)</li>
+        </ul>
+        <h3>Phosphorus in Fertilizers</h3>
+        <p>
+          磷對於植物生長至關重要. 土壤中雖然含有大量的磷, 但多以難溶性礦物(Insoluble minerals)的形式存在,
+          導致植物無法直接吸收利用
+        </p>
+        <p><b>磷肥的種類與製備</b></p>
+        <ul>
+          <li>
+            普通過磷酸鈣（Superphosphate of lime）
+            <ul>
+              <li>透過硫酸處理磷礦石所製造的產品</li>
+              <li>
+                含有硫酸鈣二水合物 (\(CaSO_{4}\cdot 2H_{2}O\)) 與磷酸二氫鈣一水合物 (\(Ca(H_{2}PO_{4})_{2}\cdot
+                H_{2}O\)) 的混合物
+              </li>
+            </ul>
+          </li>
+          <li>
+            重過磷酸鈣（Triple phosphate)
+            <ul>
+              <li>化學式\(Ca(H_{2}PO_{4})_{2}\)</li>
+              <li>由磷酸處理磷礦石後生成</li>
+            </ul>
+          </li>
+          <li>
+            磷酸二氫銨（Ammonium dihydrogen phosphate)
+            <ul>
+              <li>化學式\(NH_{4}H_{2}PO_{4}\)</li>
+              <li>由氨與磷酸反應後生成</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 id="20_10">20-10 The Group 6A Elements</h2>
+        <p>包含氧 O、硫 S、硒 Se、碲 Te、釙 Po 等元素</p>
+        <ul>
+          <li>與金屬反應時獲得 2 個電子, 達到惰性氣體電子組態. 在離子化合物中形成 \(2–\) 陰離子</li>
+          <li>與非金屬形成共價鍵, 元素之間形成共價鍵結</li>
+          <li>與氫結合形成一系列通式為 \(H_{2}X\) 的共價氫化物（例如 \(H_{2}O\)、\(H_{2}S\)）</li>
+          <li>除氧以外, 具有可利用價 \(d\) 軌域的元素, 能形成中心原子被超過 8 個電子包圍的分子（超價分子）</li>
+          <li>範例： \(SF_{4}\)、 \(SeBr_{4}\) 和 \(TeI_{4}\)。</li>
+        </ul>
+        <h3>Selenium and Polonium 硒與釙</h3>
+        <p><b>硒 (Selenium, Se)</b></p>
+        <p>用於電子工業</p>
+        <p><b>釙 (Polonium, Po)</b></p>
+        <p>具有劇毒且具有放射性</p>
+        <hr />
+        <p>Ex. What is the correct molecular structure for SeF6?</p>
+        <ol>
+          <li>Trigonal bipyramidal</li>
+          <li>Trigonal planar</li>
+          <li>Tetrahedral</li>
+          <li class="hightlight">Octahedral</li>
+          <li>None of these</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_11">20-11 The Chemistry of Oxygen</h2>
+        <h3>Present in</h3>
+        <ul>
+          <li>大氣: 以氧氣 (\(O_{2}\)) 和臭氧 (\(O_{3}\)) 的形式存在</li>
+          <li>土壤與岩石: 存在於氧化物、矽酸鹽和碳酸鹽礦物中</li>
+          <li>水體: 大量的水 (\(H_{2}O\)) 及溶解氧</li>
+          <li>人體: 構成生物分子的重要元素</li>
+        </ul>
+        <h3>Oxygen</h3>
+        <ul>
+          <li>佔地球大氣體積的 21%</li>
+          <li>無色氣體, 液態為淡藍色液體</li>
+          <li>沸點/凝固點: -183°C / -219°C</li>
+          <li>本質上具有順磁性 (Paramagnetic)</li>
+        </ul>
+        <h3>Ozone</h3>
+        <img src="picture_chemistry/C20_11.png" />
+        <br />
+        <p>由共振結構表示, 其孤對電子比成鍵電子對需要更大的空間, 導致鍵角略小於120° (約117°)</p>
+        <ul>
+          <li>製備</li>
+          通過純氧氣進行放電處理, 電能會破壞部分 \(O_{2}\) 分子的鍵結。產生的氧原子與其他 \(O_{2}\) 分子反應生成
+          \(O_{3}\)
+          <li>穩定性</li>
+          在 25°C 和 1atm 下, 穩定性低於氧氣
+          <li>物理性質</li>
+          淡藍色、具高度毒性的氣體
+        </ul>
+        <p><b>應用與特性</b></p>
+        <ul>
+          <li>強氧化劑(Oxidizing agent)</li>
+          <li>水處理:用於城市供水處理及農產品採收後的清洗</li>
+          <li>優點: 不會留下有毒殘留物</li>
+          <li>缺點: 容易發生二次污染 (因為臭氧不穩定, 無法長效殺菌)</li>
+        </ul>
+        <p><b>臭氧層 (Ozone Layer)</b></p>
+        <p>自然存在於高層大氣中. 可吸收紫外線 (UV), 防止輻射抵達地球表面</p>
+        <ul>
+          <li>當\(O_{3}\) 分子吸收能量時, 會裂解為 \(O_{2}\) 和 \(O\)</li>
+          <li>若 \(O_{2}\) 與 \(O\) 碰撞, 除非有「第三體」（Third body）吸收能量, 否則無法維持 \(O_{3}\) 狀態</li>
+          <li>第三體會將能量轉化為動能, 使紫外線輻射轉化為熱能</li>
+        </ul>
+        <hr />
+        <p>Ex. How many forms of elemental oxygen are there under standard temperature and pressure?</p>
+        <ol>
+          <li>1</li>
+          <li class="hightlight">2</li>
+          <li>3</li>
+          <li>4</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 id="20_12">20-12 The Chemistry of Sulfur</h2>
+        <p>為游離元素的大型礦床, 在自然界中以單質硫的形式存在</p>
+        <ul>
+          <li>方鉛礦 (Galena, \(PbS\))</li>
+          <li>辰砂/朱砂 (Cinnabar, \(HgS\))</li>
+          <li>黃鐵礦 (Pyrite, \(FeS_{2}\))</li>
+          <li>石膏 (Gypsum, \(CaSO_{4}\cdot 2H_{2}O\))</li>
+          <li>瀉利鹽 (Epsomite, \(MgSO_{4}\cdot 7H_{2}O\))</li>
+          <li>鈣芒硝 (Glauberite, \(Na_{2}Ca(SO_{4})_{2}\))</li>
+        </ul>
+        <p>透過弗拉施法回收. 將過熱水泵入地下礦床以熔化硫, 利用空氣壓力將熔化的硫強行壓送至地面</p>
+        <h3>Sulfur Oxides 硫的氧化物</h3>
+        <p><b>一氧化硫 (SO)</b></p>
+         
+        <ul>
+          <li>性質極度不穩定</li>
+          <li>
+            \(SO\) 中硫（S）與氧（O）原子間的 \(\pi \) 鍵結合力，比 \(O_{2}\) 分子中氧原子間的 \(\pi \) 鍵結合力弱
+          </li>
+        </ul>
+         
+        <p><b>二氧化硫 (\(SO_{2}\)) </b></p>
+        <ul>
+          <li>無色氣體，具有刺激性氣味。</li>
+          <li>當硫在空氣中燃燒時產生（是形成酸雨的主要原因）。</li>
+
+          <li>液化： 在 \(1\) 大氣壓下，於 \(-10^{\circ }C\) 時冷凝為液態。</li>
+          <li>應用：高效的抗菌劑。用於保存儲藏的水果（防腐處理）</li>
+        </ul>
+        <p><b>三氧化硫 (\(SO_{3}\))</b></p>
+        <p>為二氧化硫 (\(SO_{2}\)) 與氧氣 (\(O_{2}\)) 反應的產物. 在缺乏催化劑的情況下，此反應進行得非常緩慢</p>
+        <div class="formula">\[ 2SO_2(g) + O_2(g) \rightarrow 2SO_3(g) \]</div>
+        <h3>Oxyacids of Sulfur 硫的含氧酸</h3>
+        <p><b>亞硫酸 (Sulfurous acid)</b></p>
+        <p>為二氧化硫 (\(SO_{2}\)) 溶解於水中的產物</p>
+        <div class="formula">\[ SO_2(g) + H_2O(l) \rightarrow H_2SO_3(aq) \]</div>
+        <p><b>硫酸 (Sulfuric acid)</b></p>
+        <p>為三氧化硫 (\(SO_{3}\)) 與水發生劇烈反應後的產物. 其本質上為二元酸（Diprotic）</p>
+        <div class="formula">\[ SO_3(g) + H_2O(l) \rightarrow H_2SO_4(aq) \]</div>
+        <h3>Sulfuric Acid 硫酸</h3>
+        <p>
+          在工業製備通常透過接觸法 (Contact process) 生產 <br />主要用途:
+          利用磷礦石生產化肥、用於鉛蓄電池（電池水）、石油精煉、鋼鐵製造(如酸洗製程)
+        </p>
+        <p><b>脫水劑 Dehydrating Agent</b></p>
+        <p>硫酸對水具有強大的親和力, 可作為脫水劑</p>
+        <ul>
+          <li>氣體乾燥: 用於分離（乾燥）不與其發生反應的氣體，例如氧氣、氮氣和二氧化碳。</li>
+          <li>分離過程: 將氣體通入濃硫酸溶液中進行鼓泡處理（Bubbling）</li>
+          <li>脫水作用: 能從不含分子水的物質中, 以 2:1 的比例脫去氫和氧原子</li>
+        </ul>
+        <div class="formula">\[ C_{12}H_{22}O_{11}(s) + 11H_2SO_4 \rightarrow 12C(s) + 11H_2SO_4 \cdot H_2O(l) \]</div>
+        <hr />
+        <p>Ex. What is the correct molecular structure for SO3(g)?</p>
+        <ol>
+          <li>Trigonal bipyramidal</li>
+          <li class="hightlight">Trigonal planar</li>
+          <li>Tetrahedral</li>
+          <li>Octahedral</li>
+          <li>None of these</li>
+        </ol>
+      </section>
+
+      <section class="card" id="20_13">
+        <h2>20-13 The Group 7A Elements</h2>
+        <p>包含氟 F、氯 Cl、溴 Br、碘 I、砈 At 等元素</p>
+        <ul>
+          <li>價電子組態為ns<sup>2</sup>np<sup>5</sup></li>
+          <li>具有高度反應性</li>
+          <li>屬於非金屬元素, 其性質隨原子序增加呈現規律性的變化</li>
+          <li>由於原子半徑極小, 電子間排斥力較大, 氟 (F) 的電子親和力較低. \(F_{2}\) 分子的鍵能較小</li>
+          <li>自然界中無法以游離元素（單質）形式存在. 通常以鹵離子 (\(X^{–}\)) 的形式存在於各種礦物及海水中</li>
+          <li>具有極高的電負度（負電性）值</li>
+          <li>與非金屬形成極性共價鍵. 與處於低氧化態的金屬形成離子鍵</li>
+        </ul>
+        <h3>Trends in Selected Physical Properties</h3>
+        <img src="picture_chemistry/C20_13.png" />
+        <h3>Some Physical Properties, Sources, and Methods of Preparation</h3>
+        <img src="picture_chemistry/C20_13_2.png" />
+        <h3>Hydrogen Halides 鹵化氫</h3>
+        <p><b>制備過程</b></p>
+        <div class="formula">\[ H_{2}+X_{2} \rightarrow 2HX \]</div>
+        <p><b>反應劇烈程度</b></p>
+        <ul>
+          <li>氟與氫混合時, 反應會以爆炸般的威力進行</li>
+          <li>氫與氯在黑暗中共存時幾乎不反應, 但在紫外線照射下會迅速反應</li>
+          <li>溴與碘與氫的反應速率較慢</li>
+        </ul>
+        <p><b>酸性行為</b></p>
+        <ul>
+          <li>當溶解於水中時, 表現為酸性並能完全解離(強酸)</li>
+          <li>氟化氫 (HF)在水中屬於弱酸</li>
+          <li>酸性強度順序\(HI &gt; HBr &gt; HCl \gg HF\)</li>
+          (註：隨著鹵素原子半徑增大, 鍵能減弱, 越容易釋放氫離子, 酸性越強)
+        </ul>
+        <p><b>氫鹵化物的物理性質 </b></p>
+        <img src="picture_chemistry/C20_13_3.png" />
+        <h3>Hydrohalic Acids 氫鹵酸</h3>
+        <p>氫鹵酸是指鹵化氫的水溶液</p>
+        <p><b>氫氯酸(鹽酸) Hydrochloric acid</b></p>
+        <p>用於鋼鐵在鍍鋅(Galvanization)前的清洗處理</p>
+        <p><b>氫氟酸 Hydrofluoric acid </b></p>
+        <p>用於蝕刻玻璃. 反應原理: 與玻璃中的二氧化矽反應生成四氟化矽, 也解釋了為什麼氫氟酸不能儲存在玻璃容器中</p>
+        <div class="formula">
+          \[ \text{SiO}_{2}(s)+4\text{HF}(aq)\longrightarrow \text{SiF}_{4}(g)+2\text{H}_{2}\text{O}(l)\]
+        </div>
+        <h3>Halogen Oxyacids and Oxyanions 鹵素含氧酸與含氧陰離子</h3>
+        <ul>
+          <li>除了氟以外, 所有鹵素都能與氧原子結合, 形成一系列的含氧酸</li>
+          <li>酸的強度與連接在鹵素原子上的氧原子數量成正比</li>
+          <li>\(HClO_{4}\)（過氯酸）&gt; \(HClO_{3}\)（氯酸）&gt; \(HClO_{2}\)（亞氯酸）&gt; \(HClO\)（次氯酸）</li>
+        </ul>
+        <img src="picture_chemistry/C20_13_4.png" />
+        <h3>Chlorine Series - Oxyacids and Oxyanions</h3>
+        <p><b>過氯酸 (\(\text{HOClO}_{3}\) 或 \(\text{HClO}_{4}\))  Perchloric acid </b></p>
+        <ul>
+          <li>性質: 是一種強酸和強氧化劑</li>
+          <li>穩定性: 是氯系列中唯一可以分離出純物質的成員</li>
+          <li>其他酸的特性: 該系列的其他含氧酸僅存在於水溶液中</li>
+          <li>鹽類: 含有這些含氧酸陰離子的鹽類(如次氯酸鈉、氯酸鉀、過氯酸銨等)則廣泛存在 </li>
+        </ul>
+        <p><b>氧氯陰離子(Oxychloro Anions)的結構</b></p>
+        <img src="picture_chemistry/C20_13_5.png" />
+        <p><b>次氯酸 (\(\text{HOCl}\))  Hypochlorous acid </b></p>
+        <ul>
+          <li>
+            將氯氣溶解在冷水中時形成
+            <div class="formula">
+              \[ \text{Cl}_2(aq) + \text{H}_2\text{O}(l) \rightleftharpoons \text{HOCl}(aq) + \text{H}^+(aq) +
+              \text{Cl}^-(aq)\]
+            </div>
+          </li>
+          <li>歧化反應 (Disproportionation reaction): 在此反應中, 給定的元素同時被氧化和還原.</li>
+          <li>次氯酸及其鹽類是強氧化劑, 其溶液被用作消毒劑和家用漂白水</li>
+        </ul>
+        <p><b>氯酸鹽 Chlorate Salts</b></p>
+        <p>為強氧化劑, 可用作除草劑或煙花和爆炸物中的氧化劑</p>
+        <h3>Fluorine Series - Oxyacids and Oxides</h3>
+        <ul>
+          <li>含氧酸: 僅形成一種含氧酸, 即次氟酸 (\(\text{HOF}\))</li>
+          <li>氧化物(氟化物): 形成兩種化合物（氧的氟化物）即二氟化氧、二氟化二氧</li>
+        </ul>
+        <p><b>二氟化氧 Oxygen difluoride (\(\text{OF}_{2}\))</b></p>
+        <p>淡黃色氣體, 沸點-145°C. 為強氧化劑, 當氟氣通入稀釋的氫氧化鈉溶液中時形成</p>
+        <div class="formula">
+          \[ 4\text{F}_2(g) + 3\text{H}_2\text{O}(l) \rightarrow 6\text{HF}(aq) + \text{OF}_2(g) + \text{O}_2(g) \]
+        </div>
+        <p><b>二氟化二氧 Dioxygen difluoride (\(\text{O}_{2}\text{F}_{2}\))</b></p>
+        <p>為橙色固體, 於等莫耳混合的氟氣和氧氣中進行放電處理後製得</p>
+        <div class="formula">
+          \[\text{F}_2(g) + \text{O}_2(g) \xrightarrow{\text{electric discharge}} \text{O}_2\text{F}_2(s)\]
+        </div>
+      </section>
+
+      <section class="card" id="20_14">
+        <h2>20-14 The Group 8A Elements</h2>
+        <p>
+          其價電子組態為填滿的 s 和 p 軌域, 導致化學性質極不活潑. (氦為1s<sup>2</sup>或 2s<sup>2</sup>, 其他元素為
+          ns<sup>2</sup>np<sup>6</sup>)
+        </p>
+        <h3>Selected Properties</h3>
+        <img src="picture_chemistry/C20_14.png" />
+        <h3>Helium 氦</h3>
+        <ul>
+          <li>來源: 天然氣礦藏</li>
+          <li>由放射性元素的 \(\alpha \) 粒子衰變產生</li>
+          <li>不形成化合物(在一般條件下)</li>
+          <li>用於冷卻劑、火箭燃料的加壓氣體、深海潛水氣體混合物</li>
+        </ul>
+        <h3>Neon and Argon 氖與氬</h3>
+        <p><b>氖 (\(\text{Ne}\))</b></p>
+        <p>不形成化合物(在一般條件下), 常用於霓虹燈招牌</p>
+        <p><b>氬 (\(\text{Ar}\)) </b></p>
+        <p>在某些特定情況下能形成化學鍵. 常用在白熾燈泡中提供非腐蝕性氣氛(保護燈絲)</p>
+        <h3>Krypton and Xenon 氪與氙</h3>
+        <p>能形成許多穩定的化學化合物. 如四氟化氙（Xenon tetrafluoride), 一種穩定且無色的晶體</p>
+        <div class="formula">
+          $$\text{Xe}(g) + 2\text{F}_2(g) \xrightarrow{400^\circ\text{C} \; 6\text{ atm} } \text{XeF}_4(s)$$
+        </div>
+        <p>氙的氟化物與水反應會生成氟化氫與含氧化合物(oxycompounds)</p>
+        <hr />
+        <p>Ex. Which of the following statements is true?</p>
+        <ol>
+          <li>Because noble gases are highly reactive, many compounds containing elements from Group 8A exist</li>
+          <li>Because noble gases are rather nonreactive, no compounds containing elements from Group 8A exist</li>
+          <li>Although noble gases are highly reactive, few compounds containing elements from Group 8A exist</li>
+          <li class="hightlight">
+            Although noble gases are rather nonreactive, some compounds containing elements from Group 8A exist
+          </li>
+        </ol>
+      </section>
+
+      <section class="card" id="21_1">
+        <h2>21-1 The Transition Metals: A Survey</h2>
+        <h3>Transition Metals – Properties</h3>
+        <p>其通性與電子組態在給定的週期(橫排)和給定的族(直行)內,表現出極大的相似性. 歸因於內層電子是最後被添加的電子</p>
+        <ul>
+          <li>d 區過渡金屬接收 \(d\) 電子</li>
+          <li>鑭系和錒系元素接收 \(f\) 電子</li>
+          <li>鍵結能力: 這些內層電子不容易參與化學鍵結</li>
+        </ul>
+        <p><b>物理與化學變異性</b></p>
+        <ul>
+          <li>表現出典型的金屬行為. 擁有金屬光澤以及高導電性和導熱性</li>
+          <li>
+            物理性質表現出很大差異性
+            <ul>
+              <li>熔點: 鎢的熔點為 3400°C ; 汞的熔點為 25°C</li>
+              <li>硬度: 鐵和鈦堅硬且強韌, 而銅和金則相對柔軟</li>
+            </ul>
+          </li>
+          <li>
+            化學反應性差異. 如某些過渡金屬容易反應形成氧化物
+            <ul>
+              <li>保護性氧化層: 鉻、鎳、鈷的氧化物會緊密附著在金屬表面</li>
+              <li>非保護性氧化層: 鐵的氧化物(鐵鏽)會剝落, 使新的金屬表面持續暴露並腐蝕</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Forming Ionic Compounds – Trends</h3>
+        <ul>
+          <li>通常會有多於一種的氧化態(價數)</li>
+          <li>陽離子(Cations)通常是錯離子(Complex ions), 被一定數量的配位基包圍</li>
+          <li>配位基(Ligands)表現為路易斯鹼 (Lewis bases) 的分子或離子</li>
+          <li>
+            範例： \(\text{[Co(NH}_{3}\text{)}_{6}\text{]Cl}_{3}\) 含有 \(\text{Co(NH}_{3}\text{)}_{6}{}^{3+}\) 陽離子和
+            \(\text{Cl}^{–}\) 陰離子<img src="picture_chemistry/C21_1.png" />
+          </li>
+          <li>錯離子中的過渡金屬離子可以吸收特定波長的可見光, 使化合物具有顏色</li>
+          <li>含有未成對電子, 使化合物具有順磁性 (Paramagnetic)</li>
+        </ul>
+         
+        <h3>First-Row Transition Metals – Electron Configurations</h3>
+        <ul>
+          <li>其電子組態優先填滿\(4s\) 軌域, 再填充\(3d\) 軌域</li>
+          <li>例外: 鉻(Cr)、銅(Cu)</li>
+          <li>具有相同能量的一組軌域稱為簡併軌域 (degenerate orbitals)</li>
+        </ul>
+        <img src="picture_chemistry/C21_1_3.png" />
+        <p><b>離子化趨勢</b></p>
+        <p>
+          因為在離子狀態下 \(3d\) 軌域的能量顯著低於 \(4s\) 軌域的能量, 導致第一列過渡金屬離子不含 \(4s\) 電子<br />
+          範例: \(\text{Ti} : [\text{Ar}]4s^{2}3d^{2} \quad \text{Ti}^{3+} : [\text{Ar}]3d^{1}\)
+        </p>
+        <h3>Oxidation States and Ionization Energy</h3>
+        <p>過渡金屬可以通過失去一個或多個電子來形成各種不同的離子</p>
+        <ul>
+          <li>
+            對於前五個元素（Sc 到 Mn), 最大可能的氧化態與失去所有 4s 和 3d 電子有關.
+            最大氧化態在週期表上從左向右逐漸增加
+          </li>
+          <li>第三游離能的增加速度快於第一游離能, 證明了在週期表中從左向右移動時 3d 軌域的能量顯著下降</li>
+        </ul>
+        <img src="picture_chemistry/C21_1_4.png" />
+        <h3>Standard Reduction Potentials 標準還原電位</h3>
+        <p><b>金屬作為還原劑的半反應(與常規半反應的方向相反)</b></p>
+
+        <div class="formula">\[ M \rightarrow M^{n+} + ne^- \]</div>
+        <p>電位值最正的金屬是最佳的還原劑</p>
+        <img src="picture_chemistry/C21_1_5.png" />
+        <p><b>標準氫電極 (SHE)</b></p>
+        <div class="formula">\[ 2\text{H}^+ + 2\text{e}^- \rightarrow \text{H}_2\]</div>
+        <ul>
+          <li>此反應$E^\circ = 0$, 是所有還原電位的基準點</li>
+          <li>
+            除了銅以外, 所有金屬都能在 1M 的強酸水溶液中, 將氫離子還原成氫氣
+            <div class="formula">\[ \text{M}(s) + 2\text{H}^+(aq) \rightarrow \text{H}_2(g) + \text{M}^{2+}(aq) \]</div>
+          </li>
+          <li>
+            第一列過渡金屬的還原能力, 隨著週期由左至右逐漸減弱. 即越往右邊的金屬, 越不容易失去電子(被氧化). 例外: Cr、Zn
+          </li>
+        </ul>
+
+        <h3>4d and 5d Transition Series</h3>
+        <p>4d 和 5d 系列金屬的原子尺寸相似</p>
+        <p><b>鑭系收縮 Lanthanide contraction</b></p>
+        <p>
+          在週期表中從左向右移動時, 由於核電荷增加(即有效核電荷增大),
+          抵消了從一個主量子能階轉移到下一個主量子能階時(即從 4d 到 5d)通常會出現的尺寸增大趨勢, 進而使原子半徑減小
+        </p>
+        <hr />
+        <p title="提示: 當過渡金屬形成離子時，電子會優先從能量較高的 4s 軌域移除，接著才移除 3d 軌域的電子">
+          Ex. Which of the following metal ions has a d<sup>6</sup> electron configuration?
+        </p>
+        <ol>
+          <li>Mn<sup>2+</sup></li>
+          <li>Cr<sup>2+</sup></li>
+          <li>Fe<sup>3+</sup></li>
+          <li class="hightlight">Co<sup>3+</sup></li>
+        </ol>
+        <p>Ex. Which of the following metal ions has a d<sup>8</sup> electron configuration?</p>
+        <ol>
+          <li>Zn<sup>2+</sup></li>
+          <li class="hightlight">Ni<sup>2+</sup></li>
+          <li>Cr<sup>3+</sup></li>
+          <li>Cu<sup>+</sup></li>
+        </ol>
+      </section>
+
+      <section class="card" id="21_2">
+        <h2>21-2 The First-Row Transition Metals</h2>
+        <h3>Scandium 鈧 (Sc)</h3>
+        <ul>
+          <li>為稀有元素, 在化合物中以 +3 氧化態存在</li>
+          <li>化學性質與鑭系元素 (lanthanides) 非常相似</li>
+          <li>其大多數化合物為無色且具抗磁性 (diamagnetic)</li>
+          <li>金屬鈧是透過電解熔融的 \(\text{ScCl}_3\) 製備而成</li>
+        </ul>
+        <h3>Titanium 鈦 (Ti)</h3>
+        <p>其金屬為低密度且高強度. 常用於噴射發動機, 以及製造化工產業的管線、泵浦和反應容器</p>
+        <p>
+          <b>二氧化鈦 Titanium oxide - TiO<sub>2</sub></b>
+        </p>
+        <p>高度不透明的物質。常用作紙張、油漆和塑料中的白色顏料. 其主要礦石為金紅石 (Rutile)和鈦鐵礦(Ilmenite)</p>
+        <p><b>氧化態 oxidation state</b></p>
+        <ul>
+          <li>常以鈦(IV)氧化態存在於化合物中</li>
+          <li>
+            鈦(III)化合物透過還原鈦(IV)價態製得. 在水溶液中以紫色的 Ti(H<sub>2</sub>O)<sub>6</sub
+            ><sup>3+</sup> 離子形式存在, 會被空氣緩慢氧化成鈦(IV)
+          </li>
+          <li>鈦(II)在水溶液中不穩定. 常以固態形式存在於 TiO 或通式為 TiX<sub>2</sub> 的二鹵化物中</li>
+        </ul>
+        <h3>Vanadium 釩 - V</h3>
+        <ul>
+          <li>具有高硬度且耐腐蝕特性, 用於與鈦、鐵組成合金</li>
+          <li>純金屬形式可從熔鹽的電解還原中提取</li>
+          <li>
+            <b>五氧化二釩 V<sub>2</sub>O<sub>5</sub></b
+            >為生產硫酸時非常有用的工業催化劑
+          </li>
+          <li>主要氧化態為釩(V)價態</li>
+        </ul>
+        <img src="picture_chemistry/C21_2.png" />
+        <h3>Chromium 鉻 - Cr -</h3>
+        <ul>
+          <li>質地堅硬且脆, 透過產生一層緻密且肉眼看不見的氧化層來保持表面光亮</li>
+          <li>其化合物中的氧化態通常為 +2 +3 或 +6</li>
+          <li>
+            主要礦石為鉻鐵礦(FeCr<sub>2</sub>O<sub>4</sub>). 可用碳還原生產鉻鐵合金(Ferrochrome), 用於製造不鏽鋼
+            <div class="formula">\[ FeCr_2O_4(s) + 4C(s) \rightarrow Fe(s) + 2Cr(s) + 4CO(g) \]</div>
+          </li>
+        </ul>
+        <p><b>重要離子與反應</b></p>
+        <ul>
+          <li>鉻離子 Cr<sup>2+</sup>: 在水溶液中是強效還原劑</li>
+          <li>
+            鉻(VI)氧化物(紅色): 溶解於水中會形成強酸性的紅橙色溶液. 鹼化後可獲得鉻酸鹽 CrO<sub>4</sub><sup>2-</sup>
+            <div class="formula">
+              \[2\text{CrO}_3(s) + \text{H}_2\text{O}(l) \rightarrow 2\text{H}^+(aq) + \text{Cr}_2\text{O}_7^{2-}(aq)\]
+            </div>
+          </li>
+          <li>鉻酸洗液: CrO<sub>3</sub>與濃硫酸的混合物, 具強氧化性, 可除去實驗玻璃儀器上的有機物</li>
+        </ul>
+        <p><b>氧化還原能力 鉻(VI)</b></p>
+        <ul>
+          <li>二鉻酸根 Cr<sub>2</sub>O<sub>7</sub> <sup>2-</sup></li>
+          還原成 Cr(III)氧化態 , 其氧化能力受 pH 值影響
+        </ul>
+        <div class="formula">
+          \[ \text{Cr}_2\text{O}_7^{2-}(aq) + 14\text{H}^+(aq) + 6e^- \rightarrow 2\text{Cr}^{3+}(aq) +
+          7\text{H}_2\text{O}(l) \quad E^\circ = 1.33\text{ V}\]
+        </div>
+        <ul>
+          <li>鉻酸根 CrO<sub>4</sub><sup>2-</sup></li>
+          存在於鹼性溶液中, 氧化能力較弱
+        </ul>
+        <div class="formula">
+          \[\text{CrO}_4^{2-}(aq) + 4\text{H}_2\text{O}(l) + 3e^- \rightarrow \text{Cr(OH)}_3(s) + 5\text{OH}^-(aq)
+          \quad E^\circ = -0.13\text{ V}\]
+        </div>
+        <img src="picture_chemistry/C21_2_2.png" />
+        <h3>Manganese 錳 - Mn -</h3>
+        <ul>
+          <li>用於生產硬鋼. 這種硬鋼可用於製造碎石機、銀行金庫和裝甲板</li>
+          <li>來源於錳結核, 發現於洋底, 其呈球狀岩石形式, 這些岩石含有錳、鐵的氧化物混合物, 以及微量的鈷、鎳和銅</li>
+          <li>存在於從 +2 到 +7 的所有氧化態</li>
+        </ul>
+        <h3>Iron 鐵 -Fe-</h3>
+        <ul>
+          <li>含量最豐富的重金屬, 呈現白色且有光澤</li>
+          <li></li>
+          <li>對氧化劑具有高反應性, 如鐵在潮濕空氣中會迅速氧化形成鐵鏽</li>
+          <li>鐵的化學性質主要涉及其 +2 和 +3 氧化態</li>
+        </ul>
+        <h3>Cobalt 鈷 - Co -</h3>
+        <ul>
+          <li>屬於稀有元素</li>
+          <li>呈現藍白色外觀</li>
+          <li>主要礦石包括方鈷礦 (Smaltite, \(\text{CoAs}_{2}\)) 和硫鈷礦 (Cobaltite, \(\text{CoAsS}\))</li>
+          <li>用於合金中, 如不鏽鋼和鎢鉻鈷合金(stellite)</li>
+          <li>鈷的化學性質主要涉及其 +2 和 +3 氧化態</li>
+          <li>能形成種類廣泛的配位化合物(錯化合物)</li>
+        </ul>
+        <p><b>Typical Compounds of Cobalt</b></p>
+        <img src="picture_chemistry/C21_2_3.png" />
+        <h3>Nickel 鎳 - Ni -</h3>
+        <ul>
+          <li>銀白色的金屬, 通常在礦石中與砷、銻和硫結合存在</li>
+          <li>具有高導電性和導熱性, 以及很強的抗腐蝕性</li>
+          <li>用於電鍍活性金屬或生產合金, 如不鏽鋼</li>
+          <li>在化合物中主要以 +2 氧化態存在</li>
+        </ul>
+        <p><b>Typical Compounds of Nickel</b></p>
+        <img src="picture_chemistry/C21_2_4.png" />
+        <h3>Copper 銅 - Cu -</h3>
+        <ul>
+          <li>廣泛存在於含有硫化物、砷化物、氯化物和碳酸鹽的天然礦石中</li>
+          <li>因其高導電性和抗腐蝕性而備受重視</li>
+          <li>用於水管和電氣應用(電線、電纜)</li>
+          <li>為多種合金的成分, 例如黃銅、純銀和K金</li>
+          <li>
+            暴露在空氣中會腐蝕. 產生一層綠色銅綠(Patina), 其成分為鹼式硫酸銅、鹼式碳酸銅
+            <div class="formula">
+              \[2\text{Cu}(s)+\text{H}_{2}\text{O}(g)+\text{CO}_{2}(g)+\text{O}_{2}(g)\longrightarrow
+              \text{Cu}_{2}(\text{OH})_{2}\text{CO}_{3}(s)\]
+            </div>
+          </li>
+          <li>銅的化學性質主要涉及 +2 氧化態</li>
+        </ul>
+        <p><b>含銅合金 Alloys Containing Copper </b></p>
+        <img src="picture_chemistry/C21_2_5.png" />
+        <h3>Zinc 鋅 - Zn -</h3>
+        <ul>
+          <li>白色且有光澤的高活性金屬</li>
+          <li>從閃鋅礦 ZnS 中提煉, 閃鋅礦常與方鉛礦 PbS 一起伴生</li>
+          <li>為優秀的還原劑, 且有迅速失去光澤（變色/表面鈍化）的傾向</li>
+          <li>常用於鍍鋅鋼材(保護鋼鐵防鏽)</li>
+          <li>在化合物中僅以 +2 氧化態形式存在(形成無色鹽類)</li>
+        </ul>
+      </section>
+
+      <section class="card" id="21_3">
+        <h2>21-3 Coordination Compounds</h2>
+        <p>
+          配位化合物又稱為錯合物或絡合物.
+          其中包含一個或多個中心原子或離子(通常是過渡金屬)與周圍多個配位基(ligands)以配位鍵結合而成
+        </p>
+        <ul>
+          <li>過渡金屬的多種氧化態和配位基的多樣性, 使配位化合物的種類極其豐富</li>
+          <li>許多配位化合物具有鮮豔的顏色源於中心金屬離子的 d 軌域電子躍遷吸收可見光所致</li>
+          <li>根據其含有的未成對電子數量, 配位化合物可能表現出順磁性(Paramagnetic)或反磁性(Diamagnetic)</li>
+          <li>具有特定的幾何結構. 如八面體(Octahedral, 配位數 6)、四面體(Tetrahedral, 配位數 4)</li>
+        </ul>
+        <h3>Coordination Number 配位數</h3>
+        <ul>
+          <li>在錯離子中, 中心金屬離子與配位基(Ligand)之間所形成的共價鍵(配位鍵)數量</li>
+          <li>
+            配位數通常在 2 到 8 之間變化, 具體取決於過渡金屬離子的大小、電荷以及電子組態.
+            <ul>
+              <li>Linear(two ligands)</li>
+              <li>Tetrahedral or square planar(four ligands)</li>
+              <li>Octahedral(six ligands)</li>
+            </ul>
+          </li>
+          <li>同一種金屬離子在不同的環境下可以擁有不只一種配位數</li>
+        </ul>
+        <img src="picture_chemistry/C21_3.png" />
+
+        <h3>Ligands 配位基</h3>
+        <p>具有孤對電子(Lone electron pair)的中性分子或離子, 該電子對可用於與金屬離子形成化學鍵</p>
+        <p><b>配位共價鍵 (Coordinate covalent bond)</b></p>
+        <p>
+          金屬與配位基之間形成的化學鍵, 源於路易士鹼(Lewis base, 即配位基)與路易士酸(Lewis acid,
+          即金屬離子)之間的交互作用
+        </p>
+        <p><b>配位基的類型 Types of Ligands</b></p>
+        <ul>
+          <li>
+            單牙基配位基(Monodentate/unidentate ligand))
+            <ul>
+              <li>只能與金屬離子形成一個配位鍵的配位基</li>
+              <li>如\(\text{H}_{2}\text{O}\)（水）、\(\text{NH}_{3}\)（氨）、\(\text{Cl}^{–}\)（氯離子）。 </li>
+            </ul>
+          </li>
+          <li>
+            螯合配位基 (Chelating ligand, chelate) 
+            <ul>
+              <li>擁有多個具有孤對電子的原子, 可以同時與同一個金屬離子鍵結</li>
+              <li>形成環狀結構, 通常會使錯合物更穩定</li>
+              <li>多牙基配位基 (Polydentate ligand): 可以與同一個金屬離子形成多於兩個配位鍵的配位基</li>
+              <li>雙牙基配位基 (Bidentate ligand):可以與同一個金屬離子形成兩個配位鍵的配位基。</li>
+              <li>範例: 乙二胺 (Ethylenediamine)</li>
+              <li>六牙基配位基 (Hexadentate ligand): 可以與同一個金屬離子形成多達六個配位鍵的配位基</li>
+              <li>範例: 乙二胺四醋酸根 (\(\text{EDTA}\)，Ethylenediaminetetraacetate)。</li>
+               
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="21_5">
+        <h2>21-5 Bonding in Complex Ions: The Localized Electron Model</h2>
+        <p>
+          價殼層電子對斥力理論（VSEPR）在預測主族元素(如 CH<sub>4</sub>) 的形狀時非常有效, 但由於過渡金屬具有 $d$
+          軌域電子, 其交互作用更為複雜, 因此 VSEPR 模型不適用於錯合物
+        </p>
+        <ul>
+          <li>配位數為 6 的錯離子: 通常具有八面體(Octahedral)排列</li>
+          <li>配位數為 2 的錯合物: 通常呈直線型(Linear)</li>
+          <li>配位數為 4 的錯離子: 可能是四面體(Tetrahedral)或平面正方形(Square Planar)</li>
+        </ul>
+        <p>
+          金屬離子與配位基的交互作用可視為「路易士酸鹼反應」, 即配位基將其孤對電子提供給金屬離子的空軌域,
+          從而形成配位共價鍵
+        </p>
+      </section>
+
+      <section class="card" id="21_6">
+        <h2>21-6 The Crystal Field Model</h2>
+        <p>晶體場模型主要分析金屬離子 d 軌域能量, 進而解釋過渡金屬錯合物的顏色與磁性</p>
+        <ul>
+          <li>配位基視為負點電荷</li>
+          <li>金屬 - 配位基完全是離子鍵</li>
+        </ul>
+        <h3>Octahedral Complexes</h3>
+        <p>在八面體配位中: 電子會先填入能量較低的軌域以減少排斥</p>
+        <ul>
+          <li>dz² 和 dx²–y² 軌域直接指向配位基, 導致電子受到配位基最大排斥, 即軌域能量高</li>
+          <li>dxy、dxz、dyz 軌域在配體之間, 受到排斥較小, 即軌域能量低</li>
+        </ul>
+        <img src="picture_chemistry/C21_6.png" />
+        <img src="picture_chemistry/C21_6_2.png" />
+        <h3>Splitting of 3d Orbital Energies 3d軌道能量分裂</h3>
+        <ul>
+          <li>
+            強場配體 (Strong field)
+            <ul>
+              <li>\( \Delta \) 大 → 電子傾向成對填入 t<sub>2g</sub> → 低自旋 (Low-spin) → 順磁性降低或成抗磁性</li>
+            </ul>
+          </li>
+
+          <li>
+            弱場配體 (Weak field)
+            <ul>
+              <li>\( \Delta \) 小 → 電子分佈在所有軌域 → 高自旋 (High-spin) → 順磁性強</li>
+            </ul>
+          </li>
+          <li>
+            配體依產生 \( \Delta \) 的能力排序
+            <ul>
+              <li>I⁻ &lt; Br⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O &lt; NH₃ &lt; en &lt; CN⁻ &lt; CO</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Other Coordination Geometries</h3>
+        <ul>
+          <li>四面體 (tetrahedral): \( \Delta_{tet} \) ≈ \( \frac{1}{2}\Delta_{oct} \) → 弱場 → 高自旋</li>
+          <li>方平面 (square planar): 由八面體去掉 z 軸兩個配體</li>
+          <li>線性 (linear): 僅保留 z 軸兩個配體</li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">- 普通化學 -</footer>
+    <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 取得按鈕元件
+      let mybutton = document.getElementById("btn-back-to-top");
+
+      // 當使用者捲動網頁時，觸發 scrollFunction
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block"; // 顯示按鈕
+        } else {
+          mybutton.style.display = "none"; // 隱藏按鈕
+        }
+      }
+
+      // 當使用者點擊按鈕時，回到頂端
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // 平滑捲動效果
+        });
+      }
+    </script>
+  </body>
+</html>

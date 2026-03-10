@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>靜力學</title>
+        <!-- Favicons -->
+        <link href="picture_other/favicon-32x32.png" rel="icon" />
+        <link href="picture_other/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+        <script>
+            MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ]
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">課程筆記整理</a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculus.html">微積分</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chemistry.html">普通化學</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experiment.html">普化實驗</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="energy.html">能源工程概論</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link active dropdown-toggle"
+                                href="statics.html"
+                                id="statics.html"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                靜力學
+                            </a>
+                            <ul
+                                class="dropdown-menu dropdown-scrollable"
+                                style="overflow-y: auto"
+                                aria-labelledby="navbarDropdown">
+                                <li><h3 class="dropdown-item-text">章節目錄</h3></li>
+                                <li class="dropdown-header">- CH1 一般原則 -</li>
+                                <li><a class="dropdown-item" href="#1-1">1-1 力學</a></li>
+                                <li><a class="dropdown-item" href="#1-2">1-2 基本概念</a></li>
+                                <li><a class="dropdown-item" href="#1-3">1-3 SI制</a></li>
+                                <li><a class="dropdown-item" href="#1-4">1-4 數值計算</a></li>
+                                <li class="dropdown-header">- CH2 力向量 -</li>
+                                <li><a class="dropdown-item" href="#2-1">2-1 純量與向量</a></li>
+                                <li><a class="dropdown-item" href="#2-2">2-2 向量運算</a></li>
+                                <li><a class="dropdown-item" href="#2-3">2-3 力向量的和</a></li>
+                                <li><a class="dropdown-item" href="#2-4">2-4 共面力向量的和</a></li>
+                                <li><a class="dropdown-item" href="#2-5">2-5 笛卡兒向量</a></li>
+                                <li><a class="dropdown-item" href="#2-6">2-6 笛卡兒向量的和</a></li>
+                                <li><a class="dropdown-item" href="#2-7">2-7 位置向量</a></li>
+                                <li><a class="dropdown-item" href="#2-8">2-8 直線方向上的力向量</a></li>
+                                <li><a class="dropdown-item" href="#2-9">2-9 點積</a></li>
+                                <li class="dropdown-header">- CH3 粒子的平衡 -</li>
+                                <li><a class="dropdown-item" href="#3-1">3-1 粒子平衡的條件</a></li>
+                                <li><a class="dropdown-item" href="#3-2">3-2 自由體圖</a></li>
+                                <li><a class="dropdown-item" href="#3-3">3-3 二維力系統</a></li>
+                                <li><a class="dropdown-item" href="#3-4">3-4 三維力系統</a></li>
+                                <li class="dropdown-header">- CH4 系統合力 -</li>
+                                <li><a class="dropdown-item" href="#4-1">4-1 力矩 - 標量形式</a></li>
+                                <li><a class="dropdown-item" href="#4-2">4-2 外積</a></li>
+                                <li><a class="dropdown-item" href="#4-3">4-3 力矩 - 向量形式</a></li>
+                                <li><a class="dropdown-item" href="#4-4">4-4 矩量原理</a></li>
+                                <li><a class="dropdown-item" href="#4-6">4-6 力偶矩</a></li>
+                                <li><a class="dropdown-item" href="#4-7">4-7 力偶系統的簡化</a></li>
+                                <li><a class="dropdown-item" href="#4-8">4-8 力與力偶系統的進一步簡化</a></li>
+                                <li><a class="dropdown-item" href="#4-9">4-9 簡化簡單分散式載重</a></li>
+                                <li class="dropdown-header">- CH5 剛體的平衡 -</li>
+                                <li><a class="dropdown-item" href="#5-1">5-1 剛體平衡</a></li>
+                                <li><a class="dropdown-item" href="#5-2">5-2 自由體圖</a></li>
+                                <li><a class="dropdown-item" href="#5-3">5-3 二維平衡方程式</a></li>
+                                <li><a class="dropdown-item" href="#5-4">5-4 二力與三力構件</a></li>
+                                <li><a class="dropdown-item" href="#5-5">5-5 三維自由體圖</a></li>
+                                <li><a class="dropdown-item" href="#5-6">5-6 三維平衡方程式</a></li>
+                                <li><a class="dropdown-item" href="#5-7">5-7 約束與靜不定</a></li>
+                                <li class="dropdown-header">- CH6 結構分析 -</li>
+                                <li><a class="dropdown-item" href="#6-1">6-1 簡單桁架</a></li>
+                                <li><a class="dropdown-item" href="#6-2">6-2 節點法</a></li>
+                                <li><a class="dropdown-item" href="#6-3">6-3 零力桿件</a></li>
+                                <li><a class="dropdown-item" href="#6-4">6-4 截面法</a></li>
+                                <li><a class="dropdown-item" href="#6-6">6-6 剛架與機械</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="phoenix_code.html">網頁程式設計</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="octave.html">基礎程式設計</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="minerals.html">礦物與生活</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container">
+            <section class="card">
+                <h2>靜力學</h2>
+                <p>(資料待補充)</p>
+            </section>
+
+            <section class="card" id="1-1">
+                <h2>1-1 Mechanics 力學</h2>
+                <h3>分類</h3>
+                <ul>
+                    <li>Rigid-body mechanics 剛體力學</li>
+                    <li>Deformable-body mechanics 變形體力學</li>
+                    <li>Fluid mechanics 流體力學</li>
+                </ul>
+
+                <h3>Statics 靜力學</h3>
+                <ul>
+                    <li>At rest 靜止</li>
+                    <li>Move with constant velocity 等速</li>
+                </ul>
+
+                <h3>Dynamics 動力學</h3>
+            </section>
+
+            <section class="card" id="1-2">
+                <h2>1-2 Fundamental Concepts 基本概念</h2>
+
+                <h3>Basic Quantities 基本量</h3>
+                <ul>
+                    <li>Length 長度</li>
+                    <li>Time 時間</li>
+                    <li>Mass 質量</li>
+                    <li>Force 力</li>
+                </ul>
+
+                <h3>Idealizations 理想化</h3>
+                <ul>
+                    <li>Particle 質點</li>
+                    <li>Rigid body 剛體</li>
+                    <li>Concentrated force</li>
+                </ul>
+
+                <h3>Newton's Three Laws of Motion 牛頓三大運動定律</h3>
+                <ul>
+                    <li>First law：靜者恆靜, 動者恆作等速直線運動</li>
+                    <li>Second law：F = ma</li>
+                    <li>Third law：反作用力</li>
+                </ul>
+
+                <h3>Newton's Law of Gravitational Attraction</h3>
+                <div class="formula">
+                    F = Gm₁m₂ / r² <br />
+                    G = 6.673×10<sup>-13</sup> (m³/kg•s²) <br />
+                    W = GmM<sub>e</sub> / r² , g = GM<sub>e</sub> / r² , W = mg
+                </div>
+            </section>
+
+            <section class="card" id="1-3">
+                <h2>1-3 The International System of Units (SI制)</h2>
+
+                <h3>Basic Units 基本量</h3>
+                <ul>
+                    <li>Length 長度 / meter / (m)</li>
+                    <li>Time 時間 / second / (s)</li>
+                    <li>Mass 質量 / kilogram / (kg)</li>
+                    <li>Force 力 / newton / (N = kg•m / s<sup>2</sup>)</li>
+                </ul>
+
+                <h3>Prefix 前綴詞</h3>
+                <p><b>Multiple </b></p>
+                <ul>
+                    <li>10<sup>9</sup> / giga / G</li>
+                    <li>10<sup>6</sup> / mega / M</li>
+                    <li>10<sup>3</sup> / kilo / k</li>
+                </ul>
+                <p><b>Submultiple </b></p>
+                <ul>
+                    <li>10<sup>-3</sup> / milli / m</li>
+                    <li>10<sup>-6</sup> / micro / µ</li>
+                    <li>10<sup>-9</sup> / nano / n</li>
+                </ul>
+            </section>
+
+            <section class="card" id="1-4">
+                <h2>1-4 Numerical Calculation 數值計算</h2>
+                <ul>
+                    <li>Dimensional homogeneity 尺寸均勻性</li>
+                    <li>Significant figures 有效數字</li>
+                    <li>Rounding of numbers 四捨五入</li>
+                </ul>
+            </section>
+
+            <section class="card" id="2-1">
+                <h2>2-1 Scalars and Vectors</h2>
+                <ul>
+                    <li>Scalar 純量</li>
+                    <li>Vector 向量</li>
+                    <li>向量以粗體 <b>A</b> 表示, 向量大小以斜體 <i>A</i> 表示</li>
+                </ul>
+            </section>
+
+            <section class="card" id="2-2">
+                <h2>2-2 Vector Operation 向量運算</h2>
+                <div class="formula">
+                    <p>
+                        \[ \mathbf{R}=\mathbf{A}+\mathbf{B},\quad
+                        \mathbf{R'}=\mathbf{A}-\mathbf{B}=\mathbf{A}+(-\mathbf{B}) \]
+                    </p>
+                </div>
+                <ul>
+                    <li>
+                        Parallelogram law 平行四邊形原理<br />
+                        <img src="picture_statics/parallelogram_law.png" alt="parallelogram law" width="45%" />
+                        <img src="picture_statics/parallelogram_law_2.png" alt="parallelogram law" width="50%" />
+                    </li>
+
+                    <li>
+                        Triangle rule 三角法則
+                        <img src="picture_statics/triangle_rule.png" alt="triangle rule" width="100%" />
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card" id="2-3">
+                <h2>2-3 Vector Addition of Forces</h2>
+                <ul>
+                    <li>Resultant force 合力 <b>F</b><sub>R</sub></li>
+                </ul>
+                <div class="formula"><p>\[ \mathbf{F}_{R} = \mathbf{F}_{1} + \mathbf{F}_{2} \]</p></div>
+                <img src="picture_statics/resautant_force.png" alt="resautant force" width="100%" />
+                <ul>
+                    <li>Components of a force 力的分量</li>
+                </ul>
+                <img src="picture_statics/components_of_a_force.png" alt="components of a force" width="100%" />
+            </section>
+
+            <section class="card" id="2-4">
+                <h2>2-4 Addition of a System of Coplanar Forces</h2>
+                <ul>
+                    <li>
+                        Rectangular components 矩形分量<br />--&gt;力分解成沿 x 軸與 y 軸的兩個分量<b>F</b
+                        ><sub>x</sub> 、<b>F</b><sub>y</sub>
+                    </li>
+                </ul>
+
+                <h3>Scalar notation</h3>
+                <div class="formula">
+                    <p>\[ \mathbf{F}_{x} = F \, cos \, \theta\quad \mathbf{F}_{y}=F \, sin \, \theta \]</p>
+                </div>
+
+                <h3>Cartesian vector notation</h3>
+                <div class="formula"><p>\[ \mathbf{F}=F_{x} \, \mathbf{i} + F_{y} \, \mathbf{j} \]</p></div>
+                <h3>Coplanar force resultants</h3>
+                <div class="formula">
+                    <p>
+                        \[ \mathbf{F}_{1}=F_{1x} \, \mathbf{i} + F_{1y} \, \mathbf{j} \]\[ \mathbf{F}_{2}=-F_{2x} \,
+                        \mathbf{i} + F_{2y} \, \mathbf{j} \]\[ \mathbf{F}_{3}=F_{3x} \, \mathbf{i} - F_{3y} \,
+                        \mathbf{j} \]
+                    </p>
+                </div>
+                <img src="picture_statics/coplanar_force_resultants.png" alt="coplanar force resultants" width="100%" />
+                <div class="formula">
+                    <p>
+                        \( \begin{align*} \mathbf{F}_{R} &= \mathbf{F}_{1} + \mathbf{F}_{2} + \mathbf{F}_{3} \\ &=
+                        F_{1x} \, \mathbf{i} + F_{1y} \, \mathbf{j} -F_{2x} \, \mathbf{i} + F_{2y} \, \mathbf{j} +
+                        F_{3x} \, \mathbf{i} - F_{3y} \, \mathbf{j} \\ &= (F_{1x} - F_{2x} + F_{3x}) \, \mathbf{i} +
+                        (F_{1y} + F_{2y} - F_{3y})\,\mathbf{j} \\ &= (F_{Rx})\,\mathbf{i} + (F_{Ry})\,\mathbf{j}
+                        \end{align*} \)
+                    </p>
+                </div>
+                <div class="formula">
+                    (<i>F</i><sub>Rx</sub>) = Σ<i>F</i><sub>x</sub> , (<i>F</i><sub>Ry</sub>) = Σ<i>F</i><sub>y</sub>
+                    <br /><i>F</i><sub>R</sub> = √(<i>F</i><sub>Rx</sub>)<sup>2</sup> + (<i>F</i><sub>Ry</sub>)<sup
+                        >2</sup
+                    >
+                </div>
+            </section>
+
+            <section class="card" id="2-5">
+                <h2>2-5 Cartesian Vector</h2>
+
+                <h3>Right-handed coordinate system</h3>
+                <img
+                    src="picture_statics/right_handed_coordinate_system.png"
+                    alt="right-handed coordinate system"
+                    width="100%" />
+
+                <h3>Rectangular components of a vector</h3>
+                <div class="formula"><b>A</b> = <b>A</b><sub>x</sub> + <b>A</b><sub>y</sub> +<b>A</b><sub>z</sub></div>
+                <h3>Cartesian vector representation</h3>
+                <div class="formula">
+                    <b>A</b> = <i>A</i><sub>x</sub><b>i</b> + <i>A</i><sub>y</sub><b>j</b> + <i>A</i><sub>z</sub
+                    ><b>k</b>
+                </div>
+                <img
+                    src="picture_statics/cartesian_vector_representation.png"
+                    alt="cartesian vector representation"
+                    width="50%" />
+                <img
+                    src="picture_statics/cartesian_vector_representation_2.png"
+                    alt="cartesian vector representation(2)"
+                    width="40%" />
+
+                <h3>Magnitude of a cartesian vector</h3>
+                <div class="formula">
+                    <i>A</i> = √(<i>A</i><sub>x</sub><sup>2</sup> + <i>A</i><sub>y</sub><sup>2</sup> + <i>A</i
+                    ><sub>z</sub><sup>2</sup>)
+                </div>
+
+                <h3>Coordinate direction angles:</h3>
+                <div class="formula">
+                    cosα = <i>A</i><sub>x</sub> / <i>A</i> , cosβ = <i>A</i><sub>y</sub> / <i>A</i> , cosγ = <i>A</i
+                    ><sub>z</sub> /
+                    <i>A</i>
+                </div>
+                <div class="formula">
+                    <b>u</b><sub>A</sub> = (<b>A</b> / <i>A</i>) = (<i>A</i><sub>x</sub> / <i>A</i>)<b>i</b> + (<i>A</i
+                    ><sub>y</sub> / <i>A</i>)<b>j</b> + (<i>A</i><sub>z</sub> / <i>A</i>)<b>k</b><br />
+                    = cosα <b>i</b> + cosβ <b>j</b> + cosγ <b>k</b><br />
+                </div>
+                <div class="formula">cos²α + cos²β + cos²γ = 1</div>
+                <img
+                    src="picture_statics/coordinate_direction_angles.png"
+                    alt="coordinate direction angles"
+                    width="49%" />
+                <img
+                    src="picture_statics/coordinate_direction_angles_2.png"
+                    alt="coordinate direction angles(2)"
+                    width="49%" />
+
+                <p>若已知 A 的大小與角度：</p>
+                <div class="formula">
+                    <b>A</b> = <i>A</i>•<b>u</b><sub>A</sub> = <i>A</i>cosα<b>i</b> + <i>A</i>cosβ<b>j</b> +
+                    <i>A</i>cosγ<b>k</b>
+                </div>
+            </section>
+
+            <section class="card" id="2-6">
+                <h2>2-6 Addition of Cartesian Vectors</h2>
+                <div class="formula">
+                    <b>R</b> = <b>A</b> + <b>B</b> = (<i>A</i><sub>x</sub> + <i>B</i><sub>x</sub>)<b>i</b> + (<i>A</i
+                    ><sub>y</sub> + <i>B</i><sub>y</sub>)<b>j</b> + (<i>A</i><sub>z</sub> + <i>B</i><sub>z</sub>)<b>k</b
+                    ><br />
+                    <b>F</b><sub>R</sub> = Σ<b>F</b> = Σ<i>F</i><sub>x</sub><b>i</b> + Σ<i>F</i><sub>y</sub><b>j</b> +
+                    Σ<i>F</i><sub>z</sub><b>k</b>
+                </div>
+                <img
+                    src="picture_statics/addition_of_cartesian_vectors.png"
+                    alt="addition of cartesian vectors"
+                    width="100%" />
+            </section>
+
+            <section class="card" id="2-7">
+                <h2>2-7 Position Vectors</h2>
+                <div class="formula"><b>r</b> = <i>x</i><b>i</b> + <i>y</i><b>j</b> + <i>z</i><b>k</b></div>
+                <img src="picture_statics/position_vector.png" alt="position vector" width="50%" />
+                <img src="picture_statics/position_vector_2.png" alt="position vector(2)" width="49%" />
+                <div class="formula">
+                    <b>r</b><sub>A</sub> + <b>r</b> = <b>r</b><sub>b</sub> <br /><b>r</b> = (<i>x</i><sub>B</sub> -
+                    <i>x</i><sub>A</sub>)<b>i</b> + (<i>y</i><sub>B</sub> - <i>y</i><sub>A</sub>)<b>j</b> + (<i>z</i
+                    ><sub>B</sub> - <i>z</i><sub>A</sub>)<b>k</b>
+                </div>
+                <img src="picture_statics/position_vector_3.png" alt="position vecto(3)" width="50%" />
+                <img src="picture_statics/position_vector_4.png" alt="position vector(4)" width="49%" />
+            </section>
+
+            <section class="card" id="2-8">
+                <h2>2-8 Force Vector Directed Along a Line</h2>
+                <div class="formula">
+                    <b>F</b> = <i>F</i><b>u</b> = <i>F</i>(<b>r</b> / <i>r</i>) <br />
+                    = <i>F</i> [(<i>x</i><sub>B</sub> - <i>x</i><sub>A</sub>)<b>i</b> + (<i>y</i><sub>B</sub> - <i>y</i
+                    ><sub>A</sub>)<b>j</b> + (<i>z</i><sub>B</sub> - <i>z</i><sub>A</sub>)<b>k</b>] / <br />
+                    [√(<i>x</i><sub>B</sub> - <i>x</i><sub>A</sub>)<sup>2</sup> + (<i>y</i><sub>B</sub> - <i>y</i
+                    ><sub>A</sub>)<sup>2</sup> + (<i>z</i><sub>B</sub> - <i>z</i><sub>A</sub>)<sup>2</sup>]
+                </div>
+            </section>
+            <section class="card" id="2-9">
+                <h2>2-9 Dot Product 點積 / 內積</h2>
+                <div class="formula">
+                    <b>A</b> • <b>B</b> = <i>AB</i>cosθ = <i>A<sub>x</sub>B<sub>x</sub></i> +
+                    <i>A<sub>y</sub>B<sub>y</sub></i> +
+                    <i>A<sub>z</sub>B<sub>z</sub></i>
+                </div>
+                <img src="picture_statics/dot_product.png" alt="dot product" width="100%" />
+                <h3>夾角：</h3>
+                <div class="formula">θ = cos⁻¹(A • B / AB)</div>
+
+                <p><b>A</b> • <b>B</b> = 0 → <b>A</b> ⟂ <b>B</b></p>
+
+                <h3>射影：</h3>
+                <div class="formula">
+                    <p>
+                        \( A_{a} = A \cos\theta = \mathbf{A} \cdot \mathbf{u}_{a} \quad \text{向量形式：} \mathbf{A}_{a}
+                        = A_{a}\,\mathbf{u}_{a} \)
+                    </p>
+                </div>
+                <img src="picture_statics/dot_product_2.png" alt="dot product(2)" width="100%" />
+            </section>
+
+            <section class="card" id="3-1">
+                <h2>3-1 Condition for the Equilibrium of a Particle</h2>
+                <div class="formula"><p>\[ \displaystyle \sum \mathbf{F} = 0 = m \mathbf{a}, a = 0 \]</p></div>
+                <p>--&gt; 合力與加速度為0, 粒子呈靜止或等速運動</p>
+            </section>
+
+            <section class="card" id="3-2">
+                <h2>3-2 The Free-Body Diagram 自由體圖</h2>
+                <h3>Three types of supports often encountered in particle equilibrium problems</h3>
+                <ul>
+                    <li>Linearly elastic spring 線性彈簧</li>
+                </ul>
+                <p>-&gt; 彈簧受力與變形量成正比</p>
+                <div class="formula">F = ks</div>
+                <img src="picture_statics/spring.png" alt="spring" width="90%" />
+
+                <ul>
+                    <li>Cables and pullesy 繩索與滑輪</li>
+                </ul>
+                <p>-&gt;同一繩子張力T 大小相同,受力方向沿繩索方向 <br />無摩擦力滑輪, 繩兩側張力大小相同</p>
+                <img src="picture_statics/cables_and_pulleys.png" alt="cables and pullesy" width="100%" />
+
+                <ul>
+                    <li>Smooth contact 光滑接觸面</li>
+                </ul>
+                <p>-&gt;無摩擦力, 只有垂直受力面的正向力N</p>
+                <img src="picture_statics/smooth_contact.png" alt="smooth contact" width="100%" />
+            </section>
+
+            <section class="card" id="3-3">
+                <h2>3-3 Complaner Force Systems 二維力系統</h2>
+            </section>
+
+            <section class="card" id="3-4">
+                <h2>3-4 Three-Dimensional Force Systems 三維力系統</h2>
+            </section>
+
+            <section class="card" id="4-1">
+                <h2>4-1 Moment of a Force - Scalar Formulation 力矩</h2>
+
+                torque/moment 力矩
+                <section class="formula">
+                    <code>Magnitude</code>
+                    <p>\[ M_o = Fd \]</p>
+                    <ol style="list-style-type: none">
+                        <li><i>M</i><sub>o</sub>: 力矩</li>
+                        <li>d: moment arm 力臂</li>
+                    </ol>
+                </section>
+            </section>
+
+            <section class="card" id="4-2">
+                <h2>4-2 Cross Product 外積</h2>
+                <section class="formula">
+                    <p>\( \mathbf{C} = \mathbf{A} \times \mathbf{B} \)</p>
+                    <h4>magnitude</h4>
+                    <p>\( C = AB \sin\theta \)</p>
+                    <h4>direction</h4>
+                    <p>\( \mathbf{C} = \mathbf{A} \times \mathbf{B} = (\mathit{AB}\,\sin\theta)\,\mathbf{u}_{c} \)</p>
+                    <hr />
+                    <h4>laws of operation</h4>
+                    <p>
+                        \[ \mathbf{A} \times \mathbf{B} = -\mathbf{B} \times \mathbf{A} \] \[ a(\mathbf{A} \times
+                        \mathbf{B}) = (a\mathbf{A}) \times \mathbf{B} = \mathbf{A} \times (a\mathbf{B}) \] \[ \mathbf{A}
+                        \times (\mathbf{B} + \mathbf{D}) = (\mathbf{A} \times \mathbf{B}) + (\mathbf{A} \times
+                        \mathbf{D}) \]
+                    </p>
+                </section>
+            </section>
+
+            <section class="card" id="4-3">
+                <h2>4-3 Moment of a Force – Vector Formulation</h2>
+            </section>
+
+            <section class="card" id="4-4">
+                <h2>4-4 Principle of Moments</h2>
+                <p><b>法里農定理 (Varignon's Theorem)</b></p>
+                <p>一力對某點之力矩, 等於該力各分力對同點力矩之向量和</p>
+                <div class="formula">
+                    \[ \mathbf{M_O} = \mathbf{r} \times (\mathbf{ F_1 + F_2 + ...)} = \sum\mathbf{(r \times F)} \]
+                </div>
+            </section>
+
+            <section class="card" id="4-5">
+                <h2>4-5 Moment of a Force about a Specified Axis 力對特定軸之力矩</h2>
+                <p>計算力在某一特定方向（軸）上產生的轉動效果</p>
+                <h3>Scalar Analysis</h3>
+                <p>力作用線到指定軸線$A$的距離為 $d_a$<br />即可知力對指定軸線的力矩$M_a$</p>
+                <div class="formula">\[ M_a = Fd_a \]</div>
+                <h3>Vector Analysis</h3>
+                <ul>
+                    <li>$\mathbf{u_a}:$ 單位向量（定義a軸方向）</li>
+                    <li>$\mathbf{r}:$ 從轉動點指向力作用線上任一點的向量</li>
+                    <li>$\mathbf{F}:$ 力向量</li>
+                </ul>
+                <div class="formula">
+                    \[ \begin{align*} M_a &= \mathbf{u_a} \cdot (\mathbf{r} \times \mathbf{F}) \\[6pt] &= u_{a_x}(r_yF_z
+                    - r_zF_y) - u_{a_y}(r_xF_z - r_zF_x) + u_{a_z}(r_xF_y - r_yF_x) \end{align*} \] \[\Rightarrow M_a
+                    =\left[ u_{a_x}\mathbf{i} + u_{a_y}\mathbf{j} + u_{a_z}\mathbf{k} \right] \cdot \begin{vmatrix}
+                    \mathbf{i} & \mathbf{j} & \mathbf{k} \\ r_{x} & r_{y} & r_{z} \\ F_{x} & F_{y} & F_{z} \end{vmatrix}
+                    \] \[ \]
+                </div>
+                <p>以笛卡爾向量表示:</p>
+                <div class="formula">\[ \mathbf{M_a} = M_a\mathbf{u_a} \]</div>
+            </section>
+
+            <section class="card" id="4-6">
+                <h2>4-6 Moment of a Couple</h2>
+                <p>力偶 (Couple) 是由兩個大小相等、方向相反且不共線的平行力組成的力產生, 其純矩與轉動點位置無關</p>
+                <h3>Scalar Formulation</h3>
+                <div class="formula">\[ M = Fd \]</div>
+                <h3>Vector Formulation</h3>
+                <div class="formula">\[ \mathbf{M} = \mathbf{r}\times\mathbf{F} \]</div>
+            </section>
+
+            <section class="card" id="4-7">
+                <h2>4-7 Simplification of a Force and Couple System</h2>
+                <p>可將複雜的力系簡化為作用於一點的一個合力 ($F_R$) 及一個合力矩 ($M_{RO}$)</p>
+                <div class="formula">
+                    \[ \begin{align*} \mathbf{F_R} &= \sum\mathbf{F} \\[6pt] (\mathbf{M_R})_O &= \sum\mathbf{M_O} +
+                    \sum\mathbf{M} \end{align*} \]
+                </div>
+            </section>
+
+            <section class="card" id="4-8">
+                <h2>4-8 Further Simplification of a Force and Couple System</h2>
+                <p>共點、平面或平行的力系可以簡化為作用於特定P點的單一合力</p>
+                <div class="formula">
+                    \[ (M_R)_O = F_R \, d=\sum M_O \quad \text{or } \quad d = \frac{(M_R)_O}{F_R} \]
+                </div>
+            </section>
+            <section class="card" id="4-9">
+                <h2>4-9 Reduction of a Simple Distributed Loading</h2>
+                <p>將分佈在線段或面積上的載重簡化為一個單一的集中力</p>
+            </section>
+            <section class="card">
+                <h2>EX</h2>
+                <p>
+                    計算力對某點的力矩 (向量法)題目類型: <br />
+                    給定空間中一點 $O$ 的坐標、力 $F$的大小與方向， 以及力作用點 $P$ 的坐標，求 $M_O$。
+                </p>
+                解題步驟：
+                <ul>
+                    <li>建立位置向量 $r$</li>
+                    從 $O$ 點指向 $P$ 點，$r = r_P - r_O$
+                    <li>表示力向量 $F$：</li>
+                    若給定大小及方向單位向量 $u_F$，則 $F = F \cdot u_F$
+                    <li>計算外積： $M_O = r \times F $</li>
+                    通常使用行列式展開法計算
+                </ul>
+                <p>
+                    分佈荷重簡化 (Distributed Load)題目類型 <br />
+                    樑上受到一個長度為 $L$、強度函數為 $w(x)$ 的分佈載重，求合力 $F_R$ 及其位置 $\bar{x}$ 17<br />
+                </p>
+                解題步驟
+                <ul>
+                    <li>計算合力大小</li>
+                    $F_R = \int w(x) dx$。如果是矩形載重，則 $F_R = w \cdot L$；如果是三角形載重，則 $F_R = \frac{1}{2}
+                    w_{max} \cdot L$
+                    <li>確定作用位置：</li>
+                    合力的作用線通過載重圖形的形心 (Centroid)。對於三角形載重，合力作用於距離大端（直角端） $1/3 L$ 處
+                </ul>
+                <p>
+                    力系簡化為單一力與力矩題目類型<br />
+                    一個剛體上受多個力和力偶作用，要求將其簡化到 $O$ 點
+                </p>
+                解題步驟
+                <ul>
+                    <li>求合力</li>
+                    將所有力向量相加, $F_R = \sum F$ 20。
+                    <li>求合力矩</li>
+                    將所有原有的力偶矩，加上各力對 $O$ 點產生的力矩，$M_{RO} = \sum M + \sum (r \times F)$
+                </ul>
+            </section>
+            <section class="card" id="5-1">
+                <h2>5-1 Conditions for Rigid-Body Equilibrium</h2>
+                <p>一個剛體若要處於平衡狀態，作用在其上的合力與對任一點的合力矩都必須為零</p>
+                <ul>
+                    <li>rigid Body: 剛體</li>
+                    <li>equilibrium: 平衡</li>
+                    <li>resultant Force: 合力</li>
+                    <li>resultant Moment:合力矩</li>
+                </ul>
+                <div class="formula">\[ \sum \mathbf{F} = 0 \quad \sum \mathbf{M}_O = 0 \]</div>
+            </section>
+            <section class="card" id="5-2">
+                <h2>5-2 Free-Body Diagrams</h2>
+                <p>將物體從其環境中隔離, 並繪出所有作用在其上的外力與力矩(包括主動力與支承反力)</p>
+                <h3>常見支承</h3>
+                <ul>
+                    <li>Roller (滾支承): 提供垂直於接觸面的單一反力</li>
+                    <li>Pin / Hinge (銷/鉸鏈支承): 提供兩個相互垂直的力分量</li>
+                    <li>Fixed Support (固定支承): 提供兩個力分量及一個力矩</li>
+                </ul>
+            </section>
+            <section class="card" id="5-3">
+                <h2>5-3 Equations of Equilibrium</h2>
+                <p>對於平面力系，平衡條件可簡化為三個純量方程式(Scalar Equations)</p>
+                <div class="formula">\[ \sum F_x = 0 \quad \sum F_y = 0 \quad \sum M_O = 0\]</div>
+            </section>
+            <section class="card" id="5-4">
+                <h2>5-4 Two- and Three-Force Members</h2>
+                <ul>
+                    <li>二力構件 (Two-Force Member)</li>
+                    僅在兩點受力的構件. 其合力必沿著兩作用點的連線, 且大小相等、方向相反
+                    <li>三力構件 (Three-Force Member)</li>
+                    受三個力作用. 若要平衡, 此三力的作用線必交於一點(共點)或互相平行
+                </ul>
+            </section>
+            <section class="card" id="5-5">
+                <h2>5-5 Free-Body Diagrams in Three Dimensions</h2>
+            </section>
+            <section class="card" id="5-6">
+                <h2>5-6 Equilibrium in Three Dimensions</h2>
+            </section>
+            <section class="card" id="5-7">
+                <h2>5-7 Constraints and Statical Determinacy</h2>
+                <ul>
+                    <li>Statically Determinate (靜定): 未知反力數量等於獨立平衡方程式數量, 可求出所有未知數</li>
+                    <li>Statically Indeterminate (靜不定): 未知數多於方程式, 需額外考慮材料變形</li>
+                    <li>Improper Constraint (不當約束): 若反力皆共點或共線, 物體可能仍會移動</li>
+                </ul>
+            </section>
+            <section class="card">
+                <h2>EX</h2>
+                <p>
+                    <b>二維樑的支承反力計算 (2D Beam Equilibrium)情境</b><br />
+                    一根長度為 $L$ 的水平樑，左端為固定銷 (Pin)，右端為滾支承 (Roller)，中間受一垂直力 $P$
+                </p>
+                解題步驟：
+                <ul>
+                    <li>繪製 FBD</li>
+                    在左端畫出 $A_x, A_y$，右端畫出 $B_y$，中間畫出力 $P$
+                    <li>列式</li>
+                    $\sum F_x = 0 \Rightarrow A_x = 0$。$\sum M_A = 0$：藉此求出 $B_y$。$\sum F_y = 0$：藉此求出 $A_y$。
+                    <li>簡化計算</li>
+                    選擇在未知數最多的點取力矩, 可以一次消掉最多的未知數
+                </ul>
+                <p>
+                    <b>識別二力構件 (Identifying Two-Force Members)情境 </b><br />一個由多個桿件組成的結構，其中桿件
+                    $BC$ 兩端皆為鉸接且中間無受力
+                </p>
+                <p>
+                    解析：因為 $BC$ 只在 $B$ 點和 $C$ 點受力，它是一個二力構件。這意味著 $B$ 點和 $C$
+                    點的作用力方向一定沿著 $BC$ 桿的直線方向。在分析整個結構時，這能將 $B$ 點的反力從兩個未知數 ($B_x,
+                    B_y$) 減少為一個方向已知的未知數 $F_{BC}$。
+                </p>
+
+                <p>
+                    <b> 三維空間平衡 (3D Equilibrium)情境</b><br />
+                    一個招牌由三條纜線吊起，或一個由球窩接頭支撐的桿件
+                </p>
+                解題步驟
+                <ul>
+                    <li>向量表示</li>
+                    將所有的力寫成向量形式 $\mathbf{F} = F \cdot \mathbf{u}$
+                    <li>力平衡</li>
+                    $\sum \mathbf{F} = 0$
+                    <li>矩平衡</li>
+                    $\sum \mathbf{M}_O = \sum (\mathbf{r} \times \mathbf{F}) = 0$
+                    <li>關於計算</li>
+                    3D 問題通常使用向量外積 (Cross Product) 計算力矩比純量法更容易出錯，建議列出行列式進行運算
+                </ul>
+            </section>
+            <section class="card" id="6-1">
+                <h2>6-1 Simple Trusses</h2>
+                <p>桁架是由細長桿件在端點連接而成的結構。假設載重皆作用在節點上，且桿件為二力構件</p>
+                <ul>
+                    <li>Truss: 桁架</li>
+                    <li>Member / Joint: 桿件 / 節點</li>
+                    <li>Tension (T): 張力（拉力）</li>
+                    <li>Compression (C): 壓力</li>
+                </ul>
+            </section>
+
+            <section class="card" id="6-2">
+                <h2>6-2 The Method of Joints</h2>
+                <p>拆解每一個節點，利用力的平衡方程式求出桿件內力。適合求所有桿件內力時使用</p>
+                <div class="formula">\[ \sum F_x = 0 \quad \sum F_y = 0 \]</div>
+                <p>提示：選擇未知數不超過兩個的節點開始分析</p>
+            </section>
+
+            <section class="card" id="6-3">
+                <h2>6-3 Zero-Force Members</h2>
+                <p>識別在特定荷重下內力為零的桿件，可大幅簡化分析</p>
+                <ul>
+                    <li>準則 1：節點處僅有兩根不共線桿件且無外力，則兩者皆為零力桿</li>
+                    <li>準則 2：三根桿件中兩根共線且無外力，則第三根（不共線者）為零力桿</li>
+                </ul>
+            </section>
+
+            <section class="card" id="6-4">
+                <h2>6-4 The Method of Sections</h2>
+                <p>當只需要求出特定幾根桿件的內力時使用。通過想求的桿件「切一刀」，分析其中一部分的平衡</p>
+                <div class="formula">\[ \sum F_x = 0 \quad \sum F_y = 0 \quad \sum M_O = 0 \]</div>
+            </section>
+
+            <section class="card" id="6-6">
+                <h2>6-6 Frames and Machines</h2>
+                <p>包含至少一個多力構件（受力點超過兩處）的結構</p>
+                <ul>
+                    <li>Frame (剛架): 用來支撐載重，位置固定</li>
+                    <li>Machine (機械): 含有運動部件，用來傳遞力</li>
+                    <li>Multi-force Member: 多力構件</li>
+                </ul>
+                <p>分析核心：將結構拆解，利用作用力與反作用力原理連接各桿件的 FBD</p>
+            </section>
+
+            <section class="card">
+                <h2>Chapter 6 EX</h2>
+                <p><b> 節點法 (Method of Joints)情境</b><br />求一個簡單三角形桁架各桿件的力</p>
+                <ul>
+                    <li>解題關鍵</li>
+                    在節點 $A$ 繪製 FBD。若有斜桿，將力分解為水平與垂直分量。
+                    <li>列式</li>
+                    $\sum F_y = 0$ 算出垂直分量，進而求得桿件力
+                    <li>判斷 T 或 C</li>
+                    若箭頭指向節點，則為壓力 (C)；若箭頭背離節點，則為張力 (T)
+                </ul>
+                <p>
+                    <b>截面法 (Method of Sections) 情境</b><br />
+                    求一長型橋樑桁架中間某根斜桿的內力。
+                </p>
+                解題步驟：
+                <ul>
+                    <li>通過目標桿件切割桁架，確保切過的未知桿件不超過三個</li>
+                    <li>對其中一側繪製 FBD，包含截斷處的內力</li>
+                    <li>選擇適當的力矩點：通常選在另外兩個未知力作用線的交點，可直接解出目標力</li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">- 靜力學 -</footer>
+        <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">
+            <i class="bi bi-arrow-up"></i> ↑
+        </button>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // 取得按鈕元件
+            let mybutton = document.getElementById("btn-back-to-top");
+
+            // 當使用者捲動網頁時，觸發 scrollFunction
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block"; // 顯示按鈕
+                } else {
+                    mybutton.style.display = "none"; // 隱藏按鈕
+                }
+            }
+
+            // 當使用者點擊按鈕時，回到頂端
+            mybutton.addEventListener("click", backToTop);
+
+            function backToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // 平滑捲動效果
+                });
+            }
+        </script>
+    </body>
+</html>
