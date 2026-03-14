@@ -69,11 +69,12 @@
                 <li><a class="dropdown-item" href="#5.7">5.7 反三角函數的微分</a></li>
                 <li><a class="dropdown-item" href="#5.8">5.8 反三角函數的積分</a></li>
                 <li><a class="dropdown-item" href="#5.9">5.9 雙曲線函數</a></li>
-                <li><a class="dropdown-item" href="#8.1">8.1</a></li>
-                <li><a class="dropdown-item" href="#8.2">8.2</a></li>
-                <li><a class="dropdown-item" href="#8.3">8.3</a></li>
-                <li><a class="dropdown-item" href="#8.4">8.4 Trigonometric Substitution</a></li>
-                <li><a class="dropdown-item" href="#8.5">8.5 Partial Fraction</a></li>
+                <li><a class="dropdown-item" href="#8.1">8.1 基本積分規則</a></li>
+                <li><a class="dropdown-item" href="#8.2">8.2 分部積分</a></li>
+                <li><a class="dropdown-item" href="#8.3">8.3 三角函數的積分</a></li>
+                <li><a class="dropdown-item" href="#8.4">8.4 三角函數代換</a></li>
+                <li><a class="dropdown-item" href="#8.5">8.5 部分分式</a></li>
+                <li><a class="dropdown-item" href="#8.8">8.8 瑕積分</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -1573,6 +1574,7 @@
           </div>
         </div>
       </section>
+
       <section class="card">
         <h2 id="8.5" class="card-header">8.5 Partial Fraction</h2>
         <div class="card-content">
@@ -1684,6 +1686,23 @@
               3\sqrt[3]{x} + 6\sqrt[6]{x} - 6\ln|\sqrt[6]{x} + 1| + C \end{align*}
             </div>
           </div>
+        </div>
+      </section>
+      <section class="card">
+        <h2 id="8.8">8.8 Improper Intergrals</h2>
+        <div>
+          <h3>Improper Integrals with Infinite Limits</h3>
+          <div class="formula">
+            <p>
+              \( \displaystyle \textbf{Def} \quad \text{If a function} \, f \, \text{is continuous on the interval } \)
+            </p>
+            <div>
+              \[ \begin{align*} \int_a^{\infty} f(x) \, dx &= \lim_{b \to \infty} \int_a^b f(x) \, dx \\[6pt]
+              \int_{-\infty}^b f(x) \, dx &= \lim_{a \to -\infty} \int_a^b f(x) \, dx \\[6pt] \int_{-\infty}^{\infty}
+              f(x) \, dx &= \int_c^{\infty} f(x) \, dx + \int_{-\infty}^c f(x) \, dx \end{align*} \]
+            </div>
+          </div>
+        
         </div>
       </section>
     </main>

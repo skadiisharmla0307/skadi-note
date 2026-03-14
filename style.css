@@ -110,8 +110,7 @@ img {
 .card-header {
   color: var(--dc);
   background-color: var(--card);
-  margin: 0;
-  padding: 1rem;
+  padding: 0;
   cursor: pointer;
   user-select: none; /* 防止連點時選取到文字 */
 }
@@ -188,8 +187,7 @@ tfoot {
 }
 .formula {
   background: #f7fbff;
-  padding: 8px;
-  margin: 4px;
+  padding: 10px;
   margin-top: 20px;
   margin-bottom: 15px;
   border-radius: 8px;
@@ -202,7 +200,6 @@ tfoot {
 .formula-dark {
   background: #e7efff;
   padding: 8px;
-  margin: 4px;
   margin-top: 20px;
   margin-bottom: 15px;
   border-radius: 8px;
