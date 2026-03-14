@@ -17,9 +17,9 @@
         overflow: auto;
       }
     </style>
-    <!-- 設定 MathJax -->
+    <!-- MathJax -->
     <script>
-      MathJax = {
+      window.MathJax = {
         tex: {
           inlineMath: [
             ["$", "$"],
@@ -63,11 +63,7 @@
               </a>
               <ul class="dropdown-menu dropdown-scrollable" aria-labelledby="navbarDropdown">
                 <li><h3 class="dropdown-item-text">章節目錄</h3></li>
-                <li><a class="dropdown-item" href="#4.1">4.1 反導函數與不定積分</a></li>
-                <li><a class="dropdown-item" href="#4.2">4.2 面積</a></li>
-                <li><a class="dropdown-item" href="#4.3">4.3 黎曼和與定積分</a></li>
-                <li><a class="dropdown-item" href="#4.4">4.4 微積分基本定理</a></li>
-                <li><a class="dropdown-item" href="#4.5">4.5 代換積分法</a></li>
+                <li><a class="dropdown-item" href="#ch4">Ch4 積分</a></li>
                 <li><a class="dropdown-item" href="#5.1">5.1 自然對數的微分</a></li>
                 <li><a class="dropdown-item" href="#5.2">5.2 自然對數的積分</a></li>
                 <li><a class="dropdown-item" href="#5.3">5.3 反函數</a></li>
@@ -77,6 +73,10 @@
                 <li><a class="dropdown-item" href="#5.7">5.7 反三角函數的微分</a></li>
                 <li><a class="dropdown-item" href="#5.8">5.8 反三角函數的積分</a></li>
                 <li><a class="dropdown-item" href="#5.9">5.9 雙曲線函數</a></li>
+                <li><a class="dropdown-item" href="#8.1">8.1</a></li>
+                <li><a class="dropdown-item" href="#8.2">8.2</a></li>
+                <li><a class="dropdown-item" href="#8.3">8.3</a></li>
+                <li><a class="dropdown-item" href="#8.4">8.4</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -107,977 +107,1596 @@
     <main class="container col-md-8">
       <section class="card">
         <h2>微積分</h2>
-        <p>不定時補充這邊的內容~</p>
+        <p>節錄微積分課程的部分公式與例題</p>
       </section>
 
       <section class="card">
-        <h2>Ch4. Integration 積分</h2>
-        <h3 id="4.1">4.1 Antiderivatives & Indefinite Integration</h3>
-        <section class="formula">
-          <p></p>
-          <p>$$ F'(x) = f(x) \;\Rightarrow\; F(x) \text{ is an antiderivative of } f(x) $$</p>
-          <p>不定積分的表示：<br />$$ \int f(x)\,dx = F(x) + C $$</p>
-        </section>
-        <section class="formula">
-          <p>\[ \text{Intergration Formula} \]</p>
-          <div class="border">
+        <h2 id="ch4" class="card-header">Ch4. Integration 積分</h2>
+        <div class="card-content">
+          <h3>4.1 Antiderivatives & Indefinite Integration</h3>
+          <section class="formula">
+            <p></p>
+            <p>$$ F'(x) = f(x) \;\Rightarrow\; F(x) \text{ is an antiderivative of } f(x) $$</p>
+            <p>不定積分的表示：<br />$$ \int f(x)\,dx = F(x) + C $$</p>
+          </section>
+          <section class="formula">
+            <p>\[ \text{Intergration Formula} \]</p>
+            <div class="border">
+              <p>
+                \begin{align} \int 0 \, dx &=C \\ \int k \, dx &= kx+c \\ \int kf(x) \,dx &= k \int f(x) \, dx \\ \int
+                [f(x)\pm g(x)] \, dx &= \int f(x) \, dx \pm \int g(x) \, dx \\ \int x^n\,dx &=
+                \frac{x^{n+1}}{n+1}+C,\;n\ne -1 \\ \int cos \, x \, dx &= sin \, x+C \\ \int sin \, x \, dx &= -cos \,
+                x+C \\ \int sec^2 \, x \, dx &= tan \, x+C \\ \int cos^2 \, x \, dx &= -cot \, x+C \\ \int sec \, x \,
+                tan \, x \, dx &= sec\,x+C \\ \int csc \, x \, cot \, x \, dx &= -csc \, x+C \end{align}
+              </p>
+            </div>
+          </section>
+          <p><b>範例</b></p>
+          <section class="formula-dark">
+            <p>\( \displaystyle \text{EX:} \quad \int \frac{sin \, x}{cos^{2} \, x} \, dx \)</p>
             <p>
-              \begin{align} \int 0 \, dx &=C \\ \int k \, dx &= kx+c \\ \int kf(x) \,dx &= k \int f(x) \, dx \\ \int
-              [f(x)\pm g(x)] \, dx &= \int f(x) \, dx \pm \int g(x) \, dx \\ \int x^n\,dx &=
-              \frac{x^{n+1}}{n+1}+C,\;n\ne -1 \\ \int cos \, x \, dx &= sin \, x+C \\ \int sin \, x \, dx &= -cos \, x+C
-              \\ \int sec^2 \, x \, dx &= tan \, x+C \\ \int cos^2 \, x \, dx &= -cot \, x+C \\ \int sec \, x \, tan \,
-              x \, dx &= sec\,x+C \\ \int csc \, x \, cot \, x \, dx &= -csc \, x+C \end{align}
+              \begin{align} \int \frac{sin \, x}{cos^{2} \, x} \, dx &=\int(\frac{1}{cos\,x})(\frac{sin\,x}{cos\,x})\,dx
+              \\ &=\int sec\,x\,tan\,x\,dx \\ &=sec\,x+C \end{align}
+            </p>
+          </section>
+
+          <h3>4.2 Area</h3>
+          <section class="formula">
+            <p>\( \displaystyle \sum_{i=1}^{n}a_i=a_1+a_2+a_3+...+a_n \)</p>
+            <br />
+            <p>\[ \text{Summation Formula} \]</p>
+            <div class="border">
+              \( \displaystyle \begin{align*} \sum_{i=1}^{n}c &= c\cdot n,\;c\;is\;a\;constant \\ \sum_{i=1}^{n}i &=
+              \frac{n(n+1)}{2} \\ \sum_{i=1}^{n}i^2 &= \frac{n(n+1)(2n+1)}{6} \\ \sum_{i=1}^{n}i^3 &=
+              \frac{n^2(n+1)^2}{4} \end{align*} \)
+            </div>
+          </section>
+
+          <h3>4.3 黎曼和與定積分 (Riemann Sums & Definite Integrals)</h3>
+          <section class="formula">
+            <p>
+              \( \displaystyle \textbf{Thm} \quad \int_{a}^{b} f(x) \, dx = \lim_{\max \Delta x_i \to 0} \sum_{i=1}^{n}
+              f(x_i^{*})\,\Delta x_i \)
+            </p>
+          </section>
+
+          <h3>4.4 微積分基本定理 (The Fundamental Theorem of Calculus)</h3>
+          <section class="formula">
+            <p>\( \textbf{Thm} \quad \text{suppose f is continuous on[a,b]} \)</p>
+            <i>(&#8544;)</i>
+            <p>
+              \[ \begin{align} \text{Let} \quad F(x) &= \int_{a}^{x} f(t)\,dt ,\quad \forall x \in[a,b], \\ \text{Then}
+              \quad F'(x) &= \frac{d}{dx}\int_a^x f(t) \, dt =f(x) \end{align} \]
+            </p>
+            <p>
+              <i>(&#8545;)</i>\[ \begin{align} \text{If}& \quad G'(x) = f(x),\quad \forall x\in [a,b],\quad \\
+              \text{Then}& \quad \int_{a}^{b}f(x)\,dx = G(b)-G(a)=G(x)|_{a}^{b} \end{align} \]
+            </p>
+            <p>\( \textbf{Pf} \)</p>
+            <p>
+              <i>(a)</i><br />
+
+              <i>(i)</i> \[ \lim_{h \to 0} \frac{F(x+h)-F(x)}{h}=f(x),\quad
+              let\;x\in[a,b),\;h&gt;0,\;By\;MVT\;for\;intergral \]
+            </p>
+            <p>
+              $$ \frac{F(x+h)-F(x)}{h}=\frac{\int_{x}^{x+h}f(t)\,dt}{h}=\frac{f(c)\cdot h}{h},\quad
+              where\;c\in\left[x,x+h\right] $$
+            </p>
+            <p>
+              $$ \lim_{h \to 0^+}\frac{F(x+h)-F(x)}{h}=\lim_{h \to 0^+}f(c)=\lim_{c \to x^+}f(c)=f(x),\quad
+              since\;f\;is\;conti\;at\;x $$
+            </p>
+            <p><i>(ii)</i> \[ Let\;x\in(a,b],\;\text{similarly} \quad\lim_{h \to 0^+}\frac{F(x+h)-F(x)}{h}=f(x) \]</p>
+            <br />
+            <p><i>(b)</i> \( Suppose\;G'(x)=f(x),\;x\in[a,b] \)</p>
+            <p>\( By(a),\;F'(x)=f(x),\;x\in[a,b]\;then\;F'(x)=G'(x),\;x\in[a,b] \)</p>
+            <p>$$ get\;F(x)=G(x)+c $$</p>
+            <p>$$ 0=\int_{a}^{a}f(t)\,dt=F(a)=G(a)+c,\;c=-G(a) $$</p>
+            <p>$$ \int_{a}^{b}f(t)\,dt=F(b)=G(b)-G(a),\quad Q.E.D $$</p>
+
+            <br /><code
+              ><i><u>Thm</u></i></code
+            >
+            <p>\( Suppose\;f\;is\;conti\;and\;g,h\;are\;differentiable,\;then \)</p>
+            <p><i>(&#8544;)</i> \( \frac{d}{dx}\int_{a}^{g(x)}f(t)\,dt=f(g(x))\cdot g'(x) \)</p>
+            <p><i>(&#8545;)</i> \( \frac{d}{dx}\int_{h(x)}^{g(x)}f(t)\,dt=f(g(x))\cdot g'(x)-f(h(x))\cdot h'(x) \)</p>
+            <code><i>Pf</i></code>
+            <p>
+              \( Let\;F(x)=\int f(t)\,dt,\;then \)<br />
+              \(\frac{d}{dx}\int_{a}^{g(x)}f(t)\,dt=\frac{d}{dx}F(g(x))=F'(g(x))\cdot g'(x)=f(g(x))\cdot g'(x) \)<br />
+              \(
+              \frac{d}{dx}\int_{h(x)}^{g(x)}f(t)\,dt=\frac{d}{dx}F(t)|_{h(x)}^{g(x)}=\frac{d}{dx}(F(g(x)-F(h(x)))=F'(g(x))\cdot
+              g'(x)-F'(h(x))\cdot h'(x) \)
+            </p>
+          </section>
+          <section class="formula-dark">
+            <p>\( EX.\quad \frac{d}{dx}\int_{x}^{1}\sqrt{1+t^2}\,dt=-\sqrt{1+x^2} \)</p>
+            <p>
+              \(EX.\quad \frac{d}{dx}\int_{1}^{3x}\frac{sin\,t}{t}\,dt\)<br /><br />\(
+              Let\;g(x)=3x,\;f(x)=\frac{sin\,x}{x},\;then \)<br />$$
+              \frac{d}{dx}\int_{1}^{3x}\frac{sin\,t}{t}\,dt=\frac{sin\,3x}{3x}\cdot 3=\frac{sin\,3x}{x} $$
+            </p>
+          </section>
+          <h3>4.5 代換積分法(Integration by Substitution)</h3>
+          <section class="formula">
+            <p>\( \textbf{Thm}\)</p>
+            <p>\( Suppose\;F'(x)=f(x)\quad F\;is\;an\;antiderivative\;of\;f \)</p>
+            <p>$$ Then\;\int f(g(x))\cdot g'(x)\,dx=F(g(x))+c $$</p>
+            <p>\( \textbf{Proof}\)</p>
+            <p>\( Let\;u=g(x),\;du=dg(x)=g'(x)\,dx \)</p>
+            <p>$$ \int f(g(x))\cdot g'(x)\,dx=\int f(u)\,du=F(u)+c=F(g(x))+c $$</p>
+          </section>
+          <section class="formula-dark">
+            <p>
+              \( \textbf{EX.} \quad \int (x-1)^4\cdot 2x\,dx \)<br /><br />
+              $$ Let\;u=x^2-1,\;du=2x\,dx $$ \[ \begin{align} \text{Then} \quad \int (x-1)^4\cdot 2x\,dx &=\int u^4\,du
+              \\ &= \frac{u^5}{5}+c \\ &=\frac{(x^2-1)^5}{5}+c \end{align} \]
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="5.1" class="card-header">5.1 The Natural Logarithmic Function: Differentiation</h2>
+        <div class="card-content">
+          <div class="formula">
+            <p>
+              \( \textbf{Thm}\) \( ln \; x= \int_1^x \frac{1}{t} \, dt, \quad x &gt; 0 \quad \text{is called the natural
+              logarithmic function.} \)
+            </p>
+            <p>\( \textbf{Proof} \)</p>
+            <p>
+              \( \text{Since} \; \frac{1}{t} \text{ is conti on } (0, \infty) , \quad ln \, t \; \text{ is defined on }
+              (0, \infty) \)<br />
+              $$ \frac{d}{dx} \ln x = \frac{d}{dx} \int_1^x \frac{1}{t} \, dt = \frac{1}{x} &gt; 0, \quad \forall x &gt;
+              0 $$ $$ \frac{d^2}{dx^2} \ln x = -\frac{1}{x^2} &lt; 0, \quad \forall x&gt;0 $$
+            </p>
+            <br />
+            <p>
+              $$ \text{The domain of} \; ln \; \text{is} (0, \infty), \; \text{range of} \; ln \; \text{is} (-\infty,
+              \infty) $$
+            </p>
+            <p>
+              $$ ln(x) = \begin{cases} &gt; 0, & \text{if } x&gt;1 \\ 0, & \text{if } x = 1 \\ &lt; 0, & \text{if } x
+              &lt; 1 \end{cases} \quad \ln \text{ is conti, increasing, one-to-one} $$
+            </p>
+            <p>
+              \( \textbf{Thm} \quad \frac{d}{dx} \ln \, x = \frac{1}{x}, \quad \forall x &gt; 0, \quad \int \frac{1}{x}
+              \, dx = \ln|x| + C, \quad x \neq 0 \)
+            </p>
+            <p>\( \textbf{Thm} \quad a, \, b&gt;0 \quad r\in Q \)</p>
+            <div class="border">
+              \[ ln(a \cdot b) = ln a + ln b \]\[\ln a^r = r \ln a \]\[ \ln \, \frac{a}{b} = \ln a - \ln b \]
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>
+              \( \textbf{EX.} \quad f(x) = \ln \sqrt{x^2 + 1} \) \[ \begin{align} f'(x) &= \frac{1}{\sqrt{x^2+1}} \cdot
+              \frac{d}{dx}\sqrt{x^2+1} \\ &= \frac{1}{\sqrt{x^2+1}} \cdot \frac{1}{2\sqrt{x^2+1}} \cdot 2x \\ &=
+              \frac{x}{x^2 + 1} \end{align} \]
+            </p>
+            <br />
+            <p>
+              \( \displaystyle \textbf{EX.} \quad f(x) = \ln\left(\frac{x(x^2+1)^2}{\sqrt{2x^5 -1}}\right) \) \[
+              \begin{align} f(x) &= \ln\left(\frac{x(x^2+1)^2}{\sqrt{2x^5 -1}}\right) \\ &= \ln x + 2\ln(x^2+1) -
+              \ln\sqrt{2x^5 -1} \\ f'(x) &= \frac{1}{x} + \frac{2}{x^2+1} \cdot 2x - \frac{1}{2(2x^5 -1)} \cdot 10x^4 \\
+              &= \frac{1}{x} + \frac{4x}{x^2+1} - \frac{5x^4}{2x^5 -1} \end{align} \]
             </p>
           </div>
-        </section>
-        <p><b>範例</b></p>
-        <section class="formula-dark">
-          <p>\( \displaystyle \text{EX:} \quad \int \frac{sin \, x}{cos^{2} \, x} \, dx \)</p>
-          <p>
-            \begin{align} \int \frac{sin \, x}{cos^{2} \, x} \, dx &=\int(\frac{1}{cos\,x})(\frac{sin\,x}{cos\,x})\,dx
-            \\ &=\int sec\,x\,tan\,x\,dx \\ &=sec\,x+C \end{align}
-          </p>
-        </section>
-
-        <h3 id="4.2">4.2 Area</h3>
-        <section class="formula">
-          <p>\( \displaystyle \sum_{i=1}^{n}a_i=a_1+a_2+a_3+...+a_n \)</p>
-          <br />
-          <p>\[ \text{Summation Formula} \]</p>
-          <div class="border">
-            \( \displaystyle \begin{align*} \sum_{i=1}^{n}c &= c\cdot n,\;c\;is\;a\;constant \\ \sum_{i=1}^{n}i &=
-            \frac{n(n+1)}{2} \\ \sum_{i=1}^{n}i^2 &= \frac{n(n+1)(2n+1)}{6} \\ \sum_{i=1}^{n}i^3 &= \frac{n^2(n+1)^2}{4}
-            \end{align*} \)
-          </div>
-        </section>
-
-        <h3 id="4.3">4.3 黎曼和與定積分 (Riemann Sums & Definite Integrals)</h3>
-        <section class="formula">
-          <p>
-            \( \displaystyle \textbf{Thm} \quad \int_{a}^{b} f(x) \, dx = \lim_{\max \Delta x_i \to 0} \sum_{i=1}^{n}
-            f(x_i^{*})\,\Delta x_i \)
-          </p>
-        </section>
-
-        <h3 id="4.4">4.4 微積分基本定理 (The Fundamental Theorem of Calculus)</h3>
-        <section class="formula">
-          <p>\( \textbf{Thm} \quad \text{suppose f is continuous on[a,b]} \)</p>
-          <i>(&#8544;)</i>
-          <p>
-            \[ \begin{align} \text{Let} \quad F(x) &= \int_{a}^{x} f(t)\,dt ,\quad \forall x \in[a,b], \\ \text{Then}
-            \quad F'(x) &= \frac{d}{dx}\int_a^x f(t) \, dt =f(x) \end{align} \]
-          </p>
-          <p>
-            <i>(&#8545;)</i>\[ \begin{align} \text{If}& \quad G'(x) = f(x),\quad \forall x\in [a,b],\quad \\
-            \text{Then}& \quad \int_{a}^{b}f(x)\,dx = G(b)-G(a)=G(x)|_{a}^{b} \end{align} \]
-          </p>
-          <p>\( \textbf{Pf} \)</p>
-          <p>
-            <i>(a)</i><br />
-
-            <i>(i)</i> \[ \lim_{h \to 0} \frac{F(x+h)-F(x)}{h}=f(x),\quad
-            let\;x\in[a,b),\;h&gt;0,\;By\;MVT\;for\;intergral \]
-          </p>
-          <p>
-            $$ \frac{F(x+h)-F(x)}{h}=\frac{\int_{x}^{x+h}f(t)\,dt}{h}=\frac{f(c)\cdot h}{h},\quad
-            where\;c\in\left[x,x+h\right] $$
-          </p>
-          <p>
-            $$ \lim_{h \to 0^+}\frac{F(x+h)-F(x)}{h}=\lim_{h \to 0^+}f(c)=\lim_{c \to x^+}f(c)=f(x),\quad
-            since\;f\;is\;conti\;at\;x $$
-          </p>
-          <p><i>(ii)</i> \[ Let\;x\in(a,b],\;\text{similarly} \quad\lim_{h \to 0^+}\frac{F(x+h)-F(x)}{h}=f(x) \]</p>
-          <br />
-          <p><i>(b)</i> \( Suppose\;G'(x)=f(x),\;x\in[a,b] \)</p>
-          <p>\( By(a),\;F'(x)=f(x),\;x\in[a,b]\;then\;F'(x)=G'(x),\;x\in[a,b] \)</p>
-          <p>$$ get\;F(x)=G(x)+c $$</p>
-          <p>$$ 0=\int_{a}^{a}f(t)\,dt=F(a)=G(a)+c,\;c=-G(a) $$</p>
-          <p>$$ \int_{a}^{b}f(t)\,dt=F(b)=G(b)-G(a),\quad Q.E.D $$</p>
-
-          <br /><code
-            ><i><u>Thm</u></i></code
-          >
-          <p>\( Suppose\;f\;is\;conti\;and\;g,h\;are\;differentiable,\;then \)</p>
-          <p><i>(&#8544;)</i> \( \frac{d}{dx}\int_{a}^{g(x)}f(t)\,dt=f(g(x))\cdot g'(x) \)</p>
-          <p><i>(&#8545;)</i> \( \frac{d}{dx}\int_{h(x)}^{g(x)}f(t)\,dt=f(g(x))\cdot g'(x)-f(h(x))\cdot h'(x) \)</p>
-          <code><i>Pf</i></code>
-          <p>
-            \( Let\;F(x)=\int f(t)\,dt,\;then \)<br />
-            \(\frac{d}{dx}\int_{a}^{g(x)}f(t)\,dt=\frac{d}{dx}F(g(x))=F'(g(x))\cdot g'(x)=f(g(x))\cdot g'(x) \)<br />
-            \(
-            \frac{d}{dx}\int_{h(x)}^{g(x)}f(t)\,dt=\frac{d}{dx}F(t)|_{h(x)}^{g(x)}=\frac{d}{dx}(F(g(x)-F(h(x)))=F'(g(x))\cdot
-            g'(x)-F'(h(x))\cdot h'(x) \)
-          </p>
-        </section>
-        <section class="formula-dark">
-          <p>\( EX.\quad \frac{d}{dx}\int_{x}^{1}\sqrt{1+t^2}\,dt=-\sqrt{1+x^2} \)</p>
-          <p>
-            \(EX.\quad \frac{d}{dx}\int_{1}^{3x}\frac{sin\,t}{t}\,dt\)<br /><br />\(
-            Let\;g(x)=3x,\;f(x)=\frac{sin\,x}{x},\;then \)<br />$$
-            \frac{d}{dx}\int_{1}^{3x}\frac{sin\,t}{t}\,dt=\frac{sin\,3x}{3x}\cdot 3=\frac{sin\,3x}{x} $$
-          </p>
-        </section>
-        <h3 id="4.5">4.5 代換積分法(Integration by Substitution)</h3>
-        <section class="formula">
-          <p>\( \textbf{Thm}\)</p>
-          <p>\( Suppose\;F'(x)=f(x)\quad F\;is\;an\;antiderivative\;of\;f \)</p>
-          <p>$$ Then\;\int f(g(x))\cdot g'(x)\,dx=F(g(x))+c $$</p>
-          <p>\( \textbf{Proof}\)</p>
-          <p>\( Let\;u=g(x),\;du=dg(x)=g'(x)\,dx \)</p>
-          <p>$$ \int f(g(x))\cdot g'(x)\,dx=\int f(u)\,du=F(u)+c=F(g(x))+c $$</p>
-        </section>
-        <section class="formula-dark">
-          <p>
-            \( \textbf{EX.} \quad \int (x-1)^4\cdot 2x\,dx \)<br /><br />
-            $$ Let\;u=x^2-1,\;du=2x\,dx $$ \[ \begin{align} \text{Then} \quad \int (x-1)^4\cdot 2x\,dx &=\int u^4\,du \\
-            &= \frac{u^5}{5}+c \\ &=\frac{(x^2-1)^5}{5}+c \end{align} \]
-          </p>
-        </section>
-      </section>
-
-      <section class="card">
-        <h2 id="5.1">5.1 The Natural Logarithmic Function: Differentiation</h2>
-        <section class="formula">
-          <p>
-            \( \textbf{Thm}\) \( ln \; x= \int_1^x \frac{1}{t} \, dt, \quad x &gt; 0 \quad \text{is called the natural
-            logarithmic function.} \)
-          </p>
-          <p>\( \textbf{Proof} \)</p>
-          <p>
-            \( \text{Since} \; \frac{1}{t} \text{ is conti on } (0, \infty) , \quad ln \, t \; \text{ is defined on }
-            (0, \infty) \)<br />
-            $$ \frac{d}{dx} \ln x = \frac{d}{dx} \int_1^x \frac{1}{t} \, dt = \frac{1}{x} &gt; 0, \quad \forall x &gt; 0
-            $$ $$ \frac{d^2}{dx^2} \ln x = -\frac{1}{x^2} &lt; 0, \quad \forall x&gt;0 $$
-          </p>
-          <br />
-          <p>
-            $$ \text{The domain of} \; ln \; \text{is} (0, \infty), \; \text{range of} \; ln \; \text{is} (-\infty,
-            \infty) $$
-          </p>
-          <p>
-            $$ ln(x) = \begin{cases} &gt; 0, & \text{if } x&gt;1 \\ 0, & \text{if } x = 1 \\ &lt; 0, & \text{if } x &lt;
-            1 \end{cases} \quad \ln \text{ is conti, increasing, one-to-one} $$
-          </p>
-          <p>
-            \( \textbf{Thm} \quad \frac{d}{dx} \ln \, x = \frac{1}{x}, \quad \forall x &gt; 0, \quad \int \frac{1}{x} \,
-            dx = \ln|x| + C, \quad x \neq 0 \)
-          </p>
-          <p>\( \textbf{Thm} \quad a, \, b&gt;0 \quad r\in Q \)</p>
-          <div class="border">
-            \[ ln(a \cdot b) = ln a + ln b \]\[\ln a^r = r \ln a \]\[ \ln \, \frac{a}{b} = \ln a - \ln b \]
-          </div>
-        </section>
-        <section class="formula-dark">
-          <p>
-            \( \textbf{EX.} \quad f(x) = \ln \sqrt{x^2 + 1} \) \[ \begin{align} f'(x) &= \frac{1}{\sqrt{x^2+1}} \cdot
-            \frac{d}{dx}\sqrt{x^2+1} \\ &= \frac{1}{\sqrt{x^2+1}} \cdot \frac{1}{2\sqrt{x^2+1}} \cdot 2x \\ &=
-            \frac{x}{x^2 + 1} \end{align} \]
-          </p>
-          <br />
-          <p>
-            \( \displaystyle \textbf{EX.} \quad f(x) = \ln\left(\frac{x(x^2+1)^2}{\sqrt{2x^5 -1}}\right) \) \[
-            \begin{align} f(x) &= \ln\left(\frac{x(x^2+1)^2}{\sqrt{2x^5 -1}}\right) \\ &= \ln x + 2\ln(x^2+1) -
-            \ln\sqrt{2x^5 -1} \\ f'(x) &= \frac{1}{x} + \frac{2}{x^2+1} \cdot 2x - \frac{1}{2(2x^5 -1)} \cdot 10x^4 \\
-            &= \frac{1}{x} + \frac{4x}{x^2+1} - \frac{5x^4}{2x^5 -1} \end{align} \]
-          </p>
-        </section>
-      </section>
-      <section class="card">
-        <h2 id="5.2">5.2 The Natural Logarithmic Function: Integration</h2>
-        <section class="formula">
-          <p>\( \displaystyle \textbf{Thm} \quad \frac{d}{dx}\ln|x| = \frac{1}{x}, \quad x \neq 0 \)</p>
-          <p>
-            \( \textbf{Pf} \) \[ \frac{d}{dx}\ln|x| = \begin{cases} \frac{d}{dx}\ln x = \frac{1}{x}, \quad x&gt;0 \\
-            \frac{d}{dx}\ln (-x) = -\frac{1}{x} \frac{d}{dx} (-x)=\frac{1}{x} , \quad x&lt;0 \end{cases} \] \[
-            \text{s.t.} \quad \int \frac{1}{u}\,du = \ln|u| + C \] \[ \text{Cor:If　} f \text{ is diff and } f(x)\neq 0,
-            \text{ then } \frac{d}{dx}\ln|f(x)| = \frac{f'(x)}{f(x)} \]
-          </p>
-        </section>
-        <section class="formula-dark">
-          <p>
-            \( \textbf{EX.} \quad f(x) = \ln|\sec x| \) \[ \begin{align} f'(x) &= \frac{1}{\sec x} \cdot \sec x \tan x
-            \\ &= \tan x \\ \Rightarrow \int \tan x\,dx &= \ln|\sec x| + C \end{align} \]
-          </p>
-          <hr />
-          <p>\( \textbf{EX.} \quad \int \cot x\,dx = \ln|\sin x| + C \)</p>
-
-          <p>
-            \[ \begin{align} \int \sec x\,dx &= \int \frac{\sec x(\sec x + \tan x)}{\sec x + \tan x} dx \\ &= \int
-            \frac{du}{u} \\ &= \ln|u| + C \\ &= \ln|\sec x + \tan x| + C \end{align} \]
-          </p>
-
-          <p>
-            $$ \int \csc x\,dx = \int \frac{\csc x(\csc x - \cot x)}{\csc x - \cot x} dx $$ $$ = \int \frac{du}{u} =
-            \ln|u| + C $$ $$ = \ln|\csc x - \cot x| + C $$
-          </p>
-          <hr />
-          <p>\( \textbf{EX.} \)</p>
-
-          <div>
-            \[ \begin{align*} \int \frac{x}{x^2+1} \, dx &= \int \frac{1}{2u} \, du \quad \left( \text{Let }
-            \begin{cases} u = x^2+1 \\ du = 2x \, dx \end{cases} \right) \\[6pt] &= \frac{1}{2} \ln|x^2+1| + C
-            \end{align*} \]
-          </div>
-          <br />
-          <div>
-            \[ \begin{align*} \int \frac{2x^2}{x-1} \, dx &= \int \left( 2x + 2 + \frac{2}{x-1} \right) dx \\[6pt] &=
-            x^2 + 2x + 2 \ln|x-1| + C \end{align*} \]
-          </div>
-          <br />
-          <div>
-            \[ \begin{align*} \int \frac{1}{x \ln x} \, dx &= \int \frac{1}{\ln x} \cdot \frac{1}{x} \, dx \quad \left(
-            \text{Let } \begin{cases} u = \ln x \\ du = \frac{1}{x} \, dx \end{cases} \right) \\[6pt] &= \int
-            \frac{du}{u} \\[6pt] &= \ln |\ln x| + C \end{align*} \]
-          </div>
-          <hr />
-          <p>
-            \( \textbf{EX.} \displaystyle \quad \text{Find } \frac{dy}{dx} \; \text{for } y = \frac{x^{3/4}
-            \sqrt{x^2+1}}{(3x+5)^5} \)
-          </p>
-          <div>
-            \[ \Rightarrow\quad \ln y = \frac{3}{4} \ln x + \frac{1}{2} \ln(x^2+1) - 5 \ln(3x+5) \] \[ \begin{align*}
-            \frac{d}{dx} (\ln y) &= \frac{1}{y}\frac{dy}{dx} \\[6pt] &= \frac{3}{4x} + \frac{x}{x^2+1} - \frac{15}{3x+5}
-            \\[6pt] \Rightarrow\quad \frac{dy}{dx} &= y\left( \frac{3}{4x} + \frac{x}{x^2+1} - \frac{15}{3x+5} \right)
-            \end{align*} \]
-          </div>
-        </section>
-      </section>
-      <section class="card">
-        <h2 id="5.3">5.3 Inverse function</h2>
-        <section class="formula">
-          <p>\( \textbf{Def.} \)</p>
-          <div>
-            \[ \text{When} \displaystyle \begin{cases} f \left( g(x) \right) = x \\ g\left(f(x) \right)x \end{cases} \]
-            \[ \text{s.t.} \quad g(x)=f^{-1}(x) \]
-          </div>
-        </section>
-        <h3>Derivative of an Inverse Function</h3>
-        <section class="formula">
-          <p>\( \textbf{Thm} \)</p>
-          <p>\( \text{Let } f \text{ be a function that is differentiable on an interval } I \)</p>
-          <p>
-            \( \text{ If } f \text{ has an inverse function } g \text{, then } g \text{ is differentiable at any } x
-            \text{ for which } f'(g(x)) \ne 0 \)
-          </p>
-          <div class="border">\[ g'(x) = \frac{1}{f'(g(x))}, \quad f'(g(x)) \ne 0 \]</div>
-
-          <p>\( \textbf{Pf}\)</p>
-          <div>
-            \[ f(g(x)) = x \] \[ \begin{align*} \frac{d}{dx}[f(g(x))] &= \frac{d}{dx}[x] \\[6pt] f'(g(x)) \cdot g'(x) &=
-            1 \end{align*} \] \[ g'(x) = \frac{1}{f'(g(x))} \]
-          </div>
-        </section>
-      </section>
-      <section class="card">
-        <h2 id="5.4">5.4 Exponential function 指數函數</h2>
-        <section class="formula">
-          <p>\( \textbf{Def.} \quad f(x)= ln \, x ,\; f^{-1}(x) = e^{x} \)</p>
-          <hr />
-          <p>\( \textbf{Thm.} \quad \text{Let } a \text{ and } b \text{ be any real numbers.} \)</p>
-          <div class="border">\[e^a e^b = e^{a+b} \] \[ \frac{e^a}{e^b} = e^{a-b} \]</div>
-          <br />
-          <p>\( \textbf{Pf.} \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \ln(e^a e^b) &= \ln(e^a) + \ln(e^b) \\ &= a + b \\ &= \ln(e^{a+b})
-            \end{align*} \]
-            <p>\( \text{Since } \ln x \text{ is one-to-one, we conclude that } e^a e^b = e^{a+b} \text{.} \)</p>
-          </div>
-        </section>
-        <h3>Differentiation and Integration of Exponential Functions</h3>
-        <section class="formula">
-          <p>\( \textbf{Thm.} \quad \text{Let } u \text{ be a differentiable function of } x \text{.} \)</p>
-          <div style="border: 1px solid #ccc; padding: 10px; margin-left: 20px">
-            \[\frac{d}{dx}[e^x] = e^x \]\[ \frac{d}{dx}[e^u] = e^u \frac{du}{dx}\]
-          </div>
-          <br />
-          <div>
-            <p>\( \textbf{Pf.} \quad \text{Let } y = e^x \text{, then } \ln y = x \text{.} \)</p>
-            \[ \displaystyle \begin{align*} \ln y &= x \\[6pt] \frac{d}{dx}[\ln y] &= \frac{d}{dx}[x] \quad \\[6pt]
-            \frac{1}{y} \frac{dy}{dx} &= 1 \quad \\[6pt] \frac{dy}{dx} &= y \quad \\[6pt] \frac{d}{dx}[e^x] &= e^x
-            \end{align*} \]
-            <p>\( \text{The derivative of } e^u \text{ follows from the Chain Rule.} \)</p>
-          </div>
-          <hr />
-          <p>\( \textbf{Thm.} \quad \text{Let } u \text{ be a differentiable function of } x \)</p>
-          <div class="border">\[\int e^x \, dx = e^x + C \]\[\int e^u \, du = e^u + C \]</div>
-        </section>
-
-        <section class="formula-dark">
-          <p>\( \displaystyle \textbf{Ex} \quad \text{Find } \int e^{3x+1}\,dx \text{.} \)</p>
-          <p>\( \text{let } u = 3x + 1, \text{ then } du = 3\,dx \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \Rightarrow \int e^{3x+1}\,dx &= \frac{1}{3} \int e^{3x+1}(3)\,dx \\[6pt] &=
-            \frac{1}{3} \int e^u\,du \\[6pt] &= \frac{1}{3} e^u + C \\[6pt] &= \frac{1}{3} e^{3x+1} + C\end{align*} \]
-          </div>
-          <hr />
-          <p>\( \displaystyle \textbf{Ex.} \quad \text{Find }\int 5x e^{-x^2}\,dx \)</p>
-          <p>\( \displaystyle \text{let } u = -x^2, \text{ then } du = -2x\,dx \quad x\,dx = \frac{-du}{2}\)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \int 5x e^{-x^2} dx &= \int 5 e^{-x^2} (x dx) \\[6pt] &= \int 5 e^u \left(
-            -\frac{du}{2} \right) \\[6pt] &= -\frac{5}{2} \int e^u du\\[6pt] &= -\frac{5}{2} e^u + C \\[6pt] &=
-            -\frac{5}{2} e^{-x^2} + C \end{align*} \]
-          </div>
-          <hr />
-          <p>
-            \( \displaystyle \textbf{Ex.} \quad \text{Find the indefinite integral } \int \frac{e^{\frac{1}{x}}}{x^2} \,
-            dx \)
-          </p>
-          <p>\( \displaystyle \text{Let } u = \frac{1}{x}, \text{ then } du = \frac{-1}{x^{2}} \,dx \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \Rightarrow \int \frac{e^{\frac{1}{x}}}{x^2} dx &= \int e^{\frac{1}{x}}
-            \left( \frac{1}{x^2} dx \right)\\[6pt] &= \int e^u\,(-du)\\[6pt] &= - \int e^u \, du \\[6pt] &= -e^u + C
-            \\[6pt] &= -e^{1/x} + C \end{align*} \]
-          </div>
-          <hr />
-          <p>
-            \( \textbf{Ex.} \quad \displaystyle \text{Evaluate the definite integral } \int_0^1 \frac{e^x}{1+e^x} \,dx
-            \)
-          </p>
-          <p>\( \text{Let } u = 1+e^x, \text{ then } du = e^x \,dx \text{.} \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \Rightarrow \int_0^1 \frac{e^x}{1+e^x} \,dx &= \int_{x=0}^{x=1}
-            \frac{1}{1+e^x} (e^x \,dx) \\[6pt] &= \int_{u=1+e^0}^{u=1+e^1} \frac{1}{u} \,du \\[6pt] &= \int_2^{1+e}
-            \frac{1}{u} \,du \\[6pt] &= \left[ \ln|u| \right] |_2^{1+e} \\[6pt] &= \ln(1+e) - \ln(2) \\[6pt] &=
-            \ln\left(\frac{1+e}{2}\right) \\[6pt] &\approx 0.620 \end{align*} \]
-          </div>
-        </section>
-      </section>
-      <section class="card">
-        <h2 id="5.5">5.5 Bases Other than e and Applications</h2>
-        <section class="formula">
-          <p>
-            \( \textbf{Def.} \quad \displaystyle \text{If } a \text{ is a postive real number} (a \ne 1) \text{, and } x
-            \in \mathbb{R} \)
-          </p>
-          <div class="border">\[ a^{x} = e^{(ln \, a)x} \] \[ log_{a} \, x = \frac{1}{ln \, a} ln \, x \]</div>
-          <hr />
-
-          <p>\( \textbf{Thm} \quad \text{Derivatives for Bases Other than } e \)</p>
-          <p>
-            \( \begin{align*} &\text{Let } a \text{ be a positive real number } (a \neq 1) \\[6pt] &\text{ and let } u
-            \text{ be a differentiable function of } x \text{.} \end{align*} \)
-          </p>
-          <div class="border">
-            \[ \frac{d}{dx}[a^x] = (\ln a) a^x \] \[ \frac{d}{dx}[a^u] = (\ln a) a^u \frac{du}{dx} \] \[
-            \frac{d}{dx}[\log_a x] = \frac{1}{(\ln a) x} \] \[ \frac{d}{dx}[\log_a u] = \frac{1}{(\ln a) u}
-            \frac{du}{dx} \]
-          </div>
-          <br />
-          <p>\( \textbf{Pf.} \)</p>
-          <div>\[ \frac{d}{dx}[a^x] = \frac{d}{dx}[e^{(\ln a)x}] = e^{(\ln a)x} (\ln a) = a^x (\ln a) \]</div>
-          <br />
-          <div>
-            \[ \begin{align*} \frac{d}{dx}[\log_a x] &= \frac{d}{dx}\left[\frac{\ln x}{\ln a}\right] = \frac{1}{\ln a}
-            \frac{d}{dx}[\ln x] \\[6pt] &= \frac{1}{\ln a} \left(\frac{1}{x}\right) = \frac{1}{(\ln a)x} \end{align*} \]
-          </div>
-        </section>
-
-        <section class="formula-dark">
-          <p>\( \textbf{Ex} \quad \text{Find the derivative of each function} \)</p>
-          <p>\( \displaystyle \textbf{a.} \quad y = 2^x \)</p>
-          <div>\[ \displaystyle y' = \frac{d}{dx}[2^x] = (\ln 2) 2^x \]</div>
-          <p>\( \displaystyle \textbf{b.} \quad y = 2^{3x-1} \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} y' &= \frac{d}{dx}[2^{3x-1}] = (\ln 2) 2^{3x-1} \frac{d}{dx}[3x-1] \\[6pt]
-            &= (\ln 2) 2^{3x-1} (3) = 3(\ln 2) 2^{3x-1} \end{align*} \]
-          </div>
-          <p>\( \displaystyle \textbf{c.} \quad y = \log_{10} (\cos x) \)</p>
-          <div>
-            \[ \begin{align*} y' &= \frac{d}{dx}[\log_{10} (\cos x)] = \frac{1}{(\ln 10) (\cos x)} \frac{d}{dx}[\cos x]
-            \\[6pt] &= \frac{-\sin x}{(\ln 10) (\cos x)} = -\frac{1}{\ln 10} \tan x \end{align*} \]
-          </div>
-          <p>\( \textbf{d.} \quad y = \log_3 \frac{\sqrt{x}}{2x+5} \)</p>
-          <div>
-            \[ y = \log_3 \frac{\sqrt{x}}{2x+5} = \frac{1}{2} \log_3 x - \log_3 (2x+5) \] \[ \displaystyle
-            \begin{align*} y' &= \frac{d}{dx}\left[\frac{1}{2} \log_3 x - \log_3 (2x+5)\right] \\[6pt] &= \frac{1}{2}
-            \left( \frac{1}{(\ln 3) x} \right) - \frac{1}{(\ln 3) (2x+5)} \frac{d}{dx}[2x+5] \\[6pt] &= \frac{1}{2(\ln
-            3) x} - \frac{1}{(\ln 3) (2x+5)} (2) \\[6pt] &= \frac{1}{2(\ln 3) x} - \frac{2}{(\ln 3) (2x+5)} \\[6pt] &=
-            \frac{(2x+5) - 2(2x)}{2(\ln 3) x (2x+5)} \\[6pt] &= \frac{2x+5 - 4x}{2(\ln 3) x (2x+5)} \\[6pt] &= \frac{5 -
-            2x}{2(\ln 3) x (2x+5)} \end{align*} \]
-          </div>
-        </section>
-        <section class="formula">
-          <p>
-            \( \textbf{Thm} \quad \text{Let } n \in \mathbb{R} \text{ , and let } u \text{ be a differentiable function
-            of } x \text{.} \)
-          </p>
-          <div class="border">\[ \frac{d}{dx}[x^n] = nx^{n-1} \] \[ \frac{d}{dx}[u^n] = nu^{n-1} \frac{du}{dx} \]</div>
-        </section>
-        <section class="formula-dark">
-          <p>\( \displaystyle \textbf{EX.} \quad \text{Find the derivative of each function.} \)</p>
-
-          <p>\( \textbf{a.} \quad \frac{d}{dx}[e^e] = 0 \)</p>
-
-          <p>\( \textbf{b.} \quad \frac{d}{dx}[e^x] = e^x \)</p>
-
-          <p>\( \textbf{c.} \quad \frac{d}{dx}[x^e] = ex^{e-1} \)</p>
-
-          <p>\( \textbf{d.} \quad y = x^x \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} y &= x^x \\[6pt] \ln y &= \ln x^x \\[6pt] \ln y &= x \ln x \\[6pt]
-            \frac{y'}{y} &= x \left(\frac{1}{x}\right) + (\ln x)(1) \\[6pt] \frac{y'}{y} &= 1 + \ln x \\[6pt] y' &= y(1
-            + \ln x) \\[6pt] y' &= x^x(1 + \ln x) \end{align*} \]
-          </div>
-        </section>
-      </section>
-
-      <section class="card">
-        <h2 id="5.6">5.6 Indeterminate Forms and L'Hôpital's Rule</h2>
-        <section class="formula">
-          <p>\( \textbf{Thm} \quad \text{The Extended Mean Value Theorem} \)</p>
-          <p>
-            \( \begin{align*} &\text{If } f \text{ and } g \text{ are differentiable on an open interval } (a, b) \text{
-            and continuous on } [a, b] \\ &\text{ such that } g'(x) \neq 0 \text{ for any } x \text{ in } (a, b) \text{,
-            then there exists a point } c \text{ in } (a, b) \end{align*} \)
-          </p>
-          <div class="border">\[ \frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)} \]</div>
-          <p>\( \text{A proof of this theorem is given in Appendix A.} \)</p>
-          <hr />
-
-          <p>\( \textbf{Thm} \quad \text{L'Hôpital's Rule} \)</p>
-          <p>
-            \( \begin{align*} &\text{Let } f \text{ and } g \text{ be functions that are differentiable on an open
-            interval } (a, b) \text{ containing } c \\ &\text{, except possibly at } c \text{ itself. If the limit of }
-            f(x)/g(x) \text{ as } x \text{ approaches } c \text{ produces the indeterminate form } 0/0 \text{, then}
-            \end{align*} \)
-          </p>
-          <div style="border: 1px solid #ccc; padding: 10px; margin-left: 20px">
-            \[ \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)} \]
-          </div>
-          <p>
-            \( \begin{align*} &\text{provided the limit on the right exists (or is infinite). } \\ &\text{This result
-            also applies when the limit of } f(x)/g(x) \text{ as } x \text{ approaches } c \text{ produces one of the
-            indeterminate forms } \infty/\infty \text{, } (-\infty)/\infty \text{, } \infty/(-\infty) \text{, or }
-            (-\infty)/(-\infty) \text{.} \end{align*} \)
-          </p>
-          <p>\( \text{A proof of this theorem is given in Appendix A.} \)</p>
-        </section>
-        <section class="formula-dark">
-          <p>
-            \( \displaystyle \textbf{EX.} \quad \text{Evaluate the limit } \lim_{x \to 0} \frac{e^{2x} - 1}{x} \text{.}
-            \)
-          </p>
-          <div>\[ \lim_{x \to 0} (e^{2x} - 1) = e^0 - 1 = 0 \] \[ \lim_{x \to 0} x = 0 \]</div>
-          <p>\( \text{Apply L'Hôpital's Rule:} \)</p>
-          <div>
-            \[ \displaystyle \lim_{x \to 0} \frac{e^{2x} - 1}{x} = \lim_{x \to 0} \frac{\frac{d}{dx}[e^{2x} -
-            1]}{\frac{d}{dx}[x]} = \lim_{x \to 0} \frac{2e^{2x}}{1} = 2e^0 = 2 \]
-          </div>
-
-          <hr />
-
-          <p>\( \displaystyle \textbf{EX.} \quad \text{Evaluate the limit } \lim_{x \to \infty} \frac{\ln x}{x} \)</p>
-          <div>
-            \[ \displaystyle \lim_{x \to \infty} \frac{\ln x}{x} = \lim_{x \to \infty} \frac{\frac{d}{dx}[\ln
-            x]}{\frac{d}{dx}[x]} = \lim_{x \to \infty} \frac{1/x}{1} = \lim_{x \to \infty} \frac{1}{x} = 0 \]
-          </div>
-
-          <hr />
-
-          <p>
-            \( \displaystyle \textbf{Ex.} \quad \text{Evaluate the limit } \lim_{x \to -\infty} \frac{x^2}{e^{-x}} \)
-          </p>
-
-          <p>\( \text{Apply L'Hôpital's Rule (1st time):} \)</p>
-          <div>
-            \[ \displaystyle \lim_{x \to -\infty} \frac{x^2}{e^{-x}} = \lim_{x \to -\infty}
-            \frac{\frac{d}{dx}[x^2]}{\frac{d}{dx}[e^{-x}]} = \lim_{x \to -\infty} \frac{2x}{-e^{-x}} \]
-          </div>
-          <p>\( \text{Apply L'Hôpital's Rule again (2nd time):} \)</p>
-          <div>
-            \[ \displaystyle \lim_{x \to -\infty} \frac{2x}{-e^{-x}} = \lim_{x \to -\infty}
-            \frac{\frac{d}{dx}[2x]}{\frac{d}{dx}[-e^{-x}]} = \lim_{x \to -\infty} \frac{2}{e^{-x}} \] \[ \lim_{x \to
-            -\infty} \frac{2}{e^{-x}} = \frac{2}{\infty} = 0 \]
-          </div>
-
-          <hr />
-
-          <p>\( \displaystyle \textbf{Ex.} \quad \text{Evaluate the limit } \lim_{x \to \infty} e^{-x} \sqrt{x} \)</p>
-          <p>\( \textbf{Solution} \)</p>
-          <p>\( \text{Rewrite the limit as the indeterminate form } \infty/\infty \)</p>
-          <div>
-            \[ \displaystyle \lim_{x \to \infty} e^{-x} \sqrt{x} = \lim_{x \to \infty} \frac{\sqrt{x}}{e^{x}} \]
-          </div>
-          <p>\( \text{Apply L'Hôpital's Rule:} \)</p>
-          <div>
-            \[ \displaystyle \lim_{x \to \infty} \frac{\sqrt{x}}{e^{x}} = \lim_{x \to \infty}
-            \frac{\frac{d}{dx}[\sqrt{x}]}{\frac{d}{dx}[e^{x}]} \]
-          </div>
-          <p>\( \text{Calculate the derivatives:} \)</p>
-          <div>
-            \[ \frac{d}{dx}[\sqrt{x}] = \frac{d}{dx}[x^{1/2}] = \frac{1}{2} x^{-1/2} = \frac{1}{2\sqrt{x}} \] \[
-            \frac{d}{dx}[e^{x}] = e^{x} \]
-          </div>
-          <p>\( \text{Substitute back into the limit expression:} \)</p>
-          <div>
-            \[ \displaystyle \lim_{x \to \infty} \frac{\frac{1}{2\sqrt{x}}}{e^{x}} = \lim_{x \to \infty}
-            \frac{1}{2\sqrt{x} e^{x}} \]\[ \lim_{x \to \infty} \frac{1}{2\sqrt{x} e^{x}} = \frac{1}{\infty} = 0 \]
-          </div>
-        </section>
-      </section>
-      <section class="card">
-        <h2 id="5.7">5.7 Inverse Trigonometric Functions: Differentiation</h2>
-        <h3>Definitions of inverse trigonometric functions</h3>
-        <div style="overflow: auto">
-          <table>
-            <thead>
-              <tr>
-                <th>Function</th>
-                <th>Domain</th>
-                <th>Range</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>\[ y=arcsin \, x \text{ ,if } sin \, y = x \]</td>
-                <td>\[ -1 \le x \le 1 \]</td>
-                <td>\[ -\frac{\pi}{2} \le y \le \frac{\pi}{2} \]</td>
-              </tr>
-              <tr>
-                <td>\[ y=arccos \, x \text{ ,if } cos \, y = x \]</td>
-                <td>\[ -1 \le x \le 1 \]</td>
-                <td>\[ 0 \le y \le \pi \]</td>
-              </tr>
-              <tr>
-                <td>\[ y=arctan \, x \text{ ,if } tan \, y = x \]</td>
-                <td>\[ -\infty \le x \le \infty \]</td>
-                <td>\[ -\frac{\pi}{2} \lt y \lt \frac{\pi}{2} \]</td>
-              </tr>
-              <tr>
-                <td>\[ y=arccot \, x \text{ ,if } cot \, y = x \]</td>
-                <td>\[ -\infty \lt x \lt \infty \]</td>
-                <td>\[ 0 \le y \le \pi \]</td>
-              </tr>
-              <tr>
-                <td>\[ y=arcsec \, x \text{ ,if } sec \, y = x \]</td>
-                <td>\[ |x| \ge 1 \]</td>
-                <td>\[ 0 \le y \le \pi , y\ne \frac{\pi}{2} \]</td>
-              </tr>
-              <tr>
-                <td>\[ y=arccsc \, x \text{ ,if } csc \, y = x \]</td>
-                <td>\[ |x| \ge 1 \]</td>
-                <td>\[ -\frac{\pi}{2} \le y \le \frac{\pi}{2}, y \ne 0 \]</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="3"></td>
-              </tr>
-            </tfoot>
-          </table>
         </div>
-        <section class="formula">
-          <p>\( \text{If } \quad x \in \text{Domain, } \quad y \in \text{Range ,} \; \text{then} \)</p>
-          <p>
-            \[ \begin{align*} sin(arcsin \, x) &= x \quad \text{and} \quad arcsin(sin \, y) = y \\[6pt] tan(arctan \, x)
-            &= x \quad \text{and} \quad arctan(tan \, y) = y \\[6pt] sec(arcsec \, x) &= x \quad \text{and} \quad
-            arcsec(sec \, y) = y \end{align*} \]
-          </p>
-        </section>
-        <section class="formula-dark">
-          <p>\( \displaystyle \textbf{EX.} \quad \text{Solve the equation } \arctan(2x-3) = \frac{\pi}{4} \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \arctan(2x-3) &= \frac{\pi}{4} \\[6pt] \tan[\arctan(2x-3)] &=
-            \tan\left(\frac{\pi}{4}\right) \\[6pt] 2x - 3 &= 1 \\[6pt] 2x &= 4 \\[6pt] x &= 2 \end{align*} \]
+      </section>
+
+      <section class="card">
+        <h2 id="5.2" class="card-header">5.2 The Natural Logarithmic Function: Integration</h2>
+        <div class="card-content">
+          <div class="formula">
+            <p>\( \displaystyle \textbf{Thm} \quad \frac{d}{dx}\ln|x| = \frac{1}{x}, \quad x \neq 0 \)</p>
+            <p>
+              \( \textbf{Pf} \) \[ \frac{d}{dx}\ln|x| = \begin{cases} \frac{d}{dx}\ln x = \frac{1}{x}, \quad x&gt;0 \\
+              \frac{d}{dx}\ln (-x) = -\frac{1}{x} \frac{d}{dx} (-x)=\frac{1}{x} , \quad x&lt;0 \end{cases} \] \[
+              \text{s.t.} \quad \int \frac{1}{u}\,du = \ln|u| + C \] \[ \text{Cor:If　} f \text{ is diff and } f(x)\neq
+              0, \text{ then } \frac{d}{dx}\ln|f(x)| = \frac{f'(x)}{f(x)} \]
+            </p>
           </div>
-        </section>
-        <section class="formula">
-          <p>\( \textbf{Thm} \quad \text{Let } u \text{ be a differentiable function of } x \)</p>
-          <div class="border">
-            \[ \begin{align*} \frac{d}{dx}[\arcsin u] &= \frac{u'}{\sqrt{1 - u^2}} \\[6pt] \frac{d}{dx}[\arccos u] &=
-            \frac{-u'}{\sqrt{1 - u^2}} \\[6pt] \frac{d}{dx}[\arctan u] &= \frac{u'}{1 + u^2} \\[6pt]
-            \frac{d}{dx}[\text{arccot } u] &= \frac{-u'}{1 + u^2} \\[6pt] \frac{d}{dx}[\text{arcsec } u] &=
-            \frac{u'}{|u|\sqrt{u^2 - 1}} \\[6pt] \frac{d}{dx}[\text{arccsc } u] &= \frac{-u'}{|u|\sqrt{u^2 - 1}}
-            \end{align*} \]
-          </div>
-          <hr />
-          <p>\( \textbf{Pf.} \)</p>
-          <p>
-            \( \text{Let } y = \arcsin x \text{, then } \sin y = x \text{, where } -\frac{\pi}{2} \le y \le
-            \frac{\pi}{2} \)
-          </p>
-          <div>
-            \[ \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}} = \frac{1}{\frac{d}{dy}[\sin y]} = \frac{1}{\cos y} \] \[
-            \frac{d}{dx}[\arcsin x] = \frac{1}{\cos y} = \frac{1}{\sqrt{1 - \sin^2 y}} \] \[ \frac{d}{dx}[\arcsin x] =
-            \frac{1}{\sqrt{1 - x^2}} \]
-          </div>
-          <p>\( \text{Applying the Chain Rule} \)</p>
-          <div>\[ \frac{d}{dx}[\arcsin u] = \frac{u'}{\sqrt{1 - u^2}} \]</div>
-        </section>
-        <section class="formula-dark">
-          <p>\( \textbf{EX.} \quad \text{Find the derivative of each function.} \)</p>
-          <p>\( \textbf{a.} \quad y = \arcsin(2x) \)</p>
-          <div>
-            \[ \displaystyle \frac{d}{dx}[\arcsin(2x)] = \frac{2}{\sqrt{1 - (2x)^2}} = \frac{2}{\sqrt{1 - 4x^2}} \]
-          </div>
-          <p>\( \textbf{b.} \quad y = \arctan(3x) \)</p>
-          <div>\[ \displaystyle \frac{d}{dx}[\arctan(3x)] = \frac{3}{1 + (3x)^2} = \frac{3}{1 + 9x^2} \]</div>
-          <p>\( \textbf{c.} \quad y = \arcsin \sqrt{x} \)</p>
-          <p>
-            \( \displaystyle \text{Let } u = \sqrt{x} = x^{\frac{1}{2}} \text{, so } u' = \frac{1}{2} x^{-\frac{1}{2}}
-            \text{.} \)
-          </p>
-          <div>
-            \[ \displaystyle \frac{d}{dx}[\arcsin \sqrt{x}] = \frac{\frac{1}{2} x^{\frac{1}{2}}}{\sqrt{1 -
-            (\sqrt{x})^2}} = \frac{1}{2\sqrt{x}\sqrt{1 - x}} = \frac{1}{2\sqrt{x - x^2}} \]
-          </div>
-          <p>\( \textbf{d.} \quad y = \text{arcsec } e^{2x} \)</p>
-          <p>\( \text{Let } u = e^{2x} \text{, so } u' = 2e^{2x} \text{.} \)</p>
-          <div>
-            \[ \displaystyle \frac{d}{dx}[\text{arcsec } e^{2x}] = \frac{2e^{2x}}{|e^{2x}|\sqrt{(e^{2x})^2 - 1}} =
-            \frac{2e^{2x}}{e^{2x}\sqrt{e^{4x} - 1}} = \frac{2}{\sqrt{e^{4x} - 1}} \]
-          </div>
-        </section>
-        <section class="formula">
-          <p>\( \textbf{Thm} \)</p>
-          <div>
-            <ul style="list-style: none">
-              <li>\[ \text{If } -1 \le x \le 1 \text{, then } \arcsin x + \arccos x = \frac{\pi}{2} \]</li>
-              <li>\[ \text{If } x \in \mathbb{R} \text{, then } \arctan x + \text{arccot } x = \frac{\pi}{2} \]</li>
-              <li>\[ \text{If } |x| \ge 1 \text{, then } \text{arcsec } x + \text{arccsc } x = \frac{\pi}{2} \]</li>
-            </ul>
-          </div>
-          <p>\( \textbf{Proof} \)</p>
-          <div>
-            <p>\( \text{Let } f(x) = \arcsin x + \arccos x \)</p>
+          <div class="formula-dark">
+            <p>
+              \( \textbf{EX.} \quad f(x) = \ln|\sec x| \) \[ \begin{align} f'(x) &= \frac{1}{\sec x} \cdot \sec x \tan x
+              \\ &= \tan x \\ \Rightarrow \int \tan x\,dx &= \ln|\sec x| + C \end{align} \]
+            </p>
+            <hr />
+            <p>\( \textbf{EX.} \quad \int \cot x\,dx = \ln|\sin x| + C \)</p>
+
+            <p>
+              \[ \begin{align} \int \sec x\,dx &= \int \frac{\sec x(\sec x + \tan x)}{\sec x + \tan x} dx \\ &= \int
+              \frac{du}{u} \\ &= \ln|u| + C \\ &= \ln|\sec x + \tan x| + C \end{align} \]
+            </p>
+
+            <p>
+              $$ \int \csc x\,dx = \int \frac{\csc x(\csc x - \cot x)}{\csc x - \cot x} dx $$ $$ = \int \frac{du}{u} =
+              \ln|u| + C $$ $$ = \ln|\csc x - \cot x| + C $$
+            </p>
+            <hr />
+            <p>\( \textbf{EX.} \)</p>
+
             <div>
-              \[ \begin{align*} \Rightarrow f'(x) &= \frac{d}{dx}[\arcsin x] + \frac{d}{dx}[\arccos x] \\[6pt] &= \left(
-              \frac{1}{\sqrt{1 - x^2}} \right) + \left( \frac{-1}{\sqrt{1 - x^2}} \right) \\[6pt] &= 0 \\[6pt]
-              \Rightarrow f(x) &= \arcsin x + \arccos x = C \end{align*} \]
+              \[ \begin{align*} \int \frac{x}{x^2+1} \, dx &= \int \frac{1}{2u} \, du \quad \left( \text{Let }
+              \begin{cases} u = x^2+1 \\ du = 2x \, dx \end{cases} \right) \\[6pt] &= \frac{1}{2} \ln|x^2+1| + C
+              \end{align*} \]
             </div>
-            <p>\( \text{Let } x=0\)</p>
-            <div>\[ \displaystyle C = \arcsin(0) + \arccos(0) =\frac{\pi}{2} \]</div>
-            <p>\( \text{s.t. } \arcsin x + \arccos x = \frac{\pi}{2} \text{ for } -1 \le x \le 1\)</p>
+            <br />
+            <div>
+              \[ \begin{align*} \int \frac{2x^2}{x-1} \, dx &= \int \left( 2x + 2 + \frac{2}{x-1} \right) dx \\[6pt] &=
+              x^2 + 2x + 2 \ln|x-1| + C \end{align*} \]
+            </div>
+            <br />
+            <div>
+              \[ \begin{align*} \int \frac{1}{x \ln x} \, dx &= \int \frac{1}{\ln x} \cdot \frac{1}{x} \, dx \quad
+              \left( \text{Let } \begin{cases} u = \ln x \\ du = \frac{1}{x} \, dx \end{cases} \right) \\[6pt] &= \int
+              \frac{du}{u} \\[6pt] &= \ln |\ln x| + C \end{align*} \]
+            </div>
+            <hr />
+            <p>
+              \( \textbf{EX.} \displaystyle \quad \text{Find } \frac{dy}{dx} \; \text{for } y = \frac{x^{3/4}
+              \sqrt{x^2+1}}{(3x+5)^5} \)
+            </p>
+            <div>
+              \[ \Rightarrow\quad \ln y = \frac{3}{4} \ln x + \frac{1}{2} \ln(x^2+1) - 5 \ln(3x+5) \] \[ \begin{align*}
+              \frac{d}{dx} (\ln y) &= \frac{1}{y}\frac{dy}{dx} \\[6pt] &= \frac{3}{4x} + \frac{x}{x^2+1} -
+              \frac{15}{3x+5} \\[6pt] \Rightarrow\quad \frac{dy}{dx} &= y\left( \frac{3}{4x} + \frac{x}{x^2+1} -
+              \frac{15}{3x+5} \right) \end{align*} \]
+            </div>
           </div>
-        </section>
-        <section class="formula">
-          <p>\( \textbf{Thm} \)</p>
-          <div>
-            \[ \text{If } |x| \ge 1 \text{, then } \text{arcsec } x = \cos^{-1}\left(\frac{1}{x}\right) \] \[ \text{If }
-            |x| \ge 1 \text{, then } \text{arccsc } x = \sin^{-1}\left(\frac{1}{x}\right) \]
-            <p>\( \text{The identity for } \text{arccot } x \text{ is piecewise defined:} \)</p>
-            \[ \text{arccot } x = \begin{cases} \arctan\left(\frac{1}{x}\right), & x &gt; 0 \\ \pi +
-            \arctan\left(\frac{1}{x}\right), & x &lt; 0 \\ \frac{\pi}{2}, & x = 0 \end{cases} \]
-          </div>
-          <div>
-            <p>\( \textbf{Pf} \)</p>
-
-            <p>\( \text{Let } \theta = \text{arcsec } x \text{.} \text{} \)</p>
-
-            \[ x = \sec \theta , \quad \frac{1}{x} = \cos \theta \] \[ \cos^{-1}\left(\frac{1}{x}\right) = \theta
-            \text{} \] \[ \sec^{-1}\, x = \cos^{-1}\left(\frac{1}{x}\right) \]
-          </div>
-        </section>
-      </section>
-      <section class="card">
-        <h2 id="5.8">5.8 Inverse Trigonometric Function: Intergration</h2>
-        <h3>Integrals involving inverse trigonometric functions</h3>
-        <section class="formula">
-          <p>\( \textbf{Thm} \)</p>
-          <p>
-            \( \text{Let } u \text{ be a differentiable function of } x \text{, and let } a &gt; 0 \text{.} \text{} \)
-          </p>
-          <div class="border">
-            \[ \displaystyle \begin{align*} \int \frac{du}{\sqrt{a^2 - u^2}} &= \sin^{-1} \frac{u}{a} + C \\[6pt] \int
-            \frac{du}{a^2 + u^2} &= \frac{1}{a} \tan^{-1} \frac{u}{a} + C \\[6pt] \int \frac{du}{u\sqrt{u^2 - a^2}} &=
-            \frac{1}{a} \sec^{-1} \frac{|u|}{a} + C \end{align*} \]
-          </div>
-        </section>
-        <section class="formula-dark">
-          <p>\( \displaystyle \textbf{Ex} \quad \text{Evaluate } \int \frac{dx}{4x^2+4x+2} \)</p>
-
-          \[ \int \frac{dx}{4x^2+4x+2} = \int \frac{dx}{1 + (2x + 1)^2} \]
-
-          <p>\(\text{Let } u = 2x + 1 ,\quad du = 2\,dx ,\quad dx = \frac{1}{2}\,du \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \int \frac{dx}{1 + (2x + 1)^2} &= \int \frac{\frac{1}{2}\,du}{1^2 + u^2}
-            \\[6pt] &= \frac{1}{2} \int \frac{du}{1^2 + u^2} \\[6pt] &= \frac{1}{2} \left( \frac{1}{1} \tan^{-1}
-            \frac{u}{1} \right) + C \\[6pt] &= \frac{1}{2} \tan^{-1} u + C \end{align*} \] \[ \Rightarrow \int
-            \frac{dx}{4x^2+4x+2} = \frac{1}{2} \tan^{-1}(2x + 1) + C \]
-          </div>
-          <hr />
-          <p>\( \displaystyle \textbf{Ex} \quad \text{Evaluate } \int \frac{dx}{\sqrt{e^{2x}-1}} \)</p>
-          <p>\( \displaystyle \text{Let } u = e^x ,\quad du = e^x \,dx ,\quad dx = \frac{du}{e^x} = \frac{du}{u} \)</p>
-          <div>
-            \[ \displaystyle \int \frac{dx}{\sqrt{e^{2x}-1}} = \int \frac{du/u}{\sqrt{u^2 - 1^2}} = \int
-            \frac{du}{u\sqrt{u^2 - 1}} \text{} \] \[ \displaystyle \int \frac{du}{u\sqrt{u^2 - 1}} = \frac{1}{1}
-            \sec^{-1} \frac{|u|}{1} + C = \sec^{-1} |u| + C \] \[ \int \frac{dx}{\sqrt{e^{2x}-1}} = \sec^{-1} e^{x} + C
-            \]
-          </div>
-          <hr />
-          <p>\( \displaystyle \textbf{Ex} \quad \text{Evaluate } \int \frac{dx}{x\sqrt{x^2-16}} \)</p>
-          <p>\( \text{Let } u = x \text{, so } du = dx \text{.} \quad a^2 = 16 \text{, so } a = 4 \text{.} \)</p>
-          <div>
-            \[ \begin{align*} \displaystyle \int \frac{dx}{x\sqrt{x^2-16}} &= \frac{1}{4} \text{arcsec } \frac{|x|}{4} +
-            C \\[6pt] &= \frac{1}{4} \cos^{-1}\left(\frac{4}{|x|}\right) + C \\[6pt] &= \frac{1}{4} \cot^{-1} \,
-            \frac{4}{\sqrt{x^2 - 16}} + C \end{align*} \]
-          </div>
-        </section>
-      </section>
-      <section class="card">
-        <h2 id="5.9">5.9 Hyperbolic Functions</h2>
-        <h3>Definitions of the Hyperbolic Functions</h3>
-        <section class="formula">
-          <div class="border">
-            \[ \begin{align*} \sinh x &= \frac{e^{x} - e^{-x}}{2} \\[6pt] \cosh x &= \frac{e^{x} + e^{-x}}{2} \\[6pt]
-            \tanh x &= \frac{\sinh x}{\cosh x} = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} \\[6pt] \text{csch } x &=
-            \frac{1}{\sinh x}, \quad x \ne 0 \\[6pt] \text{sech } x &= \frac{1}{\cosh x} \\[6pt] \coth x &=
-            \frac{1}{\tanh x}, \quad x \ne 0 \end{align*} \]
-          </div>
-        </section>
-        <section class="formula">
-          <p>\( \textbf{Thm} \)</p>
-          <div class="border">
-            \[ \cosh^2 x - \sinh^2 x = 1 \] \[ \tanh^2 x + \text{sech}^2 x = 1 \] \[ \coth^2 x - \text{csch}^2 x = 1 \]
-          </div>
-          <p>\( \textbf{Pf} \)</p>
-          <div style="margin-top: 20px">
-            \[ \begin{align*} \displaystyle &\cosh^2 x - \sinh^2 x \\[6pt] &= \left(\frac{e^{x} + e^{-x}}{2}\right)^2 -
-            \left(\frac{e^{x} - e^{-x}}{2}\right)^2 \\[6pt] \displaystyle \quad &= \frac{e^{2x} + 2e^{x}e^{-x} +
-            e^{-2x}}{4} - \frac{e^{2x} - 2e^{x}e^{-x} + e^{-2x}}{4} \\[6pt] \displaystyle \quad &= \frac{e^{2x} + 2 +
-            e^{-2x} - e^{2x} + 2 - e^{-2x}}{4} \\[6pt] \displaystyle \quad &= \frac{4}{4} = 1 \end{align*} \]
-          </div>
-        </section>
-        <h3>Sum and Difference Formulas</h3>
-        <section class="formula">
-          <div class="border">
-            \[ \sinh(x + y) = \sinh x \cosh y + \cosh x \sinh y \] \[ \sinh(x - y) = \sinh x \cosh y - \cosh x \sinh y
-            \] \[ \cosh(x + y) = \cosh x \cosh y + \sinh x \sinh y \] \[ \cosh(x - y) = \cosh x \cosh y - \sinh x \sinh
-            y \]
-          </div>
-        </section>
-        <h3>Double-Angle Formulas</h3>
-        <section class="formula">
-          <div class="border">
-            \[ \sinh^2 x = \frac{-1 + \cosh 2x}{2} \]\[ \cosh^2 x = \frac{1 + \cosh 2x}{2} \]\[ \sinh 2x = 2 \sinh x
-            \cosh x \] \[ \begin{align*} \cosh 2x &= \cosh^2 x + \sinh^2 x \\[6pt] &= 2\cosh^2 x - 1 \\[6pt] &= 1 +
-            2\sinh x^{2} x \end{align*} \]
-          </div>
-        </section>
-        <h3>Derivatives and Integrals of Hyperbolic Functions</h3>
-        <section class="formula">
-          <p>\( \textbf{Thm} \)</p>
-          <p>\( \text{Let } u \text{ be a differentiable function of } x \text{.} \text{} \)</p>
-          <div class="border">
-            \[ \begin{align*} \frac{d}{dx}[\sinh u] &= (\cosh u)u' \\[6pt] \frac{d}{dx}[\cosh u] &= (\sinh u)u' \\[6pt]
-            \frac{d}{dx}[\tanh u] &= (\text{sech}^2 u)u' \\[6pt] \frac{d}{dx}[\coth u] &= -(\text{csch}^2 u)u' \\[6pt]
-            \frac{d}{dx}[\text{sech } u] &= -(\text{sech } u \tanh u)u' \\[6pt] \frac{d}{dx}[\text{csch } u] &=
-            -(\text{csch } u \coth u)u' \end{align*} \]
-          </div>
-
-          <p>\( \textbf{Pf}\)</p>
-          <div>
-            \[ \begin{align*} \frac{d}{dx}[\sinh x] &= \frac{d}{dx}\left[\frac{e^x - e^{-x}}{2}\right] \\[6pt] &=
-            \frac{1}{2} \left( \frac{d}{dx}[e^x] - \frac{d}{dx}[e^{-x}] \right) \\[6pt] &= \frac{1}{2} \left( e^x -
-            (-e^{-x}) \right) \\[6pt] &= \frac{e^x + e^{-x}}{2} \quad \\[6pt] &= \cosh x \end{align*} \]
-          </div>
-
-          <p>\( \textbf{Pf}\)</p>
-          <div>
-            \[ \begin{align*} \frac{d}{dx}[\tanh x] &= \frac{d}{dx}\left[\frac{\sinh x}{\cosh x}\right] \\[6pt] &=
-            \frac{(\cosh x) \frac{d}{dx}[\sinh x] - (\sinh x) \frac{d}{dx}[\cosh x]}{\cosh^2 x} \\[6pt] &= \frac{(\cosh
-            x)(\cosh x) - (\sinh x)(\sinh x)}{\cosh^2 x} \\[6pt] &= \frac{\cosh^2 x - \sinh^2 x}{\cosh^2 x} \\[6pt] &=
-            \frac{1}{\cosh^2 x} \\[6pt] &= \text{sech}^2 x \end{align*} \]
-          </div>
-          <p>\( \textbf{Thm} \)</p>
-          <p>\( \text{Let } u \text{ be a differentiable function of } x \text{.} \text{} \)</p>
-          <div class="border">
-            \[ \begin{align*} \int \cosh u\,du &= \sinh u + C \\[6pt] \int \sinh u\,du &= \cosh u + C \\[6pt] \int
-            \text{sech}^2 u\,du &= \tanh u + C \\[6pt] \int \text{csch}^2 u\,du &= -\coth u + C \\[6pt] \int \text{sech
-            } u \tanh u\,du &= -\text{sech } u + C \\[6pt] \int \text{csch } u \coth u\,du &= -\text{csch } u + C
-            \end{align*} \]
-          </div>
-        </section>
-        <h3>Inverse Hyperbolic Functions</h3>
-
-        <p>\( \textbf{Thm}\)</p>
-        <div style="overflow: auto">
-          <table>
-            <thead>
-              <tr>
-                <th>Function</th>
-                <th>Logarithmic Form</th>
-                <th>Domain</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>\( \sinh^{-1} x \)</td>
-                <td>\( \ln(x + \sqrt{x^2 + 1}) \)</td>
-                <td>\( (-\infty, \infty) \)</td>
-              </tr>
-              <tr>
-                <td>\( \cosh^{-1} x \)</td>
-                <td>\( \ln(x + \sqrt{x^2 - 1}) \)</td>
-                <td>\( [1, \infty) \)</td>
-              </tr>
-              <tr>
-                <td>\( \tanh^{-1} x \)</td>
-                <td>\( \frac{1}{2} \ln \left(\frac{1 + x}{1 - x}\right) \)</td>
-                <td>\( (-1, 1) \)</td>
-              </tr>
-              <tr>
-                <td>\( \coth^{-1} x \)</td>
-                <td>\( \frac{1}{2} \ln \left(\frac{x + 1}{x - 1}\right) \)</td>
-                <td>\( (-\infty, -1) \cup (1, \infty) \)</td>
-              </tr>
-              <tr>
-                <td>\( \sec^{-1} x \)</td>
-                <td>\( \ln \left(\frac{1 + \sqrt{1 - x^2}}{x}\right) \)</td>
-                <td>\( (0, 1] \)</td>
-              </tr>
-              <tr>
-                <td>\( \csc^{-1} x \)</td>
-                <td>\( \ln \left(\frac{1 + \sqrt{1 + x^2}}{|x|}\right) \)</td>
-                <td>\( (-\infty, 0) \cup (0, \infty) \)</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="3"></td>
-              </tr>
-            </tfoot>
-          </table>
         </div>
-        <section class="formula">
-          <p>\( \textbf{Pf } \quad \sinh^{-1} x = \ln(x + \sqrt{x^2 + 1}) \)</p>
+      </section>
 
-          <p>\( \text{Let } y = \sinh^{-1} x \text{. Then } x = \sinh y \text{.} \)</p>
-          <div>
-            \[ x = \frac{e^{y} - e^{-y}}{2} \] \[ 2x = e^{y} - e^{-y} \] \[ 2x e^{y} = e^{2y} - e^{0} \] \[ 2x e^{y} =
-            (e^{y})^2 - 1 \] \[ (e^{y})^2 - 2x e^{y} - 1 = 0 \]
-          </div>
-          <p>\( \text{Let } z = e^{y} \)</p>
-          <div>
-            \[ (z)^2 - 2x (z) - 1 = 0 \] \[ z = e^{y} = \frac{-(-2x) \pm \sqrt{(-2x)^2 - 4(1)(-1)}}{2(1)} \] \[
-            \begin{align*} e^{y} &= \frac{2x \pm \sqrt{4x^2 + 4}}{2} \\[6pt] &= \frac{2x \pm 2\sqrt{x^2 + 1}}{2} \\[6pt]
-            &= x \pm \sqrt{x^2 + 1} \end{align*} \]
-          </div>
-          <br />
-          <div>
-            \[ e^{y} = x + \sqrt{x^2 + 1} \] \[ y = \ln(x + \sqrt{x^2 + 1}) \] \[ \sinh^{-1} x = \ln(x + \sqrt{x^2 + 1})
-            \]
-          </div>
-          <hr />
-          <p>
-            \( \displaystyle \textbf{Pf} \quad \tanh^{-1} x = \frac{1}{2} \ln \left(\frac{1 + x}{1 - x}\right) \text{}
-            \)
-          </p>
-          <p>\( \text{Let } y = \tanh^{-1} x \text{. Then } x = \tanh y \text{, where } -1 &lt; x &lt; 1 \text{.} \)</p>
-          <div>
-            \[ x = \frac{\sinh y}{\cosh y} = \frac{e^{y} - e^{-y}}{e^{y} + e^{-y}} \] \[ x (e^{y} + e^{-y}) = e^{y} -
-            e^{-y} \] \[ x e^{y} + x e^{-y} = e^{y} - e^{-y} \] \[ x e^{-y} + e^{-y} = e^{y} - x e^{y} \] \[ e^{-y} (x +
-            1) = e^{y} (1 - x) \] \[ \frac{e^{y}}{e^{-y}} = \frac{x + 1}{1 - x} \] \[ e^{2y} = \frac{1 + x}{1 - x} \] \[
-            \ln(e^{2y}) = \ln \left(\frac{1 + x}{1 - x}\right) \] \[ 2y = \ln \left(\frac{1 + x}{1 - x}\right) \] \[ y =
-            \frac{1}{2} \ln \left(\frac{1 + x}{1 - x}\right) \] \[ \tanh^{-1} x = \frac{1}{2} \ln \left(\frac{1 + x}{1 -
-            x}\right) \text{} \]
-          </div>
-        </section>
-        <h3>Differentiation and Integration Involving Inverse Hyperbolic Functions</h3>
-        <section class="formula">
-          <p>\( \textbf{Thm} \)</p>
-          <p>
-            \( \text{Let } u \text{ be a differentiable function of } x \text{, and let } a &gt; 0 \text{.} \text{} \)
-          </p>
-          <p>\( \textbf{A. Differentiation Formulas} \)</p>
-          <div class="border" style="display: flex; justify-content: space-around">
-            <div style="flex-basis: 45%">
-              \[ \begin{align*} \frac{d}{dx}[\sinh^{-1} u] &= \frac{u'}{\sqrt{u^2 + 1}} \\[6pt] \frac{d}{dx}[\tanh^{-1}
-              u] &= \frac{u'}{1 - u^2} \\[6pt] \frac{d}{dx}[\sec^{-1} u] &= \frac{-u'}{u\sqrt{1 - u^2}} \end{align*} \]
+      <section class="card">
+        <h2 id="5.3" class="card-header">5.3 Inverse function</h2>
+        <div class="card-content">
+          <div class="formula">
+            <p>\( \textbf{Def.} \)</p>
+            <div>
+              \[ \text{When} \displaystyle \begin{cases} f \left( g(x) \right) = x \\ g\left(f(x) \right)x \end{cases}
+              \] \[ \text{s.t.} \quad g(x)=f^{-1}(x) \]
             </div>
-            <div style="flex-basis: 45%">
-              \[ \begin{align*} \frac{d}{dx}[\cosh^{-1} u] &= \frac{u'}{\sqrt{u^2 - 1}} \\[6pt] \frac{d}{dx}[\coth^{-1}
-              u] &= \frac{u'}{1 - u^2} \\[6pt] \frac{d}{dx}[\csc^{-1} u] &= \frac{-u'}{|u|\sqrt{1 + u^2}} \end{align*}
+          </div>
+          <h3>Derivative of an Inverse Function</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <p>\( \text{Let } f \text{ be a function that is differentiable on an interval } I \)</p>
+            <p>
+              \( \text{ If } f \text{ has an inverse function } g \text{, then } g \text{ is differentiable at any } x
+              \text{ for which } f'(g(x)) \ne 0 \)
+            </p>
+            <div class="border">\[ g'(x) = \frac{1}{f'(g(x))}, \quad f'(g(x)) \ne 0 \]</div>
+
+            <p>\( \textbf{Pf}\)</p>
+            <div>
+              \[ f(g(x)) = x \] \[ \begin{align*} \frac{d}{dx}[f(g(x))] &= \frac{d}{dx}[x] \\[6pt] f'(g(x)) \cdot g'(x)
+              &= 1 \end{align*} \] \[ g'(x) = \frac{1}{f'(g(x))} \]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="5.4" class="card-header">5.4 Exponential function 指數函數</h2>
+        <div class="card-content">
+          <div class="formula">
+            <p>\( \textbf{Def.} \quad f(x)= ln \, x ,\; f^{-1}(x) = e^{x} \)</p>
+            <hr />
+            <p>\( \textbf{Thm.} \quad \text{Let } a \text{ and } b \text{ be any real numbers.} \)</p>
+            <div class="border">\[e^a e^b = e^{a+b} \] \[ \frac{e^a}{e^b} = e^{a-b} \]</div>
+            <br />
+            <p>\( \textbf{Pf.} \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} \ln(e^a e^b) &= \ln(e^a) + \ln(e^b) \\ &= a + b \\ &= \ln(e^{a+b})
+              \end{align*} \]
+              <p>\( \text{Since } \ln x \text{ is one-to-one, we conclude that } e^a e^b = e^{a+b} \text{.} \)</p>
+            </div>
+          </div>
+          <h3>Differentiation and Integration of Exponential Functions</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm.} \quad \text{Let } u \text{ be a differentiable function of } x \text{.} \)</p>
+            <div style="border: 1px solid #ccc; padding: 10px; margin-left: 20px">
+              \[\frac{d}{dx}[e^x] = e^x \]\[ \frac{d}{dx}[e^u] = e^u \frac{du}{dx}\]
+            </div>
+            <br />
+            <div>
+              <p>\( \textbf{Pf.} \quad \text{Let } y = e^x \text{, then } \ln y = x \text{.} \)</p>
+              \[ \displaystyle \begin{align*} \ln y &= x \\[6pt] \frac{d}{dx}[\ln y] &= \frac{d}{dx}[x] \quad \\[6pt]
+              \frac{1}{y} \frac{dy}{dx} &= 1 \quad \\[6pt] \frac{dy}{dx} &= y \quad \\[6pt] \frac{d}{dx}[e^x] &= e^x
+              \end{align*} \]
+              <p>\( \text{The derivative of } e^u \text{ follows from the Chain Rule.} \)</p>
+            </div>
+            <hr />
+            <p>\( \textbf{Thm.} \quad \text{Let } u \text{ be a differentiable function of } x \)</p>
+            <div class="border">\[\int e^x \, dx = e^x + C \]\[\int e^u \, du = e^u + C \]</div>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{Ex} \quad \text{Find } \int e^{3x+1}\,dx \text{.} \)</p>
+            <p>\( \text{let } u = 3x + 1, \text{ then } du = 3\,dx \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} \Rightarrow \int e^{3x+1}\,dx &= \frac{1}{3} \int e^{3x+1}(3)\,dx \\[6pt]
+              &= \frac{1}{3} \int e^u\,du \\[6pt] &= \frac{1}{3} e^u + C \\[6pt] &= \frac{1}{3} e^{3x+1} + C\end{align*}
+              \]
+            </div>
+            <hr />
+            <p>\( \displaystyle \textbf{Ex.} \quad \text{Find }\int 5x e^{-x^2}\,dx \)</p>
+            <p>\( \displaystyle \text{let } u = -x^2, \text{ then } du = -2x\,dx \quad x\,dx = \frac{-du}{2}\)</p>
+            <div>
+              \[ \displaystyle \begin{align*} \int 5x e^{-x^2} dx &= \int 5 e^{-x^2} (x dx) \\[6pt] &= \int 5 e^u \left(
+              -\frac{du}{2} \right) \\[6pt] &= -\frac{5}{2} \int e^u du\\[6pt] &= -\frac{5}{2} e^u + C \\[6pt] &=
+              -\frac{5}{2} e^{-x^2} + C \end{align*} \]
+            </div>
+            <hr />
+            <p>
+              \( \displaystyle \textbf{Ex.} \quad \text{Find the indefinite integral } \int \frac{e^{\frac{1}{x}}}{x^2}
+              \, dx \)
+            </p>
+            <p>\( \displaystyle \text{Let } u = \frac{1}{x}, \text{ then } du = \frac{-1}{x^{2}} \,dx \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} \Rightarrow \int \frac{e^{\frac{1}{x}}}{x^2} dx &= \int e^{\frac{1}{x}}
+              \left( \frac{1}{x^2} dx \right)\\[6pt] &= \int e^u\,(-du)\\[6pt] &= - \int e^u \, du \\[6pt] &= -e^u + C
+              \\[6pt] &= -e^{1/x} + C \end{align*} \]
+            </div>
+            <hr />
+            <p>
+              \( \textbf{Ex.} \quad \displaystyle \text{Evaluate the definite integral } \int_0^1 \frac{e^x}{1+e^x} \,dx
+              \)
+            </p>
+            <p>\( \text{Let } u = 1+e^x, \text{ then } du = e^x \,dx \text{.} \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} \Rightarrow \int_0^1 \frac{e^x}{1+e^x} \,dx &= \int_{x=0}^{x=1}
+              \frac{1}{1+e^x} (e^x \,dx) \\[6pt] &= \int_{u=1+e^0}^{u=1+e^1} \frac{1}{u} \,du \\[6pt] &= \int_2^{1+e}
+              \frac{1}{u} \,du \\[6pt] &= \left[ \ln|u| \right] |_2^{1+e} \\[6pt] &= \ln(1+e) - \ln(2) \\[6pt] &=
+              \ln\left(\frac{1+e}{2}\right) \\[6pt] &\approx 0.620 \end{align*} \]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="5.5" class="card-header">5.5 Bases Other than e and Applications</h2>
+        <div class="card-content">
+          <div class="formula">
+            <p>
+              \( \textbf{Def.} \quad \displaystyle \text{If } a \text{ is a postive real number} (a \ne 1) \text{, and }
+              x \in \mathbb{R} \)
+            </p>
+            <div class="border">\[ a^{x} = e^{(ln \, a)x} \] \[ log_{a} \, x = \frac{1}{ln \, a} ln \, x \]</div>
+            <hr />
+
+            <p>\( \textbf{Thm} \quad \text{Derivatives for Bases Other than } e \)</p>
+            <p>
+              \( \begin{align*} &\text{Let } a \text{ be a positive real number } (a \neq 1) \\[6pt] &\text{ and let } u
+              \text{ be a differentiable function of } x \text{.} \end{align*} \)
+            </p>
+            <div class="border">
+              \[ \frac{d}{dx}[a^x] = (\ln a) a^x \] \[ \frac{d}{dx}[a^u] = (\ln a) a^u \frac{du}{dx} \] \[
+              \frac{d}{dx}[\log_a x] = \frac{1}{(\ln a) x} \] \[ \frac{d}{dx}[\log_a u] = \frac{1}{(\ln a) u}
+              \frac{du}{dx} \]
+            </div>
+            <br />
+            <p>\( \textbf{Pf.} \)</p>
+            <div>\[ \frac{d}{dx}[a^x] = \frac{d}{dx}[e^{(\ln a)x}] = e^{(\ln a)x} (\ln a) = a^x (\ln a) \]</div>
+            <br />
+            <div>
+              \[ \begin{align*} \frac{d}{dx}[\log_a x] &= \frac{d}{dx}\left[\frac{\ln x}{\ln a}\right] = \frac{1}{\ln a}
+              \frac{d}{dx}[\ln x] \\[6pt] &= \frac{1}{\ln a} \left(\frac{1}{x}\right) = \frac{1}{(\ln a)x} \end{align*}
               \]
             </div>
           </div>
 
-          <p>\( \textbf{B. Integration Formulas} \)</p>
-          <div class="border">
-            \[ \begin{align*} \int \frac{du}{\sqrt{u^2 \pm a^2}} &= \ln(u + \sqrt{u^2 \pm a^2}) + C \\[6pt] \int
-            \frac{du}{a^2 - u^2} &= \frac{1}{2a} \ln \left| \frac{a + u}{a - u} \right| + C \quad (\text{for } |u| &lt;
-            a) \\[6pt] \int \frac{du}{u\sqrt{a^2 - u^2}} &= \frac{1}{a} \ln \left| \frac{a + \sqrt{a^2 - u^2}}{u}
-            \right| + C \\[6pt] \int \frac{du}{u\sqrt{a^2 + u^2}} &= -\frac{1}{a} \ln \left| \frac{a + \sqrt{a^2 +
-            u^2}}{u} \right| + C \end{align*} \]
+          <div class="formula-dark">
+            <p>\( \textbf{Ex} \quad \text{Find the derivative of each function} \)</p>
+            <p>\( \displaystyle \textbf{a.} \quad y = 2^x \)</p>
+            <div>\[ \displaystyle y' = \frac{d}{dx}[2^x] = (\ln 2) 2^x \]</div>
+            <p>\( \displaystyle \textbf{b.} \quad y = 2^{3x-1} \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} y' &= \frac{d}{dx}[2^{3x-1}] = (\ln 2) 2^{3x-1} \frac{d}{dx}[3x-1] \\[6pt]
+              &= (\ln 2) 2^{3x-1} (3) = 3(\ln 2) 2^{3x-1} \end{align*} \]
+            </div>
+            <p>\( \displaystyle \textbf{c.} \quad y = \log_{10} (\cos x) \)</p>
+            <div>
+              \[ \begin{align*} y' &= \frac{d}{dx}[\log_{10} (\cos x)] = \frac{1}{(\ln 10) (\cos x)} \frac{d}{dx}[\cos
+              x] \\[6pt] &= \frac{-\sin x}{(\ln 10) (\cos x)} = -\frac{1}{\ln 10} \tan x \end{align*} \]
+            </div>
+            <p>\( \textbf{d.} \quad y = \log_3 \frac{\sqrt{x}}{2x+5} \)</p>
+            <div>
+              \[ y = \log_3 \frac{\sqrt{x}}{2x+5} = \frac{1}{2} \log_3 x - \log_3 (2x+5) \] \[ \displaystyle
+              \begin{align*} y' &= \frac{d}{dx}\left[\frac{1}{2} \log_3 x - \log_3 (2x+5)\right] \\[6pt] &= \frac{1}{2}
+              \left( \frac{1}{(\ln 3) x} \right) - \frac{1}{(\ln 3) (2x+5)} \frac{d}{dx}[2x+5] \\[6pt] &= \frac{1}{2(\ln
+              3) x} - \frac{1}{(\ln 3) (2x+5)} (2) \\[6pt] &= \frac{1}{2(\ln 3) x} - \frac{2}{(\ln 3) (2x+5)} \\[6pt] &=
+              \frac{(2x+5) - 2(2x)}{2(\ln 3) x (2x+5)} \\[6pt] &= \frac{2x+5 - 4x}{2(\ln 3) x (2x+5)} \\[6pt] &= \frac{5
+              - 2x}{2(\ln 3) x (2x+5)} \end{align*} \]
+            </div>
+          </div>
+          <div class="formula">
+            <p>
+              \( \textbf{Thm} \quad \text{Let } n \in \mathbb{R} \text{ , and let } u \text{ be a differentiable
+              function of } x \text{.} \)
+            </p>
+            <div class="border">
+              \[ \frac{d}{dx}[x^n] = nx^{n-1} \] \[ \frac{d}{dx}[u^n] = nu^{n-1} \frac{du}{dx} \]
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX.} \quad \text{Find the derivative of each function.} \)</p>
+
+            <p>\( \textbf{a.} \quad \frac{d}{dx}[e^e] = 0 \)</p>
+
+            <p>\( \textbf{b.} \quad \frac{d}{dx}[e^x] = e^x \)</p>
+
+            <p>\( \textbf{c.} \quad \frac{d}{dx}[x^e] = ex^{e-1} \)</p>
+
+            <p>\( \textbf{d.} \quad y = x^x \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} y &= x^x \\[6pt] \ln y &= \ln x^x \\[6pt] \ln y &= x \ln x \\[6pt]
+              \frac{y'}{y} &= x \left(\frac{1}{x}\right) + (\ln x)(1) \\[6pt] \frac{y'}{y} &= 1 + \ln x \\[6pt] y' &=
+              y(1 + \ln x) \\[6pt] y' &= x^x(1 + \ln x) \end{align*} \]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="5.6" class="card-header">5.6 Indeterminate Forms and L'Hôpital's Rule</h2>
+        <div class="card-content">
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{The Extended Mean Value Theorem} \)</p>
+            <p>
+              \( \begin{align*} &\text{If } f \text{ and } g \text{ are differentiable on an open interval } (a, b)
+              \text{ and continuous on } [a, b] \\ &\text{ such that } g'(x) \neq 0 \text{ for any } x \text{ in } (a,
+              b) \text{, then there exists a point } c \text{ in } (a, b) \end{align*} \)
+            </p>
+            <div class="border">\[ \frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)} \]</div>
+            <p>\( \text{A proof of this theorem is given in Appendix A.} \)</p>
+            <hr />
+
+            <p>\( \textbf{Thm} \quad \text{L'Hôpital's Rule} \)</p>
+            <p>
+              \( \begin{align*} &\text{Let } f \text{ and } g \text{ be functions that are differentiable on an open
+              interval } (a, b) \text{ containing } c \\ &\text{, except possibly at } c \text{ itself. If the limit of
+              } f(x)/g(x) \text{ as } x \text{ approaches } c \text{ produces the indeterminate form } 0/0 \text{, then}
+              \end{align*} \)
+            </p>
+            <div style="border: 1px solid #ccc; padding: 10px; margin-left: 20px">
+              \[ \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)} \]
+            </div>
+            <p>
+              \( \begin{align*} &\text{provided the limit on the right exists (or is infinite). } \\ &\text{This result
+              also applies when the limit of } f(x)/g(x) \text{ as } x \text{ approaches } c \text{ produces one of the
+              indeterminate forms } \infty/\infty \text{, } (-\infty)/\infty \text{, } \infty/(-\infty) \text{, or }
+              (-\infty)/(-\infty) \text{.} \end{align*} \)
+            </p>
+            <p>\( \text{A proof of this theorem is given in Appendix A.} \)</p>
+          </div>
+          <div class="formula-dark">
+            <p>
+              \( \displaystyle \textbf{EX.} \quad \text{Evaluate the limit } \lim_{x \to 0} \frac{e^{2x} - 1}{x}
+              \text{.} \)
+            </p>
+            <div>\[ \lim_{x \to 0} (e^{2x} - 1) = e^0 - 1 = 0 \] \[ \lim_{x \to 0} x = 0 \]</div>
+            <p>\( \text{Apply L'Hôpital's Rule:} \)</p>
+            <div>
+              \[ \displaystyle \lim_{x \to 0} \frac{e^{2x} - 1}{x} = \lim_{x \to 0} \frac{\frac{d}{dx}[e^{2x} -
+              1]}{\frac{d}{dx}[x]} = \lim_{x \to 0} \frac{2e^{2x}}{1} = 2e^0 = 2 \]
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX.} \quad \text{Evaluate the limit } \lim_{x \to \infty} \frac{\ln x}{x} \)</p>
+            <div>
+              \[ \displaystyle \lim_{x \to \infty} \frac{\ln x}{x} = \lim_{x \to \infty} \frac{\frac{d}{dx}[\ln
+              x]}{\frac{d}{dx}[x]} = \lim_{x \to \infty} \frac{1/x}{1} = \lim_{x \to \infty} \frac{1}{x} = 0 \]
+            </div>
+
+            <hr />
+
+            <p>
+              \( \displaystyle \textbf{Ex.} \quad \text{Evaluate the limit } \lim_{x \to -\infty} \frac{x^2}{e^{-x}} \)
+            </p>
+
+            <p>\( \text{Apply L'Hôpital's Rule (1st time):} \)</p>
+            <div>
+              \[ \displaystyle \lim_{x \to -\infty} \frac{x^2}{e^{-x}} = \lim_{x \to -\infty}
+              \frac{\frac{d}{dx}[x^2]}{\frac{d}{dx}[e^{-x}]} = \lim_{x \to -\infty} \frac{2x}{-e^{-x}} \]
+            </div>
+            <p>\( \text{Apply L'Hôpital's Rule again (2nd time):} \)</p>
+            <div>
+              \[ \displaystyle \lim_{x \to -\infty} \frac{2x}{-e^{-x}} = \lim_{x \to -\infty}
+              \frac{\frac{d}{dx}[2x]}{\frac{d}{dx}[-e^{-x}]} = \lim_{x \to -\infty} \frac{2}{e^{-x}} \] \[ \lim_{x \to
+              -\infty} \frac{2}{e^{-x}} = \frac{2}{\infty} = 0 \]
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{Ex.} \quad \text{Evaluate the limit } \lim_{x \to \infty} e^{-x} \sqrt{x} \)</p>
+            <p>\( \textbf{Solution} \)</p>
+            <p>\( \text{Rewrite the limit as the indeterminate form } \infty/\infty \)</p>
+            <div>
+              \[ \displaystyle \lim_{x \to \infty} e^{-x} \sqrt{x} = \lim_{x \to \infty} \frac{\sqrt{x}}{e^{x}} \]
+            </div>
+            <p>\( \text{Apply L'Hôpital's Rule:} \)</p>
+            <div>
+              \[ \displaystyle \lim_{x \to \infty} \frac{\sqrt{x}}{e^{x}} = \lim_{x \to \infty}
+              \frac{\frac{d}{dx}[\sqrt{x}]}{\frac{d}{dx}[e^{x}]} \]
+            </div>
+            <p>\( \text{Calculate the derivatives:} \)</p>
+            <div>
+              \[ \frac{d}{dx}[\sqrt{x}] = \frac{d}{dx}[x^{1/2}] = \frac{1}{2} x^{-1/2} = \frac{1}{2\sqrt{x}} \] \[
+              \frac{d}{dx}[e^{x}] = e^{x} \]
+            </div>
+            <p>\( \text{Substitute back into the limit expression:} \)</p>
+            <div>
+              \[ \displaystyle \lim_{x \to \infty} \frac{\frac{1}{2\sqrt{x}}}{e^{x}} = \lim_{x \to \infty}
+              \frac{1}{2\sqrt{x} e^{x}} \]\[ \lim_{x \to \infty} \frac{1}{2\sqrt{x} e^{x}} = \frac{1}{\infty} = 0 \]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="5.7" class="card-header">5.7 Inverse Trigonometric Functions: Differentiation</h2>
+        <div class="card-content">
+          <h3>Definitions of inverse trigonometric functions</h3>
+          <div style="overflow: auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>Function</th>
+                  <th>Domain</th>
+                  <th>Range</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\[ y=arcsin \, x \text{ ,if } sin \, y = x \]</td>
+                  <td>\[ -1 \le x \le 1 \]</td>
+                  <td>\[ -\frac{\pi}{2} \le y \le \frac{\pi}{2} \]</td>
+                </tr>
+                <tr>
+                  <td>\[ y=arccos \, x \text{ ,if } cos \, y = x \]</td>
+                  <td>\[ -1 \le x \le 1 \]</td>
+                  <td>\[ 0 \le y \le \pi \]</td>
+                </tr>
+                <tr>
+                  <td>\[ y=arctan \, x \text{ ,if } tan \, y = x \]</td>
+                  <td>\[ -\infty \le x \le \infty \]</td>
+                  <td>\[ -\frac{\pi}{2} \lt y \lt \frac{\pi}{2} \]</td>
+                </tr>
+                <tr>
+                  <td>\[ y=arccot \, x \text{ ,if } cot \, y = x \]</td>
+                  <td>\[ -\infty \lt x \lt \infty \]</td>
+                  <td>\[ 0 \le y \le \pi \]</td>
+                </tr>
+                <tr>
+                  <td>\[ y=arcsec \, x \text{ ,if } sec \, y = x \]</td>
+                  <td>\[ |x| \ge 1 \]</td>
+                  <td>\[ 0 \le y \le \pi , y\ne \frac{\pi}{2} \]</td>
+                </tr>
+                <tr>
+                  <td>\[ y=arccsc \, x \text{ ,if } csc \, y = x \]</td>
+                  <td>\[ |x| \ge 1 \]</td>
+                  <td>\[ -\frac{\pi}{2} \le y \le \frac{\pi}{2}, y \ne 0 \]</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="formula">
+            <p>\( \text{If } \quad x \in \text{Domain, } \quad y \in \text{Range ,} \; \text{then} \)</p>
+            <p>
+              \[ \begin{align*} sin(arcsin \, x) &= x \quad \text{and} \quad arcsin(sin \, y) = y \\[6pt] tan(arctan \,
+              x) &= x \quad \text{and} \quad arctan(tan \, y) = y \\[6pt] sec(arcsec \, x) &= x \quad \text{and} \quad
+              arcsec(sec \, y) = y \end{align*} \]
+            </p>
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX.} \quad \text{Solve the equation } \arctan(2x-3) = \frac{\pi}{4} \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} \arctan(2x-3) &= \frac{\pi}{4} \\[6pt] \tan[\arctan(2x-3)] &=
+              \tan\left(\frac{\pi}{4}\right) \\[6pt] 2x - 3 &= 1 \\[6pt] 2x &= 4 \\[6pt] x &= 2 \end{align*} \]
+            </div>
+          </div>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{Let } u \text{ be a differentiable function of } x \)</p>
+            <div class="border">
+              \[ \begin{align*} \frac{d}{dx}[\arcsin u] &= \frac{u'}{\sqrt{1 - u^2}} \\[6pt] \frac{d}{dx}[\arccos u] &=
+              \frac{-u'}{\sqrt{1 - u^2}} \\[6pt] \frac{d}{dx}[\arctan u] &= \frac{u'}{1 + u^2} \\[6pt]
+              \frac{d}{dx}[\text{arccot } u] &= \frac{-u'}{1 + u^2} \\[6pt] \frac{d}{dx}[\text{arcsec } u] &=
+              \frac{u'}{|u|\sqrt{u^2 - 1}} \\[6pt] \frac{d}{dx}[\text{arccsc } u] &= \frac{-u'}{|u|\sqrt{u^2 - 1}}
+              \end{align*} \]
+            </div>
+            <hr />
+            <p>\( \textbf{Pf.} \)</p>
+            <p>
+              \( \text{Let } y = \arcsin x \text{, then } \sin y = x \text{, where } -\frac{\pi}{2} \le y \le
+              \frac{\pi}{2} \)
+            </p>
+            <div>
+              \[ \frac{dy}{dx} = \frac{1}{\frac{dx}{dy}} = \frac{1}{\frac{d}{dy}[\sin y]} = \frac{1}{\cos y} \] \[
+              \frac{d}{dx}[\arcsin x] = \frac{1}{\cos y} = \frac{1}{\sqrt{1 - \sin^2 y}} \] \[ \frac{d}{dx}[\arcsin x] =
+              \frac{1}{\sqrt{1 - x^2}} \]
+            </div>
+            <p>\( \text{Applying the Chain Rule} \)</p>
+            <div>\[ \frac{d}{dx}[\arcsin u] = \frac{u'}{\sqrt{1 - u^2}} \]</div>
+          </div>
+          <div class="formula-dark">
+            <p>\( \textbf{EX.} \quad \text{Find the derivative of each function.} \)</p>
+            <p>\( \textbf{a.} \quad y = \arcsin(2x) \)</p>
+            <div>
+              \[ \displaystyle \frac{d}{dx}[\arcsin(2x)] = \frac{2}{\sqrt{1 - (2x)^2}} = \frac{2}{\sqrt{1 - 4x^2}} \]
+            </div>
+            <p>\( \textbf{b.} \quad y = \arctan(3x) \)</p>
+            <div>\[ \displaystyle \frac{d}{dx}[\arctan(3x)] = \frac{3}{1 + (3x)^2} = \frac{3}{1 + 9x^2} \]</div>
+            <p>\( \textbf{c.} \quad y = \arcsin \sqrt{x} \)</p>
+            <p>
+              \( \displaystyle \text{Let } u = \sqrt{x} = x^{\frac{1}{2}} \text{, so } u' = \frac{1}{2} x^{-\frac{1}{2}}
+              \text{.} \)
+            </p>
+            <div>
+              \[ \displaystyle \frac{d}{dx}[\arcsin \sqrt{x}] = \frac{\frac{1}{2} x^{\frac{1}{2}}}{\sqrt{1 -
+              (\sqrt{x})^2}} = \frac{1}{2\sqrt{x}\sqrt{1 - x}} = \frac{1}{2\sqrt{x - x^2}} \]
+            </div>
+            <p>\( \textbf{d.} \quad y = \text{arcsec } e^{2x} \)</p>
+            <p>\( \text{Let } u = e^{2x} \text{, so } u' = 2e^{2x} \text{.} \)</p>
+            <div>
+              \[ \displaystyle \frac{d}{dx}[\text{arcsec } e^{2x}] = \frac{2e^{2x}}{|e^{2x}|\sqrt{(e^{2x})^2 - 1}} =
+              \frac{2e^{2x}}{e^{2x}\sqrt{e^{4x} - 1}} = \frac{2}{\sqrt{e^{4x} - 1}} \]
+            </div>
+          </div>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <div>
+              <ul style="list-style: none">
+                <li>\[ \text{If } -1 \le x \le 1 \text{, then } \arcsin x + \arccos x = \frac{\pi}{2} \]</li>
+                <li>\[ \text{If } x \in \mathbb{R} \text{, then } \arctan x + \text{arccot } x = \frac{\pi}{2} \]</li>
+                <li>\[ \text{If } |x| \ge 1 \text{, then } \text{arcsec } x + \text{arccsc } x = \frac{\pi}{2} \]</li>
+              </ul>
+            </div>
+            <p>\( \textbf{Proof} \)</p>
+            <div>
+              <p>\( \text{Let } f(x) = \arcsin x + \arccos x \)</p>
+              <div>
+                \[ \begin{align*} \Rightarrow f'(x) &= \frac{d}{dx}[\arcsin x] + \frac{d}{dx}[\arccos x] \\[6pt] &=
+                \left( \frac{1}{\sqrt{1 - x^2}} \right) + \left( \frac{-1}{\sqrt{1 - x^2}} \right) \\[6pt] &= 0 \\[6pt]
+                \Rightarrow f(x) &= \arcsin x + \arccos x = C \end{align*} \]
+              </div>
+              <p>\( \text{Let } x=0\)</p>
+              <div>\[ \displaystyle C = \arcsin(0) + \arccos(0) =\frac{\pi}{2} \]</div>
+              <p>\( \text{s.t. } \arcsin x + \arccos x = \frac{\pi}{2} \text{ for } -1 \le x \le 1\)</p>
+            </div>
+          </div>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <div>
+              \[ \text{If } |x| \ge 1 \text{, then } \text{arcsec } x = \cos^{-1}\left(\frac{1}{x}\right) \] \[ \text{If
+              } |x| \ge 1 \text{, then } \text{arccsc } x = \sin^{-1}\left(\frac{1}{x}\right) \]
+              <p>\( \text{The identity for } \text{arccot } x \text{ is piecewise defined:} \)</p>
+              \[ \text{arccot } x = \begin{cases} \arctan\left(\frac{1}{x}\right), & x &gt; 0 \\ \pi +
+              \arctan\left(\frac{1}{x}\right), & x &lt; 0 \\ \frac{\pi}{2}, & x = 0 \end{cases} \]
+            </div>
+            <div>
+              <p>\( \textbf{Pf} \)</p>
+
+              <p>\( \text{Let } \theta = \text{arcsec } x \text{.} \text{} \)</p>
+
+              \[ x = \sec \theta , \quad \frac{1}{x} = \cos \theta \] \[ \cos^{-1}\left(\frac{1}{x}\right) = \theta
+              \text{} \] \[ \sec^{-1}\, x = \cos^{-1}\left(\frac{1}{x}\right) \]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="5.8" class="card-header">5.8 Inverse Trigonometric Function: Intergration</h2>
+        <div class="card-content">
+          <h3>Integrals involving inverse trigonometric functions</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <p>
+              \( \text{Let } u \text{ be a differentiable function of } x \text{, and let } a &gt; 0 \text{.} \text{} \)
+            </p>
+            <div class="border">
+              \[ \displaystyle \begin{align*} \int \frac{du}{\sqrt{a^2 - u^2}} &= \sin^{-1} \frac{u}{a} + C \\[6pt] \int
+              \frac{du}{a^2 + u^2} &= \frac{1}{a} \tan^{-1} \frac{u}{a} + C \\[6pt] \int \frac{du}{u\sqrt{u^2 - a^2}} &=
+              \frac{1}{a} \sec^{-1} \frac{|u|}{a} + C \end{align*} \]
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{Ex} \quad \text{Evaluate } \int \frac{dx}{4x^2+4x+2} \)</p>
+            <div class="border">\(\text{Let } u = 2x + 1 ,\quad du = 2\,dx ,\quad dx = \frac{1}{2}\,du \)</div>
+
+            <div>
+              \[ \displaystyle \begin{align*} \int \frac{dx}{4x^2+4x+2} &=\int \frac{dx}{1 + (2x + 1)^2} \\[6pt] &= \int
+              \frac{\frac{1}{2}\,du}{1^2 + u^2} \\[6pt] &= \frac{1}{2} \int \frac{du}{1^2 + u^2} \\[6pt] &= \frac{1}{2}
+              \left( \frac{1}{1} \tan^{-1} \frac{u}{1} \right) + C \\[6pt] &= \frac{1}{2} \tan^{-1} u + C \end{align*}
+              \] \[ \Rightarrow \int \frac{dx}{4x^2+4x+2} = \frac{1}{2} \tan^{-1}(2x + 1) + C \]
+            </div>
+            <hr />
+            <p>\( \displaystyle \textbf{Ex} \quad \text{Evaluate } \int \frac{dx}{\sqrt{e^{2x}-1}} \)</p>
+            <div class="border">
+              \[ \displaystyle \text{Let } u = e^x ,\quad du = e^x \,dx ,\quad dx = \frac{du}{e^x} = \frac{du}{u} \]
+            </div>
+            <div>
+              \[ \displaystyle \int \frac{dx}{\sqrt{e^{2x}-1}} = \int \frac{du/u}{\sqrt{u^2 - 1^2}} = \int
+              \frac{du}{u\sqrt{u^2 - 1}} \text{} \] \[ \displaystyle \int \frac{du}{u\sqrt{u^2 - 1}} = \frac{1}{1}
+              \sec^{-1} \frac{|u|}{1} + C = \sec^{-1} |u| + C \] \[ \RIghtarrow \int \frac{dx}{\sqrt{e^{2x}-1}} =
+              \sec^{-1} e^{x} + C \]
+            </div>
+            <hr />
+            <p>\( \displaystyle \textbf{Ex} \quad \text{Evaluate } \int \frac{dx}{x\sqrt{x^2-16}} \)</p>
+            <p>\( \text{Let } u = x \text{, so } du = dx \text{.} \quad a^2 = 16 \text{, so } a = 4 \text{.} \)</p>
+            <div>
+              \[ \begin{align*} \displaystyle \int \frac{dx}{x\sqrt{x^2-16}} &= \frac{1}{4} \text{arcsec } \frac{|x|}{4}
+              + C \\[6pt] &= \frac{1}{4} \cos^{-1}\left(\frac{4}{|x|}\right) + C \\[6pt] &= \frac{1}{4} \cot^{-1} \,
+              \frac{4}{\sqrt{x^2 - 16}} + C \end{align*} \]
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <h2 id="5.9" class="card-header">5.9 Hyperbolic Functions</h2>
+        <div class="card-content">
+          <h3>Definitions of the Hyperbolic Functions</h3>
+          <div class="formula">
+            <div class="border">
+              \[ \begin{align*} \sinh x &= \frac{e^{x} - e^{-x}}{2} \\[6pt] \cosh x &= \frac{e^{x} + e^{-x}}{2} \\[6pt]
+              \tanh x &= \frac{\sinh x}{\cosh x} = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} \\[6pt] \text{csch } x &=
+              \frac{1}{\sinh x}, \quad x \ne 0 \\[6pt] \text{sech } x &= \frac{1}{\cosh x} \\[6pt] \coth x &=
+              \frac{1}{\tanh x}, \quad x \ne 0 \end{align*} \]
+            </div>
+          </div>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <div class="border">
+              \[ \cosh^2 x - \sinh^2 x = 1 \] \[ \tanh^2 x + \text{sech}^2 x = 1 \] \[ \coth^2 x - \text{csch}^2 x = 1
+              \]
+            </div>
+            <p>\( \textbf{Pf} \)</p>
+            <div style="margin-top: 20px">
+              \[ \begin{align*} \displaystyle &\cosh^2 x - \sinh^2 x \\[6pt] &= \left(\frac{e^{x} + e^{-x}}{2}\right)^2
+              - \left(\frac{e^{x} - e^{-x}}{2}\right)^2 \\[6pt] \displaystyle \quad &= \frac{e^{2x} + 2e^{x}e^{-x} +
+              e^{-2x}}{4} - \frac{e^{2x} - 2e^{x}e^{-x} + e^{-2x}}{4} \\[6pt] \displaystyle \quad &= \frac{e^{2x} + 2 +
+              e^{-2x} - e^{2x} + 2 - e^{-2x}}{4} \\[6pt] \displaystyle \quad &= \frac{4}{4} = 1 \end{align*} \]
+            </div>
+          </div>
+          <h3>Sum and Difference Formulas</h3>
+          <div class="formula">
+            <div class="border">
+              \[ \sinh(x + y) = \sinh x \cosh y + \cosh x \sinh y \] \[ \sinh(x - y) = \sinh x \cosh y - \cosh x \sinh y
+              \] \[ \cosh(x + y) = \cosh x \cosh y + \sinh x \sinh y \] \[ \cosh(x - y) = \cosh x \cosh y - \sinh x
+              \sinh y \]
+            </div>
+          </div>
+          <h3>Double-Angle Formulas</h3>
+          <div class="formula">
+            <div class="border">
+              \[ \sinh^2 x = \frac{-1 + \cosh 2x}{2} \]\[ \cosh^2 x = \frac{1 + \cosh 2x}{2} \]\[ \sinh 2x = 2 \sinh x
+              \cosh x \] \[ \begin{align*} \cosh 2x &= \cosh^2 x + \sinh^2 x \\[6pt] &= 2\cosh^2 x - 1 \\[6pt] &= 1 +
+              2\sinh x^{2} x \end{align*} \]
+            </div>
+          </div>
+          <h3>Derivatives and Integrals of Hyperbolic Functions</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <p>\( \text{Let } u \text{ be a differentiable function of } x \text{.} \text{} \)</p>
+            <div class="border">
+              \[ \begin{align*} \frac{d}{dx}[\sinh u] &= (\cosh u)u' \\[6pt] \frac{d}{dx}[\cosh u] &= (\sinh u)u'
+              \\[6pt] \frac{d}{dx}[\tanh u] &= (\text{sech}^2 u)u' \\[6pt] \frac{d}{dx}[\coth u] &= -(\text{csch}^2 u)u'
+              \\[6pt] \frac{d}{dx}[\text{sech } u] &= -(\text{sech } u \tanh u)u' \\[6pt] \frac{d}{dx}[\text{csch } u]
+              &= -(\text{csch } u \coth u)u' \end{align*} \]
+            </div>
+
+            <p>\( \textbf{Pf}\)</p>
+            <div>
+              \[ \begin{align*} \frac{d}{dx}[\sinh x] &= \frac{d}{dx}\left[\frac{e^x - e^{-x}}{2}\right] \\[6pt] &=
+              \frac{1}{2} \left( \frac{d}{dx}[e^x] - \frac{d}{dx}[e^{-x}] \right) \\[6pt] &= \frac{1}{2} \left( e^x -
+              (-e^{-x}) \right) \\[6pt] &= \frac{e^x + e^{-x}}{2} \quad \\[6pt] &= \cosh x \end{align*} \]
+            </div>
+
+            <p>\( \textbf{Pf}\)</p>
+            <div>
+              \[ \begin{align*} \frac{d}{dx}[\tanh x] &= \frac{d}{dx}\left[\frac{\sinh x}{\cosh x}\right] \\[6pt] &=
+              \frac{(\cosh x) \frac{d}{dx}[\sinh x] - (\sinh x) \frac{d}{dx}[\cosh x]}{\cosh^2 x} \\[6pt] &=
+              \frac{(\cosh x)(\cosh x) - (\sinh x)(\sinh x)}{\cosh^2 x} \\[6pt] &= \frac{\cosh^2 x - \sinh^2 x}{\cosh^2
+              x} \\[6pt] &= \frac{1}{\cosh^2 x} \\[6pt] &= \text{sech}^2 x \end{align*} \]
+            </div>
+            <p>\( \textbf{Thm} \)</p>
+            <p>\( \text{Let } u \text{ be a differentiable function of } x \text{.} \text{} \)</p>
+            <div class="border">
+              \[ \begin{align*} \int \cosh u\,du &= \sinh u + C \\[6pt] \int \sinh u\,du &= \cosh u + C \\[6pt] \int
+              \text{sech}^2 u\,du &= \tanh u + C \\[6pt] \int \text{csch}^2 u\,du &= -\coth u + C \\[6pt] \int
+              \text{sech } u \tanh u\,du &= -\text{sech } u + C \\[6pt] \int \text{csch } u \coth u\,du &= -\text{csch }
+              u + C \end{align*} \]
+            </div>
+          </div>
+          <h3>Inverse Hyperbolic Functions</h3>
+
+          <p>\( \textbf{Thm}\)</p>
+          <div style="overflow: auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>Function</th>
+                  <th>Logarithmic Form</th>
+                  <th>Domain</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\( \sinh^{-1} x \)</td>
+                  <td>\( \ln(x + \sqrt{x^2 + 1}) \)</td>
+                  <td>\( (-\infty, \infty) \)</td>
+                </tr>
+                <tr>
+                  <td>\( \cosh^{-1} x \)</td>
+                  <td>\( \ln(x + \sqrt{x^2 - 1}) \)</td>
+                  <td>\( [1, \infty) \)</td>
+                </tr>
+                <tr>
+                  <td>\( \tanh^{-1} x \)</td>
+                  <td>\( \frac{1}{2} \ln \left(\frac{1 + x}{1 - x}\right) \)</td>
+                  <td>\( (-1, 1) \)</td>
+                </tr>
+                <tr>
+                  <td>\( \coth^{-1} x \)</td>
+                  <td>\( \frac{1}{2} \ln \left(\frac{x + 1}{x - 1}\right) \)</td>
+                  <td>\( (-\infty, -1) \cup (1, \infty) \)</td>
+                </tr>
+                <tr>
+                  <td>\( \sec^{-1} x \)</td>
+                  <td>\( \ln \left(\frac{1 + \sqrt{1 - x^2}}{x}\right) \)</td>
+                  <td>\( (0, 1] \)</td>
+                </tr>
+                <tr>
+                  <td>\( \csc^{-1} x \)</td>
+                  <td>\( \ln \left(\frac{1 + \sqrt{1 + x^2}}{|x|}\right) \)</td>
+                  <td>\( (-\infty, 0) \cup (0, \infty) \)</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="formula">
+            <p>\( \textbf{Pf } \quad \sinh^{-1} x = \ln(x + \sqrt{x^2 + 1}) \)</p>
+
+            <p>\( \text{Let } y = \sinh^{-1} x \text{. Then } x = \sinh y \text{.} \)</p>
+            <div>
+              \[ x = \frac{e^{y} - e^{-y}}{2} \] \[ 2x = e^{y} - e^{-y} \] \[ 2x e^{y} = e^{2y} - e^{0} \] \[ 2x e^{y} =
+              (e^{y})^2 - 1 \] \[ (e^{y})^2 - 2x e^{y} - 1 = 0 \]
+            </div>
+            <p>\( \text{Let } z = e^{y} \)</p>
+            <div>
+              \[ (z)^2 - 2x (z) - 1 = 0 \] \[ z = e^{y} = \frac{-(-2x) \pm \sqrt{(-2x)^2 - 4(1)(-1)}}{2(1)} \] \[
+              \begin{align*} e^{y} &= \frac{2x \pm \sqrt{4x^2 + 4}}{2} \\[6pt] &= \frac{2x \pm 2\sqrt{x^2 + 1}}{2}
+              \\[6pt] &= x \pm \sqrt{x^2 + 1} \end{align*} \]
+            </div>
+            <br />
+            <div>
+              \[ e^{y} = x + \sqrt{x^2 + 1} \] \[ y = \ln(x + \sqrt{x^2 + 1}) \] \[ \sinh^{-1} x = \ln(x + \sqrt{x^2 +
+              1}) \]
+            </div>
+            <hr />
+            <p>
+              \( \displaystyle \textbf{Pf} \quad \tanh^{-1} x = \frac{1}{2} \ln \left(\frac{1 + x}{1 - x}\right) \text{}
+              \)
+            </p>
+            <p>
+              \( \text{Let } y = \tanh^{-1} x \text{. Then } x = \tanh y \text{, where } -1 &lt; x &lt; 1 \text{.} \)
+            </p>
+            <div>
+              \[ x = \frac{\sinh y}{\cosh y} = \frac{e^{y} - e^{-y}}{e^{y} + e^{-y}} \] \[ x (e^{y} + e^{-y}) = e^{y} -
+              e^{-y} \] \[ x e^{y} + x e^{-y} = e^{y} - e^{-y} \] \[ x e^{-y} + e^{-y} = e^{y} - x e^{y} \] \[ e^{-y} (x
+              + 1) = e^{y} (1 - x) \] \[ \frac{e^{y}}{e^{-y}} = \frac{x + 1}{1 - x} \] \[ e^{2y} = \frac{1 + x}{1 - x}
+              \] \[ \ln(e^{2y}) = \ln \left(\frac{1 + x}{1 - x}\right) \] \[ 2y = \ln \left(\frac{1 + x}{1 - x}\right)
+              \] \[ y = \frac{1}{2} \ln \left(\frac{1 + x}{1 - x}\right) \] \[ \tanh^{-1} x = \frac{1}{2} \ln
+              \left(\frac{1 + x}{1 - x}\right) \text{} \]
+            </div>
+          </div>
+          <h3>Differentiation and Integration Involving Inverse Hyperbolic Functions</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <p>
+              \( \text{Let } u \text{ be a differentiable function of } x \text{, and let } a &gt; 0 \text{.} \text{} \)
+            </p>
+            <p>\( \textbf{A. Differentiation Formulas} \)</p>
+            <div class="border" style="display: flex; justify-content: space-around">
+              <div style="flex-basis: 45%">
+                \[ \begin{align*} \frac{d}{dx}[\sinh^{-1} u] &= \frac{u'}{\sqrt{u^2 + 1}} \\[6pt]
+                \frac{d}{dx}[\tanh^{-1} u] &= \frac{u'}{1 - u^2} \\[6pt] \frac{d}{dx}[\sec^{-1} u] &=
+                \frac{-u'}{u\sqrt{1 - u^2}} \end{align*} \]
+              </div>
+              <div style="flex-basis: 45%">
+                \[ \begin{align*} \frac{d}{dx}[\cosh^{-1} u] &= \frac{u'}{\sqrt{u^2 - 1}} \\[6pt]
+                \frac{d}{dx}[\coth^{-1} u] &= \frac{u'}{1 - u^2} \\[6pt] \frac{d}{dx}[\csc^{-1} u] &=
+                \frac{-u'}{|u|\sqrt{1 + u^2}} \end{align*} \]
+              </div>
+            </div>
+
+            <p>\( \textbf{B. Integration Formulas} \)</p>
+            <div class="border">
+              \[ \begin{align*} \int \frac{du}{\sqrt{u^2 \pm a^2}} &= \ln(u + \sqrt{u^2 \pm a^2}) + C \\[6pt] \int
+              \frac{du}{a^2 - u^2} &= \frac{1}{2a} \ln \left| \frac{a + u}{a - u} \right| + C \quad (\text{for } |u|
+              &lt; a) \\[6pt] \int \frac{du}{u\sqrt{a^2 - u^2}} &= \frac{1}{a} \ln \left| \frac{a + \sqrt{a^2 - u^2}}{u}
+              \right| + C \\[6pt] \int \frac{du}{u\sqrt{a^2 + u^2}} &= -\frac{1}{a} \ln \left| \frac{a + \sqrt{a^2 +
+              u^2}}{u} \right| + C \end{align*} \]
+            </div>
+
+            <p>\( \displaystyle \textbf{Pf} \quad \frac{d}{dx}[\sinh^{-1} x] \)</p>
+            <p>\( \text{Let } y = \sinh^{-1} x \text{. Then } x = \sinh y \text{.} \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} \frac{dy}{dx} &= \frac{1}{\frac{d}{dy}[\sinh y]} \\[6pt] &= \frac{1}{\cosh
+              y} \end{align*} \]
+            </div>
+            <p>\( \cosh^2 y - \sinh^2 y = 1 \text{} \text{, we have } \cosh y = \sqrt{1 + \sinh^2 y}\)</p>
+            <div>
+              \[ \begin{align*} \frac{d}{dx}[\sinh^{-1} x] &= \frac{1}{\sqrt{1 + x^2}} \\[6pt] \Rightarrow
+              \frac{d}{dx}[\sinh^{-1} u] &= \frac{u'}{\sqrt{u^2 + 1}} \end{align*} \]
+            </div>
+            <hr />
+            <p>\( \displaystyle \textbf{Pf} \quad \frac{d}{dx}[\tanh^{-1} x] \)</p>
+            <p>\( \text{Let } y = \tanh^{-1} x \text{. Then } x = \tanh y \text{.} \)</p>
+            <div>
+              \[ \begin{align*} \frac{dy}{dx} &= \frac{1}{\frac{d}{dy}[\tanh y]} \\[6pt] &= \frac{1}{\text{sech}^2 y}
+              \end{align*} \]
+            </div>
+            <p>
+              \( \tanh^2 y + \text{sech}^2 y = 1 \text{} \text{, we have } \text{sech}^2 y = 1 - \tanh^2 y \text{.} \)
+            </p>
+            <div>
+              \[ \begin{align*} \frac{d}{dx}[\tanh^{-1} x] &= \frac{1}{1 - x^2} \\[6pt] \frac{d}{dx}[\tanh^{-1} u] &=
+              \frac{u'}{1 - u^2} \end{align*} \]
+            </div>
           </div>
 
-          <p>\( \displaystyle \textbf{Pf} \quad \frac{d}{dx}[\sinh^{-1} x] \)</p>
-          <p>\( \text{Let } y = \sinh^{-1} x \text{. Then } x = \sinh y \text{.} \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} \frac{dy}{dx} &= \frac{1}{\frac{d}{dy}[\sinh y]} \\[6pt] &= \frac{1}{\cosh
-            y} \end{align*} \]
-          </div>
-          <p>\( \cosh^2 y - \sinh^2 y = 1 \text{} \text{, we have } \cosh y = \sqrt{1 + \sinh^2 y}\)</p>
-          <div>
-            \[ \begin{align*} \frac{d}{dx}[\sinh^{-1} x] &= \frac{1}{\sqrt{1 + x^2}} \\[6pt] \Rightarrow
-            \frac{d}{dx}[\sinh^{-1} u] &= \frac{u'}{\sqrt{u^2 + 1}} \end{align*} \]
-          </div>
-          <hr />
-          <p>\( \displaystyle \textbf{Pf} \quad \frac{d}{dx}[\tanh^{-1} x] \)</p>
-          <p>\( \text{Let } y = \tanh^{-1} x \text{. Then } x = \tanh y \text{.} \)</p>
-          <div>
-            \[ \begin{align*} \frac{dy}{dx} &= \frac{1}{\frac{d}{dy}[\tanh y]} \\[6pt] &= \frac{1}{\text{sech}^2 y}
-            \end{align*} \]
-          </div>
-          <p>
-            \( \tanh^2 y + \text{sech}^2 y = 1 \text{} \text{, we have } \text{sech}^2 y = 1 - \tanh^2 y \text{.} \)
-          </p>
-          <div>
-            \[ \begin{align*} \frac{d}{dx}[\tanh^{-1} x] &= \frac{1}{1 - x^2} \\[6pt] \frac{d}{dx}[\tanh^{-1} u] &=
-            \frac{u'}{1 - u^2} \end{align*} \]
-          </div>
-        </section>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \frac{d}{dx}\sinh^{-1}(\tan x) \)</p>
 
-        <section class="formula-dark">
-          <p>\( \displaystyle \textbf{EX} \quad \frac{d}{dx}\sinh^{-1}(\tan x) \)</p>
+            <p>\( \text{Let } u = \tan x ,\quad u' = \sec^2 x \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} &\frac{d}{dx}[\sinh^{-1}(\tan x)] \\[6pt] =& \frac{d}{dx}[\sinh^{-1}(u)]
+              \\[6pt] =& \frac{\sec^2 x}{\sqrt{(\tan x)^2 + 1}} \\[6pt] =& \frac{\sec^2 x}{\sqrt{\sec^2 x}} \\[6pt] =&
+              \frac{\sec^2 x}{|\sec x|} = |\sec x| \end{align*} \]
+            </div>
+            <hr />
+            <p>\( \displaystyle \textbf{EX} \quad \frac{d}{dx}\tanh^{-1}(\sin x) \)</p>
+            <div>
+              \[ \displaystyle \begin{align*} & \frac{d}{dx}\tanh^{-1}(\sin x) \\[6pt] =& \frac{1}{1 -
+              \sin^{2}x}\frac{d}{dx}\sin x \\[6pt] =& \frac{\cos x}{\cos^{2}x} \\[6pt] =& \sec x \\[6pt] \Leftrightarrow
+              \int \sec x \, & dx = \tanh^{-1}(\sin x) + C \end{align*} \]
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <h2 id="8.1">8.1 Basic Intergration Rules</h2>
+      </section>
 
-          <p>\( \text{Let } u = \tan x ,\quad u' = \sec^2 x \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} &\frac{d}{dx}[\sinh^{-1}(\tan x)] \\[6pt] =& \frac{d}{dx}[\sinh^{-1}(u)]
-            \\[6pt] =& \frac{\sec^2 x}{\sqrt{(\tan x)^2 + 1}} \\[6pt] =& \frac{\sec^2 x}{\sqrt{\sec^2 x}} \\[6pt] =&
-            \frac{\sec^2 x}{|\sec x|} = |\sec x| \end{align*} \]
+      <section class="card">
+        <h2 id="8.2" class="card-header">8.2 Intergration by Parts</h2>
+        <div class="card-content">
+          <div class="formula">
+            <p>\( \displaystyle \textbf{Thm} \)</p>
+            <p>
+              \( \text{If } u \text{ and } v \text{ are functions of } x \text{ and have continious derivatives ,
+              then}\)
+            </p>
+            <div class="border">\[ \int u \, dv = uv - \int v \, du \]</div>
+            <p>\( \displaystyle \textbf{Rule} \quad \text{LIATE Rule for Choosing } u \)</p>
+
+            <div>
+              <p>依照下列順序，排在愈前方的函數愈優先設為 \( u \)</p>
+              \begin{align*} \textbf{L} & \quad \text{Logarithmic functions} \quad (\ln x, \log_a x) \\[6pt] \textbf{I}
+              & \quad \text{Inverse trigonometric functions} \quad (\arcsin x) \\[6pt] \textbf{A} & \quad
+              \text{Algebraic functions} \quad (x^n, 2x, \text{polynomials}) \\[6pt] \textbf{T} & \quad
+              \text{Trigonometric functions} \quad (\sin x, \cos x) \\[6pt] \textbf{E} & \quad \text{Exponential
+              functions} \quad (e^x, a^x) \end{align*}
+            </div>
           </div>
-          <hr />
-          <p>\( \displaystyle \textbf{EX} \quad \frac{d}{dx}\tanh^{-1}(\sin x) \)</p>
-          <div>
-            \[ \displaystyle \begin{align*} & \frac{d}{dx}\tanh^{-1}(\sin x) \\[6pt] =& \frac{1}{1 -
-            \sin^{2}x}\frac{d}{dx}\sin x \\[6pt] =& \frac{\cos x}{\cos^{2}x} \\[6pt] =& \sec x \\[6pt] \Leftrightarrow
-            \int \sec x \, & dx = \tanh^{-1}(\sin x) + C \end{align*} \]
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int x \, \sin \, x \, dx \)</p>
+            <p>\( \text{Let } u = x ,\quad dv = \sin x \, dx du = 1 \, dx ,\quad v = - \cos x \)</p>
+            <div>
+              \[ \begin{align*} & \int x \, \sin \, x \, dx \\[6pt] &= -x\cos x + \int \cos x \, dx \\[6pt] &= -x \cos x
+              + \sin x + C \end{align*} \]
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \ln x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \ln x \quad \Rightarrow \quad du = \frac{1}{x} \, dx \\ dv &= dx
+              \quad \Rightarrow \quad v = x \end{align*}
+            </div>
+            <div>
+              \begin{align*} \Rightarrow \int \ln x \, dx &= (\ln x)(x) - \int x \cdot \left( \frac{1}{x} \right) \, dx
+              \\ &= x \ln x - \int 1 \, dx \\ &= x \ln x - x + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int x^2 \ln(x+1) \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \ln(x+1) \quad \Rightarrow \quad du = \frac{1}{x+1} \, dx \\[6pt] dv
+              &= x^2 \, dx \quad \Rightarrow \quad v = \frac{1}{3}x^3 \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int x^2 \ln(x+1) \, dx \\[6pt] &= \frac{1}{3}x^3 \ln(x+1) - \int
+              \frac{1}{3}x^3 \cdot \frac{1}{x+1} , dx \\[6pt] &= \frac{1}{3}x^3 \ln(x+1) - \frac{1}{3} \int
+              \frac{x^3}{x+1} , dx \\[6pt] &= \frac{1}{3}x^3 \ln(x+1) - \frac{1}{3} \int \left( x^2 - x + 1 -
+              \frac{1}{x+1} \right) , dx \\[6pt] &= \frac{1}{3}x^3 \ln(x+1) - \frac{1}{3} \left( \frac{1}{3}x^3 -
+              \frac{1}{2}x^2 + x - \ln|x+1| \right) + C \\[6pt] &= \frac{1}{3}x^3 \ln(x+1) - \frac{1}{9}x^3 +
+              \frac{1}{6}x^2 - \frac{1}{3}x + \frac{1}{3}\ln|x+1| + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int e^x \sin x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \sin x \quad \Rightarrow \quad du = \cos x \, dx \\[6pt] dv &= e^x ,
+              dx \quad \Rightarrow \quad v = e^x \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int e^x \sin x \, dx \\[6pt] &= e^x \sin x - \int e^x \cos x \, dx
+              \end{align*}
+            </div>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \cos x \quad \Rightarrow \quad du = -\sin x \, dx \\[6pt] dv &= e^x
+              \, dx \quad \Rightarrow \quad v = e^x \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int e^x \sin x \, dx \\[6pt] &= e^x \sin x - \left( e^x \cos x - \int e^x
+              (-\sin x) , dx \right) \\[6pt] &= e^x \sin x - e^x \cos x - \int e^x \sin x \, dx \\[6pt] &\Rightarrow 2
+              \int e^x \sin x \, dx = e^x (\sin x - \cos x) \\[6pt] &= \frac{e^x (\sin x - \cos x)}{2} + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int x^2 e^x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= x^2 \quad \Rightarrow \quad du = 2x \, dx \\[6pt] dv &= e^x \, dx
+              \quad \Rightarrow \quad v = e^x \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int x^2 e^x \, dx \\[6pt] &= x^2 e^x - \int 2x e^x \, dx \\[6pt] &= x^2 e^x -
+              2 \int x e^x \, dx \end{align*}
+            </div>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= x \quad \Rightarrow \quad du = dx \\[6pt] dv &= e^x \, dx \quad
+              \Rightarrow \quad v = e^x \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow x^2 e^x - 2 \left( x e^x - \int e^x \, dx \right) \\[6pt] &= x^2 e^x - 2 (x
+              e^x - e^x) + C \\[6pt] &= x^2 e^x - 2xe^x + 2e^x + C \\[6pt] &= e^x (x^2 - 2x + 2) + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int x^3 \cos(2x) \, dx \)</p>
+            <div class="border">
+              <p>使用表格法 (Tabular Integration)</p>
+              \begin{align*} \begin{array}{c|c|c} \text{Sign} & u \text{ (Diff)} & dv \text{ (Int)} \\ \hline + & x^3 &
+              \cos(2x) \\ - & 3x^2 & \frac{1}{2}\sin(2x) \\ + & 6x & -\frac{1}{4}\cos(2x) \\ - & 6 &
+              -\frac{1}{8}\sin(2x) \\ + & 0 & \frac{1}{16}\cos(2x) \end{array} \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int x^3 \cos(2x) \, dx \\[6pt] &= (x^3)\left( \frac{1}{2}\sin(2x) \right) -
+              (3x^2)\left( -\frac{1}{4}\cos(2x) \right) + (6x)\left( -\frac{1}{8}\sin(2x) \right) - (6)\left(
+              \frac{1}{16}\cos(2x) \right) + C \\[6pt] &= \frac{1}{2}x^3 \sin(2x) + \frac{3}{4}x^2 \cos(2x) -
+              \frac{3}{4}x \sin(2x) - \frac{3}{8}\cos(2x) + C \\[6pt] &= \left( \frac{1}{2}x^3 - \frac{3}{4}x \right)
+              \sin(2x) + \left( \frac{3}{4}x^2 - \frac{3}{8} \right) \cos(2x) + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \arctan x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \arctan x \quad \Rightarrow \quad du = \frac{1}{1+x^2} \, dx \\[6pt]
+              dv &= dx \quad \Rightarrow \quad v = x \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \arctan x \, dx \\[6pt] &= x \arctan x - \int \frac{x}{1+x^2} \, dx
+              \\[6pt] &= x \arctan x - \frac{1}{2} \int \frac{2x}{1+x^2} \, dx \\[6pt] &= x \arctan x - \frac{1}{2}
+              \ln(1+x^2) + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \cos(\sqrt{x}) \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad w &= \sqrt{x} = x^{1/2} \quad \Rightarrow \quad dw = \frac{1}{2\sqrt{x}}
+              \, dx \\[6pt] dx &= 2\sqrt{x} \, dw = 2w \, dw \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \cos(\sqrt{x}) \, dx \\[6pt] &= \int \cos(w) \cdot 2w \, dw \\[6pt] &= 2
+              \int w \cos w \, dw \end{align*}
+            </div>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= w \quad \Rightarrow \quad du = dw \\[6pt] dv &= \cos w \, dw \quad
+              \Rightarrow \quad v = \sin w \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow 2 \left( w \sin w - \int \sin w \, dw \right) \\[6pt] &= 2 (w \sin w + \cos w)
+              + C \\[6pt] &= 2\sqrt{x} \sin(\sqrt{x}) + 2\cos(\sqrt{x}) + C \end{align*}
+            </div>
+
+            <hr />
           </div>
-        </section>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="8.3" class="card-header">8.3 Trigonometric Integrals</h2>
+        <div class="card-content">
+          <h3>Integrals Involving Powers of Sine and Cosine</h3>
+          <div class="formula">
+            <p><strong>1. 當 \(\sin\) 的次方為奇數時：</strong> 拆出一個 \(\sin x\)，將其餘轉為 \(\cos\)</p>
+            \begin{align*} \int \sin^{2k+1} x \cos^n x \, dx &= \int (\sin^2 x)^k \cos^n x \sin x \, dx \\[6pt] &= \int
+            (1 - \cos^2 x)^k \cos^n x \sin x \, dx \end{align*}
+            <p><strong>2. 當 \(\cos\) 的次方為奇數時：</strong> 拆出一個 \(\cos x\)，將其餘轉為 \(\sin\)</p>
+            \begin{align*} \int \sin^m x \cos^{2k+1} x \, dx &= \int \sin^m x (\cos^2 x)^k \cos x \, dx \\[6pt] &= \int
+            \sin^m x (1 - \sin^2 x)^k \cos x \, dx \end{align*}
+            <p><strong>3. 當 \(\sin\) 與 \(\cos\) 均為偶數時：</strong> 使用降次公式</p>
+            \begin{align*} \sin^2 x &= \frac{1 - \cos 2x}{2} \\[6pt] \cos^2 x &= \frac{1 + \cos 2x}{2} \end{align*}
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int \sin^2 x \cos x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \sin x \quad \Rightarrow \quad du = \cos x \, dx \end{align*}
+            </div>
+            <div>
+              \begin{align*} & \int (\sin^2 x) (\cos x \, dx) \\[6pt] =& \int u^2 \, du \\[6pt] =& \frac{1}{3}u^3 + C
+              \\[6pt] =& \frac{1}{3}\sin^3 x + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \sin^2 x \cos^2 x \, dx \)</p>
+
+            <div class="border">
+              \begin{align*} \sin^2 x &= \frac{1 - \cos 2x}{2} \\[6pt] \cos^2 x &= \frac{1 + \cos 2x}{2} \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \left( \frac{1 - \cos 2x}{2} \right) \left( \frac{1 + \cos 2x}{2} \right)
+              \, dx \\[6pt] &= \frac{1}{4} \int (1 - \cos^2 2x) \, dx \\[6pt] &= \frac{1}{4} \int \sin^2 2x \, dx
+              \end{align*}
+            </div>
+            <div class="border">\begin{align*} \sin^2 2x = \frac{1 - \cos 4x}{2} \end{align*}</div>
+            <div>
+              \begin{align*} &\Rightarrow \frac{1}{4} \int \frac{1 - \cos 4x}{2} \, dx \\[6pt] &= \frac{1}{8} \int (1 -
+              \cos 4x) \, dx \\[6pt] &= \frac{1}{8} \left( x - \frac{1}{4} \sin 4x \right) + C \\[6pt] &= \frac{1}{8}x -
+              \frac{1}{32}\sin 4x + C \end{align*}
+            </div>
+          </div>
+          <h3>Integrals Involving Powers of Secant and Tangent</h3>
+          <div class="formula">
+            <p><strong>1. 當 \(\sec\) 的次方為偶數時：</strong> 拆出 \(\sec^2 x\)，其餘轉為 \(\tan\)</p>
+            \begin{align*} \int \sec^{2k} x \tan^n x \, dx &= \int (\sec^2 x)^{k-1} \tan^n x \sec^2 x \, dx \\[6pt] &=
+            \int (1 + \tan^2 x)^{k-1} \tan^n x \sec^2 x \, dx \end{align*}
+            <p><strong>2. 當 \(\tan\) 的次方為奇數時：</strong> 拆出 \(\sec x \tan x\)，其餘轉為 \(\sec\)</p>
+            \begin{align*} \int \sec^m x \tan^{2k+1} x \, dx &= \int \sec^{m-1} x (\tan^2 x)^k \sec x \tan x \, dx
+            \\[6pt] &= \int \sec^{m-1} x (\sec^2 x - 1)^k \sec x \tan x \, dx \end{align*}
+            <p><strong>3. 只有 \(\tan\) 且為偶數次方時：</strong></p>
+            \begin{align*} \int \tan^n x \, dx &= \int \tan^{n-2} x (\tan^2 x) \, dx \\[6pt] &= \int \tan^{n-2} x
+            (\sec^2 x - 1) \, dx \end{align*}
+            <p><strong>4. 當 \(\sec\) 為奇數次方時：</strong> 使用分部積分</p>
+            \begin{align*} \int \sec^m x \, dx \quad (m \text{ is odd}) \end{align*}
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int \tan^3 x \sec^4 x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \sec x \quad \Rightarrow \quad du = \sec x \tan x \, dx \\[6pt]
+              \tan^2 x &= \sec^2 x - 1 = u^2 - 1 \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int (\tan^2 x) \cdot (\sec^3 x) \cdot (\sec x \tan x \, dx) \\[6pt] &= \int
+              (u^2 - 1) \cdot u^3 \, du \\[6pt] &= \int (u^5 - u^3) \, du \\[6pt] &= \frac{1}{6}u^6 - \frac{1}{4}u^4 + C
+              \\[6pt] &= \frac{1}{6}\sec^6 x - \frac{1}{4}\sec^4 x + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \tan^{1/3} x \sec^4 x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \tan x \quad \Rightarrow \quad du = \sec^2 x \, dx \\[6pt] \sec^2 x
+              &= 1 + \tan^2 x = 1 + u^2 \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \tan^{1/3} x \cdot \sec^2 x \cdot (\sec^2 x \, dx) \\[6pt] &= \int
+              u^{1/3} (1 + u^2) \, du \\[6pt] &= \int (u^{1/3} + u^{7/3}) \, du \\[6pt] &= \frac{u^{4/3}}{4/3} +
+              \frac{u^{10/3}}{10/3} + C \\[6pt] &= \frac{3}{4} u^{4/3} + \frac{3}{10} u^{10/3} + C \\[6pt] &=
+              \frac{3}{4} \tan^{4/3} x + \frac{3}{10} \tan^{10/3} x + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \sec^3 x \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad u &= \sec x \quad \Rightarrow \quad du = \sec x \tan x \, dx \\[6pt] dv &=
+              \sec^2 x \, dx \quad \Rightarrow \quad v = \tan x \end{align*}
+            </div>
+            <div>
+              \begin{align*} \Rightarrow \int \sec^3 x \, dx &= \sec x \tan x - \int \tan x (\sec x \tan x) \, dx
+              \\[6pt] &= \sec x \tan x - \int \sec x \tan^2 x \, dx \\[6pt] &= \sec x \tan x - \int \sec x (\sec^2 x -
+              1) \, dx \\[6pt] &= \sec x \tan x - \left( \int \sec^3 x \, dx - \int \sec x \, dx \right) \end{align*}
+            </div>
+            <div>
+              \begin{align*} \Rightarrow 2 \int \sec^3 x \, dx &= \sec x \tan x + \int \sec x \, dx \\[6pt] &= \sec x
+              \tan x + \ln|\sec x + \tan x| + C \\[6pt] \Rightarrow \int \sec^3 x \, dx &= \frac{1}{2} \left( \sec x
+              \tan x + \ln|\sec x + \tan x| \right) + C\end{align*}
+            </div>
+
+            <hr />
+
+            <p>
+              \( \displaystyle \textbf{EX} \quad \int \tan^3 x \, dx \quad \int \tan^4 x \, dx \quad \int \tan^5 x \, dx
+              \)
+            </p>
+
+            <hr />
+            <div class="border">\[ \displaystyle \text{Let} \quad u = \tan x, \, du = \sec^2 x \, dx \]</div>
+            <div>
+              \begin{align*} \int \tan^3 x \, dx &= \int \tan x (\tan^2 x) \, dx \\[6pt] &= \int \tan x (\sec^2 x - 1)
+              \, dx \\[6pt] &= \int \tan x \sec^2 x \, dx - \int \tan x \, dx \end{align*} \begin{align*} &\Rightarrow
+              \int u \, du - \ln|\sec x| \\[6pt] &= \frac{1}{2}\tan^2 x - \ln|\sec x| + C \end{align*}
+            </div>
+            <hr />
+            <div>
+              \begin{align*} \int \tan^4 x \, dx &= \int \tan^2 x (\sec^2 x - 1) \, dx \\[6pt] &= \int \tan^2 x \sec^2 x
+              \, dx - \int \tan^2 x \, dx \\[6pt] &= \int \tan^2 x \sec^2 x \, dx - \int (\sec^2 x - 1) \, dx
+              \end{align*} \begin{align*} &= \int u^2 \, du - (\tan x - x) \\[6pt] &= \frac{1}{3}\tan^3 x - \tan x + x +
+              C \end{align*}
+            </div>
+            <hr />
+            <div>
+              \begin{align*} \int \tan^5 x \, dx &= \int \tan^3 x (\sec^2 x - 1) \, dx \\[6pt] &= \int \tan^3 x \sec^2 x
+              \, dx - \int \tan^3 x \, dx \\[6pt] &= \frac{1}{4}\tan^4 x - \left( \frac{1}{2}\tan^2 x - \ln|\sec x|
+              \right) + C \\[6pt] &= \frac{1}{4}\tan^4 x - \frac{1}{2}\tan^2 x + \ln|\sec x| + C \end{align*}
+            </div>
+          </div>
+          <h3>Wallis's Formulas</h3>
+          <div class="formula">
+            <p>
+              對於定積分 \( \displaystyle \int_0^{\pi/2} \cos^n x \, dx \text{ 和 } \int_0^{\pi/2} \sin^n x \, dx \)：
+            </p>
+            <div>
+              \[ \begin{align*} \text{If } n \text{ is odd: } & \quad \left( \frac{2}{3} \right) \left( \frac{4}{5}
+              \right) \left( \frac{6}{7} \right) \cdots \left( \frac{n-1}{n} \right) \\[6pt] \text{If } n \text{ is
+              even: } & \quad \left( \frac{1}{2} \right) \left( \frac{3}{4} \right) \left( \frac{5}{6} \right) \cdots
+              \left( \frac{n-1}{n} \right) \left( \frac{\pi}{2} \right) \end{align*} \]
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int_0^{\pi/2} \sin^5 x \, dx \)</p>
+            <div>
+              \begin{align*} \int_0^{\pi/2} \sin^5 x \, dx &= \left( \frac{n-1}{n} \right) \left( \frac{n-3}{n-2}
+              \right) \cdots \\[6pt] &= \left( \frac{4}{5} \right) \left( \frac{2}{3} \right) \\[6pt] &= \frac{8}{15}
+              \end{align*}
+            </div>
+          </div>
+          <h3>Product-to-Sum Formulas with sines and cosines 和差化積公式</h3>
+          <div class="formula">
+            <div class="border">
+              \begin{align*} \sin mx \sin nx &= \frac{1}{2} \left[ \cos(m-n)x - \cos(m+n)x \right] \\[6pt] \sin mx \cos
+              nx &= \frac{1}{2} \left[ \sin(m-n)x + \sin(m+n)x \right] \\[6pt] \cos mx \cos nx &= \frac{1}{2} \left[
+              \cos(m-n)x + \cos(m+n)x \right] \end{align*}
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int \sin 5x \cos 4x \, dx \)</p>
+            <div>
+              \begin{align*} &\int \sin 5x \cos 4x \, dx \\[6pt] =& \frac{1}{2} \left( \int \sin x \, dx + \int \sin 9x
+              \, dx \right) \\[6pt] =& \frac{1}{2} \left( -\cos x - \frac{\cos 9x}{9} \right) + C \\[6pt] =& -\frac{\cos
+              x}{2} - \frac{\cos 9x}{18} + C \end{align*}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="8.4" class="card-header">8.4 Trigonometric Substitution</h2>
+        <div class="card-content">
+          <h3>Trigonometric Substitution (a &gt; 0)</h3>
+          <div class="formula">
+            <div class="border">
+              <p>\( \sqrt{a^2 - u^2} \quad \text{, Let } u = a \sin \theta \)</p>
+              <div>
+                \begin{align*} \sqrt{a^2 - u^2} &= \sqrt{a^2 - a^2\sin^2 \theta} = a \cos \theta \\[6pt] du &= a \cos
+                \theta \, d\theta \end{align*}
+              </div>
+              <hr />
+              <p>\( \sqrt{a^2 + u^2} \quad \text{, Let } u = a \tan \theta \)</p>
+              <div>
+                \begin{align*} \sqrt{a^2 + u^2} &= \sqrt{a^2 + a^2\tan^2 \theta} = a \sec \theta \\[6pt] du &= a \sec^2
+                \theta \, d\theta \end{align*}
+              </div>
+              <hr />
+              <p>\( \sqrt{u^2 - a^2} \quad \text{, Let } u = a \sec \theta \)</p>
+              <div>
+                \begin{align*} \sqrt{u^2 - a^2} &= \sqrt{a^2\sec^2 \theta - a^2} = a \tan \theta \\[6pt] du &= a \sec
+                \theta \tan \theta \, d\theta \end{align*}
+              </div>
+            </div>
+          </div>
+          <div class="formula">
+            <p>
+              \( \displaystyle \textbf{Proof} \quad \text{Area of an Ellipse } \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \)
+            </p>
+            <div>
+              \begin{align*} \text{Let} \quad x &= a \sin \theta \quad \Rightarrow \quad dx = a \cos \theta \, d\theta
+              \\[6pt] \sqrt{a^2 - x^2} &= \sqrt{a^2 - a^2\sin^2 \theta} = a \cos \theta \end{align*} \begin{align*}
+              \text{When } x = 0: & \quad 0 = a \sin \theta \quad \Rightarrow \quad \theta = 0 \\[6pt] \text{When } x =
+              a: & \quad a = a \sin \theta \quad \Rightarrow \quad \theta = \pi/2 \end{align*}
+            </div>
+            <hr />
+            <div>
+              \begin{align*} A_{\text{quadrant}} &= \frac{b}{a} \int_0^a \sqrt{a^2 - x^2} \, dx \\[6pt] &= \frac{b}{a}
+              \int_0^{\pi/2} (a \cos \theta) (a \cos \theta \, d\theta) \\[6pt] &= ab \int_0^{\pi/2} \cos^2 \theta \,
+              d\theta \end{align*}
+            </div>
+            <hr />
+            <div>
+              \begin{align*} \int_0^{\pi/2} \cos^2 \theta \, d\theta &= \int_0^{\pi/2} \frac{1 + \cos 2\theta}{2} \,
+              d\theta \\[6pt] &= \left[ \frac{1}{2}\theta + \frac{1}{4}\sin 2\theta \right]_0^{\pi/2} \\[6pt] &= \left(
+              \frac{\pi}{4} + 0 \right) - (0 + 0) = \frac{\pi}{4} \end{align*}
+            </div>
+            <hr />
+            <div>
+              \begin{align*} A_{\text{ellipse}} &= 4 \times A_{\text{quadrant}} \\[6pt] &= 4 \times \left( ab \cdot
+              \frac{\pi}{4} \right) \\[6pt] &= \pi ab \end{align*}
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{x^2}{\sqrt{4-x^2}} \, dx \)</p>
+
+            <div class="border">
+              \begin{align*} \text{Let} \quad x &= 2 \sin \theta \quad \Rightarrow \quad dx = 2 \cos \theta \, d\theta
+              \\[6pt] \sqrt{4-x^2} &= \sqrt{4-4\sin^2 \theta} = 2 \cos \theta \end{align*}
+            </div>
+
+            <div>
+              \begin{align*} &\Rightarrow \int \frac{(2\sin \theta)^2}{2\cos \theta} \cdot (2\cos \theta \, d\theta)
+              \\[6pt] &= \int 4\sin^2 \theta \, d\theta \\[6pt] &= 4 \int \frac{1 - \cos 2\theta}{2} \, d\theta \\[6pt]
+              &= 2 \int (1 - \cos 2\theta) \, d\theta \\[6pt] &= 2\theta - \sin 2\theta + C \\[6pt] &= 2\theta - 2\sin
+              \theta \cos \theta + C \end{align*}
+            </div>
+            <div class="border">
+              \begin{align*} \sin \theta &= \frac{x}{2} \quad \Rightarrow \quad \theta = \arcsin\left(\frac{x}{2}\right)
+              \\[6pt] \cos \theta &= \frac{\sqrt{4-x^2}}{2} \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow 2 \arcsin\left(\frac{x}{2}\right) - 2 \left( \frac{x}{2} \right) \left(
+              \frac{\sqrt{4-x^2}}{2} \right) + C \\[6pt] &= 2 \arcsin\left(\frac{x}{2}\right) - \frac{x\sqrt{4-x^2}}{2}
+              + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \sqrt{9-x^2} \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad x &= 3 \sin \theta \quad \Rightarrow \quad dx = 3 \cos \theta \, d\theta
+              \\[6pt] \sqrt{9-x^2} &= 3 \cos \theta \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int (3 \cos \theta) (3 \cos \theta) \, d\theta = 9 \int \cos^2 \theta \,
+              d\theta \\[6pt] &= 9 \int \frac{1 + \cos 2\theta}{2} \, d\theta = \frac{9}{2} \left( \theta +
+              \frac{1}{2}\sin 2\theta \right) + C \\[6pt] &= \frac{9}{2} \theta + \frac{9}{2} \sin \theta \cos \theta +
+              C \\[6pt] &= \frac{9}{2} \arcsin\left(\frac{x}{3}\right) + \frac{x\sqrt{9-x^2}}{2} + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{1}{\sqrt{x^2+4}} \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad x &= 2 \tan \theta \quad \Rightarrow \quad dx = 2 \sec^2 \theta \, d\theta
+              \\[6pt] \sqrt{x^2+4} &= 2 \sec \theta \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \frac{2 \sec^2 \theta}{2 \sec \theta} \, d\theta = \int \sec \theta \,
+              d\theta \\[6pt] &= \ln|\sec \theta + \tan \theta| + C \\[6pt] &= \ln\left| \frac{\sqrt{x^2+4}}{2} +
+              \frac{x}{2} \right| + C \\[6pt] &= \ln|x + \sqrt{x^2+4}| + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{x}{\sqrt{3-2x-x^2}} \, dx \)</p>
+            <div>
+              \begin{align*} &\int \frac{x}{\sqrt{3-2x-x^2}} \, dx \\[6pt] =& \int \frac{x+1}{\sqrt{4-(x+1)^2}} \, dx -
+              \int \frac{1}{\sqrt{4-(x+1)^2}} \, dx \\[6pt] \end{align*}
+            </div>
+            <div class="border">
+              \[ \begin{align*} \text{Let} \quad u &= 3-2x-x^2, \\[6pt] du &= (-2-2x)dx = -2(x+1)dx \end{align*} \]
+            </div>
+            <div>
+              \begin{align*} &\int \frac{x+1}{\sqrt{4-(x+1)^2}} \, dx \\[6pt] =& \int \frac{x+1}{\sqrt{u}} \cdot
+              \frac{du}{-2(x+1)} \\[6pt] =& -\frac{1}{2} \int u^{-1/2} \, du \\[6pt] =& -\frac{1}{2} (2u^{1/2}) \\[6pt]
+              =& -\sqrt{3-2x-x^2} \end{align*}
+            </div>
+            <div class="border">\[ \text{Let } x+1 = 2\sin\theta, \quad dx = 2\cos\theta \, d\theta \]</div>
+            <div>
+              \begin{align*} &\int \frac{1}{\sqrt{4-(x+1)^2}} \, dx \\[6pt] =&\int \frac{2\cos\theta}{2\cos\theta} \,
+              d\theta \\[6pt] =& \theta = \arcsin\left(\frac{x+1}{2}\right) \end{align*}
+            </div>
+            <div>
+              \[ \begin{align*} \Rightarrow&\int \frac{x}{\sqrt{3-2x-x^2}} \, dx \\[6pt] =& -\sqrt{3-2x-x^2} -
+              \arcsin\left(\frac{x+1}{2}\right) + C \end{align*} \]
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{\sqrt{x^2-3}}{x} \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad x &= \sqrt{3} \sec \theta \\[6pt] \Rightarrow \quad dx &= \sqrt{3} \sec
+              \theta \tan \theta \, d\theta \\[6pt] \sqrt{x^2-3} &= \sqrt{3} \tan \theta \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \frac{\sqrt{3} \tan \theta}{\sqrt{3} \sec \theta} \cdot (\sqrt{3} \sec
+              \theta \tan \theta) \, d\theta \\[6pt] &= \sqrt{3} \int \tan^2 \theta \, d\theta = \sqrt{3} \int (\sec^2
+              \theta - 1) \, d\theta \\[6pt] &= \sqrt{3} (\tan \theta - \theta) + C \\[6pt] &= \sqrt{x^2-3} - \sqrt{3}
+              \text{arcsec}\left(\frac{x}{\sqrt{3}}\right) + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int_1^2 x^3 \sqrt{x^2-1} \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let} \quad x &= \sec \theta \\[6pt] \Rightarrow \quad dx &= \sec \theta \tan \theta
+              \, d\theta \\[6pt] \sqrt{x^2-1} &= \tan \theta \\[6pt] & x = 1 \Rightarrow \sec \theta = 1 \Rightarrow
+              \theta = 0 \\[6pt] & x = 2 \Rightarrow \sec \theta = 2 \Rightarrow \theta = \frac{\pi}{3} \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int_0^{\pi/3} (\sec^3 \theta) (\tan \theta) (\sec \theta \tan \theta \,
+              d\theta) \\[6pt] &= \int_0^{\pi/3} \sec^4 \theta \tan^2 \theta \, d\theta \\[6pt] &= \int_0^{\pi/3} \sec^2
+              \theta \tan^2 \theta (\sec^2 \theta \, d\theta) \\[6pt] &= \int_0^{\pi/3} (1 + \tan^2 \theta) \tan^2
+              \theta (\sec^2 \theta \, d\theta) \end{align*}
+            </div>
+            <div class="border">
+              \begin{align*} u &= \tan \theta \quad \Rightarrow \quad du = \sec^2 \theta \, d\theta \\[6pt] &\theta = 0
+              \Rightarrow u = 0 \\[6pt] &\theta = \frac{\pi}{3} \Rightarrow u = \sqrt{3} \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int_0^{\sqrt{3}} (1 + u^2) u^2 \, du \\[6pt] &= \int_0^{\sqrt{3}} (u^2 + u^4)
+              \, du \\[6pt] &= \left[ \frac{1}{3}u^3 + \frac{1}{5}u^5 \right]_0^{\sqrt{3}} \\[6pt] &=
+              \frac{1}{3}(\sqrt{3})^3 + \frac{1}{5}(\sqrt{3})^5 \\[6pt] &= \frac{1}{3}(3\sqrt{3}) +
+              \frac{1}{5}(9\sqrt{3}) \\[6pt] &= \sqrt{3} + \frac{9\sqrt{3}}{5} = \frac{14\sqrt{3}}{5} \end{align*}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <h2 id="8.5" class="card-header">8.5 Partial Fraction</h2>
+        <div>
+          <h3>Partial Fraction Decomposition Cases</h3>
+          <div class="formula">
+            <div class="border">
+              <p><strong>相異線性因式</strong> 分母分解後為單純的一次方因式相乘</p>
+              \begin{align*} \frac{5x+3}{(x-1)(x+2)} &= \frac{A}{x-1} + \frac{B}{x+2} \end{align*}
+            </div>
+            <div class="border">
+              <p><strong>重複線性因式</strong> 某個一次方項出現了多次（如平方、立方）</p>
+              \begin{align*} \frac{x^2+1}{(x-1)^3} &= \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{(x-1)^3} \end{align*}
+            </div>
+            <div class="border">
+              <p><strong>不可約二次因式</strong> 分母含有無法再分解成實數一次方的二次項</p>
+              \begin{align*} \frac{2x+1}{(x-1)(x^2+4)} &= \frac{A}{x-1} + \frac{Bx+C}{x^2+4} \end{align*}
+              <p><em>Ps: 二次項上面的分子設為 \( Bx+C \)</em></p>
+            </div>
+            <div class="border">
+              <p><strong>重複不可約二次因式</strong></p>
+              \begin{align*} \frac{1}{x(x^2+1)^2} &= \frac{A}{x} + \frac{Bx+C}{x^2+1} + \frac{Dx+E}{(x^2+1)^2}
+              \end{align*}
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{1}{(x-2)(x+2)} \, dx \)</p>
+            <div>\[ \displaystyle \frac{1}{(x-2)(x+2)} = \frac{A}{x-2} + \frac{B}{x+2} \]</div>
+            <div class="border">
+              \begin{align*} 1 &= A(x+2) + B(x-2) \\[6pt] \text{Let } x=2 &\Rightarrow 1 = 4A \Rightarrow A = 1/4
+              \\[6pt] \text{Let } x=-2 &\Rightarrow 1 = -4B \Rightarrow B = -1/4 \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \left( \frac{1/4}{x-2} - \frac{1/4}{x+2} \right) dx \\[6pt] &=
+              \frac{1}{4} \ln|x-2| - \frac{1}{4} \ln|x+2| + C \\[6pt] &= \frac{1}{4} \ln \left| \frac{x-2}{x+2} \right|
+              + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{(x^3-2x^2) - 4}{x^3-2x^2} \, dx \)</p>
+            <div>
+              \begin{align*} &\int \frac{x^3-2x^2-4}{x^3-2x^2} \, dx \\[6pt] =& \int 1 \, dx - \int \frac{4}{x^2(x-2)}
+              \, dx \\[6pt] =& \int 1 \, dx - \int \left( \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x-2} \, dx \right)
+              \\[6pt] \end{align*}
+            </div>
+            <div class="border">\[ 4 = Ax(x-2) + B(x-2) + Cx^2 \]\[ \Rightarrow B=-2, C=1, A=-1 \]</div>
+            <div>
+              \begin{align*} &\Rightarrow \int \left[ 1 - \left( \frac{-1}{x} + \frac{-2}{x^2} + \frac{1}{x-2} \right)
+              \right] dx \\[6pt] &= \int \left( 1 + \frac{1}{x} + \frac{2}{x^2} - \frac{1}{x-2} \right) dx \\[6pt] &= x
+              + \ln|x| - \frac{2}{x} - \ln|x-2| + C \end{align*}
+            </div>
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{1}{(x+1)(x^2+1)} \, dx \)</p>
+            <div>\[ \frac{1}{(x+1)(x^2+1)} = \frac{A}{x+1} + \frac{Bx+C}{x^2+1} \]</div>
+            <div class="border">
+              \begin{align*} 1 &= A(x^2+1) + (Bx+C)(x+1) \\[6pt] \text{Let } x=-1 &\Rightarrow 1 = 2A \Rightarrow A =
+              1/2 \\[6pt] \Rightarrow A+B=0 &\Rightarrow B = -1/2 \\[6pt] \Rightarrow A+C=1 &\Rightarrow C = 1/2
+              \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \left( \frac{1/2}{x+1} + \frac{-1/2x + 1/2}{x^2+1} \right) dx \\[6pt] &=
+              \frac{1}{2}\ln|x+1| - \frac{1}{4}\int \frac{2x}{x^2+1}dx + \frac{1}{2}\int \frac{1}{x^2+1}dx \\[6pt] &=
+              \frac{1}{2}\ln|x+1| - \frac{1}{4}\ln(x^2+1) + \frac{1}{2}\arctan(x) + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{1}{\sqrt{1+e^x}} \, dx \)</p>
+            <div class="border">
+              \[ \begin{align} u &= \sqrt{1+e^x} \Rightarrow u^2 = 1+e^x \Rightarrow e^x = u^2-1 \\[6pt] e^x dx &= 2u du
+              \Rightarrow dx = \frac{2u}{u^2-1} du \end{align} \]
+            </div>
+            <div>
+              \begin{align*} \Rightarrow &\int \frac{1}{u} \cdot \frac{2u}{u^2-1} \, du \\[6pt] =& \int
+              \frac{2}{(u-1)(u+1)} \, du \\[6pt] =& \int \left( \frac{1}{u-1} - \frac{1}{u+1} \right) du \\[6pt] =&
+              \ln|u-1| - \ln|u+1| + C \\[6pt] =& \ln \left| \frac{\sqrt{1+e^x}-1}{\sqrt{1+e^x}+1} \right| + C
+              \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{x^3 + 7x^2 + 18x + 17}{(x^2 + 4x + 5)^2} \, dx \)</p>
+
+            <div>
+              \[ \begin{align*} &\frac{x^3 + 7x^2 + 18x + 17}{(x^2 + 4x + 5)^2} \\[6pt] =&\frac{Ax + B}{x^2 + 4x + 5} +
+              \frac{Cx + D}{(x^2 + 4x + 5)^2} \\[6pt] \Rightarrow& A=1, B=3, C=1, D=2 \end{align*} \] \[ \Rightarrow
+              \int \frac{x+3}{x^2+4x+5} \, dx + \int \frac{x+2}{(x^2+4x+5)^2} \, dx \\[6pt] \]
+            </div>
+
+            <div class="border">\[ \text{Let } u = x^2+4x+5, \quad du = (2x+4)dx \]</div>
+            <div class="border">
+              \begin{align*} &\Rightarrow \frac{1}{2} \int \frac{du}{u} + \int \frac{1}{(x+2)^2 + 1} \, dx + \frac{1}{2}
+              \int \frac{du}{u^2} \\[6pt] &= \frac{1}{2} \ln|u| + \tan^{-1}(x+2) - \frac{1}{2u} + C \\[6pt]
+              &=\frac{1}{2} \ln|x^2+4x+5| + \tan^{-1}(x+2) - \frac{1}{2x^2+8x+10} + C \end{align*}
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int \frac{1}{\sqrt[3]{x} + \sqrt{x}} \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let } x &= u^6 \quad \Rightarrow \quad dx = 6u^5 \, du \\[6pt] \sqrt[3]{x} &= u^2,
+              \quad \sqrt{x} = u^3 \end{align*}
+            </div>
+            <div>
+              \begin{align*} &\Rightarrow \int \frac{6u^5}{u^2 + u^3} \, du \\[6pt] &= \int \frac{6u^5}{u^2(1 + u)} \,
+              du \\[6pt] &= \int \frac{6u^3}{u+1} \, du \\[6pt] &= 6 \int \left( u^2 - u + 1 - \frac{1}{u+1} \right) \, du
+              \\[6pt] &= 6 \left( \frac{1}{3}u^3 - \frac{1}{2}u^2 + u - \ln|u+1| \right) + C \\[6pt] &= 2\sqrt{x} -
+              3\sqrt[3]{x} + 6\sqrt[6]{x} - 6\ln|\sqrt[6]{x} + 1| + C \end{align*}
+            </div>
+            
+          </div>
+        </div>
       </section>
     </main>
+
     <footer class="footer">- 微積分 -</footer>
     <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">
       <i class="bi bi-arrow-up"></i> ↑
     </button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // 取得按鈕元件
-      let mybutton = document.getElementById("btn-back-to-top");
-
-      // 當使用者捲動網頁時，觸發 scrollFunction
-      window.onscroll = function () {
-        scrollFunction();
-      };
-
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block"; // 顯示按鈕
-        } else {
-          mybutton.style.display = "none"; // 隱藏按鈕
-        }
-      }
-
-      // 當使用者點擊按鈕時，回到頂端
-      mybutton.addEventListener("click", backToTop);
-
-      function backToTop() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth" // 平滑捲動效果
-        });
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

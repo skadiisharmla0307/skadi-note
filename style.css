@@ -105,30 +105,39 @@ img {
   margin-bottom: 15px;
   padding: 15px; /* 內距 */
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+  overflow: hidden;
 }
-.card-title {
+.card-header {
   color: var(--dc);
+  background-color: var(--card);
+  margin: 0;
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none; /* 防止連點時選取到文字 */
+}
+.card-content {
+  max-height: 0; /* 關鍵：初始高度為 0 */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out; /* 展開動畫 */
+}
+
+/* 當 card 被加上 .active 類別時展開 */
+.card.active .card-content {
+  max-height: 500px; /* 給一個足夠大的預估高度 */
+  padding: 1rem;
 }
 
 h2 {
   font-size: 1.6em;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-image: linear-gradient(to right, #004b8d 0%, #002b6d 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 h3 {
   font-size: 1.3em;
-  margin-top: 30px;
+  margin-top: 20px;
   border-bottom-style: solid;
-  background-color: #fdfdff;
-  background-image: linear-gradient(to right, #4285f4 0%, #167cb6 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--lc);
 }
 h4 {
   line-height: normal;
@@ -139,10 +148,7 @@ p {
   line-height: 1.7;
   color: #020202;
 }
-p::selection {
-  color: #004b8d;
-  background-color: #a9bee1;
-}
+
 code {
   color: var(--muted);
 }
