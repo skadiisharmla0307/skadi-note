@@ -1702,7 +1702,121 @@
               f(x) \, dx &= \int_c^{\infty} f(x) \, dx + \int_{-\infty}^c f(x) \, dx \end{align*} \]
             </div>
           </div>
-        
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int_1^{\infty} e^{-x} \, dx \)</p>
+            <div>
+              \[ \begin{align*} \int_1^{\infty} e^{-x} \, dx &= \lim_{b \to \infty} \int_1^b e^{-x} \, dx \\[6pt] &=
+              \lim_{b \to \infty} \left[ -e^{-x} \right]_1^b \\[6pt] &= \lim_{b \to \infty} ( -e^{-b} - (-e^{-1}) )
+              \\[6pt] &= \lim_{b \to \infty} ( -e^{-b} + e^{-1} ) \end{align*} \]
+            </div>
+            <div class="border">\[ \begin{align*} b \to \infty, \quad e^{-b} = \frac{1}{e^b} \to 0 \end{align*} \]</div>
+            <div>\[ \begin{align*} &\Rightarrow 0 + e^{-1} \\[6pt] &= \frac{1}{e} \end{align*} \]</div>
+          </div>
+          <h3>Improper Integrals with Infinite Discontinuities</h3>
+          <div class="formula">
+            <p><strong>不連續點在右端點 \( b \)</strong></p>
+            \[ \int_a^b f(x) \, dx = \lim_{c \to b^-} \int_a^c f(x) \, dx \]
+
+            <p><strong>不連續點在左端點 \( a \)</strong></p>
+            \[ \int_a^b f(x) \, dx = \lim_{c \to a^+} \int_c^b f(x) \, dx \]
+
+            <p><strong>不連續點在中間某點 \( c \)</strong></p>
+            \[ \int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx \]
+            <p>ps. 兩個極限都收斂, 積分才算收斂</p>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \int_0^{\infty} \frac{1}{\sqrt{x}(x+1)} \, dx \)</p>
+            <div class="border">
+              \begin{align*} \text{Let } u &= \sqrt{x} \quad \Rightarrow \quad u^2 = x \\[6pt] dx &= 2u \, du \\[6pt]
+              \text{Limits: } x \to 0 &\Rightarrow u \to 0 \\[6pt] x \to \infty &\Rightarrow u \to \infty \end{align*}
+            </div>
+            <div>
+              \[ \begin{align*} &\Rightarrow \int_0^{\infty} \frac{1}{u(u^2+1)} \cdot (2u \, du) \\[6pt] &= 2
+              \int_0^{\infty} \frac{1}{u^2+1} \, du \\[6pt] &= 2 \int_0^{\infty} \tan^{-1} u \, du \\[6pt] &= 2 \lim_{b
+              \to \infty} \left[ \tan^{-1} u \right]_0^b \\[6pt] &= 2 \left( \lim_{b \to \infty} \tan^{-1} b - \tan^{-1}
+              0 \right) \\[6pt] &= 2 \left( \frac{\pi}{2} - 0 \right) \\[6pt] &= \pi \end{align*} \]
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int_{0}^{\pi} \sec x \, dx \)</p>
+            <div>
+              \[ \begin{align*} \because& \, \sec x = \frac{1}{\cos x} \, \text{ ,when } x = \frac{\pi}{2} ,\, \cos
+              \frac{\pi}{2} = 0 \\[6pt] \therefore& \, x = \frac{\pi}{2} \, \text{ isn't conti} \end{align*} \] \[
+              \begin{align*} \int_{0}^{\pi} \sec x \, dx &= \int_{0}^{\pi/2} \sec x \, dx + \int_{\pi/2}^{\pi} \sec x \,
+              dx \\[6pt] &= \lim_{b \to \frac{\pi}{2}^-} \int_{0}^{b} \sec x \, dx + \lim_{c \to \frac{\pi}{2}^+}
+              \int_{c}^{\pi} \sec x \, dx \end{align*} \] \[ \begin{align*} &\lim_{b \to \frac{\pi}{2}^-} \left[
+              \ln|\sec x + \tan x| \right]_{0}^{b} \\[6pt] &= \lim_{b \to \frac{\pi}{2}^-} \ln|\sec b + \tan b| - \ln|1
+              + 0| \\[6pt] &= \ln|\infty + \infty| - 0 \\[6pt] &= \infty \\[6pt] &\Rightarrow \int_{0}^{\pi} \sec x \,
+              dx \, \text{ is div} \end{align*} \]
+            </div>
+
+            <hr />
+
+            <p>\( \displaystyle \textbf{EX} \quad \int_{-1}^{2} \frac{2}{x^3} \, dx \)</p>
+
+            <div>
+              \begin{align*} \int_{-1}^{2} \frac{2}{x^3} \, dx &= \int_{-1}^{0} \frac{2}{x^3} \, dx + \int_{0}^{2}
+              \frac{2}{x^3} \, dx \\[6pt] &= \lim_{b \to 0^-} \int_{-1}^{b} \frac{2}{x^3} \, dx + \lim_{c \to 0^+}
+              \int_{c}^{2} \frac{2}{x^3} \, dx \end{align*}
+            </div>
+            <div>
+              \begin{align*} \lim_{c \to 0^+} \int_{c}^{2} 2x^{-3} \, dx &= \lim_{c \to 0^+} \left[ \frac{2x^{-2}}{-2}
+              \right]_{c}^{2} \\[6pt] &= \lim_{c \to 0^+} \left[ -\frac{1}{x^2} \right]_{c}^{2} \\[6pt] &= \lim_{c \to
+              0^+} \left( -\frac{1}{4} + \frac{1}{c^2} \right) \\[6pt] &= \infty \end{align*}
+            </div>
+            <div>\[ \Rightarrow \int_{-1}^{2} \frac{2}{x^3} \, dx \, \text{ diverges} \]</div>
+
+          <hr>
+          
+            <p>\( \displaystyle \textbf{Problem} \quad \int_1^{\infty} xe^{-x} \, dx \)</p>
+
+<div class="border">
+  \begin{align*} 
+  \text{Let } u &= x \quad \Rightarrow \quad du = dx \\[6pt] 
+  dv &= e^{-x} dx \quad \Rightarrow \quad v = -e^{-x} \\[6pt]
+  \int xe^{-x} \, dx &= -xe^{-x} - \int (-e^{-x}) \, dx \\[6pt] 
+  &= -xe^{-x} - e^{-x} + C
+  \end{align*}
+</div>
+
+<div>
+  <p><strong>Step 2: 處理瑕積分極限</strong></p>
+  \begin{align*} 
+  \int_1^{\infty} xe^{-x} \, dx &= \lim_{b \to \infty} \left[ -xe^{-x} - e^{-x} \right]_1^b \\[6pt] 
+  &= \lim_{b \to \infty} \left( \frac{-b}{e^b} - \frac{1}{e^b} \right) - \left( \frac{-1}{e^1} - \frac{1}{e^1} \right)
+  \end{align*}
+</div>
+
+<div>
+  <p><strong>Step 3: 應用羅必達法則 (L'Hôpital's Rule)</strong></p>
+  \begin{align*} 
+  &\because \lim_{b \to \infty} \frac{-b}{e^b} \quad (\text{Type } \infty/\infty) \\[6pt] 
+  &\xrightarrow{L'H} \lim_{b \to \infty} \frac{-1}{e^b} = 0 \\[6pt] 
+  &\therefore \int_1^{\infty} xe^{-x} \, dx = (0 - 0) - \left( -\frac{2}{e} \right) = \frac{2}{e}
+  \end{align*}
+</div>
+          </div>
+
+          <h3>Torricelli's Trumpet</h3>
+
+          <div class="formula">
+            <p>\( \displaystyle y = \frac{1}{x} \, \text{在區間} \, [1, \infty) \, \text{繞x軸旋轉} \)</p>
+            <div>
+              \[ \begin{align*} V &= \int_1^{\infty} \pi [R(x)]^2 \, dx \\[6pt] &= \lim_{b \to \infty} \int_1^b \pi
+              \left( \frac{1}{x} \right)^2 \, dx \\[6pt] &= \pi \lim_{b \to \infty} \left[ -\frac{1}{x} \right]_1^b
+              \\[6pt] &= \pi \lim_{b \to \infty} \left( -\frac{1}{b} + 1 \right) \\[6pt] &= \pi(0 + 1) = \pi
+              \end{align*} \]
+              <hr />
+              \[ \begin{align*} S &= \int_1^{\infty} 2\pi y \sqrt{1 + (y')^2} \, dx \\[6pt] &= \int_1^{\infty} 2\pi
+              \left( \frac{1}{x} \right) \sqrt{1 + \left( -\frac{1}{x^2} \right)^2} \, dx \\[6pt] &= 2\pi
+              \int_1^{\infty} \frac{\sqrt{1 + \frac{1}{x^4}}}{x} \, dx \end{align*} \] \[ \begin{align*} &\because x \ge
+              1 ,\quad \sqrt{1 + \frac{1}{x^4}} &gt; 1 \\[6pt] &\therefore \frac{\sqrt{1 + \frac{1}{x^4}}}{x} &gt;
+              \frac{1}{x} \\[6pt] &\text{by C.T.} \quad \int_1^{\infty} \frac{1}{x} \, dx \quad \text{is div}
+              \end{align*} \]
+            </div>
+          </div>
         </div>
       </section>
     </main>
