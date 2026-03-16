@@ -75,6 +75,10 @@
                 <li><a class="dropdown-item" href="#8.4">8.4 三角函數代換</a></li>
                 <li><a class="dropdown-item" href="#8.5">8.5 部分分式</a></li>
                 <li><a class="dropdown-item" href="#8.8">8.8 瑕積分</a></li>
+                <li class="dropdown-header">- CH9 Infinite Series -</li>
+                <li><a class="dropdown-item" href="#9.1">9.1</a></li>
+                <li><a class="dropdown-item" href="#9.2">9.2</a></li>
+                <li><a class="dropdown-item" href="#9.3">9.3</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -1080,6 +1084,53 @@
       </section>
       <section class="card">
         <h2 id="8.1">8.1 Basic Intergration Rules</h2>
+        <h3>Review of Basic Integration Rules (a &gt; 0)</h3>
+        <div class="formula">
+          \begin{align*} 1. & \int k f(u) \, du = k \int f(u) \, du \\[6pt] 2. & \int [f(u) \pm g(u)] \, du = \int f(u)
+          \, du \pm \int g(u) \, du \\[6pt] 3. & \int du = u + C \\[6pt] 4. & \int u^n \, du = \frac{u^{n+1}}{n+1} + C,
+          \quad n \neq -1 \\[6pt] 5. & \int \frac{du}{u} = \ln|u| + C \\[6pt] 6. & \int e^u \, du = e^u + C \\[6pt] 7. &
+          \int a^u \, du = \left( \frac{1}{\ln a} \right) a^u + C \\[6pt] 8. & \int \sin u \, du = -\cos u + C \\[6pt]
+          9. & \int \cos u \, du = \sin u + C \\[6pt] 10. & \int \tan u \, du = -\ln|\cos u| + C \\[6pt] 11. & \int \cot
+          u \, du = \ln|\sin u| + C \\[6pt] 12. & \int \sec u \, du = \ln|\sec u + \tan u| + C \\[6pt] 13. & \int \csc u
+          \, du = -\ln|\csc u + \cot u| + C \\[6pt] 14. & \int \sec^2 u \, du = \tan u + C \\[6pt] 15. & \int \csc^2 u
+          \, du = -\cot u + C \\[6pt] 16. & \int \sec u \tan u \, du = \sec u + C \\[6pt] 17. & \int \csc u \cot u \, du
+          = -\csc u + C \\[6pt] 18. & \int \frac{du}{\sqrt{a^2 - u^2}} = \sin^{-1} \frac{u}{a} + C \\[6pt] 19. & \int
+          \frac{du}{a^2 + u^2} = \frac{1}{a} \tan^{-1} \frac{u}{a} + C \\[6pt] 20. & \int \frac{du}{u\sqrt{u^2 - a^2}} =
+          \frac{1}{a} \sec^{-1} \frac{|u|}{a} + C \end{align*}
+        </div>
+        <div class="formula-dark">
+          <p>\( \displaystyle \textbf{EX} \quad \int_0^1 \frac{x+3}{\sqrt{4-x^2}} \, dx \)</p>
+
+          <div>
+            \[ \int_0^1 \frac{x+3}{\sqrt{4-x^2}} \, dx = \int_0^1 \frac{x}{\sqrt{4-x^2}} \, dx + \int_0^1
+            \frac{3}{\sqrt{4-x^2}} \, dx \]
+          </div>
+
+          <div class="border">
+            <p> \( \text{Let } u = 4-x^2 \implies du = -2x \, dx \implies x \, dx = -\frac{1}{2} du \)</p>
+            \begin{align*} \int \frac{x}{\sqrt{4-x^2}} \, dx &= -\frac{1}{2} \int u^{-1/2} \, du \\[6pt] &= -\frac{1}{2}
+            (2u^{1/2}) = -\sqrt{4-x^2} \end{align*}
+          </div>
+
+          <div class="border">
+            <p><strong>Step 3: 計算第二部分 \( \int \frac{3}{\sqrt{4-x^2}} \, dx \)</strong></p>
+            <p>利用基本積分公式 18，其中 \( a=2 \)：</p>
+            \[ 3 \int \frac{1}{\sqrt{2^2-x^2}} \, dx = 3 \sin^{-1} \frac{x}{2} \]
+          </div>
+
+          <div>
+            <p><strong>Step 4: 代入上下限求值</strong></p>
+            \begin{align*} I &= \left[ -\sqrt{4-x^2} + 3 \sin^{-1} \frac{x}{2} \right]_0^1 \\[6pt] &= \left(
+            -\sqrt{4-1^2} + 3 \sin^{-1} \frac{1}{2} \right) - \left( -\sqrt{4-0^2} + 3 \sin^{-1} 0 \right) \\[6pt] &=
+            \left( -\sqrt{3} + 3 \cdot \frac{\pi}{6} \right) - ( -2 + 0 ) \\[6pt] &= 2 - \sqrt{3} + \frac{\pi}{2}
+            \end{align*}
+          </div>
+
+          <div class="note">
+            <p><strong>結論：</strong></p>
+            <p>\( \therefore \int_0^1 \frac{x+3}{\sqrt{4-x^2}} \, dx = 2 - \sqrt{3} + \frac{\pi}{2} \)</p>
+          </div>
+        </div>
       </section>
 
       <section class="card">
@@ -1688,6 +1739,7 @@
           </div>
         </div>
       </section>
+
       <section class="card">
         <h2 id="8.8" class="card-header">8.8 Improper Intergrals</h2>
         <div class="card-content">
@@ -1850,6 +1902,21 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="card">
+        <h2 id="9.1">9.1 Sequences</h2>
+        <div></div>
+      </section>
+
+      <section class="card">
+        <h2 id="9.2">9.2 Series and Convergence</h2>
+        <div></div>
+      </section>
+
+      <section class="card">
+        <h2 id="9.3">9.3 The Intergral Test and p-Series</h2>
+        <div></div>
       </section>
     </main>
 
