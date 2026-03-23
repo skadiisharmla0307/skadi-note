@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8" />
+        <title>普通物理</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <!-- Favicons -->
+        <link href="picture_other/favicon-32x32.png" rel="icon" />
+        <link href="picture_other/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+
+        <style>
+            .border {
+                border: 1px solid #ccc;
+                padding: 10px;
+                overflow: auto;
+            }
+        </style>
+        <!-- MathJax -->
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"]
+                    ]
+                }
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">課程筆記整理</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculus.html">微積分</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link active dropdown-toggle"
+                                href="physics.html"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                普通物理
+                            </a>
+                            <ul class="dropdown-menu dropdown-scrollable" aria-labelledby="navbarDropdown">
+                                <li><h3 class="dropdown-item-text">章節目錄</h3></li>
+                                <li class="dropdown-header">- Ch22 靜電 -</li>
+                                <li><a class="dropdown-item" href="#22.1">22.1 電荷</a></li>
+                                <li><a class="dropdown-item" href="#22.2">22.2 導體與絕緣體</a></li>
+                                <li><a class="dropdown-item" href="#22.3">22.3 靜電感應</a></li>
+                                <li><a class="dropdown-item" href="#22.5">22.5 庫侖定律</a></li>
+                                <li class="dropdown-header">- Ch23 電場 -</li>
+                                <li><a class="dropdown-item" href="#23.1">23.1 電場</a></li>
+                                <li><a class="dropdown-item" href="#23.2">23.2 電力線</a></li>
+                                <li><a class="dropdown-item" href="#23.3">23.3 電場與導體</a></li>
+                                <li><a class="dropdown-item" href="#23.4">23.4 均勻靜電場中電荷的移動</a></li>
+                                <li><a class="dropdown-item" href="#23.5">23.5 連續電荷分布</a></li>
+                                <li><a class="dropdown-item" href="#23.6">23.6 電偶極</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="p-experiment.html">普物實驗</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="energy.html">能源工程概論</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chemistry.html">普通化學</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experiment.html">普化實驗</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="statics.html">靜力學</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dynamics.html">動力學</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="phoenix_code.html">網頁程式設計</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="octave.html">基礎程式設計</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="minerals.html">礦物與生活</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container col-md-8">
+            <section class="card">
+                <h2>普通物理</h2>
+                <p></p>
+            </section>
+
+            <section class="card">
+                <h2 id="22.1" class="card-header">22.1 電荷</h2>
+                <div class="card-content"></div>
+            </section>
+
+            <section class="card">
+                <h2 id="23.1" class="card-header">23.1 電場</h2>
+                <div class="card-content">
+                    <p>
+                        電場強度 $\vec{E}$, 定義為在該點放置一個正檢驗電荷(Test Charge)$q_0$ 時, 該電荷所受到的靜電力
+                        $\vec{F}$與其電量之比
+                    </p>
+                    <div class="formula">\[ \displaystyle \vec{E}=\frac{\vec{F}}{q_0} \]</div>
+                    <ul>
+                        <li>單位: 牛頓/庫侖 ($N/C$) 或 伏特/公尺 ($V/m$)。</li>
+                        <li>向量性: 電場為向量, 其方向與正檢驗電荷受力方向相同</li>
+                    </ul>
+                    <hr />
+                    <p>而由庫侖定律可得知, 大小為 $Q$ 的源電荷對距離 $r$ 處的檢驗電荷 $q_0$ 施加的力為</p>
+                    <div class="formula">\[\vec{F} = k \frac{Q q_0}{r^2} \hat{r}\]</div>
+                    <p>代入電場定義後可得</p>
+                    <div class="formula">
+                        $$\vec{E} = \frac{\vec{F}}{q_0} = \frac{k \frac{Q q_0}{r^2} \hat{r}}{q_0}$$
+                    </div>
+                    <p>
+                        若空間中有多個點電荷 $q_1, q_2, \dots,
+                        q_n$，則某一點的總電場強度即為各別電荷在該點產生電場的向量和
+                    </p>
+                    <div class="formula">
+                        $$\vec{E} = \sum_{i=1}^{n} \vec{E}_i = \vec{E}_1 + \vec{E}_2 + \dots + \vec{E}_n$$
+                    </div>
+                    <h3>習題</h3>
+                    <div class="formula-dark">
+                        <p>
+                            \( \text{Q: }位於地球表面約有100 N/C的電場直指向下, 求在電場內一質子所受電力與重力為何? \)
+                        </p>
+                        <p>
+                            \(\text{A: }\)<br />
+                            \[\text{靜電力: } \vec{F_e} = q\vec{E} = (1.60 \times 10^{-19} \text{ C}) \times (100 \text{
+                            N/C}) = 1.6 \times 10^{-17} \text{ N}\uparrow\]\[\text{重力: } \vec{F_g} = m_e \vec{g} =
+                            (9.11 \times 10^{-31} \text{ kg}) \times (9.8 \text{ m/s}^2) \approx 8.9 \times 10^{-30}
+                            \text{ N}\downarrow\]
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="23.2" class="card-header">23.2 電力線</h2>
+                <div class="card-content">
+                    <p>
+                        為表示多個電荷所產生的電場, 使用電力線表示電場分布. 電力線由正電荷出發且終止於負電荷,
+                        線段之間不相交. 而電場強度正比於電力線密度, 即通過垂直電場方向單位面積上的電力線數目.<br />設一點電荷發出$N$條電力線,
+                        在距電荷$r$處, 這些線分布於$4\pi r$的球面區域, 所以電力線密度為$N/4\pi r$.
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>23.3 電場與導體</h2>
+                <div>
+                    <p></p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="23.4" class="card-header">23.4 均勻靜電場中電荷的移動</h2>
+                <div class="card-content">
+                    <p>
+                        當電子或質子移動時，因所受重力微弱，通常僅需考慮靜電力。在電場 $\vec{E}$ 中，質量為 $m$ 且電荷為
+                        $q$ 的帶電粒子受靜電力 $\vec{F}=q\vec{E}$ 作用，由牛頓第二定律可得其加速度：
+                    </p>
+                    <div class="formula">\[ \vec{a} = \frac{\vec{F}}{m} = \frac{q\vec{E}}{m} \]</div>
+                    <p>當電場為均勻時，加速度為定值，可使用等加速度運動方程式進行分析。</p>
+
+                    <h3>習題練習</h3>
+
+                    <div class="formula-dark wrap-text mb-4">
+                        <h4>
+                            \( \text{Q: } \) 若於地球表面有 $120 \text{ N/C}$ 的電場直指向下, 求一質子所受之力與其加速度
+                        </h4>
+                        <div class="mt-3">
+                            <p class="mb-1">\( \text{A: } \)</p>
+                            \[ \vec{F} = q\vec{E} = (1.60 \times 10^{-19} \text{ C}) \times (120 \text{ N/C}) = 1.92
+                            \times 10^{-17} \text{ N} \uparrow \] \[ a = \frac{F}{m_p} = \frac{1.92 \times 10^{-17}
+                            \text{ N}}{1.67 \times 10^{-27} \text{ kg}} \approx 1.15 \times 10^{10} \text{ m/s}^2
+                            \uparrow \]
+                        </div>
+                    </div>
+
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-8">
+                                <h4>
+                                    \( \text{Q: } \) 一質子沿均勻電場 $\mathbf{E} = 10^3\mathbf{i} \text{ N/C}$ 前進 $4
+                                    \text{ cm}$, 其起始速度為 $10^5 \text{ m/s}$, 求其末速度
+                                </h4>
+                            </div>
+                            <div class="col-12 col-md-4 text-center">
+                                <img
+                                    src="picture_physics/23_4_1.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="物理例圖" />
+                            </div>
+                        </div>
+                        <h4 class="fw-bold">$\text{Ans:}$</h4>
+                        <p>1. 計算加速度 $a$：</p>
+                        <div class="p-2 mb-3">
+                            $$a = \frac{eE}{m} = \frac{(1.60 \times 10^{-19})(10^3)}{1.67 \times 10^{-27}} = 9.6 \times
+                            10^{10} \text{ m/s}^2$$
+                        </div>
+                        <p>2. 利用公式 $v_f^2 = v_i^2 + 2a\Delta x$ 求得末速</p>
+                        <div class="p-2 mb-3">
+                            $$ \begin{aligned} v_f^2 &= (10^5 \text{ m/s})^2 + 2(9.6 \times 10^{10} \text{ m/s}^2)(4
+                            \times 10^{-2} \text{ m}) \\ &= 1.0 \times 10^{10} + 0.768 \times 10^{10} \\ &= 1.768 \times
+                            10^{10} \text{ m}^2/\text{s}^2 \end{aligned} $$
+                        </div>
+                    </div>
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <h4>\(\text{EX}\)</h4>
+                            <p>
+                                在陰極射線管中，電子以起始速度 $v_0\mathbf{i}$ 進入長度為 $\ell$、電場為 $\mathbf{E} =
+                                -E\mathbf{j}$ 的勻強電場區域。由於電子受到的靜電力恆定，其軌跡在板間呈拋物線。
+                            </p>
+                            <div class="col-12 col-md-4">
+                                <h4>
+                                    \( \text{Q: } \) 求：(a) 電子由平板射出時的垂直位置 $y_F$；(b) 射出時的角度
+                                    $\theta$；(c) 若平板末端與螢光幕相距 $L$，求在螢光幕上的總垂直位移 $D$。
+                                </h4>
+                            </div>
+                            <div class="col-12 col-md-8 text-center">
+                                <img
+                                    src="picture_physics/23_4_2.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="CRT 電子偏轉示意圖" />
+                            </div>
+                        </div>
+
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>(a) 射出時的垂直位置 $y_F$</strong></p>
+                            <p>電子在電場中經歷的時間為 $t = \frac{\ell}{v_0}$。由 $a_y = \frac{eE}{m}$，可得：</p>
+                            <div class="p-2 mb-3">
+                                $$y_F = \frac{1}{2} a_y t^2 = \frac{1}{2} \left( \frac{eE}{m} \right) \left(
+                                \frac{\ell}{v_0} \right)^2 = \frac{eE\ell^2}{2mv_0^2}$$
+                            </div>
+
+                            <p class="mb-1 mt-3"><strong>(b) 射出時的角度 $\theta$</strong></p>
+                            <p>利用速度的分量比值：$v_x = v_0$，$v_y = a_y t = \frac{eE\ell}{mv_0}$</p>
+                            <div class="p-2 mb-3">
+                                $$\tan \theta = \frac{v_y}{v_x} = \frac{eE\ell}{mv_0^2} \implies \theta = \tan^{-1}
+                                \left( \frac{eE\ell}{mv_0^2} \right)$$
+                            </div>
+
+                            <p class="mb-1 mt-3"><strong>(c) 螢光幕上的總位移 $D$</strong></p>
+                            <p>離開電場後電子做直線運動，額外垂直位移 $\Delta y = L \cdot \tan \theta$：</p>
+                            <div class="p-2 mb-3">
+                                $$\begin{aligned} D &= y_F + L \tan \theta \\ &= \frac{eE\ell^2}{2mv_0^2} + \frac{eE\ell
+                                L}{mv_0^2} \\ &= \frac{eE\ell}{mv_0^2} \left( \frac{\ell}{2} + L \right) \end{aligned}$$
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12">
+                                <h4>\(\text{EX}\)</h4>
+                                <p>
+                                    一個電子進入兩水平平行板間區域，以水平初速 $v_0\mathbf{i} = 2 \times 10^6\mathbf{i}
+                                    \text{ m/s}$ 在兩板正中間行進。板面長度 $L = 4 \text{ cm}$，板間距離為 $1.6 \text{
+                                    cm}$。
+                                </p>
+                                <h4>
+                                    \( \text{Q: } \)
+                                    欲使電子順利通過板間區域而不撞擊任一板子，所能施加的最大垂直電場強度
+                                    $E_{\text{max}}$ 為多少？
+                                </h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img
+                                    src="picture_physics/23_4_3.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="電子平行板偏轉示意圖" />
+                            </div>
+                        </div>
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>1. 分析邊界條件</strong></p>
+                            <p>
+                                電子從兩板正中間入射，板距為 $1.6 \text{
+                                cm}$。欲不撞板，其最大垂直位移必須小於或等於板距的一半： $$\Delta y_{\text{max}} =
+                                \frac{1.6 \text{ cm}}{2} = 0.8 \text{ cm} = 0.008 \text{ m}$$
+                            </p>
+
+                            <p class="mb-1 mt-3"><strong>2. 計算穿越時間 $t$</strong></p>
+                            <p>電子在水平方向做等速運動，穿越長度 $L = 4 \text{ cm} = 0.04 \text{ m}$ 所需時間為：</p>
+                            <div class="p-2 mb-3">
+                                $$t = \frac{L}{v_0} = \frac{0.04 \text{ m}}{2 \times 10^6 \text{ m/s}} = 2 \times
+                                10^{-8} \text{ s}$$
+                            </div>
+
+                            <p class="mb-1 mt-3"><strong>3. 求解最大電場 $E_{\text{max}}$</strong></p>
+                            <p>
+                                電子在垂直方向受電場力做等加速度運動。利用公式 $\Delta y = \frac{1}{2} a t^2 =
+                                \frac{1}{2} \left( \frac{eE}{m} \right) t^2$，將其轉化為求解 $E$：
+                            </p>
+                            <div class="p-2 mb-3">
+                                $$ \begin{aligned} E &= \frac{2 \cdot m \cdot \Delta y_{\text{max}}}{e \cdot t^2} \\ &=
+                                \frac{2 \cdot (9.11 \times 10^{-31} \text{ kg}) \cdot (0.008 \text{ m})}{(1.60 \times
+                                10^{-19} \text{ C}) \cdot (2 \times 10^{-8} \text{ s})^2} \\ &= \frac{1.4576 \times
+                                10^{-32}}{6.40 \times 10^{-35}} \text{ N/C} \\ &\approx 228 \text{ N/C} \end{aligned} $$
+                            </div>
+                            <h4>** 故最大垂直電場強度為約 $228 \text{ N/C}$。**</h4>
+                        </div>
+                    </div>
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12">
+                                <h4>\(\text{EX}\)</h4>
+                                <p>
+                                    一個電子進入兩帶電平行板間區域，在兩板正中間行進。板面長度 $L = 4 \text{
+                                    cm}$，板間距離為 $1.6 \text{ cm}$。當所能施加的最大垂直電場強度為 $E_{\text{max}} =
+                                    57 \text{ N/C}$ 時，電子恰可順利通過板間區域而不撞擊任一板子。
+                                </p>
+                                <h4>\(\text{Q: }\) 試求電子之水平初速大小 $v_0$ 約為多少？</h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img
+                                    src="picture_physics/23_4_4.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="電子平行板偏轉示意圖" />
+                            </div>
+                        </div>
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1">
+                                <strong>1. 分析邊界條件</strong>
+                            </p>
+                            <p>
+                                電子從兩板正中間入射，板距為 $1.6 \text{ cm}$。欲不撞板，其在電場中的最大垂直位移為：
+                                $$\Delta y_{\text{max}} = \frac{1.6 \text{ cm}}{2} = 0.8 \text{ cm} = 0.008 \text{ m}$$
+                            </p>
+
+                            <p class="mb-1 mt-3"><strong>2. 建立運動公式</strong></p>
+                            <p>
+                                電子在垂直方向（$y$軸）做等加速度運動：$\Delta y = \frac{1}{2} a t^2$，其中 $a =
+                                \frac{eE}{m}$。
+                                <br />
+                                電子在水平方向（$x$軸）做等速運動，穿越板長 $L=4 \text{ cm}=0.04 \text{ m}$ 所需時間：$t
+                                = L / v_0$。
+                            </p>
+                            <div class="p-2 mb-3">
+                                由上可建立 $\Delta y = \frac{1}{2} \left( \frac{eE}{m} \right) \left( \frac{L}{v_0}
+                                \right)^2$ 的關係式。
+                            </div>
+
+                            <p class="mb-1 mt-3"><strong>3. 代值求解初速 $v_0$</strong></p>
+                            <p>將 $\Delta y_{\text{max}}$ 代入上式並轉化為求解 $v_0$：</p>
+                            <div class="p-2 mb-3">
+                                $$ \begin{aligned} v_0^2 &= \frac{e E_{\text{max}} L^2}{2 m \cdot \Delta y_{\text{max}}}
+                                \\ &= \frac{(1.60 \times 10^{-19} \text{ C}) \cdot (57 \text{ N/C}) \cdot (0.04 \text{
+                                m})^2}{2 \cdot (9.11 \times 10^{-31} \text{ kg}) \cdot (0.008 \text{ m})} \\ &=
+                                \frac{1.4592 \times 10^{-20}}{1.4576 \times 10^{-32}} \\ &\approx 1.0011 \times 10^{12}
+                                \end{aligned} $$
+                            </div>
+                            <p>
+                                最後求得初速： $$v_0 = \sqrt{1.0011 \times 10^{12}} \approx 1.0 \times 10^6 \text{
+                                m/s}$$
+                            </p>
+                            <h4>** 故電子之水平初速 $v_0$ 約為 $1.0 \times 10^6 \text{ m/s}$。**</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="23.5" class="card-header">23.5 連續電荷分布</h2>
+                <div>
+                    <p>
+                        當電荷分布在一個體積、表面或線段上且數量極大時，我們可以將其視為連續分布。此時，空間中某點的電場
+                        $\vec{E}$ 必須透過對所有電荷微元 $dq$ 所產生的微小電場 $d\vec{E}$ 進行積分：
+                    </p>
+                    <div class="formula">$$ \vec{E} = k \int \frac{dq}{r^2} \hat{r} $$</div>
+                    <h3 class="mt-4">電荷密度</h3>
+                    <p>根據分布的維度，定義三種不同的電荷密度</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center mt-2">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>分布類型</th>
+                                    <th>符號</th>
+                                    <th>定義式</th>
+                                    <th>單位</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>線電荷密度</td>
+                                    <td>$\lambda$</td>
+                                    <td>$dq = \lambda \cdot d\ell$</td>
+                                    <td>$\text{C/m}$</td>
+                                </tr>
+                                <tr>
+                                    <td>面電荷密度</td>
+                                    <td>$\sigma$</td>
+                                    <td>$dq = \sigma \cdot dA$</td>
+                                    <td>$\text{C/m}^2$</td>
+                                </tr>
+                                <tr>
+                                    <td>體電荷密度</td>
+                                    <td>$\rho$</td>
+                                    <td>$dq = \rho \cdot dV$</td>
+                                    <td>$\text{C/m}^3$</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="mt-4">特殊形狀電場</h3>
+                    <div class="formula wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-4">
+                                <h4>\(\text{Pf: 細棒軸端電場}\)</h4>
+                                <p>一均勻帶電細棒長 $L$，總電荷 $Q$。點 $P$ 位於棒的延長線上，距離最近的一端為 $a$。</p>
+                                <h4>\( \text{Q: } \) 證明點 $P$ 之電場為 $E = \frac{k_e Q}{a(a+L)}$。</h4>
+                            </div>
+                            <div class="col-12 col-md-8 text-center">
+                                <img
+                                    src="picture_physics/23_5_3.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="細棒中垂線上的電場示意圖" />
+                            </div>
+                        </div>
+                        <br />
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p>
+                                取棒左端為原點，棒分布在 $x \in [0, L]$。點 $P$ 在 $x = L + a$ 處。取微元 $dq = \lambda
+                                dx'$，距離點 $P$ 為 $r = (L+a) - x'$：
+                            </p>
+                            <div class="p-2 mb-3">
+                                \[\begin{align*} E &= \int_0^L \frac{k_e \lambda dx'}{((L+a)-x')^2} \\[6pt] &= k_e
+                                \lambda \left[ \frac{1}{(L+a)-x'} \right]_0^L \\[6pt] &= k_e \lambda \left( \frac{1}{a}
+                                - \frac{1}{L+a} \right) \\[6pt] E &= \frac{k_e \lambda L}{a(L+a)} = \frac{k_e Q}{a(a+L)}
+                                \end{align*}\]
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-6">
+                                <h4>\(\text{Pf: 細棒中垂線上的電場}\)</h4>
+                                <h4>
+                                    \( \text{Q: } \) 一均勻帶電細棒長 $L$，點 $P$ 距離棒心為 $a$。證明點 $P$ 之電場為 $E
+                                    = \frac{2k_e \lambda \sin\theta_0}{a}$，其中 $\theta_0$ 為端點張角。
+                                </h4>
+                            </div>
+                            <div class="col-12 col-md-6 text-center">
+                                <img
+                                    src="picture_physics/23_5_4.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="細棒中垂線上的電場示意圖" />
+                            </div>
+                        </div>
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p>由其對稱性知 $E_y = 0$。僅剩垂直於棒的 $E_x$：</p>
+                            <div class="p-2 mb-3">
+                                \[\begin{align*}E_x &= \int dE \cos\theta \\[6pt] &= \int_{-L/2}^{L/2} \frac{k_e \lambda
+                                dy}{a^2+y^2} \cdot \frac{a}{\sqrt{a^2+y^2}} \\[6pt]E &= \frac{k_e \lambda L}{a \sqrt{a^2
+                                + (L/2)^2}}\end{align*}\]
+                            </div>
+                            <h4>** 當 $L \to \infty$ 時，電場趨近於 $E = \frac{2k_e \lambda}{a}$。**</h4>
+                        </div>
+                    </div>
+                    <div class="formula wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12">
+                                <h4>\(\text{Pf: 均勻帶電環電場}\)</h4>
+                                <p>
+                                    考慮一半徑為 $R$、總電荷為 $Q$
+                                    的均勻帶電圓環。在通過環心且垂直於環面的軸線上（距離環心 $x$ 處）的電場強度。
+                                </p>
+                                <h4>
+                                    \( \text{Q: } \) 試證明該點的電場公式為 $E = \frac{k_e Q x}{(x^2 + R^2)^{3/2}}$。
+                                </h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img
+                                    src="picture_physics/23_5_1.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="均勻帶電環電場示意圖" />
+                            </div>
+                        </div>
+
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>水平垂直電場分析</strong></p>
+                            <p>
+                                由於圓環的對稱性，垂直於軸向的電場分量會互相抵消，因此總電場僅存在於 $x$ 軸方向： $$dE_x
+                                = dE \cos \theta = \left( k_e \frac{dq}{r^2} \right) \frac{x}{r}$$
+                            </p>
+
+                            <p class="mb-1 mt-3"><strong>積分求解</strong></p>
+                            <p>其中 $r = \sqrt{x^2 + R^2}$ 為定值，故：</p>
+                            <div class="p-2 mb-3">
+                                $$ \begin{aligned} E_x &= \int \frac{k_e \cdot x}{(x^2 + R^2)^{3/2}} dq \\ &= \frac{k_e
+                                \cdot x}{(x^2 + R^2)^{3/2}} \int dq \\ &= \frac{k_e Q x}{(x^2 + R^2)^{3/2}}
+                                \end{aligned} $$
+                            </div>
+                            <h4>** 當 $x \gg R$ 時，此結果會退化為點電荷公式 $E \approx \frac{k_e Q}{x^2}$。**</h4>
+                        </div>
+                    </div>
+                    <div class="formula wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12">
+                                <h4>\(\text{Pf: 均勻帶電圓盤}\)</h4>
+                                <p>
+                                    考慮一個半徑為 $R$、總電荷為 $Q$ 的均勻帶電薄圓盤，其面電荷密度為 $\sigma = Q / \pi
+                                    R^2$。我們欲求在通過盤心且垂直於盤面的軸線上（距離盤心 $x$ 處）點 $P$ 的電場強度。
+                                </p>
+                                <h4>
+                                    \( \text{Q: } \) 試證明該圓盤在軸線上產生的電場公式為 $E = 2\pi k_e \sigma \left[ 1
+                                    - \frac{x}{\sqrt{x^2 + R^2}} \right]$。
+                                </h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img
+                                    src="picture_physics/23_5_2.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="均勻帶電圓盤電場示意圖" />
+                            </div>
+                        </div>
+
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>選取微元</strong></p>
+                            <p>
+                                將圓盤看作由許多半徑為 $r$、寬度為 $dr$ 的薄圓環組成。 每一層圓環的面積為 $dA = 2\pi r
+                                dr$，所帶電荷量為 $dq = \sigma dA = \sigma (2\pi r dr)$。
+                            </p>
+
+                            <p class="mb-1 mt-3"><strong>利用圓環公式</strong></p>
+                            <p>根據上一節圓環的結論，半徑為 $r$ 的圓環在軸線上產生的微小電場 $dE$ 為：</p>
+                            <div class="p-2 mb-3">
+                                $$dE = \frac{k_e x dq}{(x^2 + r^2)^{3/2}} = \frac{k_e x (\sigma 2\pi r dr)}{(x^2 +
+                                r^2)^{3/2}}$$
+                            </div>
+
+                            <p class="mb-1 mt-3"><strong>3. 積分求解 (Integration)</strong></p>
+                            <p>對半徑 $r$ 從 $0$ 積分到 $R$：</p>
+                            <div class="p-2 mb-3">
+                                $$ \begin{aligned} E &= \int_0^R \frac{2\pi k_e \sigma x r}{(x^2 + r^2)^{3/2}} dr \\ &=
+                                \pi k_e \sigma x \int_0^R (x^2 + r^2)^{-3/2} (2r dr) \\ &= \pi k_e \sigma x \left[
+                                \frac{(x^2 + r^2)^{-1/2}}{-1/2} \right]_0^R \\ &= 2\pi k_e \sigma x \left[ \frac{1}{x} -
+                                \frac{1}{\sqrt{x^2 + R^2}} \right] \\ &= 2\pi k_e \sigma \left[ 1 - \frac{x}{\sqrt{x^2 +
+                                R^2}} \right] \end{aligned} $$
+                            </div>
+
+                            <p class="mb-1 mt-3"><strong>特殊情況討論</strong></p>
+                            <div class="p-2">
+                                <ul>
+                                    <li>
+                                        <strong>當 $R \to \infty$（無限大帶電平面）：</strong> 電場變為恆定值 $E = 2\pi
+                                        k_e \sigma = \frac{\sigma}{2\varepsilon_0}$。
+                                    </li>
+                                    <li>
+                                        <strong>當 $x \gg R$：</strong> 利用二項式展開，公式會退化回點電荷形式 $E
+                                        \approx \frac{k_e Q}{x^2}$。
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12">
+                                <h4>\(\text{Pf: 無限大厚導體平板}\)</h4>
+                                <p>
+                                    考慮一厚度為 $d$ 的無限大導體平板，帶有總面電荷密度 $\sigma
+                                    $。根據導體特性，電荷會平均分布在左、右兩個表面，每個表面的面電荷密度為 $\sigma =
+                                    \frac{\sigma}{2}$。
+                                </p>
+                                <h4>\( \text{Q: } \) 試求導體平板外部與內部的電場強度。</h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img
+                                    src="picture_physics/23_5_5.png"
+                                    class="img-fluid rounded shadow-sm"
+                                    alt="無限大厚導體平板電場示意圖" />
+                            </div>
+                        </div>
+
+                        <h4>$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>導體特性分析</strong></p>
+                            <p>在靜電平衡狀態下：</p>
+                            <ul>
+                                <li>導體內部電場 $E_{\text{inside}} = 0$</li>
+                                <li>電荷僅分布在表面。對於無限大平板，電荷會對稱地分布在兩個外表面</li>
+                            </ul>
+
+                            <p class="mb-1 mt-3"><strong>疊加原理</strong></p>
+                            <p>將厚平板視為兩個「無限大薄平面」的組合，每個平面的電荷密度皆為 $\sigma$：</p>
+                            <div class="p-2 mb-3 bg-light bg-opacity-10 rounded">
+                                <ul>
+                                    <li>
+                                        <strong>左表面產生的電場：</strong> $E_L =
+                                        \frac{\sigma}{2\varepsilon_0}$，方向向外。
+                                    </li>
+                                    <li>
+                                        <strong>右表面產生的電場：</strong> $E_R =
+                                        \frac{\sigma}{2\varepsilon_0}$，方向向外。
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="mb-1 mt-3"><strong>各區域電場計算</strong></p>
+                            <div class="p-2 mb-3 bg-dark bg-opacity-25 rounded">
+                                <ul class="mb-0">
+                                    <li>
+                                        <strong>導體內部：</strong> 兩個表面的電場方向相反，互相抵消。 $$E_{\text{in}} =
+                                        \frac{\sigma}{2\varepsilon_0} - \frac{\sigma}{2\varepsilon_0} = 0$$
+                                    </li>
+                                    <li class="mt-2">
+                                        <strong>導體外部：</strong> 兩個表面的電場方向相同，互相疊加。 $$E_{\text{out}}
+                                        = \frac{\sigma}{2\varepsilon_0} + \frac{\sigma}{2\varepsilon_0} =
+                                        \frac{\sigma}{\varepsilon_0}$$
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p>
+                                若以總面電荷密度 $\sigma_{\text{total}} = 2\sigma$ 來表示，外部電場為： $$E_{\text{out}}
+                                = \frac{\sigma_{\text{total}}}{2\varepsilon_0}$$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">- 普通物理 -</footer>
+        <button type="button" class="btn btn-primary rounded-circle shadow" id="btn-back-to-top">
+            <i class="bi bi-arrow-up"></i> ↑
+        </button>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

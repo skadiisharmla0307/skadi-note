@@ -116,6 +116,7 @@ img {
 }
 .card-content {
   max-height: 0; /* 關鍵：初始高度為 0 */
+  padding-top: 5px;
   overflow: hidden;
   transition: max-height 0.5s ease-out; /* 展開動畫 */
 }
@@ -135,6 +136,7 @@ h2 {
 h3 {
   font-size: 1.3em;
   margin-top: 20px;
+  margin-bottom: 20px;
   border-bottom-style: solid;
   color: var(--lc);
 }
@@ -207,6 +209,15 @@ tfoot {
   font-family: "Consolas", monospace;
   overflow-x: auto;
   white-space: nowrap;
+}
+/* 專門給需要換行的公式卡片使用 */
+.formula-dark.wrap-text {
+  white-space: normal;
+  font-family: inherit; /* 回復到一般字體，讀題目比較輕鬆 */
+}
+.formula.wrap-text {
+  white-space: normal;
+  font-family: inherit; /* 回復到一般字體，讀題目比較輕鬆 */
 }
 
 .formula-red {
