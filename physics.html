@@ -394,7 +394,7 @@
 
             <section class="card">
                 <h2 id="23.5" class="card-header">23.5 連續電荷分布</h2>
-                <div class=card-content>
+                <div class="card-content">
                     <p>
                         當電荷分布在一個體積、表面或線段上且數量極大時，我們可以將其視為連續分布。此時，空間中某點的電場
                         $\vec{E}$ 必須透過對所有電荷微元 $dq$ 所產生的微小電場 $d\vec{E}$ 進行積分：
@@ -655,6 +655,53 @@
                                 = \frac{\sigma_{\text{total}}}{2\varepsilon_0}$$
                             </p>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="card">
+                <h2 id="23.6" class="card-header">23.6 電偶極</h2>
+                <div class=card-content>
+                    <h3>基本定義與電偶極矩 (Dipole Moment)</h3>
+                    <p>
+                        電偶極是由兩個電荷量相等 ($q$)、電性相反，且相距一段微小距離 $d$
+                        的點電荷所組成的系統。由電荷量與距離定義電偶極矩 ($\vec{p}$) 為：
+                    </p>
+                    <div class="formula">$$ \vec{p} = q \vec{d} $$</div>
+                    <p>電偶極矩方向規定負電荷指向正電荷。</p>
+                    <h3 class="mt-4">電偶極產生的電場</h3>
+                    <p>
+                        考慮點 $P$ 位在電偶極的軸線上，距離中心點為 $r$。當 $r \gg d$
+                        時，透過疊加原理與二項式展開(方法類似求細棒中垂線上電場)，可導出：
+                    </p>
+                    <div class="formula">\[ E = \frac{2k_e p}{r^3} \quad (\text{軸線上}) \]</div>
+                    <p>點電荷電場隨 $1/r^2$ 衰減，但電偶極電場隨 $1/r^3$ 更快地衰減。</p>
+                    <h3 class="mt-4">均勻外電場中的轉矩(Torque)</h3>
+                    <p>
+                        當電偶極置於均勻外電場 $\vec{E}$
+                        中，正負電荷受力方向相反，會形成一個使偶極轉向與電場平行的轉矩$\tau$：
+                    </p>
+                    <div class="formula">
+                        \[ \vec{\tau} = \vec{p} \times \vec{E} \]
+                        <p>大小為：$\tau = pE \sin\theta$ （$\theta$ 為 $\vec{p}$ 與 $\vec{E}$ 的夾角）。</p>
+                    </div>
+
+                    <h3 class="mt-4">電偶極的位能</h3>
+                    <p>
+                        改變電偶極在電場中的角度需要做功，這份功會儲存為系統的靜電位能。通常取夾角 $\theta = 90^\circ$
+                        時位能為零：
+                    </p>
+                    <div class="formula">
+                        \[ U = -\vec{p} \cdot \vec{E} = -pE \cos\theta \]
+                        <ul class="mt-2 small">
+                            <li>
+                                <strong>能量最低 (穩定平衡)：</strong> $\theta = 0^\circ$（$\vec{p} ,\, \vec{E} \,
+                                \text{同向}$），此時 $U = -pE$。
+                            </li>
+                            <li>
+                                <strong>能量最高 (不穩定平衡)：</strong> $\theta = 180^\circ$（$\vec{p} ,\, \vec{E} \,
+                                \text{反向}$），此時 $U = +pE$。
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>

@@ -81,9 +81,7 @@
                 <li><a class="dropdown-item" href="#9.3">9.3</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="calculus.html">微積分</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="physics.html">普通物理</a>
             </li>
@@ -102,9 +100,9 @@
             <li class="nav-item">
               <a class="nav-link" href="statics.html">靜力學</a>
             </li>
-<li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="dynamics.html">動力學</a>
-            </li>            
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="phoenix_code.html">網頁程式設計</a>
             </li>
@@ -1906,113 +1904,115 @@
 
       <section class="card">
         <h2 class="card-header">CH8 Caculus Test</h2>
-        <div class=card-content><div class="formula-dark">
-          \( \displaystyle \text{1.} \quad \int \tan x \ln(\cos x) \, dx \)
-          <div class="border">
-            \[ \text{Let } u = \ln(\cos x) \quad du = \frac{-\sin x}{\cos x} dx = -\tan x \, dx \]
-          </div>
-          \[ \begin{align*} \int -u \, du &= -\frac{u^2}{2} + C \\[6pt] &= -\frac{(\ln(\cos x))^2}{2} + C \end{align*}
-          \]
-          <hr />
-          \( \displaystyle \text{2.} \quad \int \frac{1}{2+e^x} \, dx \)
-          <div class="border">
-            \[ \begin{align*} \text{Let } \quad e^{x/2} &= \sqrt{2} \tan \theta \\[6pt] \frac{1}{2} e^{x/2} dx &=
-            \sqrt{2} \sec^2 \theta \, d\theta \\[6pt] dx &= \frac{2\sqrt{2} \sec^2 \theta}{\sqrt{2} \tan \theta} \,
-            d\theta \end{align*} \]
-          </div>
-          \[ \begin{align*} \Rightarrow &\int \frac{1}{2 \sec^2 \theta} \cdot \frac{2 \sqrt{2} \sec^2 \theta}{\sqrt{2}
-          \tan \theta} d\theta \\[6pt] = &\int \cot \theta \, d\theta \\[6pt] = &\ln|\sin \theta| + C \\[6pt] = &\ln
-          \left| \frac{e^{x/2}}{\sqrt{e^x+2}} \right| + C \end{align*} \]
-          <hr />
-          \( \displaystyle \text{3.} \quad \int \ln(x + x^2) \, dx \) \[ \begin{align*} &\int \ln(x + x^2) \, dx \\[6pt]
-          = &\int \ln x \, dx + \int \ln(1+x) \, dx \\[6pt] = &(x \ln x - x) + ((1+x) \ln(1+x) - (x+1)) + C \\[6pt] = &
-          x(\ln x - 1) + (x+1)(\ln(x+1) - 1) + C \end{align*} \]
-          <hr />
-          \( \displaystyle \text{4.} \quad \int e^{-3x} \sin(2x) \, dx \)
-          <div class="border">
-            \[ \begin{align*} \text{Let } u &= \sin 2x \quad dv = e^{-3x}dx \\[6pt] du &=2\cos 2x \, dx \quad
-            v=-\frac{1}{3}e^{-3x} \end{align*} \]
-          </div>
-          \[ \begin{align*} \int e^{-3x} \sin(2x) \, dx = -\frac{1}{3}e^{-3x} \sin(2x) + \frac{2}{3}\int e^{-3x}\cos 2x
-          \end{align*} \]
-          <div class="border">
-            \[ \begin{align*} \text{Let } u &= \cos 2x \quad dv = e^{-3x}dx \\[6pt] du &=-2\sin 2x \, dx \quad
-            v=-\frac{1}{3}e^{-3x} \end{align*} \]
-          </div>
-          \[\begin{align*} &= -\frac{1}{3}e^{-3x} \sin(2x) + \frac{2}{3}\left( -\frac{1}{3}e^{-3x}\cos 2x -
-          \frac{2}{3}\int e^{-3x} \sin(2x) \, dx \right) \\[6pt]&\Rightarrow \frac{13}{9}\int e^{-3x} \sin(2x) \, dx =
-          -\frac{1}{3}e^{-3x} \sin(2x) -\frac{2}{9}e^{-3x} \cos(2x) \\[6pt]&\Rightarrow \int e^{-3x} \sin(2x) =
-          -\frac{e^{-3x}}{13}\left( 3\sin 2x + 2\cos 2x \right) \end{align*}\]
-          <hr />
-          \( \displaystyle \text{5.} \quad \int_{-\pi/2}^{\pi/2} \cos x \cos 7x \, dx \)
-          <div class="border">\[ \cos A \cos B = \frac{1}{2}[\cos(A+B) + \cos(A-B)] \]</div>
-          \[ \begin{align*} &\Rightarrow \frac{1}{2} \int_{-\pi/2}^{\pi/2} (\cos 8x + \cos 6x) \, dx \\[6pt] &=
-          \frac{1}{2} [\frac{1}{8}\sin 8x + \frac{1}{6}\sin 6x]|_{-\pi/2}^{\pi/2} \\[6pt] &=0 \end{align*} \]
-          <hr />
-          \( \displaystyle \text{6.} \quad \int \cot^6(2x) \, dx \)
-          <div class="border">\[ u = 2x \quad dx = \frac{1}{2}du \quad cot^2 u = \csc^2 u - 1\]</div>
-          \[\begin{align*} &\frac{1}{2} \int \cot^6 u \, du \\[6pt]=&\frac{1}{2} \int \cot^4 u (\csc^2 u - 1) \, du
-          \\[6pt]=&\frac{1}{2} \left(\int \cot^4 u \csc^2 u \, du - \int \cot^4 u \, du \right) \\[6pt]=&\frac{1}{2}
-          \left(\int \cot^4 u \csc^2 u \, du - \int \cot^2 u (\csc^2 u - 1) \, du \right) \\[6pt]=&\frac{1}{2}
-          \left[\int \cot^4 u \csc^2 u \, du - \left(\int \cot^2 u \csc^2 u \, du - \int (\csc^2 u - 1) \, du\right)
-          \right] \end{align*} \]
-          <div class="border">
-            \[ \text{代換} \quad \frac{d}{du}(\cot u) = -\csc^2 u \text{ 與 } \int \cot^n u \csc^2 u \, du =
-            -\frac{\cot^{n+1} u}{n+1} \]
-          </div>
-          \[\begin{align*} &\Rightarrow \frac{1}{2} \left[ -\frac{1}{5}\cot^5 u - \left( -\frac{1}{3}\cot^3 u - (-\cot u
-          - u) \right) \right] + C \\[6pt] &= -\frac{1}{10}\cot^5(2x) + \frac{1}{6}\cot^3(2x) - \frac{1}{2}\cot(2x) - x
-          + C \end{align*}\]
-          <hr />
+        <div class="card-content">
+          <div class="formula-dark">
+            \( \displaystyle \text{1.} \quad \int \tan x \ln(\cos x) \, dx \)
+            <div class="border">
+              \[ \text{Let } u = \ln(\cos x) \quad du = \frac{-\sin x}{\cos x} dx = -\tan x \, dx \]
+            </div>
+            \[ \begin{align*} \int -u \, du &= -\frac{u^2}{2} + C \\[6pt] &= -\frac{(\ln(\cos x))^2}{2} + C \end{align*}
+            \]
+            <hr />
+            \( \displaystyle \text{2.} \quad \int \frac{1}{2+e^x} \, dx \)
+            <div class="border">
+              \[ \begin{align*} \text{Let } \quad e^{x/2} &= \sqrt{2} \tan \theta \\[6pt] \frac{1}{2} e^{x/2} dx &=
+              \sqrt{2} \sec^2 \theta \, d\theta \\[6pt] dx &= \frac{2\sqrt{2} \sec^2 \theta}{\sqrt{2} \tan \theta} \,
+              d\theta \end{align*} \]
+            </div>
+            \[ \begin{align*} \Rightarrow &\int \frac{1}{2 \sec^2 \theta} \cdot \frac{2 \sqrt{2} \sec^2 \theta}{\sqrt{2}
+            \tan \theta} d\theta \\[6pt] = &\int \cot \theta \, d\theta \\[6pt] = &\ln|\sin \theta| + C \\[6pt] = &\ln
+            \left| \frac{e^{x/2}}{\sqrt{e^x+2}} \right| + C \end{align*} \]
+            <hr />
+            \( \displaystyle \text{3.} \quad \int \ln(x + x^2) \, dx \) \[ \begin{align*} &\int \ln(x + x^2) \, dx
+            \\[6pt] = &\int \ln x \, dx + \int \ln(1+x) \, dx \\[6pt] = &(x \ln x - x) + ((1+x) \ln(1+x) - (x+1)) + C
+            \\[6pt] = & x(\ln x - 1) + (x+1)(\ln(x+1) - 1) + C \end{align*} \]
+            <hr />
+            \( \displaystyle \text{4.} \quad \int e^{-3x} \sin(2x) \, dx \)
+            <div class="border">
+              \[ \begin{align*} \text{Let } u &= \sin 2x \quad dv = e^{-3x}dx \\[6pt] du &=2\cos 2x \, dx \quad
+              v=-\frac{1}{3}e^{-3x} \end{align*} \]
+            </div>
+            \[ \begin{align*} \int e^{-3x} \sin(2x) \, dx = -\frac{1}{3}e^{-3x} \sin(2x) + \frac{2}{3}\int e^{-3x}\cos
+            2x \end{align*} \]
+            <div class="border">
+              \[ \begin{align*} \text{Let } u &= \cos 2x \quad dv = e^{-3x}dx \\[6pt] du &=-2\sin 2x \, dx \quad
+              v=-\frac{1}{3}e^{-3x} \end{align*} \]
+            </div>
+            \[\begin{align*} &= -\frac{1}{3}e^{-3x} \sin(2x) + \frac{2}{3}\left( -\frac{1}{3}e^{-3x}\cos 2x -
+            \frac{2}{3}\int e^{-3x} \sin(2x) \, dx \right) \\[6pt]&\Rightarrow \frac{13}{9}\int e^{-3x} \sin(2x) \, dx =
+            -\frac{1}{3}e^{-3x} \sin(2x) -\frac{2}{9}e^{-3x} \cos(2x) \\[6pt]&\Rightarrow \int e^{-3x} \sin(2x) =
+            -\frac{e^{-3x}}{13}\left( 3\sin 2x + 2\cos 2x \right) \end{align*}\]
+            <hr />
+            \( \displaystyle \text{5.} \quad \int_{-\pi/2}^{\pi/2} \cos x \cos 7x \, dx \)
+            <div class="border">\[ \cos A \cos B = \frac{1}{2}[\cos(A+B) + \cos(A-B)] \]</div>
+            \[ \begin{align*} &\Rightarrow \frac{1}{2} \int_{-\pi/2}^{\pi/2} (\cos 8x + \cos 6x) \, dx \\[6pt] &=
+            \frac{1}{2} [\frac{1}{8}\sin 8x + \frac{1}{6}\sin 6x]|_{-\pi/2}^{\pi/2} \\[6pt] &=0 \end{align*} \]
+            <hr />
+            \( \displaystyle \text{6.} \quad \int \cot^6(2x) \, dx \)
+            <div class="border">\[ u = 2x \quad dx = \frac{1}{2}du \quad cot^2 u = \csc^2 u - 1\]</div>
+            \[\begin{align*} &\frac{1}{2} \int \cot^6 u \, du \\[6pt]=&\frac{1}{2} \int \cot^4 u (\csc^2 u - 1) \, du
+            \\[6pt]=&\frac{1}{2} \left(\int \cot^4 u \csc^2 u \, du - \int \cot^4 u \, du \right) \\[6pt]=&\frac{1}{2}
+            \left(\int \cot^4 u \csc^2 u \, du - \int \cot^2 u (\csc^2 u - 1) \, du \right) \\[6pt]=&\frac{1}{2}
+            \left[\int \cot^4 u \csc^2 u \, du - \left(\int \cot^2 u \csc^2 u \, du - \int (\csc^2 u - 1) \, du\right)
+            \right] \end{align*} \]
+            <div class="border">
+              \[ \text{代換} \quad \frac{d}{du}(\cot u) = -\csc^2 u \text{ 與 } \int \cot^n u \csc^2 u \, du =
+              -\frac{\cot^{n+1} u}{n+1} \]
+            </div>
+            \[\begin{align*} &\Rightarrow \frac{1}{2} \left[ -\frac{1}{5}\cot^5 u - \left( -\frac{1}{3}\cot^3 u - (-\cot
+            u - u) \right) \right] + C \\[6pt] &= -\frac{1}{10}\cot^5(2x) + \frac{1}{6}\cot^3(2x) - \frac{1}{2}\cot(2x)
+            - x + C \end{align*}\]
+            <hr />
 
-          \(\displaystyle \text{7.} \quad \int \frac{\sqrt{9-x^2}}{x^2} \, dx ) \)
-          <div class="border">
-            \[ x = 3\sin\theta \quad dx = 3\cos\theta d\theta \quad \cot\theta = \frac{\sqrt{9-x^2}}{x} \]
-          </div>
-          \[\begin{align*}&\int \frac{3\cos\theta}{9\sin^2\theta} \cdot 3\cos\theta \, d\theta \\[6pt]=& \int
-          \cot^2\theta \, d\theta = \int (\csc^2\theta - 1) \, d\theta \\[6pt]=& -\cot\theta - \theta + C \\[6pt]=&
-          -\frac{\sqrt{9-x^2}}{x} - \sin^{-1}\left(\frac{x}{3}\right) + C\end{align*}\]
-          <hr />
+            \(\displaystyle \text{7.} \quad \int \frac{\sqrt{9-x^2}}{x^2} \, dx ) \)
+            <div class="border">
+              \[ x = 3\sin\theta \quad dx = 3\cos\theta d\theta \quad \cot\theta = \frac{\sqrt{9-x^2}}{x} \]
+            </div>
+            \[\begin{align*}&\int \frac{3\cos\theta}{9\sin^2\theta} \cdot 3\cos\theta \, d\theta \\[6pt]=& \int
+            \cot^2\theta \, d\theta = \int (\csc^2\theta - 1) \, d\theta \\[6pt]=& -\cot\theta - \theta + C \\[6pt]=&
+            -\frac{\sqrt{9-x^2}}{x} - \sin^{-1}\left(\frac{x}{3}\right) + C\end{align*}\]
+            <hr />
 
-          \( \displaystyle \text{8.} \quad \int_{-1}^0 \frac{x^3}{x^2-2x+1} \, dx \)
-          <div class="border">
-            \[ \frac{x^3}{(x-1)^2} = x+2 + \frac{3x-2}{(x-1)^2} = x+2 + \frac{3}{x-1} + \frac{1}{(x-1)^2} \]
-          </div>
-          \[\begin{align*} &\int_{-1}^0 \left( x+2 + \frac{3}{x-1} + \frac{1}{(x-1)^2} \right) \, dx\\[6pt] =&\left[
-          \frac{1}{2}x^2 + 2x + 3\ln|x-1| - \frac{1}{x-1} \right]_{-1}^0 \\[6pt]=&(0 + 0 + 3\ln 1 - (-1)) - \left(
-          \frac{1}{2} - 2 + 3\ln 2 - (-\frac{1}{2}) \right) \\[6pt]=& 1 - ( -1 + 3\ln 2 ) \\[6pt]=& 2 - 3\ln 2
-          \end{align*}\]
+            \( \displaystyle \text{8.} \quad \int_{-1}^0 \frac{x^3}{x^2-2x+1} \, dx \)
+            <div class="border">
+              \[ \frac{x^3}{(x-1)^2} = x+2 + \frac{3x-2}{(x-1)^2} = x+2 + \frac{3}{x-1} + \frac{1}{(x-1)^2} \]
+            </div>
+            \[\begin{align*} &\int_{-1}^0 \left( x+2 + \frac{3}{x-1} + \frac{1}{(x-1)^2} \right) \, dx\\[6pt] =&\left[
+            \frac{1}{2}x^2 + 2x + 3\ln|x-1| - \frac{1}{x-1} \right]_{-1}^0 \\[6pt]=&(0 + 0 + 3\ln 1 - (-1)) - \left(
+            \frac{1}{2} - 2 + 3\ln 2 - (-\frac{1}{2}) \right) \\[6pt]=& 1 - ( -1 + 3\ln 2 ) \\[6pt]=& 2 - 3\ln 2
+            \end{align*}\]
 
-          <hr />
-          \( \displaystyle \text{9.} \quad \int \frac{1}{\sqrt{x}-\sqrt[3]{x}+\sqrt[6]{x}-1} \, dx \)
-          <div class="border">
-            \[ u = x^{1/6} \quad x = u^6 \quad dx = 6u^5 \, du \\[6pt] \frac{u^5}{u^3-u^2+u-1} =
-            u^2+u+\frac{u^2}{u^3-u^2+u-1} \]
+            <hr />
+            \( \displaystyle \text{9.} \quad \int \frac{1}{\sqrt{x}-\sqrt[3]{x}+\sqrt[6]{x}-1} \, dx \)
+            <div class="border">
+              \[ u = x^{1/6} \quad x = u^6 \quad dx = 6u^5 \, du \\[6pt] \frac{u^5}{u^3-u^2+u-1} =
+              u^2+u+\frac{u^2}{u^3-u^2+u-1} \]
+            </div>
+            \[\begin{align*} &\int \frac{6u^5}{(u-1)(u^2+1)} \, du \\[6pt]=& \int \left( 6u^2 + 6u + \frac{3}{u-1} -
+            \frac{3u}{u^2+1} + \frac{3}{u^2+1} \right) \, du \\[6pt]=& 2u^3 + 3u^2 + 3\ln|u-1| - \frac{3}{2}\ln(u^2+1) +
+            3\tan^{-1} u + C \\[6pt]=& 2x^{1/2} + 3x^{1/3} + 3\ln|x^{1/6}-1| - \frac{3}{2}\ln(x^{1/3}+1) +
+            3\tan^{-1}(x^{1/6}) + C \end{align*}\]
+            <hr />
+            \( \displaystyle \text{10.} \quad \int_0^2 \frac{1}{\sqrt{|x-1|}} \, dx \)
+            <div class="border">
+              \[ \int_0^2 f(x)dx = \lim_{t \to 1^-} \int_0^t \frac{1}{\sqrt{1-x}} dx + \lim_{s \to 1^+} \int_s^2
+              \frac{1}{\sqrt{x-1}} dx \]
+            </div>
+            \[\begin{align*} &\lim_{t \to 1^-} \left[ -2\sqrt{1-x} \right]0^t + \lim_{s \to 1^+} \left[ 2\sqrt{x-1}
+            \right]_s^2 \\[6pt]=& \left( 0 - (-2\sqrt{1}) \right) + \left( 2\sqrt{1} - 0 \right) \\[6pt]=& 2 + 2
+            \\[6pt]=& 4 \end{align*}\]
+            <hr />
+            \( \displaystyle \text{11.} \quad \int_0^{\infty} \frac{1}{(x+1)(x^2+1)} \, dx \)
+            <div class="border">
+              \[ \text{部分分式: } \frac{1}{(x+1)(x^2+1)} = \frac{1/2}{x+1} - \frac{1/2(x-1)}{x^2+1} \quad \text{C.T.: }
+              \frac{1}{(x+1)(x^2+1)} \ &lt; \frac{1}{x^3} \]
+            </div>
+            \[\begin{align*} &\lim_{t \to \infty} \left[ \frac{1}{2}\ln|x+1| - \frac{1}{4}\ln(x^2+1) +
+            \frac{1}{2}\tan^{-1}x \right]_0^t \\[6pt]=& \lim_{t \to \infty} \left[
+            \frac{1}{4}\ln\left(\frac{(t+1)^2}{t^2+1}\right) + \frac{1}{2}\tan^{-1}t \right] - (0 + 0) \\[6pt]=&
+            \frac{1}{4}\ln(1) + \frac{1}{2}\left(\frac{\pi}{2}\right) \\[6pt]=& \frac{\pi}{4} \end{align*}\]
           </div>
-          \[\begin{align*} &\int \frac{6u^5}{(u-1)(u^2+1)} \, du \\[6pt]=& \int \left( 6u^2 + 6u + \frac{3}{u-1} -
-          \frac{3u}{u^2+1} + \frac{3}{u^2+1} \right) \, du \\[6pt]=& 2u^3 + 3u^2 + 3\ln|u-1| - \frac{3}{2}\ln(u^2+1) +
-          3\tan^{-1} u + C \\[6pt]=& 2x^{1/2} + 3x^{1/3} + 3\ln|x^{1/6}-1| - \frac{3}{2}\ln(x^{1/3}+1) +
-          3\tan^{-1}(x^{1/6}) + C \end{align*}\]
-          <hr />
-          \( \displaystyle \text{10.} \quad \int_0^2 \frac{1}{\sqrt{|x-1|}} \, dx \)
-          <div class="border">
-            \[ \int_0^2 f(x)dx = \lim_{t \to 1^-} \int_0^t \frac{1}{\sqrt{1-x}} dx + \lim_{s \to 1^+} \int_s^2
-            \frac{1}{\sqrt{x-1}} dx \]
-          </div>
-          \[\begin{align*} &\lim_{t \to 1^-} \left[ -2\sqrt{1-x} \right]0^t + \lim_{s \to 1^+} \left[ 2\sqrt{x-1}
-          \right]_s^2 \\[6pt]=& \left( 0 - (-2\sqrt{1}) \right) + \left( 2\sqrt{1} - 0 \right) \\[6pt]=& 2 + 2 \\[6pt]=&
-          4 \end{align*}\]
-          <hr />
-          \( \displaystyle \text{11.} \quad \int_0^{\infty} \frac{1}{(x+1)(x^2+1)} \, dx \)
-          <div class="border">
-            \[ \text{部分分式: } \frac{1}{(x+1)(x^2+1)} = \frac{1/2}{x+1} - \frac{1/2(x-1)}{x^2+1} \quad \text{C.T.: }
-            \frac{1}{(x+1)(x^2+1)} \ &lt; \frac{1}{x^3} \]
-          </div>
-          \[\begin{align*} &\lim_{t \to \infty} \left[ \frac{1}{2}\ln|x+1| - \frac{1}{4}\ln(x^2+1) +
-          \frac{1}{2}\tan^{-1}x \right]_0^t \\[6pt]=& \lim_{t \to \infty} \left[
-          \frac{1}{4}\ln\left(\frac{(t+1)^2}{t^2+1}\right) + \frac{1}{2}\tan^{-1}t \right] - (0 + 0) \\[6pt]=&
-          \frac{1}{4}\ln(1) + \frac{1}{2}\left(\frac{\pi}{2}\right) \\[6pt]=& \frac{\pi}{4} \end{align*}\]
-          </div></div>
+        </div>
       </section>
       <section class="card">
         <h2 id="9.1">9.1 Sequences</h2>
