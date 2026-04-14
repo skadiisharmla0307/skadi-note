@@ -76,9 +76,11 @@
                 <li><a class="dropdown-item" href="#8.5">8.5 部分分式</a></li>
                 <li><a class="dropdown-item" href="#8.8">8.8 瑕積分</a></li>
                 <li class="dropdown-header">- CH9 Infinite Series -</li>
-                <li><a class="dropdown-item" href="#9.1">9.1</a></li>
-                <li><a class="dropdown-item" href="#9.2">9.2</a></li>
-                <li><a class="dropdown-item" href="#9.3">9.3</a></li>
+                <li><a class="dropdown-item" href="#9.1">9.1 數列</a></li>
+                <li><a class="dropdown-item" href="#9.2">9.2 級數與收斂</a></li>
+                <li><a class="dropdown-item" href="#9.3">9.3 積分判別法與p-級數</a></li>
+                <li><a class="dropdown-item" href="#9.4">9.4 級數比較法</a></li>
+                <li><a class="dropdown-item" href="#9.5">9.5 交錯級數</a></li>
               </ul>
             </li>
 
@@ -2014,19 +2016,346 @@
           </div>
         </div>
       </section>
+
       <section class="card">
         <h2 id="9.1">9.1 Sequences</h2>
-        <div></div>
+        <div>
+          <h3>數列極限定義</h3>
+          <div class="formula">
+            <p>
+              \( \textbf{Def} \quad \text{Let } L \in \mathbb{R} \text{ The limit of a sequence } \{a_n\} \text{ is } L,
+              \text{ written as:} \)
+            </p>
+            \[ \lim_{n \to \infty} a_n = L \]
+            <p>
+              \( \text{if for each } \epsilon &gt; 0, \text{ there exists } M &gt; 0 \text{ such that } |a_n - L| &lt;
+              \epsilon \text{ whenever } n &gt; M. \)
+            </p>
+            <br />
+            <h4 style="color: var(--muted)">** 極限存在則數列收斂至$L$, 不存在則發散 **</h4>
+          </div>
+
+          <h3>數列極限性質</h3>
+          <div class="formula">
+            <p>\( \displaystyle \text{Let } \lim_{n \to \infty} a_n = L \text{ and } \lim_{n \to \infty} b_n = K. \)</p>
+            <div>
+              \[ \begin{align*} \lim_{n \to \infty} (ca_n) &= cL, c \in \mathbb{R} \\[6pt] \lim_{n \to \infty} (a_n \pm
+              b_n) &= L \pm K \\[6pt] \lim_{n \to \infty} (a_n b_n) &= LK \\[6pt] \lim_{n \to \infty} \frac{a_n}{b_n} &=
+              \frac{L}{K}, b_n \neq 0, K \neq 0 \end{align*} \]
+            </div>
+          </div>
+
+          <h3>數列的夾擠定理(Squeeze Theorem)</h3>
+          <div class="formula">
+            <p>
+              \( \displaystyle \textbf{Thm} \quad \text{If } \lim_{n \to \infty} a_n = L = \lim_{n \to \infty} b_n
+              \text{ and let } k \in \mathbb{N} , \quad \forall n \ge K \)
+            </p>
+            <p>\( \text{such that } a_n \le c_n \le b_n \text{, then:} \)</p>
+            <div class="border">\[ \lim_{n \to \infty} c_n = L \]</div>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \text{Show that } \lim_{n \to \infty} \frac{n!}{n^n} = 0 \)</p>
+            <div>
+              \[ \begin{align*} 0 \le \frac{n!}{n^n} &= \frac{1 \cdot 2 \cdot 3 \cdots n}{n \cdot n \cdot n \cdots n}
+              \\\\[6pt] &= \frac{1}{n} \left( \frac{2}{n} \cdot \frac{3}{n} \cdots \frac{n}{n} \right) \\\\[6pt] &\le
+              \frac{1}{n} (1) = \frac{1}{n} \end{align*} \]
+            </div>
+            <div class="border">
+              \[ \because \lim_{n \to \infty} 0 = 0 \quad \text{and} \quad \lim_{n \to \infty} \frac{1}{n} = 0 \] \[
+              \therefore \text{By Squeeze Theorem, } \lim_{n \to \infty} \frac{n!}{n^n} = 0 \]
+            </div>
+          </div>
+
+          <!--
+          <h3>Monotonic and Bounded Sequences</h3>
+          <div class="formula">
+            <p><strong>Definition of Monotonicity:</strong></p>
+            <ul>
+              <li>\( \{a_n\} \text{ is \textbf{nondecreasing} if } a_1 \le a_2 \le a_3 \cdots \le a_n \le \cdots \)</li>
+              <li>\( \{a_n\} \text{ is \textbf{nonincreasing} if } a_1 \ge a_2 \ge a_3 \cdots \ge a_n \ge \cdots \)</li>
+            </ul>
+            <hr />
+            <p><strong>Definition of Boundedness:</strong></p>
+            <ol>
+              <li>
+                <strong>Bounded Above:</strong> There exists a real number \( M \) such that \( a_n \le M \) for all \(
+                n \).
+              </li>
+              <li>
+                <strong>Bounded Below:</strong> There exists a real number \( N \) such that \( a_n \ge N \) for all \(
+                n \).
+              </li>
+              <li><strong>Bounded:</strong> A sequence that is bounded above and bounded below.</li>
+            </ol>
+          </div>
+          -->
+
+          <h3>Monotone Converge Theorem (MCT)</h3>
+          <div class="formula">
+            \[\text{If a sequence } \{a_n\} \text{ is a nodecreasing(increasing) sequence and is bounded above}\] \[
+            (a_n \le a_{n+1}, \, \forall n \in \mathbb{N})\]\[ \text{ then } \{a_n\} \text{ converges} \]
+            <br />
+            <h4 style="color: var(--muted)">** 若數列遞增且有上界, 則為遞增 **</h4>
+          </div>
+        </div>
       </section>
 
       <section class="card">
-        <h2 id="9.2">9.2 Series and Convergence</h2>
-        <div></div>
+        <h2 class="card-header" id="9.2">9.2 Series and Convergence</h2>
+        <div class="card-content">
+          <h3>無窮級數定義</h3>
+          <div class="formula wrap-text">
+            <p>
+              \( \textbf{Def} \quad \text{If } \{a_n\} \text{ is an infinite sequence, then the sum of its terms:} \)
+            </p>
+            \[ \sum_{n=1}^{\infty} a_n = a_1 + a_2 + a_3 + \dots + a_n + \dots \]
+            <p>\( \text{is an infinite series}. \text{ The nth partial sum is given by:} \)</p>
+            <div class="border">\[ S_n = a_1 + a_2 + \dots + a_n \]</div>
+            <p>
+              \( \text{If the sequence of partial sums } \{S_n\} \text{ converges to } S, \text{ the series converges}.
+              \) <br />
+              \( \text{If } \{S_n\} \text{ diverges, the series diverges}. \)
+            </p>
+          </div>
+
+          <h3>Geometric Series (幾何級數)</h3>
+          <div class="formula">
+            <p>\( \textbf{Def} \quad \text{A geometric series with ratio } r \text{ is of the form:} \)</p>
+            \[ \sum_{n=0}^{\infty} ar^n = a + ar + ar^2 + \dots, \quad a \neq 0 \]
+            <p>\( \textbf{Convergence of Geometric Series:} \)</p>
+            <div class="border">
+              \[ \begin{align*} &\text{1. If } |r| \lt 1, \text{ the series converges to } S = \frac{a}{1-r} \\\\[6pt]
+              &\text{2. If } |r| \ge 1, \text{ the series diverges.} \end{align*} \]
+            </div>
+          </div>
+
+          <div class="formula-dark">
+            <p>
+              \( \displaystyle \textbf{EX} \quad \text{Evaluate } \sum_{n=1}^{\infty} 3\left(\frac{1}{2}\right)^n \)
+            </p>
+            <div>
+              \[ \begin{align*} \text{First term } a &= 3\left(\frac{1}{2}\right)^1 = \frac{3}{2} \\[6pt] r &=
+              \frac{1}{2} \\[6pt] \because |r| \lt 1, \quad S &= \frac{3/2}{1 - 1/2} = \frac{3/2}{1/2} = 3 \end{align*}
+              \]
+            </div>
+          </div>
+
+          <h3>無窮級數的性質</h3>
+          <div class="formula">
+            <p>\( \text{If } \sum a_n = A \text{ and } \sum b_n = B \text{ are convergent series, then:} \)</p>
+            <div class="border">
+              \[ \begin{align*} &\sum_{n=1}^{\infty} ca_n = cA \\\\[6pt] &\sum_{n=1}^{\infty} (a_n \pm b_n) = A \pm B
+              \end{align*} \]
+            </div>
+          </div>
+
+          <h3>nth-Term Test(項測試法)</h3>
+          <div class="formula">
+            <p>
+              \( \displaystyle \textbf{Thm} \quad \text{If } \sum_{n=1}^{\infty} a_n \text{ converges, then } \lim_{n
+              \to \infty} a_n = 0. \)
+            </p>
+            <h4 style="color: var(--muted)">** 反過來不一定成立 **</h4>
+            <hr />
+            <p><strong>nth-Term Test for Divergence</strong></p>
+            <div class="border">
+              \[ \text{If } \lim_{n \to \infty} a_n \neq 0, \text{ then the series } \sum_{n=1}^{\infty} a_n \textbf{
+              diverges}. \]
+              <h4 style="color: var(--muted)">** 若$P$則$Q$ $\iff$ 若非$Q$則非$P$ **</h4>
+            </div>
+          </div>
+
+          <div class="formula-dark">
+            <p>
+              \( \displaystyle \textbf{EX} \quad \text{Does the series } \sum_{n=1}^{\infty} \frac{n}{2n+1} \text{
+              converge?} \)
+            </p>
+            <div>
+              \[ \begin{align*} \lim_{n \to \infty} a_n &= \lim_{n \to \infty} \frac{n}{2n+1} = \frac{1}{2} \\\\[6pt]
+              \because \lim_{n \to \infty} a_n &\neq 0, \quad \therefore \text{By nth-term test, series diverges.}
+              \end{align*} \]
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="card">
-        <h2 id="9.3">9.3 The Intergral Test and p-Series</h2>
-        <div></div>
+        <h2 class="card-header" id="9.3">9.3 The Intergral Test and p-Series</h2>
+        <div class="card-content">
+          <h3>The Integral Test (積分測試法)</h3>
+          <div class="formula">
+            <p>
+              \( \begin{align*} \textbf{Thm} \quad \text{If }& f \text{ is positive, continuous, and decreasing} \\[6pt]
+              &\text{ for } x \ge 1 \text{ and } a_n = f(n), \text{ then:} \end{align*} \)
+            </p>
+            <div class="border">\[ \sum_{n=1}^{\infty} a_n \text{ and } \int_1^{\infty} f(x) \, dx \]</div>
+            <p>\[ \text{Either both converge or both diverge.}\]</p>
+            <h4 style="color: var(--muted)">** \( \text{即 } f(x) \gt 0 \text{ and } f'(x) \lt 0 \) **</h4>
+          </div>
+          <div class="formula-dark wrap-text">
+            <p>
+              \( \displaystyle \textbf{EX} \quad \text{Determine the convergence of } \sum_{n=1}^{\infty}
+              \frac{n}{n^2+1} \)
+            </p>
+            <p>
+              \( \displaystyle \text{Let } f(x) = \frac{x}{x^2+1}. \text{ Since } f \text{ is positive, continuous, and
+              decreasing for } x \ge 1: \)
+            </p>
+            <div>
+              \[ \begin{align*}\int_1^{\infty} \frac{x}{x^2+1} , dx &= \lim_{b \to \infty} \int_1^b \frac{x}{x^2+1} , dx
+              \\[6pt]&= \lim_{b \to \infty} \left[ \frac{1}{2} \ln(x^2+1) \right]1^b \\[6pt] &= \frac{1}{2} \lim_{b \to
+              \infty} [ \ln(b^2+1) - \ln 2 ] = \infty\end{align*} \]
+            </div>
+            <h4 style="color: var(--muted)">\[ \text{** 由積分發散推得級數發散 **}\]</h4>
+          </div>
+          <h3>p-Series and Harmonic Series(p級數與調和級數)</h3>
+          <div class="formula">
+            <p>\( \textbf{Def} \quad \text{A series of the form:} \)</p>
+            $$ \sum_{n=1}^{\infty} \frac{1}{n^p} = \frac{1}{1^p} + \frac{1}{2^p} + \frac{1}{3^p} + \dots $$
+            <p>\[ \text{is called a p-series.} \]</p>
+            <div class="border">
+              \[ \begin{align*}&\text{ Conv. if } p \gt 1 \\[6pt]&\text{Div. if } 0 \lt p \le 1\end{align*} \]
+            </div>
+            <hr />
+            <p>\( \text{Special Case: } p=1 \text{ is the Harmonic Series} \sum \frac{1}{n}, \text{Div.} \)</p>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \displaystyle \textbf{EX} \quad \text{Determine convergence} \)</p>
+            <p>
+              \( \displaystyle \text{(a) } \sum_{n=1}^{\infty} \frac{1}{\sqrt{n}} \implies p = \frac{1}{2} \le 1 \quad
+              \therefore \textbf{Diverges} \)
+            </p>
+            <p>
+              \( \displaystyle \text{(b) } \sum_{n=1}^{\infty} \frac{1}{n^2} \implies p = 2 \gt 1 \quad \therefore
+              \textbf{Converges} \)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-header" id="9.4">9.4 Comparisons of Series</h2>
+        <div class="card-content">
+          <h3>Direct Comparison Test (C.T.)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{Let } 0 &lt; a_n \le b_n \text{ for all } n \)</p>
+            <div class="border">
+              <p>
+                \( \displaystyle \text{If } \sum_{n=1}^{\infty} b_n \text{ converges}, \text{ then } \sum_{n=1}^{\infty}
+                a_n \text{ converges} \)
+              </p>
+              <p>
+                \( \displaystyle \text{If } \sum_{n=1}^{\infty} a_n \text{ diverges}, \text{ then } \sum_{n=1}^{\infty}
+                b_n \text{ diverges} \)
+              </p>
+            </div>
+          </div>
+          <div class="formula-dark">
+            <div class="border">
+              \[ \because \sum_{n=1}^{\infty} \left(\frac{1}{3}\right)^n \text{ is a convergent geometric series } (|r|
+              &lt; 1) \]\[ \therefore \sum_{n=1}^{\infty} \frac{1}{2 + 3^n} \text{ converges by C.T.} \]
+            </div>
+            <p>
+              \( \displaystyle \textbf{EX} \quad \text{Determine the convergence of } \sum_{n=1}^{\infty} \frac{1}{2 +
+              3^n} \)
+            </p>
+            <p>\( \text{For } n \ge 1\)</p>
+            \[ 2 + 3^n \gt 3^n \]\[ \Rightarrow \frac{1}{2 + 3^n} \lt \frac{1}{3^n} \]
+            <hr />
+            <p>
+              \( \displaystyle \textbf{EX} \quad \text{Determine the convergence of } \sum_{n=3}^{\infty} \frac{\ln
+              n}{n}\)
+            </p>
+            <p>\( \text{For } n \ge 3 \)</p>
+            <div class="border">
+              \[\ln n \gt 1 \Rightarrow \frac{\ln n}{n} \gt \frac{1}{n}\] \[\begin{align*} \because \sum_{n=3}^{\infty}
+              \frac{1}{n} \text{ is a divergent harmonic series} \\[6pt] \therefore \text{By C.T. } \quad
+              \sum_{n=3}^{\infty} \frac{\ln n}{n} \textbf{diverges} \end{align*} \]
+            </div>
+          </div>
+
+          <h3>Limit Comparison Test (L.C.T.)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{Suppose} \quad a_n &gt; 0 \quad b_n &gt; 0, \text{ and } \)</p>
+            \[ \lim_{n \to \infty} \frac{a_n}{b_n} = L \]
+            <div class="border">
+              <p>
+                \( \text{If } 0 \lt L \lt \infty \text{ then:} \) \[\text{Both series} \sum{a_n} \text{ and } \sum{b_n}
+                \text{ either both conv. or both div.}\]
+              </p>
+            </div>
+          </div>
+          <div class="formula-dark">
+            <p>
+              \( \displaystyle \textbf{EX} \quad \text{Determine the convergence of } \sum_{n=1}^{\infty}
+              \frac{\sqrt{n}}{n^2 + 1} \)
+            </p>
+            <p>\( \displaystyle \text{Let } a_n = \frac{\sqrt{n}}{n^2 + 1} \quad b_n = \frac{1}{n^{3/2}} \)</p>
+            <div>
+              \[ \begin{align*}\lim_{n \to \infty} \frac{a_n}{b_n} &= \lim_{n \to \infty} \left( \frac{\sqrt{n}}{n^2 +
+              1} \cdot \frac{n^{3/2}}{1} \right) \\[6pt] &= \lim_{n \to \infty} \frac{n^2}{n^2 + 1} = 1\end{align*} \]
+            </div>
+            <div class="border">
+              \[ \because \sum \frac{1}{n^{3/2}} \text{ is a convergent p-series } (p = \frac{3}{2} \gt 1) \]\[
+              \therefore \text{By L.C.T.} \quad \sum_{n=1}^{\infty} \frac{\sqrt{n}}{n^2 + 1} \textbf{ conv.} \]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-header" id="9.5">9.5 Alternating Series</h2>
+        <div>
+          <h3>The Alternating Series Test(A.S.T) </h3>
+          <div class="formula">
+            <p>\( \text{Thm — The alternating series converges if the following two conditions are met:} \)</p>
+            <div class="border">
+              <p>\( \text{1. } \lim_{n \to \infty} a_n = 0 \)</p>
+              <p>\( \text{2. } a_{n+1} \le a_n \text{ for all } n \text{ (Monotonic decreasing).} \)</p>
+            </div>
+          </div>
+
+          <h3>3. Absolute and Conditional Convergence</h3>
+          <div class="formula">
+            <p>\( \text{For a series } \sum a_n: \)</p>
+            <ul>
+              <li>
+                <strong>Absolute Convergence:</strong>
+                \( \text{If } \sum |a_n| \text{ converges.} \)
+              </li>
+              <li>
+                <strong>Conditional Convergence:</strong>
+                \( \text{If } \sum a_n \text{ converges, but } \sum |a_n| \text{ diverges.} \)
+              </li>
+            </ul>
+            <div class="border">
+              <p>\( \text{Thm — If } \sum |a_n| \text{ converges, then } \sum a_n \text{ converges.} \)</p>
+            </div>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \displaystyle \text{EX — Classify } \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} \)</p>
+            <div>
+              \[ \begin{align*} &\text{1. By AST, the series converges.} \\ &\text{2. Check absolute values: } \sum
+              \left| \frac{(-1)^{n-1}}{n} \right| = \sum \frac{1}{n} \quad (\text{Divergent harmonic series})
+              \end{align*} \]
+            </div>
+            <div class="border">\[ \therefore \text{The series is conditionally convergent.} \]</div>
+          </div>
+
+          <h3>4. Alternating Series Remainder</h3>
+          <div class="formula">
+            <p>
+              \( \text{If an alternating series converges to } S, \text{ the remainder } |R_n| = |S - S_n| \text{
+              satisfies:} \)
+            </p>
+            <div class="border">\[ |R_n| \le a_{n+1} \]</div>
+            <p>\( \text{The error is no greater than the first neglected term.} \)</p>
+          </div>
+        </div>
       </section>
     </main>
 
