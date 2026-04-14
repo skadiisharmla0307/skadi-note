@@ -69,6 +69,7 @@
                 <li><a class="dropdown-item" href="#5.7">5.7 反三角函數的微分</a></li>
                 <li><a class="dropdown-item" href="#5.8">5.8 反三角函數的積分</a></li>
                 <li><a class="dropdown-item" href="#5.9">5.9 雙曲線函數</a></li>
+                <li class="dropdown-header">- CH8 Integration Techniques and Improper Integral -</li>
                 <li><a class="dropdown-item" href="#8.1">8.1 基本積分規則</a></li>
                 <li><a class="dropdown-item" href="#8.2">8.2 分部積分</a></li>
                 <li><a class="dropdown-item" href="#8.3">8.3 三角函數的積分</a></li>
@@ -81,6 +82,11 @@
                 <li><a class="dropdown-item" href="#9.3">9.3 積分判別法與p-級數</a></li>
                 <li><a class="dropdown-item" href="#9.4">9.4 級數比較法</a></li>
                 <li><a class="dropdown-item" href="#9.5">9.5 交錯級數</a></li>
+              <li><a class="dropdown-item" href="#9.6">9.6 比值審斂法與根值審斂法</a></li>
+              <li><a class="dropdown-item" href="#9.7">9.7 泰勒多項式及其近似</a></li>
+              <li><a class="dropdown-item" href="#9.8">9.8 冪級數</a></li>
+              <li><a class="dropdown-item" href="#9.9">9.9 冪級數表示函數</a></li>
+              <li><a class="dropdown-item" href="#9.10">9.10 泰勒與麥克勞林級數</a></li>
               </ul>
             </li>
 
@@ -2018,8 +2024,8 @@
       </section>
 
       <section class="card">
-        <h2 id="9.1">9.1 Sequences</h2>
-        <div>
+        <h2 class="card-header" id="9.1">9.1 Sequences</h2>
+        <div class="card-content">
           <h3>數列極限定義</h3>
           <div class="formula">
             <p>
@@ -2308,8 +2314,8 @@
 
       <section class="card">
         <h2 class="card-header" id="9.5">9.5 Alternating Series</h2>
-        <div>
-          <h3>The Alternating Series Test(A.S.T) </h3>
+        <div class=card-content>
+          <h3>The Alternating Series Test(A.S.T)</h3>
           <div class="formula">
             <p>\( \text{Thm — The alternating series converges if the following two conditions are met:} \)</p>
             <div class="border">
@@ -2354,6 +2360,148 @@
             </p>
             <div class="border">\[ |R_n| \le a_{n+1} \]</div>
             <p>\( \text{The error is no greater than the first neglected term.} \)</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class=card-header id=9.6>9.6 The Ratio and Root Tests</h2>
+        <div class=card-content>
+          <h3>The Ratio Test (比值審斂法)</h3>
+          <div class="formula">
+            \( \textbf{Thm} \quad \text{Let } \sum a_n \text{ be a series with nonzero terms.} \) \[ \text{Let } \lim_{n
+            \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = r \] \[ \begin{align*} &\text{If } r \lt 1, \text{ the
+            series converges absolutely.} \\[6pt] &\text{If } r \gt 1 \text{ or } r = \infty, \text{ the series
+            diverges.} \\[6pt] &\text{If } r = 1, \text{ the test is inconclusive.} \end{align*} \]
+            <h4 style="color: var(--muted)">** 常用於含階乘 (n!) 或指數項 (a<sup>n</sup>) 的級數 **</h4>
+          </div>
+          <h3>The Root Test (根值審斂法)</h3>
+          <div class="formula">
+            \( \textbf{Thm} \quad \text{Let } \sum a_n \text{ be a series.} \) \[ \text{Let } \lim_{n \to \infty}
+            \sqrt[n]{|a_n|} = r \] \[ \begin{align*} &\text{If } r \lt 1, \text{ the series converges absolutely.}
+            \\[6pt] &\text{If } r \gt 1 \text{ or } r = \infty, \text{ the series diverges.} \\[6pt] &\text{If } r = 1,
+            \text{ the test is inconclusive.} \end{align*} \]
+          </div>
+        </div>
+      </section>
+      
+      <section class="card">
+        <h2 class=card-header id=9.7>9.7 Taylor Polynomials and Approximations</h2>
+        <div class=card-content>
+          <h3>Taylor Polynomials (泰勒多項式)</h3>
+          <div class="formula">
+            \( \textbf{Def} \quad \text{If } f \text{ has } n \text{ derivatives at } c, \text{ then the nth Taylor
+            polynomial for } f \text{ at } c \text{ is:} \) \[ P_n(x) = f(c) + f'(c)(x-c) + \frac{f''(c)}{2!}(x-c)^2 +
+            \dots + \frac{f^{(n)}(c)}{n!}(x-c)^n \]
+            <h4 style="color: var(--muted)">** 若中心點 ( c = 0 ), 則稱為麥克勞林多項式 (Maclaurin Polynomial) **</h4>
+          </div>
+          <h3>Taylor's Theorem & Remainder (泰勒定理與餘項)</h3>
+          <div class="formula">
+            \( \textbf{Thm} \quad \text{若 } f(x) = P_n(x) + R_n(x), \text{ 則餘項的拉格朗日形式為：} \) \[ R_n(x) =
+            \frac{f^{(n+1)}(z)}{(n+1)!}(x-c)^{n+1} \] \( \text{其中 } z \text{ 介於 } x \text{ 與 } c \text{ 之間。} \)
+          </div>
+        </div>
+      </section>
+      
+      <section class="card">
+        <h2 class=card-header id=9.8>9.8 Power Series</h2>
+        <div class=card-content><h3>冪級數定義</h3><div class="formula">
+          \( \textbf{Def} \quad \text{以 } c \text{ 為中心的冪級數形式為：} \) \[ \sum_{n=0}^{\infty} a_n(x-c)^n = a_0 +
+          a_1(x-c) + a_2(x-c)^2 + \dots \]
+        </div>
+        <h3>收斂半徑與區間 (Radius and Interval of Convergence)</h3>
+        <div class="formula">
+          \( \textbf{Thm} \quad \text{對於冪級數，其收斂情形必為下列之一：} \) \[ 僅在中心點收斂：收斂半徑 ( R = 0 )。\]
+          \[在有限區間內收斂：存在 ( R \gt 0 )，使得當 ( |x-c| \lt R ) 時絕對收斂。\] \[在全體實數收斂：收斂半徑 ( R =
+          \infty )。\]
+        </div>
+        <h3>冪級數的微分與積分</h3>
+        <div class="formula">
+          \( \textbf{Thm} \quad \text{在收斂區間內，冪級數可逐項微分與積分：} \) \[ \begin{align*} f'(x) &=
+          \sum_{n=1}^{\infty} n \, a_n (x-c)^{n-1} \\[6pt] \int f(x) \, dx &= C + \sum_{n=0}^{\infty} a_n
+          \frac{(x-c)^{n+1}}{n+1} \end{align*} \]
+        </div>
+        </div>
+      </section>
+      
+      <section class="card">
+        <h2 class=card-header id=9.9>9.9 Representation of Functions by Power Series</h2>
+        <div class=card-content>
+          <h3>幾何冪級數 (Geometric Power Series)</h3>
+          <div class="formula">\[ \frac{a}{1-r} = \sum_{n=0}^{\infty} ar^n, \quad |r| \lt 1 \]</div>
+          <div class="formula-dark">
+            \( \displaystyle \textbf{EX} \quad \text{Find a series for } f(x) = \frac{1}{1-x} \text{ centered at 0:} \)
+            \[ \frac{1}{1-x} = 1 + x + x^2 + x^3 + \dots = \sum_{n=0}^{\infty} x^n, \quad |x| \lt 1 \]
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class=card-header id=9.10>9.10 Taylor and Maclaurin Series</h2>
+        <div class=card-content>
+          <h3>Taylor Series</h3>
+          <div class="formula">
+            \( \textbf{Def} \quad \text{若函數 } f \text{ 在 } c \text{ 處具有各階導數，其級數展開為：} \) \[ f(x) =
+            \sum_{n=0}^{\infty} \frac{f^{(n)}(c)}{n!}(x-c)^n \]
+          </div>
+          <h3>Maclaurin series of common basic functions</h3>
+          <div style="overflow: auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>函數</th>
+                  <th>麥克勞林級數展開式</th>
+                  <th>收斂區間</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\[ e^x \]</td>
+                  <td>\[ \displaystyle \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \dots \]</td>
+                  <td>\[ (-\infty, \infty) \]</td>
+                </tr>
+                <tr>
+                  <td>\[ \sin x \]</td>
+                  <td>
+                    \[ \displaystyle \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \dots \]
+                  </td>
+                  <td>\[ (-\infty, \infty) \]</td>
+                </tr>
+                <tr>
+                  <td>\[ \cos x \]</td>
+                  <td>
+                    \[ \displaystyle \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \dots \]
+                  </td>
+                  <td>\[ (-\infty, \infty) \]</td>
+                </tr>
+                <tr>
+                  <td>\[ \frac{1}{1-x} \]</td>
+                  <td>\[ \displaystyle \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + \dots \]</td>
+                  <td>\[ (-1, 1) \]</td>
+                </tr>
+                <tr>
+                  <td>\[ \ln(x+1) \]</td>
+                  <td>
+                    \[ \displaystyle \sum_{n=1}^{\infty} \frac{(-1)^{n-1} x^n}{n} = x - \frac{x^2}{2} + \frac{x^3}{3} -
+                    \dots \]
+                  </td>
+                  <td>\[ (-1, 1] \]</td>
+                </tr>
+                <tr>
+                  <td>\[ \arctan x \]</td>
+                  <td>
+                    \[ \displaystyle \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{2n+1} = x - \frac{x^3}{3} +
+                    \frac{x^5}{5} - \dots \]
+                  </td>
+                  <td>\[ [-1, 1] \]</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3"></td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
         </div>
       </section>
