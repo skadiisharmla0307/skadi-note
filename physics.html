@@ -75,6 +75,9 @@
                                 <li><a class="dropdown-item" href="#23.4">23.4 均勻靜電場中電荷的移動</a></li>
                                 <li><a class="dropdown-item" href="#23.5">23.5 連續電荷分布</a></li>
                                 <li><a class="dropdown-item" href="#23.6">23.6 電偶極</a></li>
+                                <li><a class="dropdown-item" href="#24">CH24 高斯定理</a></li>
+                                <li><a class="dropdown-item" href="#25">CH25 電位</a></li>
+                                <li><a class="dropdown-item" href="#26">CH26 電容器與介電質</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -176,9 +179,9 @@
             </section>
 
             <section class="card">
-                <h2>23.3 電場與導體</h2>
-                <div>
-                    <p>(待補充)</p>
+                <h2 class="card-header" id="23.3">23.3 電場與導體</h2>
+                <div class="card-content">
+                    <p>靜電平衡條件下，導體表面上各點的電場均垂直其表面</p>
                 </div>
             </section>
 
@@ -706,194 +709,207 @@
                 </div>
             </section>
             <section class="card">
-                <h2>CH24 高斯定理</h2>
-                <h3>24.1 電通量 (Electric Flux)</h3>
-                <p>
-                    <b>電通量 $\Phi_E$</b> 定義為穿過已知表面的電力線數目。在強度為 $E$ 的均勻電場中，通過面積為 $A$
-                    的平面的電通量為
-                </p>
-                <div class="formula">\[ \Phi_E = E \cdot A = EA \cos \theta \]</div>
-                <p>其中 $\theta$ 是面積法向量 $A$ 與電場 $E$ 的夾角。若表面不平整或電場不均勻，則需使用積分定義：</p>
-                <div class="formula">\[ \Phi_E = \int E \cdot dA \]</div>
-                <h3>24.2 高斯定律 (Gauss's Law)</h3>
-                <p>
-                    對一帶正電電荷，做一假想球面，其半徑為$r$且以電荷位置作為球心。由電通量與球面公式推得通過此高斯球面的總電通量為
-                </p>
-                <div class="formula">\[ \Phi_E = \oint E \cdot dA = E \oint \, dA = E(4\pi r^2) \]</div>
-                <p>
-                    因電場$E$在整個表面皆為常數，故可從積分式提出。而面的積分化簡為圓表面積$4\pi
-                    r^2$。再代入庫侖定律以及$k=\frac{1}{4\pi\varepsilon_0}$
-                </p>
-                <div class="formula">\[ \oint E \cdot dA = E(4\pi r^2) = 4\pi kQ = \frac{Q}{\epsilon_0} \]</div>
-                <p>
-                    得出通過任一封閉高斯面的<b>淨電通量</b>，等於該面所包圍之淨電荷 $Q$ 的 $\frac{1}{\varepsilon_0}$ 倍
-                </p>
-                <div class="formula">\[ \oint \mathbf{E} \cdot d\mathbf{A} = \frac{Q}{\epsilon_0} \]</div>
-                <h4>常見對稱分布的電場：</h4>
-                <div class="formula-dark">
+                <h2 class="card-header" id="24">CH24 高斯定理</h2>
+                <div class="card-content">
+                    <h3>24.1 電通量 (Electric Flux)</h3>
+                    <p>
+                        <b>電通量 $\Phi_E$</b> 定義為穿過已知表面的電力線數目。在強度為 $E$ 的均勻電場中，通過面積為 $A$
+                        的平面的電通量為
+                    </p>
+                    <div class="formula">\[ \Phi_E = E \cdot A = EA \cos \theta \]</div>
+                    <p>
+                        其中 $\theta$ 是面積法向量 $A$ 與電場 $E$ 的夾角。若表面不平整或電場不均勻，則需使用積分定義：
+                    </p>
+                    <div class="formula">\[ \Phi_E = \int E \cdot dA \]</div>
+                    <h3>24.2 高斯定律 (Gauss's Law)</h3>
+                    <p>
+                        對一帶正電電荷，做一假想球面，其半徑為$r$且以電荷位置作為球心。由電通量與球面公式推得通過此高斯球面的總電通量為
+                    </p>
+                    <div class="formula">\[ \Phi_E = \oint E \cdot dA = E \oint \, dA = E(4\pi r^2) \]</div>
+                    <p>
+                        因電場$E$在整個表面皆為常數，故可從積分式提出。而面的積分化簡為圓表面積$4\pi
+                        r^2$。再代入庫侖定律以及$k=\frac{1}{4\pi\varepsilon_0}$
+                    </p>
+                    <div class="formula">\[ \oint E \cdot dA = E(4\pi r^2) = 4\pi kQ = \frac{Q}{\epsilon_0} \]</div>
+                    <p>
+                        得出通過任一封閉高斯面的<b>淨電通量</b>，等於該面所包圍之淨電荷 $Q$ 的 $\frac{1}{\varepsilon_0}$
+                        倍
+                    </p>
+                    <div class="formula">\[ \oint \mathbf{E} \cdot d\mathbf{A} = \frac{Q}{\epsilon_0} \]</div>
+                    <h4>常見對稱分布的電場：</h4>
+                    <div class="formula-dark">
+                        <ul>
+                            <li><b>球殼外部 ($r \gt R$)</b>：$E = \frac{kQ}{r^2}$，表現如同點電荷位於球心。</li>
+                            <li><b>球殼內部 ($r \lt R$)</b>：由於內部包圍電荷為零，故 $E = 0$。</li>
+                            <li><b>均勻荷電球體內部 ($r \lt R$)</b>：$E = \frac{kQr}{R^3}$，電場隨半徑線性增加。</li>
+                            <li><b>無限長荷電直線</b>：$E = \frac{2k\lambda}{r}$。</li>
+                            <li><b>無限大平板</b>：$E = \frac{\sigma}{2\epsilon_0}$。</li>
+                        </ul>
+                    </div>
+
+                    <h3>24.3 導體 (Conductors)</h3>
+
+                    <p>處於<b>靜電平衡</b>的導體具備以下重要物理特性：</p>
                     <ul>
-                        <li><b>球殼外部 ($r \gt R$)</b>：$E = \frac{kQ}{r^2}$，表現如同點電荷位於球心。</li>
-                        <li><b>球殼內部 ($r \lt R$)</b>：由於內部包圍電荷為零，故 $E = 0$。</li>
-                        <li><b>均勻荷電球體內部 ($r \lt R$)</b>：$E = \frac{kQr}{R^3}$，電場隨半徑線性增加。</li>
-                        <li><b>無限長荷電直線</b>：$E = \frac{2k\lambda}{r}$。</li>
-                        <li><b>無限大平板</b>：$E = \frac{\sigma}{2\epsilon_0}$。</li>
+                        <li>導體物質內部各處電場 $E = 0$</li>
+                        <li>任何淨電荷皆分布於導體表面。</li>
+                        <li>導體表面外側的電場必垂直於表面，其強度為 $E = \frac{\sigma}{\varepsilon_0}$</li>
+                        <li>在曲率半徑較小的尖端區域，面電荷密度與電場強度較大</li>
                     </ul>
                 </div>
-
-                <h3>24.3 導體 (Conductors)</h3>
-
-                <p>處於<b>靜電平衡</b>的導體具備以下重要物理特性：</p>
-                <ul>
-                    <li>導體物質內部各處電場 $E = 0$</li>
-                    <li>任何淨電荷皆分布於導體表面。</li>
-                    <li>導體表面外側的電場必垂直於表面，其強度為 $E = \frac{\sigma}{\varepsilon_0}$</li>
-                    <li>在曲率半徑較小的尖端區域，面電荷密度與電場強度較大</li>
-                </ul>
             </section>
-            <section class="card">
-                <h2>CH25 電位</h2>
-                <p>電場強度描述的是每單位電荷受到的力，而<b>電位</b>描述的是空間中每單位電荷的位能</p>
 
-                <h3>25.1 電位定義 (Electric Potential)</h3>
-                <p>兩點間的電位變化量 $\Delta V$ 定義為單位電荷的靜電位能改變量</p>
-                <div class="formula">
-                    \[ \Delta V = \frac{\Delta U}{q} \]
-                    <h4 style="color: var(--muted)">** 單位為<b>伏特 (V)</b>，即 $1 V = 1 J/C$ **</h4>
-                </div>
-                <p>而$\Delta V$僅與場源電荷建立的電場有關, 而與測試電荷無關</p>
-                <h3>25.2 均勻電場中的電位與電位能</h3>
-                <p>在均勻電場中，因電場$E$為常數，電位差可表示為</p>
-                <div class="formula">
-                    \[ \Delta V = \int \mathbf{E} \cdot d\mathbf{s} = \mathbf{E} \cdot \int \, d\mathbf{s} = -\mathbf{E}
-                    \cdot \Delta \mathbf{s} = \pm Ed \]
-                    <h4 style="color: var(--muted)">
-                        ** $\Delta \mathbf{s}$ 與 $\Delta V$ 僅與起始終止位置有關，而與路徑無關 **<br />
-                        ** $\pm Ed$ 是與 $\mathbf{E}$ 平行之位移分量**
-                    </h4>
-                </div>
-                <p>此處$d$為沿著/逆著電場之位移分量大小。而透過上式可得電場的對等單位</p>
-                <div class="formula">\[ 1 \, V/m = 1 \, N/C \]</div>
-                <hr />
-                <p>
-                    <b>等位面(Equipotentials)</b>：在等位面上移動電荷不需作功($\Delta V =
-                    0$)，電力線永遠垂直於等位面，並指向電位較低之處。
-                </p>
-                <h3>25.3 點電荷與多電荷系統</h3>
-                <p>對於點電荷$Q$附近的電位變化, 其電場為</p>
-                <div class="formula">\[ \mathbf{E} = E_r\,\hat{\mathbf{r}} = \frac{kQ}{r^2}\,\hat{\mathbf{r}} \]</div>
-                <p>於其他位置任選A、B兩點，使用$\Delta V = \int \mathbf{E} \cdot d\mathbf{s}$ 做轉換</p>
-                <div class="formula">
-                    \[ \begin{align*} \Delta V &= V_B - V_A \\[6pt] &= - \int_A^B E_r \, dr \\[6pt] &= -
-                    \left[-\frac{kQ}{r}\right]_A^B \\[6pt] &= kQ\left( \frac{1}{r_B} - \frac{1}{r_A} \right)\end{align*}
-                    \]
-                </div>
-                <p>對於距離點電荷 $Q$ 為 $r$ 處的電位（設 $r = \infty$ 為零位點）則為</p>
-                <div class="formula">\[ V = \frac{kQ}{r} \]</div>
-                <p>多個點電荷系統的總電位即為各電荷產生的電位代數和</p>
-                <div class="formula">\[V = \sum \frac{kQ_i}{r_i}\]</div>
-                <hr />
-                <p>在電位為$V$的地方放置一電荷$q$，其系統所擁有的<b>電位能</b>為</p>
-                <div class="formula">\[ U = qV \]</div>
-                <p>若場源電荷為$Q$，則</p>
-                <div class="formula">\[ U = qV = \frac{kqQ}{r} \]</div>
-                <p>
-                    當要計算<b>多電荷系統</b>的總位能時，需兩兩電荷計算一次電位能。即系統總電位能等於所有個別電位能之代數和
-                </p>
-                <div class="formula">\[ U_{ij} = \frac{kq_iq_j}{r_{ij}} \]</div>
-                <h3>25.4 由電位求電場</h3>
-                <p>電場為電位之負梯度，在某位移方向的分量為：</p>
-                <div class="formula">\[ E_s = -\frac{dV}{ds} \]</div>
-                <p>
-                    在直角坐標系中，電場 $\mathbf{E} = \mathbf{E}_x\mathbf{i} + \mathbf{E}_y\mathbf{j} +
-                    \mathbf{E}_z\mathbf{k}$<br />
-                    ，其極小位移 $d\mathbf{s} = dx\mathbf{i} + dy\mathbf{j} + dz\mathbf{k} $。故
-                </p>
-                <div class="formula">\[dV = -\mathbf{E}\cdot d\mathbf{s} = -(E_x\,dx + E_y\,dy + E_z\,dz) \]</div>
-                <p>
-                    對於 $E$
-                    在不同方向分量的計算，只針對所有分量的其中一個分量作為變數，而將其餘視為常數，此計算稱為偏導數，以符號
-                    $\partial$ 代替 $d$
-                </p>
-                <div class="formula">
-                    \[ \mathbf{E} = -\frac{\partial V}{\partial x}\mathbf{i} -\frac{\partial V}{\partial y}\mathbf{j}
-                    -\frac{\partial V}{\partial z}\mathbf{k} \]
+            <section class="card">
+                <h2 class="card-header" id="25">CH25 電位</h2>
+                <div class="card-content">
+                    <p>電場強度描述的是每單位電荷受到的力，而<b>電位</b>描述的是空間中每單位電荷的位能</p>
+
+                    <h3>25.1 電位定義 (Electric Potential)</h3>
+                    <p>兩點間的電位變化量 $\Delta V$ 定義為單位電荷的靜電位能改變量</p>
+                    <div class="formula">
+                        \[ \Delta V = \frac{\Delta U}{q} \]
+                        <h4 style="color: var(--muted)">** 單位為<b>伏特 (V)</b>，即 $1 V = 1 J/C$ **</h4>
+                    </div>
+                    <p>而$\Delta V$僅與場源電荷建立的電場有關, 而與測試電荷無關</p>
+                    <h3>25.2 均勻電場中的電位與電位能</h3>
+                    <p>在均勻電場中，因電場$E$為常數，電位差可表示為</p>
+                    <div class="formula">
+                        \[ \Delta V = \int \mathbf{E} \cdot d\mathbf{s} = \mathbf{E} \cdot \int \, d\mathbf{s} =
+                        -\mathbf{E} \cdot \Delta \mathbf{s} = \pm Ed \]
+                        <h4 style="color: var(--muted)">
+                            ** $\Delta \mathbf{s}$ 與 $\Delta V$ 僅與起始終止位置有關，而與路徑無關 **<br />
+                            ** $\pm Ed$ 是與 $\mathbf{E}$ 平行之位移分量**
+                        </h4>
+                    </div>
+                    <p>此處$d$為沿著/逆著電場之位移分量大小。而透過上式可得電場的對等單位</p>
+                    <div class="formula">\[ 1 \, V/m = 1 \, N/C \]</div>
+                    <hr />
+                    <p>
+                        <b>等位面(Equipotentials)</b>：在等位面上移動電荷不需作功($\Delta V =
+                        0$)，電力線永遠垂直於等位面，並指向電位較低之處。
+                    </p>
+                    <h3>25.3 點電荷與多電荷系統</h3>
+                    <p>對於點電荷$Q$附近的電位變化, 其電場為</p>
+                    <div class="formula">
+                        \[ \mathbf{E} = E_r\,\hat{\mathbf{r}} = \frac{kQ}{r^2}\,\hat{\mathbf{r}} \]
+                    </div>
+                    <p>於其他位置任選A、B兩點，使用$\Delta V = \int \mathbf{E} \cdot d\mathbf{s}$ 做轉換</p>
+                    <div class="formula">
+                        \[ \begin{align*} \Delta V &= V_B - V_A \\[6pt] &= - \int_A^B E_r \, dr \\[6pt] &= -
+                        \left[-\frac{kQ}{r}\right]_A^B \\[6pt] &= kQ\left( \frac{1}{r_B} - \frac{1}{r_A}
+                        \right)\end{align*} \]
+                    </div>
+                    <p>對於距離點電荷 $Q$ 為 $r$ 處的電位（設 $r = \infty$ 為零位點）則為</p>
+                    <div class="formula">\[ V = \frac{kQ}{r} \]</div>
+                    <p>多個點電荷系統的總電位即為各電荷產生的電位代數和</p>
+                    <div class="formula">\[V = \sum \frac{kQ_i}{r_i}\]</div>
+                    <hr />
+                    <p>在電位為$V$的地方放置一電荷$q$，其系統所擁有的<b>電位能</b>為</p>
+                    <div class="formula">\[ U = qV \]</div>
+                    <p>若場源電荷為$Q$，則</p>
+                    <div class="formula">\[ U = qV = \frac{kqQ}{r} \]</div>
+                    <p>
+                        當要計算<b>多電荷系統</b>的總位能時，需兩兩電荷計算一次電位能。即系統總電位能等於所有個別電位能之代數和
+                    </p>
+                    <div class="formula">\[ U_{ij} = \frac{kq_iq_j}{r_{ij}} \]</div>
+                    <h3>25.4 由電位求電場</h3>
+                    <p>電場為電位之負梯度，在某位移方向的分量為：</p>
+                    <div class="formula">\[ E_s = -\frac{dV}{ds} \]</div>
+                    <p>
+                        在直角坐標系中，電場 $\mathbf{E} = \mathbf{E}_x\mathbf{i} + \mathbf{E}_y\mathbf{j} +
+                        \mathbf{E}_z\mathbf{k}$<br />
+                        ，其極小位移 $d\mathbf{s} = dx\mathbf{i} + dy\mathbf{j} + dz\mathbf{k} $。故
+                    </p>
+                    <div class="formula">\[dV = -\mathbf{E}\cdot d\mathbf{s} = -(E_x\,dx + E_y\,dy + E_z\,dz) \]</div>
+                    <p>
+                        對於 $E$
+                        在不同方向分量的計算，只針對所有分量的其中一個分量作為變數，而將其餘視為常數，此計算稱為偏導數，以符號
+                        $\partial$ 代替 $d$
+                    </p>
+                    <div class="formula">
+                        \[ \mathbf{E} = -\frac{\partial V}{\partial x}\mathbf{i} -\frac{\partial V}{\partial
+                        y}\mathbf{j} -\frac{\partial V}{\partial z}\mathbf{k} \]
+                    </div>
                 </div>
             </section>
+
             <section class="card">
-                <h2>CH26 電容器與介電質</h2>
-                <h3>26.1 電容(Capacitance)</h3>
-                <p>
-                    電容器是儲存電荷與能量的裝置，由兩塊導體板組成。而<b>電容 $C$</b> 定義為<b
-                        >每一單位電位差所能儲存的電荷數</b
-                    >
-                </p>
-                <div class="formula">
-                    \[ C = \frac{Q}{V} \]
+                <h2 class="card-header" id="26">CH26 電容器與介電質</h2>
+                <div class="card-content">
+                    <h3>26.1 電容(Capacitance)</h3>
+                    <p>
+                        電容器是儲存電荷與能量的裝置，由兩塊導體板組成。而<b>電容 $C$</b> 定義為<b
+                            >每一單位電位差所能儲存的電荷數</b
+                        >
+                    </p>
+                    <div class="formula">
+                        \[ C = \frac{Q}{V} \]
 
-                    <h4 style="color: var(--muted)">** 其單位為法拉(F)，得$1F = 1 C/V $**</h4>
-                </div>
-                <p>而電容器的電容量與其幾何形狀及之間介質有關</p>
-                <hr />
-                <h4>平行板電容器</h4>
-                <p>
-                    由兩塊平板組成的電容，平板面積為 $A$ ，其板間距離為 $d$
-                    ，且距離小到可忽略電場邊緣效應。若兩板各帶有相反電性的等量電荷 $Q$ ，則其電場大小
-                </p>
-                <div class="formula">
-                    \[ E = \frac{\sigma}{\varepsilon_0} = \frac{Q}{\varepsilon_0 A} \]
-                    <h4 style="color: var(--muted)">** 其中$\sigma = Q/A$為面電荷密度 **</h4>
-                </div>
-                <p>而藉由均勻電場的電位差 $V = Ed$，可求得電容值 $C$</p>
-                <div class="formula">\[ C = \frac{\varepsilon_0 A}{d} \]</div>
-                <p>藉由上式得知 $\varepsilon_0$ 的另一單位表示法為 $ F/m $</p>
-                <div class="formula">\[ \varepsilon_0 = 8.85 \times 10^{-12} F/m(N\cdot m^2/C^2) \]</div>
-                <h3>26.2 電容器的組合</h3>
-                <ul>
-                    <li>
-                        <b>並聯 (Parallel)</b>：各電容器電位差相等，總電荷為和。等效電容 $\displaystyle C_{eq} = C_1 +
-                        C_2 + \dots$
-                    </li>
-                    <li>
-                        <b>串聯 (Series)</b>：各電容器電荷量相等，總電位差為和。等效電容 $ \displaystyle
-                        \frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots$
-                    </li>
-                </ul>
-                <h3>26.3 儲存能量與能量密度</h3>
-                <p>電容器儲存的能量以電位能 $U_E$ 形式儲存，等於充電過程作功的總和</p>
-                <div class="formula">
-                    \[ U_E = \frac{1}{2}QV = \frac{Q^2}{2C} = \frac{1}{2}CV^2 \]
-                    <h4 style="color: var(--muted)">** 利用 $Q=CV$ 代換 **</h4>
-                </div>
-                <h3>26.4 電場的能量密度</h3>
-                <p>
-                    考慮電容器所儲存的能量，已知平行板電容器的電容值為 $C$，平板之間電位差為 $V$，所儲存之能量為
-                    $U_E$，則可改寫為
-                </p>
-                <div class="formula">
-                    \[ U_E = \frac{1}{2}CV^2 = \frac{1}{2}\frac{\varepsilon_0A}{d}(Ed)^2 =
-                    \frac{1}{2}\varepsilon_0E^2(Ad) \]
-                </div>
-                <p>因電場所在之平板間體積為$Ad$，可得空間中電場的<b>能量密度 $\mu_E$</b>（每單位體積能量）為</p>
-                <div class="formula">\[ \mu_E = \frac{1}{2}\varepsilon_0 E^2 \]</div>
+                        <h4 style="color: var(--muted)">** 其單位為法拉(F)，得$1F = 1 C/V $**</h4>
+                    </div>
+                    <p>而電容器的電容量與其幾何形狀及之間介質有關</p>
+                    <hr />
+                    <h4>平行板電容器</h4>
+                    <p>
+                        由兩塊平板組成的電容，平板面積為 $A$ ，其板間距離為 $d$
+                        ，且距離小到可忽略電場邊緣效應。若兩板各帶有相反電性的等量電荷 $Q$ ，則其電場大小
+                    </p>
+                    <div class="formula">
+                        \[ E = \frac{\sigma}{\varepsilon_0} = \frac{Q}{\varepsilon_0 A} \]
+                        <h4 style="color: var(--muted)">** 其中$\sigma = Q/A$為面電荷密度 **</h4>
+                    </div>
+                    <p>而藉由均勻電場的電位差 $V = Ed$，可求得電容值 $C$</p>
+                    <div class="formula">\[ C = \frac{\varepsilon_0 A}{d} \]</div>
+                    <p>藉由上式得知 $\varepsilon_0$ 的另一單位表示法為 $ F/m $</p>
+                    <div class="formula">\[ \varepsilon_0 = 8.85 \times 10^{-12} F/m(N\cdot m^2/C^2) \]</div>
+                    <h3>26.2 電容器的組合</h3>
+                    <ul>
+                        <li>
+                            <b>並聯 (Parallel)</b>：各電容器電位差相等，總電荷為和。等效電容 $\displaystyle C_{eq} = C_1
+                            + C_2 + \dots$
+                        </li>
+                        <li>
+                            <b>串聯 (Series)</b>：各電容器電荷量相等，總電位差為和。等效電容 $ \displaystyle
+                            \frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots$
+                        </li>
+                    </ul>
+                    <h3>26.3 儲存能量與能量密度</h3>
+                    <p>電容器儲存的能量以電位能 $U_E$ 形式儲存，等於充電過程作功的總和</p>
+                    <div class="formula">
+                        \[ U_E = \frac{1}{2}QV = \frac{Q^2}{2C} = \frac{1}{2}CV^2 \]
+                        <h4 style="color: var(--muted)">** 利用 $Q=CV$ 代換 **</h4>
+                    </div>
+                    <h3>26.4 電場的能量密度</h3>
+                    <p>
+                        考慮電容器所儲存的能量，已知平行板電容器的電容值為 $C$，平板之間電位差為 $V$，所儲存之能量為
+                        $U_E$，則可改寫為
+                    </p>
+                    <div class="formula">
+                        \[ U_E = \frac{1}{2}CV^2 = \frac{1}{2}\frac{\varepsilon_0A}{d}(Ed)^2 =
+                        \frac{1}{2}\varepsilon_0E^2(Ad) \]
+                    </div>
+                    <p>因電場所在之平板間體積為$Ad$，可得空間中電場的<b>能量密度 $\mu_E$</b>（每單位體積能量）為</p>
+                    <div class="formula">\[ \mu_E = \frac{1}{2}\varepsilon_0 E^2 \]</div>
 
-                <h3>26.5 介電質的效應 (Dielectrics)</h3>
-                <p>在板間插入介電常數為 $\kappa$ 的絕緣物質（介電質），會導致：</p>
-                <ol>
-                    <li>電容量增加：$C_D = \kappa C_0$</li>
-                    <li>若電荷固定，電位差與內部電場均減少為 $1/\kappa$ 倍：$E_D = E_0 / \kappa$</li>
-                </ol>
+                    <h3>26.5 介電質的效應 (Dielectrics)</h3>
+                    <p>在板間插入介電常數為 $\kappa$ 的絕緣物質（介電質），會導致：</p>
+                    <ol>
+                        <li>電容量增加：$C_D = \kappa C_0$</li>
+                        <li>若電荷固定，電位差與內部電場均減少為 $1/\kappa$ 倍：$E_D = E_0 / \kappa$</li>
+                    </ol>
 
-                <h3>習題練習</h3>
-                <div class="formula-dark">
-                    <h6>
-                        Q: 一對平行板電容器 $C_1 = 5 \mu F$，$C_2 = 3 \mu F$，與 $12 V$
-                        電池並聯充電後切斷，重新以反向極性板連接。求末狀況下各板之電荷？
-                    </h6>
-                    <h6>Ans:</h6>
-                    <p>1. 初電荷：$Q_1 = C_1 V = 60 \mu C$，$Q_2 = C_2 V = 36 \mu C$</p>
-                    <p>2. 反接後總剩餘電荷 $Q_{total} = 60 - 36 = 24 \mu C$</p>
-                    <p>3. 依電容比例分配電荷（因兩者電位差必須相等）：$Q'_1 : Q'_2 = 5 : 3</p>
-                    <p>4. 求解得 $Q'_1 = 15 \mu C$，$Q'_2 = 9 \mu C$</p>
+                    <h3>習題練習</h3>
+                    <div class="formula-dark">
+                        <h6>
+                            Q: 一對平行板電容器 $C_1 = 5 \mu F$，$C_2 = 3 \mu F$，與 $12 V$
+                            電池並聯充電後切斷，重新以反向極性板連接。求末狀況下各板之電荷？
+                        </h6>
+                        <h6>Ans:</h6>
+                        <p>1. 初電荷：$Q_1 = C_1 V = 60 \mu C$，$Q_2 = C_2 V = 36 \mu C$</p>
+                        <p>2. 反接後總剩餘電荷 $Q_{total} = 60 - 36 = 24 \mu C$</p>
+                        <p>3. 依電容比例分配電荷（因兩者電位差必須相等）：$Q'_1 : Q'_2 = 5 : 3$</p>
+                        <p>4. 求解得 $Q'_1 = 15 \mu C$，$Q'_2 = 9 \mu C$</p>
+                    </div>
                 </div>
             </section>
         </main>
