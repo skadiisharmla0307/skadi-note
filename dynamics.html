@@ -81,7 +81,26 @@
                             </a>
                             <ul class="dropdown-menu dropdown-scrollable" aria-labelledby="navbarDropdown">
                                 <li><h3 class="dropdown-item-text">章節目錄</h3></li>
-                                <li class="dropdown-header">-  -</li>
+                                <li class="dropdown-header">- ch12 Kinematics of a Particle -</li>
+                                <li><a class="dropdown-item" href="#12.1">12.1 介紹</a></li>
+                                <li><a class="dropdown-item" href="#12.2">12.2 連續直線運動</a></li>
+                                <li><a class="dropdown-item" href="#12.3">12.3 不規則直線運動</a></li>
+                                <li><a class="dropdown-item" href="#12.4">12.4 一般曲線運動</a></li>
+                                <li><a class="dropdown-item" href="#12.5">12.5 直角坐標分量</a></li>
+                                <li><a class="dropdown-item" href="#12.6">12.6 拋體運動</a></li>
+                                <li><a class="dropdown-item" href="#12.7">12.7 法向量與切線分量</a></li>
+                                <li><a class="dropdown-item" href="#12.8">12.8 極坐標與柱坐標</a></li>
+                                <li><a class="dropdown-item" href="#12.9">12.9 質點相依運動分析</a></li>
+                                <li><a class="dropdown-item" href="#12.10">12.10 平移坐標系中兩粒子相對運動</a></li>
+                                <li class="dropdown-header">- ch13 kinetics of a particle:force and acceleration -</li>
+                                <li><a class="dropdown-item" href="#13.1">13.1 牛頓第二運動定律</a></li>
+                                <li><a class="dropdown-item" href="#13.2">13.2 運動方程</a></li>
+                                <li><a class="dropdown-item" href="#13.3">13.3 質點系統的運動方程</a></li>
+                                <li><a class="dropdown-item" href="#13.4">13.4 直角坐標系的運動方程</a></li>
+                                <li><a class="dropdown-item" href="#13.4">12.10 平移坐標系中兩粒子相對運動</a></li>
+                                <li><a class="dropdown-item" href="#13.4">12.10 平移坐標系中兩粒子相對運動</a></li>
+                                <li><a class="dropdown-item" href="#13.4">12.10 平移坐標系中兩粒子相對運動</a></li>
+                                <li><a class="dropdown-item" href="#13.4">12.10 平移坐標系中兩粒子相對運動</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -105,13 +124,539 @@
             </section>
 
             <section class="card">
-                <h2 id="22.1" class="card-header"></h2>
-                <div class="card-content"></div>
+                <h2 id="12.1" class="card-header">12.1 Introduction</h2>
+                <div>
+                    <h3>名詞解釋</h3>
+                    <ul>
+                        <li>Mechanics(機械力學)</li>
+                        <li>Static(靜力學)</li>
+                        <li>
+                            <b>Dynamics(動力學)</b>
+                            <ul>
+                                <li>Kinematics(運動學)</li>
+                                專注於描述物體的運動（位置、速度、加速度）
+                                <li>Kinetics(動力學)</li>
+                                專注於研究導致運動的作用力與質量的關係
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr />
+                    <ul>
+                        <li>scalar(純量)</li>
+                        <li>vector(向量)</li>
+                    </ul>
+                    <hr />
+                    <ul>
+                        <li>position(位置) $s$</li>
+                        <li>
+                            displacement(位移) $\Delta s$
+                            <p>$\Rightarrow$ 即位置的改變量</p>
+                        </li>
+                        <li>
+                            velocity(速度) $V$
+                            <p>$\Rightarrow$ 位置對時間的變化率</p>
+                            <ul>
+                                <li>instantaneous velocity(順時速度)</li>
+                                <li>average velocity(平均速度) $V_{avg}$</li>
+                                <li>initial velocity(初速度) $V_i$</li>
+                                <li>final velocity(末速度) $V_f$</li>
+                            </ul>
+                        </li>
+                        <li>
+                            acceleration(加速度) $a$
+                            <p>$\Rightarrow$ 速度對時間的變化率</p>
+                        </li>
+                    </ul>
+                    <hr />
+                    <ul>
+                        <li>position vector(位置向量) $\mathbf{r}$</li>
+                        <li>displacement(位移) $\Delta \mathbf{r}$</li>
+                        <li>velocity(速度) $\mathbf{v}$</li>
+                    </ul>
+                </div>
             </section>
 
             <section class="card">
-                <h2 id="23.1" class="card-header"></h2>
-                <div class="card-content"></div>
+                <h2 id="12.2" class="card-header">12.2 Rectilinear Kinematics: Continuous Motion</h2>
+                <div>
+                    <h3>直線上的運動</h3>
+                    <div class="formula text-wrap">
+                        <p>
+                            令初速為 $v_i$ ，初始位置為 $s_i$ ；末速為 $v_f$ ，末位置為 $s_f$ 時，則經過時間 $\Delta t$
+                            後:
+                        </p>
+                        <div>
+                            \[ \textbf{位移}\Delta s = s_f-s_i \] \[ \textbf{平均速度}v_{avg} = \frac{\Delta s}{\Delta
+                            t} \] \[ \textbf{順時速度}v = \frac{ds}{dt} \] \[ \textbf{平均加速度}a_{avg} = \frac{\Delta
+                            v}{\Delta t} \]\[ \textbf{順時加速度}a = \frac{dv}{dt} = \frac{d^2s}{dt^2} \]
+                        </div>
+                        <h4 style="color: var(--muted)">** 可從後兩式推得 $a \, ds = v \, dv$ **</h4>
+                    </div>
+                    <h3>等加速度運動</h3>
+                    <p>當加速度 $a=a_c$ 為一定值，可進行以下推導</p>
+                    <div class="formula">
+                        <h4># 速度與時間關係</h4>
+                        <div>
+                            \[ \begin{align*} a_c &= \frac{dv}{dt} \\[6pt] dv &= a_c \, dt \\[6pt] \Rightarrow
+                            \int_{v_i}^{v_f} \, dv &= \int_{0}^{t} a_c \, dt \end{align*}\]
+                        </div>
+                        <h4 style="color: var(--muted)">** 得出 $v_f = v_i +a_ct$ **</h4>
+
+                        <hr />
+                        <h4># 位置與時間關係</h4>
+                        <div>
+                            \[ \begin{align*} v_f &= \frac{ds}{dt} \\[6pt] ds &= v_f \, dt \\[6pt] \Rightarrow
+                            \int_{s_i}^{s_f} \, ds &= \int_{0}^{t} v_f \, dt = \int_{0}^{t} (v_i + a_ct) \, dt
+                            \end{align*}\]
+                        </div>
+                        <h4 style="color: var(--muted)">** 得出 $s_f - s_i =v_it + \frac{1}{2}a_ct^2$ **</h4>
+                        <h4 style="color: var(--muted)">** 代換成位移 $\Delta s = v_it + \frac{1}{2}a_ct^2$ **</h4>
+                        <hr />
+                        <h4># 速度與位置關係</h4>
+                        <div>
+                            \[ \begin{align*} a_c \, ds &= v \, dv \\[6pt] \Rightarrow \int_{v_i}^{v_f}v \, dv &=
+                            \int_{s_i}^{s_f} a_c \, ds \\[6pt] \frac{1}{2}(v_f^2 - v_i^2) &= a_c(s_f-s_i) \\[6pt] v_f^2
+                            &= v_i^2 + 2a_c\Delta s \end{align*}\]
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.3" class="card-header">12.3 Rectilinear Kinematics: Erratic Motion</h2>
+                <div></div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.4" class="card-header">12.4 General Curvilinear Motion</h2>
+                <div>
+                    <br />
+                    <p>(注意粗體符號為向量表示)</p>
+                    <h3>位置(position) $\mathbf{r}$</h3>
+                    <p>
+                        在平面/空間從原點 $O$測量位置，將以位置向量 $\mathbf{r} = \mathbf{r}(t)$
+                        表示。(此向量的大小和方向會隨著粒子沿著曲線運動而改變)
+                    </p>
+                    <h3>位移(displacement) $ \Delta \mathbf{r}$</h3>
+                    <p>
+                        假設在極短的時間間隔 $\Delta t$ 內，粒子沿著曲線移動距離 $\Delta \mathbf{r}$ 到達新位置
+                        $\mathbf{r'}$，也就是位移 $\Delta \mathbf{r} = \mathbf{r'} - \mathbf{r}$
+                    </p>
+                    <h3>速度(velocity) $\mathbf{v}$</h3>
+                    <p>
+                        在時間間隔 $t$ 內，粒子的平均速率為 $\displaystyle \mathbf{v}_{avg} = \frac{\Delta
+                        \mathbf{r}}{\Delta t} $
+                    </p>
+                    <p>
+                        瞬時速度 $ \mathbf{v} $ 可由令 $\Delta t \rightarrow 0$ 來確定，此時 $\mathbf{r}$
+                        的方向趨近於曲線的切線 。因此
+                    </p>
+                    <div class="formula">
+                        \[ \mathbf{v} = \lim_{\Delta \rightarrow 0}\left( \frac{\Delta \mathbf{r}}{\Delta t}
+                        \right)=\frac{d\mathbf{r}}{dt} \]
+                    </div>
+                    <h3>加速度(acceleration)</h3>
+                    <p>
+                        若一粒子初速 $\mathbf{v}$ ，在經過時間 $\Delta t$ 時，末速為 $\mathbf{v'} = \mathbf{v} + \Delta
+                        \mathbf{v}$，則粒子在時間間隔 $\Delta t$ 內的平均加速度為 $\displaystyle
+                        \mathbf{a}_{avg}=\frac{\Delta \mathbf{v}}{\Delta t}$
+                    </p>
+                    <p>為了得到瞬時加速度，令上述方程式中的 $\Delta t \rightarrow 0$。在極限情況下，</p>
+                    <div class="formula">
+                        \[ \mathbf{a} = \lim_{\Delta \rightarrow 0}\left( \frac{\Delta \mathbf{v}}{\Delta t}
+                        \right)=\frac{d\mathbf{v}}{dt}=\frac{d^2\mathbf{r}}{dt^2} \]
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.5" class="card-header">12.5 Curvilinear Motion: Rectangular Components</h2>
+                <div>
+                    <h3>直角坐標分量 (Rectangular Components)</h3>
+                    <p>當質點沿著曲線移動時，使用向量來描述。將質點的運動分解在 x,y,z 軸上，各軸運動彼此獨立</p>
+                    <h3>位置(position) $\mathbf{r}$</h3>
+                    <p>設一原點 $O$ ，若質點位於點(x, y, z)，則</p>
+                    <div class="formula">
+                        \[ \mathbf{r} = x\mathbf{i}+y\mathbf{j}+z\mathbf{k} \]
+                        <h4 style="color: var(--muted)">** $\mathbf{r}$ 的大小為 $r =\sqrt{x^2+y^2+z^2}$ **</h4>
+                    </div>
+                    <h3>速度(velocity) $\mathbf{v}$</h3>
+                    <p>$\mathbf{r}$ 對時間取一階導數即為速度 $\mathbf{v}$，即</p>
+                    <div class="formula">
+                        \[ \mathbf{v} = \frac{d\mathbf{r}}{dt} =
+                        \frac{d}{dt}(x\mathbf{i})+\frac{d}{dt}(y\mathbf{j})+\frac{d}{dt}(z\mathbf{k}) \]
+                    </div>
+                    <p>其中 $\mathbf{r}$ 的 $\mathbf{i}$ 分量的導數為：</p>
+                    <div class="formula">
+                        \[ \frac{d}{dt}(x\mathbf{i}) = \frac{dx}{dt}(\mathbf{i}) + x\frac{d\mathbf{i}}{dt} \] \[
+                        \frac{dx}{dt}(\mathbf{i})= v_x = \dot{x}(表示x對時間的一階導數) \]
+                    </div>
+                    <p>而單位向量的大小與方向皆不會隨時間改變，即其一階導數$\frac{d\mathbf{i}}{dt}=0$，故可推得</p>
+                    <div class="formula">
+                        \[ \mathbf{v} = \dot{x}\mathbf{i} + \dot{y}\mathbf{j} + \dot{z}\mathbf{k} \]
+                        <h4 style="color: var(--muted)">** $\mathbf{v}$ 的大小為 $v =\sqrt{v_x^2+v_y^2+v_z^2}$ **</h4>
+                    </div>
+                    <h3>加速度(acceleration) $\mathbf{a}$</h3>
+                    <p>$\mathbf{v}$ 對時間取一階導數即為加速度 $\mathbf{a}$，即</p>
+                    <div class="formula">
+                        \[ \mathbf{a} = \frac{d\mathbf{v}}{dt} = a_x\mathbf{i}+a_y\mathbf{j}+a_z\mathbf{k} \]
+                        \[\text{where} \quad \begin{cases} a_x=\dot{v_x}=\ddot{x} \\ a_y=\dot{v_y}=\ddot{y} \\
+                        a_z=\dot{v_z}=\ddot{z} \end{cases} \]
+                        <h4 style="color: var(--muted)">** $\mathbf{a}$ 的大小為 $a =\sqrt{a_x^2+a_y^2+a_z^2}$ **</h4>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.6" class="card-header">12.6 Motion of a Projectile</h2>
+                <div>
+                    <h3>拋物運動</h3>
+                    <p>
+                        此運動在過程中只受重力加速度 $g$ 影響。故水平向加速度為0，即水平速度恆定；垂直向加速度為
+                        $−g$，適用等加速度運動公式
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.7" class="card-header">12.7 Curvilinear Motion: Normal and Ta ngential Components</h2>
+                <div>
+                    <h3>法線與切線坐標 (Normal and Tangential Components)</h3>
+                    <p>
+                        當質點路徑已知時，使用 n（法向）與 t（切向）軸做分量。如加速度 $a$ 可被拆解為切線加速度 $a_t$ 與
+                        法線加速度 $a_n$
+                    </p>
+                    <div class="formula">
+                        \[ \mathbf{a} = a_t\mathbf{u}_t + a_n\mathbf{u}_n \] \[a_t= \dot{v} \quad \text{or} \quad a_t \,
+                        ds= v \, dv \] \[ a_n = \frac{v^2}{\rho}(\rho\text{ 為曲率半徑}) \]
+                        <h4 style="color: var(--muted)">** $\mathbf{a}$ 的大小為 $a =\sqrt{a_t^2 + a_n^2}$ **</h4>
+                    </div>
+                    <p>若路徑表示為 y = f(x)，則路徑上任一點的曲率半徑 $\rho$</p>
+                    <div class="formula">\[ \rho = \frac{[1 + (\frac{dy}{dx})^2]^{3/2}}{|\frac{d^2y}{dx^2}|} \]</div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.8" class="card-header">12.8 Curvilinear Motion: Cylindrical Components</h2>
+                <div class="card-content">
+                    <h3>極座標(Polar Coordinates)</h3>
+                    <p>
+                        用徑向距離 $r$ 和方位角 $\theta$ 來表示平面上點的位置。角度以度或弧度為單位 其中 1 弧度 = 180°/π
+                    </p>
+                    <h3>速度(velocity)</h3>
+                    <p>瞬時速度 $\mathbf{v}$ 由 $\mathbf{r}$ 對時間的一階導數求得</p>
+                    <div class="formula">
+                        \[ \mathbf{v} = \dot{\mathbf{r}} = \dot{r}\mathbf{u}_r + r\dot{\mathbf{u}}_r \]
+                    </div>
+                    <p>經過一段艱澀難懂的推導過程後得出</p>
+                    <div class="formula">
+                        \[ \mathbf{v} = v_r\mathbf{u}_r + v_{\theta}\mathbf{u}_{\theta} \] \[ \text{where} \quad
+                        \begin{cases} v_r = \dot{r} \\ v_{\theta} = r\dot{\theta} \end{cases}\]
+                        <h4 style="color: var(--muted)">
+                            ** $\mathbf{v}$ 的大小為 $v =\sqrt{(\dot{r})^2 + (r\dot{\theta})^2}$ **
+                        </h4>
+                    </div>
+                    <h3>加速度(acceleration)</h3>
+                    <p>瞬時加速度 $\mathbf{a}$ 由 $\mathbf{v}$ 對時間的一階導數求得</p>
+                    <div class="formula">
+                        \[ \mathbf{a} = a_r\mathbf{u}_r + a_{\theta}\mathbf{u}_{\theta} \] \[ \text{where} \quad
+                        \begin{cases} a_r = \ddot{r} - r{\dot{\theta}}^2 \\ a_{\theta} = r\ddot{\theta} +
+                        2\dot{r}\dot{\theta} \end{cases}\]
+                        <h4 style="color: var(--muted)">
+                            ** $\mathbf{a}$ 的大小為 $a =\sqrt{(\ddot{r} - r{\dot{\theta}}^2)^2 + (r\ddot{\theta} +
+                            2\dot{r}\dot{\theta})^2}$ **
+                        </h4>
+                    </div>
+                    <h3>柱坐標(Cylindrical Coordinates)</h3>
+                    <p>與極座標相比，多了變量 $z$ (高度)。其對應的單位向量為 $\mathbf{u}_z$</p>
+                    <div class="formula">
+                        \[ \begin{cases} \mathbf{r}_P = r \mathbf{u}_r + z \mathbf{u}_z \\ \mathbf{v} = \dot{r}
+                        \mathbf{u}_r + r\dot{\theta} \mathbf{u}_\theta + \dot{z} \mathbf{u}_z \\ \mathbf{a} =
+                        (\underbrace{\ddot{r} - r\dot{\theta}^2}_{\text{徑向}}) \mathbf{u}_r +
+                        (\underbrace{r\ddot{\theta} + 2\dot{r}\dot{\theta}}_{\text{切向}}) \mathbf{u}_\theta +
+                        \underbrace{\ddot{z}}_{\text{垂直}} \mathbf{u}_z \end{cases}\]
+                    </div>
+                    <h3>Time Derivatives</h3>
+                    <p>若條件為已知時間參數方程： $r(t)$ 和 $\theta(t)$。直接對時間求導即可</p>
+                    <p>
+                        若條件為已知路徑方程：給$r = f(\theta)$。須利用連鎖律 (Chain Rule) 來轉換：$\dot{r} =
+                        \frac{dr}{d\theta} \cdot \dot{\theta}$$\ddot{r} = \frac{d^2r}{d\theta^2}(\dot{\theta})^2 +
+                        \frac{dr}{d\theta}\ddot{\theta}$
+                    </p>
+                    <h3>例題練習</h3>
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12">
+                                <h4>\(\text{EX}\)</h4>
+                                <p>
+                                    遊樂園的遊樂設施由一個座椅組成，該座椅沿著半徑 $r$ 進行水平圓周運動，其旋轉臂 $OB$
+                                    的角速度為 $\dot{\theta}$，角加速度為 $\ddot{\theta}$。
+                                </p>
+                                <h4 class="mt-3">
+                                    \( \text{Q: } \) 求乘客的徑向和切向速度分量($v_r
+                                    、v_\theta$)和加速度分量。(計算時忽略乘客的尺寸)
+                                </h4>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img src="picture_dynamics/12_8_1.png" class="img-fluid rounded shadow-sm" alt="" />
+                            </div>
+                        </div>
+                        <h4 class="mt-3">$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>1. 建立坐標系與已知條件</strong></p>
+                            <p>旋轉臂 $OB$ 的長度 $r$ 是固定不變的。 $r$ 是常數，所以它對時間的一階與二階導數皆為 0</p>
+                            <div>\[\dot{r} = 0, \quad \ddot{r} = 0\]</div>
+                            <p class="mb-1 mt-3"><strong>2. 速度計算</strong></p>
+                            <p>
+                                根據極坐標速度公式：$\mathbf{v} = \dot{r}\mathbf{u}_r + r\dot{\theta}\mathbf{u}_\theta$
+                            </p>
+                            <div class="p-2 mb-3">
+                                \[\begin{cases} 徑向速度 v_r = \dot{r} =0 \\ 切向速度 v_\theta = r\dot{\theta}
+                                \end{cases}\]
+                            </div>
+                            <p class="mb-1 mt-3"><strong>3. 加速度計算</strong></p>
+                            <p>根據極坐標加速度公式</p>
+
+                            <div class="p-2 mb-3">
+                                \[\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\mathbf{u}_r + (r\ddot{\theta} +
+                                2\dot{r}\dot{\theta})\mathbf{u}_\theta \] \[ \begin{cases} a_r = \ddot{r} -
+                                r\dot{\theta}^2 = 0 - r\dot{\theta}^2 = -r\dot{\theta}^2 \\ a_\theta = r\ddot{\theta} +
+                                2\dot{r}\dot{\theta} = r\ddot{\theta} + 2(0)\dot{\theta} = r\ddot{\theta} \end{cases}\]
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-8">
+                                <h4>\(\text{EX}\)</h4>
+                                <p>
+                                    桿 $OA$ 在水平面內旋轉，使得 $\theta = (t^3)$rad。同一時間套環 $B$ 沿 $OA$
+                                    向外滑動，使得 $r = (100t^2)$mm。若兩種情況 $t$ 的單位均為$s$
+                                </p>
+                                <h4 class="mt-3">\( \text{Q: } \) 求當 $t = 1s$ 時，套環的速度和加速度</h4>
+                            </div>
+                            <div class="col-12 col-md-4 text-center">
+                                <img src="picture_dynamics/12_8_2.png" class="img-fluid rounded shadow-sm" alt="" />
+                            </div>
+                        </div>
+                        <h4 class="mt-3">$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>1. 位置計算</strong></p>
+                            <p>計算 $r$ 和方位角 $\theta$ 的一階與二階導數，並代入 $t = 1$</p>
+                            <div>
+                                \[ \displaystyle \begin{cases} r = 100t^2 = 100(mm) \\ \dot{r} = \frac{dr}{dt} = 200t =
+                                200(mm/s) \\ \ddot{r} = \frac{d^2r}{dt^2} = 200(mm/s^2) \end{cases}\] \[ \displaystyle
+                                \begin{cases} \theta = t^3 = 1(rad) \approx 57.3^{\circ} \\ \dot{\theta} =
+                                \frac{d\theta}{dt} = 3t^2 = 3(rad/s) \\ \ddot{\theta} = \frac{d^2\theta}{dt^2} = 6t =
+                                6(rad/s^2) \end{cases}\]
+                            </div>
+                            <p class="mb-1 mt-3"><strong>2. 速度計算</strong></p>
+                            <p>
+                                根據極坐標速度公式：$\mathbf{v} = \dot{r}\mathbf{u}_r + r\dot{\theta}\mathbf{u}_\theta$
+                            </p>
+                            <div class="p-2 mb-3">
+                                \[\begin{cases} 徑向速度 v_r = \dot{r} = 200 \text{ mm/s} \\ 切向速度 v_\theta =
+                                r\dot{\theta} = 100(3) = 300 \text{ mm/s} \end{cases}\]
+                            </div>
+                            <p>速度大小與方向</p>
+                            <div class="p-2 mb-3">
+                                \[\begin{cases} v = \sqrt{(200)^2 + (300)^2} \approx 361(mm/s) \\ 方向 \delta:
+                                \tan^{-1}\left(\frac{300}{200}\right) = 56.3^{\circ} \\相對於固定軸的角度為 56.3^{\circ}
+                                + 57.3^{\circ} = 114^{\circ} \end{cases}\]
+                            </div>
+                            <p class="mb-1 mt-3"><strong>3. 加速度計算</strong></p>
+                            <p>根據極坐標加速度公式</p>
+
+                            <div class="p-2 mb-3">
+                                \[\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\mathbf{u}_r + (r\ddot{\theta} +
+                                2\dot{r}\dot{\theta})\mathbf{u}_\theta \] \[ \begin{cases} a_r = \ddot{r} -
+                                r\dot{\theta}^2 = 200 - 100(3)^2 = 200 - 900 = -700(mm/s^2) \\ a_\theta = r\ddot{\theta}
+                                + 2\dot{r}\dot{\theta} = 100(6) + 2(200)(3) = 600 + 1200 = 1800(mm/s^2) \end{cases}\]
+                            </div>
+                            <p>加速度大小與方向</p>
+                            <div>
+                                \[\begin{cases}大小: a = \sqrt{(-700)^2 + (1800)^2} \approx 1930(mm/s^2) \\ 方向(\phi):
+                                \tan^{-1}\left(\frac{1800}{700}\right) = 68.7^{\circ} \\ 相對於固定軸的角度為
+                                (180^{\circ} - 68.7^{\circ}) + 57.3^{\circ} = 169^{\circ} \end{cases}\]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.9" class="card-header">12.9 Absolute Dependent Motion Analysis of Two Particles</h2>
+                <div class="card-content">
+                    <h3>相依運動(Dependent Motion)</h3>
+                    <p>
+                        針對繩索與滑輪系統的運動計算，因繩子的總長度不變，其中一個物體移動時，另一個物體必須隨之移動以維持長度平衡，進而推出位移、速度與加速度關係
+                    </p>
+                    <p>主要有以下步驟</p>
+                    <ol>
+                        <li>設定基準面：選擇一個固定的點或線作為測量起點</li>
+                        <li>定義位置座標 ($s_A, s_B$)： 從基準面出發，沿著運動路徑測量到物體中心</li>
+                        <li>寫出總繩長方程式 ($l$)： 將所有變動的繩段加總</li>
+                    </ol>
+                    <h3>例題練習</h3>
+
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-8">
+                                <h4>\(\text{EX}\)</h4>
+                                <p>若滑塊 B 的向上速度為 6 英尺/秒</p>
+                                <h4 class="mt-3">\( \text{Q: } \) 求滑塊 A 的速率</h4>
+                            </div>
+                            <div class="col-12 col-md-4 text-center">
+                                <img src="picture_dynamics/12_9_1.png" class="img-fluid rounded shadow-sm" alt="" />
+                            </div>
+                        </div>
+                        <h4 class="mt-3">$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>1. 建立位置座標方程</strong></p>
+                            <p>
+                                將基準面設在最上方的固定滑輪中心線，而 $s_A$ 為基準面到物體 $A$ 的距離；$s_B$
+                                為基準面到物體 $B$ 的距離，由圖推得總繩長 $l$
+                            </p>
+                            <div>\[ s_A + 3s_B = l \]</div>
+                            <p class="mb-1 mt-3"><strong>2. 時間微分</strong></p>
+                            <p>對時間 $t$ 進行微分進而將「位置」轉換成「速度」</p>
+                            <div class="p-2 mb-3">
+                                \[\begin{align*} \frac{d}{dt}(s_A + 3s_B) &= \frac{d}{dt}(l) \\[6pt] v_A + 3v_B &= 0
+                                \end{align*}\]
+                            </div>
+                            <p>即滑塊 $A$ 的速度大小是滑塊 $B$ 的 3 倍，且運動方向相反</p>
+                            <p class="mb-1 mt-3"><strong>3. 代入數值求解</strong></p>
+                            <p>根據題目滑塊 $B$ 以 $6 \text{ ft/s}$ 的速度向上移動</p>
+                            <div class="p-2 mb-3">
+                                \[\begin{align*}v_A + 3(-6) &= 0 \\[6pt] v_A &= 18 \text{ ft/s}\end{align*}\]
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula-dark wrap-text">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md-8">
+                                <h4>\(\text{EX}\)</h4>
+                                <p>若繩子 A 端的物體以 2 m/s 的速率向下拉</p>
+                                <h4 class="mt-3">\( \text{Q: } \) 求物體 B 的速率</h4>
+                            </div>
+                            <div class="col-12 col-md-4 text-center">
+                                <img src="picture_dynamics/12_9_2.png" class="img-fluid rounded shadow-sm" alt="" />
+                            </div>
+                        </div>
+                        <h4 class="mt-3">$\text{Ans: }$</h4>
+                        <div class="ps-2">
+                            <p class="mb-1"><strong>1. 建立位置座標方程</strong></p>
+                            <p>以最上方的固定滑輪中心作為基準面，向下為正</p>
+                            <ul>
+                                <li>$s_A$：手 $A$ 的位置</li>
+                                <li>$s_B$：物體 $B$ 的位置</li>
+                                <li>$s_C$：動滑輪 $C$ 的位置</li>
+                            </ul>
+                            <p class="mb-1 mt-3"><strong>2. 寫出繩長方程式</strong></p>
+                            <p>系統由兩根獨立的繩子組成</p>
+                            <div class="p-2 mb-3">
+                                \[\begin{cases} 上: s_C + s_B = l_1 \\[6pt] 下: s_A - 2s_C + 2s_B = l_2 \end{cases}\]
+                            </div>
+                            <p class="mb-1 mt-3"><strong>3. 對時間微分求速度</strong></p>
+                            <div class="p-2 mb-3">
+                                \[\begin{cases} 上: v_C + v_B = 0 \implies v_C = -v_B \\[6pt] 下: v_A - 2v_C + 2v_B = 0
+                                \end{cases}\] \[ \Rightarrow v_A + 4v_B = 0 \]
+                            </div>
+                            <p>即 $A$ 的速度大小是 $B$ 的4倍，且方向相反</p>
+                            <p class="mb-1 mt-3"><strong>4. 數值計算</strong></p>
+                            <div class="p-2 mb-3">\[代入 v_A = 2 \text{ m/s} \Rightarrow v_B = -0.5 \text{ m/s}\]</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="12.10" class="card-header">12.10 Relative-Motion of Two Particles Using Translating Axes</h2>
+                <div class="card-content">
+                    <h3>平移參考系(Translating Reference Frame)</h3>
+                    <p>
+                        將原本於地面或靜止的觀測者(原點$O$)，改為在移動的物體上作為觀測者。以在一移動物體 $A$ 上觀測物體
+                        $B$ 為例
+                    </p>
+                    <div class="formula">
+                        \[\begin{align*} \mathbf{r}_B = \mathbf{r}_A + \mathbf{r}_{B/A} \\[6pt] \mathbf{v}_B =
+                        \mathbf{v}_A + \mathbf{v}_{B/A}\\[6pt] \mathbf{a}_B = \mathbf{a}_A + \mathbf{a}_{B/A}
+                        \end{align*}\]
+                    </div>
+                    <p>其中 $B/A$ 代表從 $A$ 點觀察 $B$ 點，讀作 "$B$ with respect to $A$"</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="13.1" class="card-header">13.1 Newton's Second Law of Motion</h2>
+                <div>
+                    <h3>牛頓第二運動定律</h3>
+                    <p>當一個力作用於質點時，該質點會朝著力的方向產生加速度，加速度的大小與合力成正比，其關係式如下</p>
+                    <div class="formula">\[\textbf{F}=m\textbf{a}\]</div>
+                    <h3>牛頓萬有引力定律（Newton's Law of Gravitational Attraction）</h3>
+                    <p>任何兩個質點間都存在相互吸引力，其關係式如下</p>
+                    <div class="formula">
+                        \[ F = G \frac{m_1 m_2}{r^2} \]
+                        <h4 style="color: var(--muted)">
+                            ** 其中 G 為萬有引力常數（約為 $66.73×10^{−12} m^3/(kg\cdot s^2)$) **
+                        </h4>
+                    </div>
+                    <h3>質量與重量</h3>
+                    <p>重量 $W$ 專指地球對質點產生的引力，其關係式如下</p>
+                    <div class="formula">
+                        \[W = mg\]\[g = \frac{G M_e}{R_e^2}\]
+                        <h4 style="color: var(--muted)">** $g = 9.81 m/s^2 = 32.2 ft/s^2$ **</h4>
+                    </div>
+                    <p>重力加速度 ($g$) 是透過萬有引力公式推導而來</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="13.2" class="card-header">13.2 The Equation of Motion</h2>
+                <div class="card-content">
+                    <h3>慣性參考座標系(Inertial Reference Frame)</h3>
+                    <p>
+                        測量加速度時必須在一個慣性座標系中。此座標系必須是固定不動或作等速度直線運動的，在此前提下當一個質點受到多個力作用時，其合力
+                        ($\Sigma \mathbf{F}$) 等於質點的質量 ($m$) 乘以其產生的加速度 ($\mathbf{a}$)
+                    </p>
+                    <div class="formula">\[\Sigma \mathbf{F} = m\mathbf{a} \]</div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="13.3" class="card-header">13.3 Equation of Motion for a System of Particles</h2>
+                <div>
+                    <h3>質點系統(System of Particles)</h3>
+                    <p>當我們考慮一群質點組成的系統時，力被分為兩類</p>
+                    <ul>
+                        <li>外力 ($\mathbf{F}_i$)：系統外部施加在質點上的力（如重力、磁力）</li>
+                        <li>內力 ($\mathbf{f}_i$)：系統內質點與質點之間的交互作用力</li>
+                    </ul>
+                    <p>對單一質點 $i$ 而言，其方程式為</p>
+                    <div class="formula">\[\mathbf{F}_i + \mathbf{f}_i = m_i \mathbf{a}_i\]</div>
+                    <p>
+                        根據作用力與反作用力，當我們把系統內所有質點的力加總時，因 $\Sigma \mathbf{f}_i =
+                        0$，故系統的總合力只取決於外力
+                    </p>
+                    <h3>質心 (Center of Mass, $G$)</h3>
+                    <p>為了簡化運算，於系統中使用質心代換做計算</p>
+                    <div class="formula">
+                        \[質心位置: m\mathbf{r}_G = \Sigma m_i \mathbf{r}_i\]\[ 對時間微分兩次 \Rightarrow \Sigma
+                        \mathbf{F} = m\mathbf{a}_G = \Sigma m_i \mathbf{a}_i \]
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 id="13.4" class="card-header">13.4 Equations of Motion: Rectangular Coordinates</h2>
+                <div></div>
+            </section>
+
+            <section class="card">
+                <h2 id="13.5" class="card-header"></h2>
+                <div></div>
             </section>
         </main>
 
