@@ -102,15 +102,16 @@
                                 <li class="dropdown-header">- ch14 Kinetics of a Particle: Work and Energy -</li>
                                 <li><a class="dropdown-item" href="#14.1">14.1 力的作功</a></li>
                                 <li><a class="dropdown-item" href="#14.2">14.2 功與能原理</a></li>
-                                <li><a class="dropdown-item" href="#14.3"></a>14.3 質點系統的功與能原理</li>
+                                <li><a class="dropdown-item" href="#14.3">14.3 質點系統的功與能原理</a></li>
                                 <li><a class="dropdown-item" href="#14.4">14.4 功率與效率</a></li>
                                 <li><a class="dropdown-item" href="#14.5">14.5 保守力與位能</a></li>
-                                <li><a class="dropdown-item" href="#14.6">14.6</a></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
+                                <li><a class="dropdown-item" href="#14.6">14.6 能量守恆</a></li>
+                                <li class="dropdown-header">- ch15 Kinetics of a Particle: Impulse and Momentum -</li>
+                                <li><a class="dropdown-item" href="#15.1">15.1 線性衝量與動量原理</a></li>
+                                <li><a class="dropdown-item" href="#15.2">15.2 質點系的線性衝量與動量原理</a></li>
+                                <li><a class="dropdown-item" href="#15.3">15.3 質點系的動量守恆</a></li>
+                                <li><a class="dropdown-item" href="#15.4"></a></li>
+                                <li><a class="dropdown-item" href="#15.5"></a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -880,30 +881,121 @@
                     <p>無論彈簧是被拉伸還是壓縮，$V_e$ 永遠是正值</p>
                     <h3>位能函數與功的關係 (Potential Function)</h3>
                     <p>當一個系統同時受重力和彈力影響時，總位能可以寫成：</p>
-                    <div class="formula">$$V = V_g + V_e$$</div>
+                    <div class="formula">
+                        \[ \begin{align*} V &= V_g + V_e \\[6pt] &= -Ws +\frac{1}{2}ks^2 \end{align*} \]
+                    </div>
                     <p>而保守力做的功 $U_{1-2}$ 可以表示為位能的改變量</p>
                     <div class="formula">$$U_{1-2} = V_1 - V_2$$</div>
                 </div>
             </section>
 
             <section class="card">
-                <h2 id="14.6" class="card-header"></h2>
-                <div></div>
+                <h2 id="14.6" class="card-header">14.6 Conservation of Energy</h2>
+                <div>
+                    <h3>能量守恆方程式</h3>
+                    <div class="formula">
+                        \[ T_1 + V_1 + (\sum U_{1-2})_{\text{noncons.}} = T_2 + V_2 \] \[\begin{cases} T (動能)：
+                        物體運動產生的能量，公式為 T = \frac{1}{2}mv^2 \\ V(位能)： 包含重力位能 (V_g = Wy) 和彈性位能
+                        (V_e = \frac{1}{2}ks^2) \\ (\sum U_{1-2})_{\text{noncons.}} (非保守力作功)：
+                        最常見的就是摩擦力或阻力。如果這項為負，代表能量損耗（變成熱能或噪音） \end{cases}\]
+                    </div>
+                    <p>系統內只有保守力（如重力、彈簧力）作功，則公式簡化為</p>
+                    <div class="formula">
+                        \[ \begin{align*} T_1 + V_1 &= T_2 + V_2 \\[6pt] (多質點) \sum T_1 + \sum V_1 &= \sum T_2 + \sum
+                        V_2 \end{align*} \]
+                    </div>
+                    <p>代表初始的總機械能等於末總機械能</p>
+                    <h3>分析步驟 (Procedure for Analysis)</h3>
+                    <ul>
+                        <li>繪製起始與終點圖： 明確標出物體在位置 1 與位置 2 的狀態。</li>
+                        <li>設定基準面 (Datum)： 選定一個水平面作為位能測量的基準。基準面以上位能為正，以下為負。</li>
+                        <li>列出已知數據： 找出初速、末速、彈簧伸長量 $s$ 以及高度 $y$。</li>
+                        <li>套用方程式： 使用 $T_1 + V_1 = T_2 + V_2$ 求解未知數（速度或位移）。</li>
+                    </ul>
+                </div>
             </section>
 
             <section class="card">
-                <h2 id="15.1" class="card-header"></h2>
-                <div></div>
+                <h2 id="15.1" class="card-header">15.1 Principle of Linear Impulse and Momentum</h2>
+                <div>
+                    <h3>線性動量(Linear Momentum, $L$)</h3>
+                    <p>動量是一個向量，其方向與速度 $v$ 相同。單位通常是 $\text{kg} \cdot \text{m/s}$，其公式如下</p>
+                    <div class="formula">\[ L = mv \]</div>
+                    <h3>線性衝量(Linear Impulse, $I$)</h3>
+                    <p>為力對時間的積分（力 $times$ 時間）。表示在一段時間內，力作用在物體上的總效果</p>
+                    <div class="formula">\[I = \int_{t_1}^{t_2} F dt \]</div>
+                    <h3>線性衝量與動量原理</h3>
+                    <p>初始動量 + 這段時間內受到的所有衝量總和 = 最終動量</p>
+                    <div class="formula">\[mv_1 + \sum \int_{t_1}^{t_2} \mathbf{F} dt = mv_2 \]</div>
+                    <p>若處理三維空間的問題，可以將其拆解為 $x, y, z$ 三個方向的純量方程式</p>
+                    <div class="formula">
+                        \[ \displaystyle \begin{cases} m(v_x)_1 + \sum \int_{t_1}^{t_2} \mathbf{F}_x dt = m(v_x)_2 \\
+                        m(v_y)_1 + \sum \int_{t_1}^{t_2} \mathbf{F}_y dt = m(v_y)_2 \\ m(v_z)_1 + \sum \int_{t_1}^{t_2}
+                        \mathbf{F}_z dt = m(v_z)_2 \end{cases}\]
+                    </div>
+                    <h3>分析步驟 (Procedure for Analysis)</h3>
+                    <ul>
+                        <li>繪製受力圖: 找出所有作用在質點上的力</li>
+                        <li>建立坐標系: 設定 $x, y, z$ 直角坐標系</li>
+                        <li>繪製動量/脈衝圖: 畫出物體在 $t_1$ 的動量向量、過程中的脈衝向量，以及 $t_2$ 的動量向量</li>
+                        <li>列式計算: 如果力是時間的函數，需進行積分。如果力是常數，直接以力乘以時間。</li>
+                    </ul>
+                </div>
             </section>
 
             <section class="card">
-                <h2 id="15.2" class="card-header"></h2>
-                <div></div>
+                <h2 id="15.2" class="card-header">
+                    15.2 Principle of Linear Impulse and Momentum for a System of Particles
+                </h2>
+                <div>
+                    <h3>質點系線性衝量與動量方程式</h3>
+                    <p>
+                        在一個質點系中，質點之間會互相施加內力 ($\mathbf{f}_i$)，而外界環境會對質點施加外力
+                        ($\mathbf{F}_i$)。在對整個系統進行求和時，所有的內力都會互相抵消。因此，影響整個系統動量變化的只有外力的總和
+                        ($\Sigma \mathbf{F}_i$)
+                    </p>
+                    <div class="formula">\[ \Sigma \mathbf{F}_i = \Sigma m_i \frac{d\mathbf{v}_i}{dt} \]</div>
+                    <p>套用線性衝量與動量原理公式後得到</p>
+                    <div class="formula">
+                        \[ \sum m_i(\mathbf{v}_i)_1 + \sum \int_{t_1}^{t_2} \mathbf{F}_i dt = \sum m_i(\mathbf{v}_i)_2
+                        \]
+                    </div>
+                    <p>也就是系統初始動量 加上 在時間段 $t_1$ 到 $t_2$ 之間的衝量 等於 系統末動量</p>
+                    <h3>質心（Mass Center）</h3>
+                    <p>定義質心: 系統的總質量乘以質心位置，等於各個質點質量與位置乘積的總和，即</p>
+                    <div class="formula">\[m\mathbf{v}_G = \sum m_i\mathbf{v}_i\]</div>
+                    <p>上式可以把一個複雜的質點系看作一個位於質心的「虛擬質點」做計算</p>
+                    <div class="formula">
+                        \[ m(\mathbf{v}_G)_1 + \sum \int_{t_1}^{t_2} \mathbf{F}_i dt = m(\mathbf{v}_G)_2\]
+                    </div>
+                </div>
             </section>
 
             <section class="card">
-                <h2 id="15.3" class="card-header"></h2>
-                <div></div>
+                <h2 id="15.3" class="card-header">15.3 Conservation of Linear Momentum for a System of Particles</h2>
+                <div>
+                    <p>
+                        當一個質點系受到的合外脈衝為零（即外力總和為零，或外力作用時間極短）時，系統的總動量就會保持不變
+                    </p>
+                    <div class="formula">\[ \sum m_i(\mathbf{v}_i)_1 = \sum m_i(\mathbf{v}_i)_2 \]</div>
+                    <p>也代表沒有外力干擾系統時質心的速度會保持恆定</p>
+                    <div class="formula">\[ (\mathbf{v}_G)_1 = (\mathbf{v}_G)_2 \]</div>
+                    <h3>分析步驟 (Procedure for Analysis)</h3>
+                    <ul>
+                        <li>繪製受力圖: 建立座標系 ($x, y, z$)，畫出系統中每個質點的受力圖(識別內力與外力)</li>
+                        <li>
+                            建立動量方程式
+                            <ul>
+                                <li>若動量守恆，使用 $\sum mv_1 = \sum mv_2$</li>
+                                <li>
+                                    求某個特定的力（例如求碰撞力），則對單一質點使用衝量與動量原理 $mv_1 + \int F dt =
+                                    mv_2$
+                                </li>
+                                <li>平均衝擊力的計算公式為：$F_{avg} = \frac{\int F dt}{\Delta t}$</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <section class="card">
