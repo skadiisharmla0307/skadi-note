@@ -1,19 +1,119 @@
+/* =========================================
+   1. 變數與全域重設
+   ========================================= */
+
 :root {
-  /* 顏色變數 */
-  --card: #ffffff; /* 底色純白 */
-  --tone: #4285f4; /* 主題色藍色 */
-  --tone-g: #a9bee1; /* 加深藍灰 */
-  --lc: #5ab0ff; /* 淺藍 */
-  --dc: #004b8d; /* 深藍 */
-  --lbg: #f7fbff; /* 淺藍(背景) */
-  --dbg: #e7efff; /* 深藍(背景) */
-  --text: #202124; /* 文字 */
-  --muted: #666666;
+  /* 基礎色系 */
+  --card: #ffffff; /* 白色背景 */
+
+  --tone: #4285f4; /* 主色調 */
+  --tone-g: #a9bee1; /* 色調偏暗 */
+  --lc: #5ab0ff; /* 淺色調 */
+  --dc: #004d99; /* 深色調 */
+
+  --bg: #f5f7fa; /* 偏灰背景 */
+  --lbg: #f7fbff; /* 淺色調背景 */
+  --dbg: #e7efff; /* 深色調背景 */
+
+  --text-main: #333333; /* 主文字顏色 */
+  --text-sub: #666666; /* 副文字顏色 */
+
+  /* 樣式重用變數 */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1); /* 常規陰影 */
+  --shadow-lg: 5px 5px 15px rgba(0, 0, 0, 0.15); /* 強調陰影(卡片懸停) */
+
+  --transition-fast: all 0.2s ease-in-out; /* 轉場(快) */
+  --transition-normal: all 0.5s ease-in-out; /* 轉場 */
+
+  --radius-md: 8px; /* 統一圓角 */
+  --radius-lg: 12px;
 }
 
 * {
   box-sizing: border-box;
 }
+
+/* =========================================
+   2. 佈局結構
+   ========================================= */
+
+body {
+  background-color: var(--bg);
+  margin: 12px;
+  font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+/* 導覽列 */
+.nav {
+  background: var(--card);
+  padding: 12px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  gap: 8px;
+  flex-wrap: wrap; /* 換行 */
+}
+
+.nav a:hover /* 滑鼠懸停 */ {
+  background: var(--tone-g);
+  border-color: var(--tone);
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 12px;
+}
+
+/* 內容區(區塊) */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  padding: 12px; /* 內距 */
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.card-header {
+  color: var(--dc);
+  background-color: var(--card);
+  padding: 0;
+  cursor: pointer;
+  user-select: none; /* 防止連點時選取到文字 */
+}
+.card-header:hover /* 滑鼠懸停 */ {
+  background: var(--tone-g);
+  border-color: var(--tone);
+  color: var(--text-main);
+}
+.card-content {
+  max-height: 0; /* 關鍵：初始高度為 0 */
+  margin-top: 12px;
+  overflow: hidden;
+  transition: var(--transition-normal); /* 展開動畫 */
+}
+
+/* 當 card 被加上 .active 類別時展開 */
+.card.active .card-content {
+  max-height: 500px; /* 給一個足夠大的預估高度 */
+}
+
+/* footer */
+.footer {
+  text-align: center;
+  background: var(--card);
+  color: var(--text-sub);
+  border-radius: var(--radius-lg);
+  font-size: 0.8rem;
+  padding: 20px 10px;
+}
+
+/* =========================================
+   3. 通用組件
+   ========================================= */
 
 #btn-back-to-top {
   position: fixed; /* 固定定位 */
@@ -32,60 +132,11 @@
   opacity: 0.7;
 }
 
-.header {
-  text-align: center;
-  padding: 28px 16px;
-  background: linear-gradient(-45deg, #ffffff, #f4f2ff); /* 漸層背景 */
-  border-bottom: 1px solid #e6eefc;
-}
-
-.header h1 {
-  margin: 0;
-  color: var(--text);
-  font-size: 1.8em;
-  border-bottom: 2px solid var(--dc);
-  padding-bottom: 5px;
-}
-
-p#heading {
-  margin: 8px 0;
-  color: #555;
-}
-
-body {
-  background-color: #f6f6f6;
-  margin: 12px;
-  font-family: "Noto Sans TC", "Segoe UI", sans-serif;
-  color: #020202;
-  line-height: 1.6;
-}
-
-.nav {
-  background: var(--card);
-  padding: 12px;
-  box-shadow: 0 2px 4px rgba(16, 24, 40, 0.06);
-  display: flex;
-  justify-content: center; /* 水平置中 */
-  gap: 8px;
-  flex-wrap: wrap; /* 換行 */
-}
-
-.nav h3 {
-  margin-top: 0;
-  font-size: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 4px;
-}
-
-.nav a:hover /* 滑鼠懸停 */ {
-  background: var(--tone-g);
-  border-color: var(--tone);
-  color: #1967d2;
-}
 .dropdown-scrollable {
   max-height: 400px;
   overflow-y: auto;
 }
+
 img {
   width: fit-content;
   max-width: 100%;
@@ -93,119 +144,26 @@ img {
   display: block;
   margin: 0 auto;
 }
-/* main content card */
-.container {
-  max-width: 1000px;
-  margin: 24px auto;
-  padding: 20px; /* 內距 */
-}
-.card {
-  background: var(--card);
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 15px; /* 內距 */
-  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
-  overflow: hidden;
-}
-.card-header {
-  color: var(--dc);
-  background-color: var(--card);
-  padding: 0;
-  cursor: pointer;
-  user-select: none; /* 防止連點時選取到文字 */
-}
-.card-content {
-  max-height: 0; /* 關鍵：初始高度為 0 */
-  padding-top: 5px;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out; /* 展開動畫 */
-}
 
-/* 當 card 被加上 .active 類別時展開 */
-.card.active .card-content {
-  max-height: 500px; /* 給一個足夠大的預估高度 */
-}
-
-h2 {
-  color: var(--dc);
-  font-size: 1.6em;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 1.3em;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-bottom-style: solid;
-  color: var(--lc);
-}
-h4 {
-  line-height: normal;
-  font-size: 1.1em;
-}
-
-p {
-  line-height: 1.7;
-  color: #020202;
-}
-
-code {
-  color: var(--muted);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 25px;
-}
-
-thead th {
-  background-color: var(--dbg);
-  color: var(--dc);
-  font-weight: bold;
-}
-th,
-td {
-  border: 1px solid #e3e7ef;
-  padding: 12px 16px;
-  text-align: center;
-  vertical-align: top;
-}
-tr:nth-child(even) {
-  background-color: var(--lbg);
-}
-tfoot {
-  background-color: #e8f0fe;
-}
-
-/* footer */
-.footer {
-  text-align: center;
-  background: linear-gradient(-45deg, #ffffff, #f4f2ff);
-  color: var(--muted);
-  font-size: 0.8rem;
-  padding: 20px 10px;
-}
 .formula {
-  background: #f7fbff;
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border-left: 3px solid var(--lc);
+  background: var(--lbg);
+  padding: 12px 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius:var(--radius-md);
+  border-left: 4px solid var(--lc);
   font-family: "Consolas", monospace;
   overflow-x: auto;
   white-space: nowrap;
 }
 
 .formula-dark {
-  background: #e7efff;
-  padding: 8px;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border-left: 3px solid var(--dc);
+  background: var(--dbg);
+  padding: 12px 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius:var(--radius-md);
+  border-left: 4px solid var(--dc);
   font-family: "Consolas", monospace;
   overflow-x: auto;
   white-space: nowrap;
@@ -220,14 +178,53 @@ tfoot {
   font-family: inherit; /* 回復到一般字體，讀題目比較輕鬆 */
 }
 
-.formula-red {
-  background: #fff1f1; /* 背景色 */
-  padding: 8px; /* 內距 */
-  border-radius: 8px;
-  border-left: 3px solid #d32f2f; /* 邊框色 */
-  font-family: "Consolas", monospace;
-  overflow-x: auto;
-  white-space: nowrap;
+/* =========================================
+   4. 文字與內容排版 
+   ========================================= */
+p {
+  line-height: 1.7;
+  color: var(--text-main);
+}
+h2 {
+  color: var(--dc);
+  font-size: 1.6em;
+  margin: 20px 4px;
+}
+h3 {
+  font-size: 1.3em;
+  margin: 20px 4px;
+  border-bottom-style: solid;
+  color: var(--lc);
+}
+h4 {
+  line-height: normal;
+  font-size: 1.1em;
+}
+code {
+  color: var(--text-sub);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+thead th {
+  background-color: var(--dbg);
+  color: var(--dc);
+  font-weight: bold;
+}
+th,
+td {
+  border: 1px solid var(--tone-g);
+  padding: 8px;
+  text-align: center;
+  vertical-align: top;
+}
+tr:nth-child(even) {
+  background-color: var(--lbg);
+}
+tfoot {
+  background-color: var(--dbg);
 }
 
 /* responsive */
