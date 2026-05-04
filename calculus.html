@@ -44,7 +44,6 @@
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -82,11 +81,16 @@
                 <li><a class="dropdown-item" href="#9.3">9.3 積分判別法與p-級數</a></li>
                 <li><a class="dropdown-item" href="#9.4">9.4 級數比較法</a></li>
                 <li><a class="dropdown-item" href="#9.5">9.5 交錯級數</a></li>
-              <li><a class="dropdown-item" href="#9.6">9.6 比值審斂法與根值審斂法</a></li>
-              <li><a class="dropdown-item" href="#9.7">9.7 泰勒多項式及其近似</a></li>
-              <li><a class="dropdown-item" href="#9.8">9.8 冪級數</a></li>
-              <li><a class="dropdown-item" href="#9.9">9.9 冪級數表示函數</a></li>
-              <li><a class="dropdown-item" href="#9.10">9.10 泰勒與麥克勞林級數</a></li>
+                <li><a class="dropdown-item" href="#9.6">9.6 比值審斂法與根值審斂法</a></li>
+                <li><a class="dropdown-item" href="#9.7">9.7 泰勒多項式及其近似</a></li>
+                <li><a class="dropdown-item" href="#9.8">9.8 冪級數</a></li>
+                <li><a class="dropdown-item" href="#9.9">9.9 冪級數表示函數</a></li>
+                <li><a class="dropdown-item" href="#9.10">9.10 泰勒與麥克勞林級數</a></li>
+                <li><a class="dropdown-item" href="#10.1">10.1 圓錐曲線與微積分</a></li>
+                <li><a class="dropdown-item" href="#10.2">10.2 參數方程式</a></li>
+                <li><a class="dropdown-item" href="#10.3">10.3 參數方程與微積分</a></li>
+                <li><a class="dropdown-item" href="#10.4">10.4 極座標與極座標圖形</a></li>
+                <li><a class="dropdown-item" href="#10.5">10.5 極座標中的面積與弧長</a></li>
               </ul>
             </li>
 
@@ -2314,7 +2318,7 @@
 
       <section class="card">
         <h2 class="card-header" id="9.5">9.5 Alternating Series</h2>
-        <div class=card-content>
+        <div class="card-content">
           <h3>The Alternating Series Test(A.S.T)</h3>
           <div class="formula">
             <p>\( \text{Thm — The alternating series converges if the following two conditions are met:} \)</p>
@@ -2365,8 +2369,8 @@
       </section>
 
       <section class="card">
-        <h2 class=card-header id=9.6>9.6 The Ratio and Root Tests</h2>
-        <div class=card-content>
+        <h2 class="card-header" id="9.6">9.6 The Ratio and Root Tests</h2>
+        <div class="card-content">
           <h3>The Ratio Test (比值審斂法)</h3>
           <div class="formula">
             \( \textbf{Thm} \quad \text{Let } \sum a_n \text{ be a series with nonzero terms.} \) \[ \text{Let } \lim_{n
@@ -2384,10 +2388,10 @@
           </div>
         </div>
       </section>
-      
+
       <section class="card">
-        <h2 class=card-header id=9.7>9.7 Taylor Polynomials and Approximations</h2>
-        <div class=card-content>
+        <h2 class="card-header" id="9.7">9.7 Taylor Polynomials and Approximations</h2>
+        <div class="card-content">
           <h3>Taylor Polynomials (泰勒多項式)</h3>
           <div class="formula">
             \( \textbf{Def} \quad \text{If } f \text{ has } n \text{ derivatives at } c, \text{ then the nth Taylor
@@ -2402,31 +2406,33 @@
           </div>
         </div>
       </section>
-      
+
       <section class="card">
-        <h2 class=card-header id=9.8>9.8 Power Series</h2>
-        <div class=card-content><h3>冪級數定義</h3><div class="formula">
-          \( \textbf{Def} \quad \text{以 } c \text{ 為中心的冪級數形式為：} \) \[ \sum_{n=0}^{\infty} a_n(x-c)^n = a_0 +
-          a_1(x-c) + a_2(x-c)^2 + \dots \]
-        </div>
-        <h3>收斂半徑與區間 (Radius and Interval of Convergence)</h3>
-        <div class="formula">
-          \( \textbf{Thm} \quad \text{對於冪級數，其收斂情形必為下列之一：} \) \[ 僅在中心點收斂：收斂半徑 ( R = 0 )。\]
-          \[在有限區間內收斂：存在 ( R \gt 0 )，使得當 ( |x-c| \lt R ) 時絕對收斂。\] \[在全體實數收斂：收斂半徑 ( R =
-          \infty )。\]
-        </div>
-        <h3>冪級數的微分與積分</h3>
-        <div class="formula">
-          \( \textbf{Thm} \quad \text{在收斂區間內，冪級數可逐項微分與積分：} \) \[ \begin{align*} f'(x) &=
-          \sum_{n=1}^{\infty} n \, a_n (x-c)^{n-1} \\[6pt] \int f(x) \, dx &= C + \sum_{n=0}^{\infty} a_n
-          \frac{(x-c)^{n+1}}{n+1} \end{align*} \]
-        </div>
+        <h2 class="card-header" id="9.8">9.8 Power Series</h2>
+        <div class="card-content">
+          <h3>冪級數定義</h3>
+          <div class="formula">
+            \( \textbf{Def} \quad \text{以 } c \text{ 為中心的冪級數形式為：} \)
+            <div class="border">\[ \sum_{n=0}^{\infty} a_n(x-c)^n = a_0 + a_1(x-c) + a_2(x-c)^2 + \dots \]</div>
+          </div>
+          <h3>收斂半徑與區間 (Radius and Interval of Convergence)</h3>
+          <div class="formula">
+            \( \textbf{Thm} \quad \text{對於冪級數，其收斂情形必為下列之一：} \) \[ 僅在中心點收斂：收斂半徑 ( R = 0
+            )。\] \[在有限區間內收斂：存在 ( R \gt 0 )，使得當 ( |x-c| \lt R ) 時絕對收斂。\] \[在全體實數收斂：收斂半徑
+            ( R = \infty )。\]
+          </div>
+          <h3>冪級數的微分與積分</h3>
+          <div class="formula">
+            \( \textbf{Thm} \quad \text{在收斂區間內，冪級數可逐項微分與積分：} \) \[ \begin{align*} f'(x) &=
+            \sum_{n=1}^{\infty} n \, a_n (x-c)^{n-1} \\[6pt] \int f(x) \, dx &= C + \sum_{n=0}^{\infty} a_n
+            \frac{(x-c)^{n+1}}{n+1} \end{align*} \]
+          </div>
         </div>
       </section>
-      
+
       <section class="card">
-        <h2 class=card-header id=9.9>9.9 Representation of Functions by Power Series</h2>
-        <div class=card-content>
+        <h2 class="card-header" id="9.9">9.9 Representation of Functions by Power Series</h2>
+        <div class="card-content">
           <h3>幾何冪級數 (Geometric Power Series)</h3>
           <div class="formula">\[ \frac{a}{1-r} = \sum_{n=0}^{\infty} ar^n, \quad |r| \lt 1 \]</div>
           <div class="formula-dark">
@@ -2437,12 +2443,12 @@
       </section>
 
       <section class="card">
-        <h2 class=card-header id=9.10>9.10 Taylor and Maclaurin Series</h2>
-        <div class=card-content>
+        <h2 class="card-header" id="9.10">9.10 Taylor and Maclaurin Series</h2>
+        <div class="card-content">
           <h3>Taylor Series</h3>
           <div class="formula">
-            \( \textbf{Def} \quad \text{若函數 } f \text{ 在 } c \text{ 處具有各階導數，其級數展開為：} \) \[ f(x) =
-            \sum_{n=0}^{\infty} \frac{f^{(n)}(c)}{n!}(x-c)^n \]
+            \( \textbf{Def} \quad \text{若函數 } f \text{ 在 } c \text{ 處具有各階導數，其級數展開為：} \)
+            <div class="border">\[ f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(c)}{n!}(x-c)^n \]</div>
           </div>
           <h3>Maclaurin series of common basic functions</h3>
           <div style="overflow: auto">
@@ -2502,6 +2508,522 @@
                 </tr>
               </tfoot>
             </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="10.1" class="card-header">10.1 Conics and Calculus</h2>
+        <div class="card-content">
+          <h3>圓錐曲線簡介 (Conic Sections)</h3>
+          <p>
+            圓錐曲線是由平面與雙錐面相交而成。常見的四種基本圓錐曲線包括：圓 (Circle)、拋物線 (Parabola)、橢圓 (Ellipse)
+            與雙曲線 (Hyperbola)。
+          </p>
+          <div class="formula">
+            <p>一般二次方程式形式：</p>
+            <p>$$ Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0 $$</p>
+          </div>
+
+          <h3>拋物線 (Parabolas)</h3>
+          <p>拋物線是與一個定點（焦點 Focus）和一條定直線（準線 Directrix）等距離的所有點的集合。</p>
+          <div class="formula">
+            <p>\[ \text{Standard Equation of a Parabola (頂點於 (h, k))} \]</p>
+            <div class="border">
+              <p>
+                <b>垂直軸 (開口向上/下)：</b><br />
+                $$ (x - h)^2 = 4p(y - k) $$ 焦點：$(h, k + p)$，準線：$y = k - p$
+              </p>
+              <hr />
+              <p>
+                <b>水平軸 (開口向左/右)：</b><br />
+                $$ (y - k)^2 = 4p(x - h) $$ 焦點：$(h + p, k)$，準線：$x = h - p$
+              </p>
+            </div>
+          </div>
+          <p><b>拋物線的性質：</b></p>
+          <ul>
+            <li>正焦弦 (Latus Rectum) 長度為 $|4p|$。</li>
+            <li>反射性質：平行於軸的光線射入拋物面後，會反射並通過其焦點。</li>
+          </ul>
+
+          <h3>橢圓 (Ellipses)</h3>
+          <p>橢圓到兩個定點（焦點 Foci）的距離之和為常數 ($2a$) 的點集合。</p>
+          <div class="formula">
+            <p>\[ \text{Standard Equation of an Ellipse (中心於 (h, k))} \]</p>
+            <div class="border">
+              <p>
+                <b>長軸平行於 x 軸：</b><br />
+                $$ \frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1, \quad a \gt b \gt 0 $$
+              </p>
+              <hr />
+              <p>
+                <b>長軸平行於 y 軸：</b><br />
+                $$ \frac{(x - h)^2}{b^2} + \frac{(y - k)^2}{a^2} = 1, \quad a \gt b \gt 0 $$
+              </p>
+            </div>
+            <p>其中 $c^2 = a^2 - b^2$，焦點距離中心為 $c$。</p>
+          </div>
+          <p><b>離心率 (Eccentricity)：</b></p>
+          <div class="formula">
+            <p>$$ e = \frac{c}{a} \quad (0 \lt e \lt 1) $$</p>
+            <p>當 $e$ 接近 0 時，橢圓接近圓形；當 $e$ 接近 1 時，橢圓愈顯扁平。</p>
+          </div>
+
+          <h3>3. 雙曲線 (Hyperbolas)</h3>
+          <p>雙曲線到兩個定點（焦點 Foci）的距離之差的絕對值為常數 ($2a$) 的點集合。</p>
+          <div class="formula">
+            <p>\[ \text{Standard Equation of a Hyperbola (中心於 (h, k))} \]</p>
+            <div class="border">
+              <p>
+                <b>貫軸平行於 x 軸 (左右開口)：</b><br />
+                $$ \frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1 $$ 漸近線：$y = k \pm \frac{b}{a}(x - h)$
+              </p>
+              <hr />
+              <p>
+                <b>貫軸平行於 y 軸 (上下開口)：</b><br />
+                $$ \frac{(y - k)^2}{a^2} - \frac{(x - h)^2}{b^2} = 1 $$ 漸近線：$y = k \pm \frac{a}{b}(x - h)$
+              </p>
+            </div>
+            <p>其中 $c^2 = a^2 + b^2$，離心率 $e = \frac{c}{a} \gt 1$。</p>
+          </div>
+
+          <p><b>綜合練習題範例</b></p>
+          <section class="formula-dark wrap-text">
+            <p><b>EX:</b> 尋找拋物線 $y = \frac{1}{2} - x - \frac{1}{2}x^2$ 的焦點。</p>
+            <p>
+              將原式配方化為標準式：<br />
+              $2y = 1 - 2x - x^2$<br />
+              $2y = 2 - (x^2 + 2x + 1)$<br />
+              $(x + 1)^2 = -2(y - 1)$
+            </p>
+            <p>
+              對照 $(x - h)^2 = 4p(y - k)$ 可得：<br />
+              頂點 $(h, k) = (-1, 1)$<br />
+              $4p = -2 \Rightarrow p = -\frac{1}{2}$<br />
+              因為 $p \lt 0$ 且軸為垂直向，開口向下。<br />
+              焦點為 $(h, k + p) = (-1, 1 - \frac{1}{2}) = (-1, \frac{1}{2})$
+            </p>
+          </section>
+        </div>
+      </section>
+      <!-- 10.2 參數方程式 -->
+      <section class="card">
+        <h2 id="10.2" class="card-header">10.2 Plane Curves and Parametric Equations</h2>
+        <div class="card-content">
+          <p>
+            在描述物體運動軌跡時，單純的直角座標關係式 \(y=f(x)\)
+            雖然能呈現路徑，但無法得知物體在特定時間點的位置。藉由引入第三個變數
+            \(t\)（稱為參數），可以更完整地描述運動狀態。
+          </p>
+
+          <div class="formula">
+            <p>\( \textbf{Def} \quad \text{Plane Curve} \)</p>
+            <p>若 \(f\) 與 \(g\) 在區間 \(I\) 上皆為 \(t\) 的連續函數，則方程式：</p>
+            <p>$$ x = f(t), \quad y = g(t) $$</p>
+            <p>稱為參數方程式 \(\text{Parametric Equations}\)</p>
+          </div>
+
+          <h3>曲線取向 (Orientation)</h3>
+          <p>
+            當參數 \(t\) 隨區間 \(I\) 增加時，點 \((x, y)\)
+            在平面上描繪出的路徑方向稱為該曲線的取向。不同的參數化方式可能代表相同的路徑，但具有不同的移動速度或方向[cite:
+            12]。
+          </p>
+
+          <h3>消去參數 (Eliminating the Parameter)</h3>
+          <p>將參數方程式轉換為直角座標方程式，有助於辨識曲線的幾何圖形。</p>
+          <div class="formula-dark wrap-text">
+            <p>\(\textbf{常用代數技巧}\)</p>
+            <ul>
+              <li>
+                <b>解 \(t\) 代入法：</b> 從其中一式解出 \(t\)，再代入另一式。例如：\(x=t^2-4, y=t/2 \Rightarrow
+                x=4y^2-4\)。
+              </li>
+              <li><b>三角恆等式法：</b> 利用 \(\sin^2 \theta + \cos^2 \theta = 1\) 處理橢圓或圓形軌跡。</li>
+            </ul>
+          </div>
+
+          <h3>圓錐曲線的參數表示法</h3>
+          <p>常見的二次元曲線參數式如下：</p>
+          <div class="formula">
+            <ul>
+              <li>
+                <b>直線：</b> 通過 \((x_1, y_1)\) 與 \((x_2, y_2)\)：<br />
+                \(x = x_1 + t(x_2 - x_1), \quad y = y_1 + t(y_2 - y_1)\)
+              </li>
+              <li>
+                <b>圓形：</b> 中心 \((h, k)\)，半徑 \(r\)：<br />
+                \(x = h + r \cos \theta, \quad y = k + r \sin \theta\)
+              </li>
+              <li>
+                <b>橢圓：</b> 中心 \((h, k)\)：<br />
+                \(x = h + a \cos \theta, \quad y = k + b \sin \theta \Rightarrow \frac{(x-h)^2}{a^2} +
+                \frac{(y-k)^2}{b^2} = 1\)
+              </li>
+              <li>
+                <b>雙曲線：</b> 中心 \((h, k)\)：<br />
+                \(x = h + a \sec \theta, \quad y = k + b \tan \theta\)
+              </li>
+            </ul>
+          </div>
+
+          <h3>擺線(Cycloid)與平滑曲線</h3>
+          <p>擺線是圓形在直線上滾動時，圓周上的一點所留下的軌跡。</p>
+          <div class="formula">
+            <p><b>擺線方程式：</b></p>
+            <p>$$ x = a(\theta - \sin \theta), \quad y = a(1 - \cos \theta) $$</p>
+          </div>
+          <p>
+            <b>平滑曲線 (Smooth Curve) 定義：</b> 當 \(f'(t)\) 與 \(g'(t)\) 皆連續且在區間內不會同時為 \(0\)
+            時，稱該曲線為平滑的。
+          </p>
+
+          <h3>經典物理問題</h3>
+          <ul>
+            <li>
+              <b>等時降落問題 (Tautochrone Problem)：</b> 惠更斯 (Huygens)
+              發現，不論球從倒置擺線的何處釋放，到達底部的時間皆相同。
+            </li>
+            <li>
+              <b>最速降落問題 (Brachistochrone Problem)：</b> 伯努利 (Bernoulli)
+              提出，連接兩點間使質點滑行時間最短的路徑並非直線，而是倒置的擺線軌跡。
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="10.3" class="card-header">10.3 Parametric Equations and Calculus</h2>
+        <div class="card-content">
+          <h3>導數與切線 (Differentiation and Tangent Lines)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \text{參數形式的導數} \)</p>
+            <p>若平滑曲線 \( C \) 由 \( x = f(t) \) 且 \( y = g(t) \) 給定，則在 \( (x, y) \) 處的斜率為：</p>
+            <div class="border">
+              \[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{g'(t)}{f'(t)}, \quad \frac{dx}{dt} \neq 0 \]
+            </div>
+            <br />
+            <p>\( \textbf{高階導數 (Higher-Order Derivatives)} \)</p>
+            <p>二階導數的計算並非簡單的導函數再對 \( t \) 微分，須考慮\(\text{Chain rule}\)：</p>
+            <div class="border">
+              \[ \frac{d^2y}{dx^2} = \frac{d}{dx} \left[ \frac{dy}{dx} \right] = \frac{\frac{d}{dt} \left[ \frac{dy}{dx}
+              \right]}{\frac{dx}{dt}} \]
+            </div>
+            <p>
+              三階導數依此類推：\( \displaystyle \frac{d^3y}{dx^3} = \frac{\frac{d}{dt}
+              [\frac{d^2y}{dx^2}]}{\frac{dx}{dt}} \)
+            </p>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \textbf{EX} \)</p>
+            <p>已知曲線 \( x = \sqrt{t}, \, y = \frac{1}{4}(t^2 - 4) \)，求在點 \( (2, 3) \) 處的斜率與凹凸性。</p>
+            <p>\( \text{Sol:} \)</p>
+            <p>1. 找出對應之 \( t \) 值：\( \sqrt{t} = 2 \Rightarrow t = 4 \)</p>
+            <p>2. 計算一階導數：</p>
+            \[ \frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{\frac{1}{2}t}{\frac{1}{2}t^{-\frac{1}{2}}} =
+            t^{\frac{3}{2}} \]
+            <p>當 \( t = 4 \) 時，斜率 \( m = 4^{\frac{3}{2}} = 8 \)。</p>
+            <p>3. 計算二階導數：</p>
+            \[ \frac{d^2y}{dx^2} = \frac{\frac{d}{dt}[t^{\frac{3}{2}}]}{\frac{dx}{dt}} =
+            \frac{(\frac{3}{2})t^{\frac{1}{2}}}{(\frac{1}{2})t^{-\frac{1}{2}}} = 3t \]
+            <p>當 \( t = 4 \) 時，\( \frac{d^2y}{dx^2} = 12 &gt; 0 \)，故曲線在該點凹向上 (concave upward)</p>
+          </div>
+
+          <h3>弧長 (Arc Length)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{參數形式的弧長} \)</p>
+            <p>
+              若曲線 \( C \) 由 \( x = f(t) \) 且 \( y = g(t) \) 給定，在區間 \( a \le t \le b \)
+              內不自交（端點除外），則弧長 \( s \) 為：
+            </p>
+            <div class="border">
+              \[ \begin{align*} s &= \int_{a}^{b} \sqrt{\left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2}
+              dt \\[6pt] &= \int_{a}^{b} \sqrt{[f'(t)]^2 + [g'(t)]^2} dt \end{align*} \]
+            </div>
+          </div>
+
+          <h3>旋轉曲面面積 (Area of a Surface of Revolution)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm: 旋轉曲面面積} \)</p>
+            <p>設曲線 \( C \) 由 \( x = f(t), \, y = g(t) \) 組成，在 \( a \le t \le b \) 繞坐標軸旋轉：</p>
+            <ol>
+              <li>
+                繞 \( x \) 軸旋轉 (\( g(t) \ge 0 \)):
+                <div class="border">
+                  \[ S = 2\pi \int_{a}^{b} g(t) \sqrt{\left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2}
+                  dt \]
+                </div>
+              </li>
+              <li>
+                繞 \( y \) 軸旋轉 (\( f(t) \ge 0 \)):
+                <div class="border">
+                  \[ S = 2\pi \int_{a}^{b} f(t) \sqrt{\left( \frac{dx}{dt} \right)^2 + \left( \frac{dy}{dt} \right)^2}
+                  dt \]
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \textbf{EX: 求旋轉曲面面積} \)</p>
+            <p>將圓弧 \( x = 3\cos t, \, y = 3\sin t \) (區間 \( 0 \le t \le \pi/3 \)) 繞 \( x \) 軸旋轉，求表面積。</p>
+            <p>\( \text{Sol:} \)</p>
+            <p>微分項：\( \frac{dx}{dt} = -3\sin t, \, dy/dt = 3\cos t \)</p>
+            <p>根號項：\( \sqrt{(-3\sin t)^2 + (3\cos t)^2} = \sqrt{9(\sin^2 t + \cos^2 t)} = 3 \)</p>
+            \[ \begin{align*} S &amp;= 2\pi \int_{0}^{\frac{\pi}{3}} (3\sin t) (3) dt \\ &amp;= 18\pi
+            \int_{0}^{\frac{\pi}{3}} \sin t dt \\ &amp;= 18\pi [-\cos t]_{0}^{\frac{\pi}{3}} \\ &amp;= -18\pi
+            (\frac{1}{2} - 1) = 9\pi \end{align*} \]
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="10.4" class="card-header">10.4 Polar Coordinates and Polar Graphs</h2>
+        <div class="card-content">
+          <br />
+          <p>
+            在直角座標系中，點是以 \((x, y)\) 表示；而在極座標系中，點則是以相對於極點（Pole，即原點）的距離 \(r\)
+            與角度 \(\theta\) 來定位。
+          </p>
+
+          <div class="formula">
+            <p>\( \textbf{Def} \quad \text{極座標系 (Polar Coordinate System)} \)</p>
+            <ul>
+              <li><b>極點 (Pole)：</b> 固定點 \(O\)。</li>
+              <li><b>極軸 (Polar Axis)：</b> 從極點出發的一條射線（通常對應正 \(x\) 軸）。</li>
+              <li><b>\(r\)：</b> 從極點到點 \(P\) 的有向距離。</li>
+              <li><b>\(\theta\)：</b> 從極軸到線段 \(OP\) 的有向角度（逆時針為正）。</li>
+            </ul>
+            <p>
+              <i
+                >註：極座標的表示法並非唯一。點 \((r, \theta)\) 也可以表示為 \((r, \theta + 2n\pi)\) 或 \((-r, \theta +
+                (2n+1)\pi)\)。</i
+              >
+            </p>
+          </div>
+
+          <h3>座標轉換 (Coordinate Conversion)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{極座標直角座標轉換公式} \)</p>
+            <div class="border" style="display: flex; justify-content: space-around">
+              <div style="flex-basis: 45%">
+                <p><b>極座標轉直角座標：</b></p>
+                \[ x = r \cos \theta \] \[ y = r \sin \theta \]
+              </div>
+              <div style="flex-basis: 45%">
+                <p><b>直角座標轉極座標：</b></p>
+                \[ \tan \theta = \frac{y}{x} \] \[ r^2 = x^2 + y^2 \]
+              </div>
+            </div>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \textbf{EX} \quad \text{轉換方程式} \)</p>
+            <p>將極座標方程式 \( r = \sec \theta \) 轉換為直角座標方程式。</p>
+            <p>\( \text{Sol:} \)</p>
+            \[ r = \frac{1}{\cos \theta} \Rightarrow r \cos \theta = 1 \]
+            <p>已知 \( x = r \cos \theta \)，故直角座標方程式為 \( x = 1 \)，這是一條垂直線。</p>
+          </div>
+
+          <h3>極座標圖形 (Polar Graphs)</h3>
+          <p>許多複雜的曲線在極座標下有非常簡單的表示式：</p>
+          <ul>
+            <li>
+              <b>圓形：</b> \( r = a \) (以極點為中心的圓)；\( r = a \cos \theta \) 或 \( r = a \sin \theta \)
+              (通過極點的圓)。
+            </li>
+            <li><b>阿基米德螺線 (Spiral of Archimedes)：</b> \( r = a\theta \)。</li>
+            <li>
+              <b>玫瑰線 (Rose Curves)：</b> \( r = a \cos n\theta \) 或 \( r = a \sin n\theta \)。若 \(n\) 為奇數，則有
+              \(n\) 個花瓣；若 \(n\) 為偶數，則有 \(2n\) 個花瓣。
+            </li>
+          </ul>
+
+          <h3>極座標下的斜率與切線 (Slope and Tangent Lines)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{極座標形式的斜率} \)</p>
+            <p>若 \( r = f(\theta) \) 是一條可微曲線，則在點 \((r, \theta)\) 處的切線斜率為：</p>
+            <div class="border">
+              \[ \frac{dy}{dx} = \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}} = \frac{f(\theta) \cos \theta +
+              f'(\theta) \sin \theta}{-f(\theta) \sin \theta + f'(\theta) \cos \theta} \]
+            </div>
+            <br />
+            <p><b>切線特性判別：</b></p>
+            <ul>
+              <li>
+                若 \( \frac{dy}{d\theta} = 0 \) 且 \( \frac{dx}{d\theta} \neq 0 \)，則有<b
+                  >水平切線 (Horizontal Tangents)</b
+                >。
+              </li>
+              <li>
+                若 \( \frac{dx}{d\theta} = 0 \) 且 \( \frac{dy}{d\theta} \neq 0 \)，則有<b
+                  >垂直切線 (Vertical Tangents)</b
+                >。
+              </li>
+            </ul>
+          </div>
+
+          <h3>極點處的切線 (Tangent Lines at the Pole)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \)</p>
+            <p>若曲線通過極點（即 \( f(\alpha) = 0 \)）且 \( f'(\alpha) \neq 0 \)</p>
+            <p>則直線 \( \theta = \alpha \) 即為該曲線在極點處的切線。</p>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \textbf{EX} \)</p>
+            <p>求 \( r = \sin \theta \) 在 \( \theta = \frac{\pi}{4} \) 處的斜率。</p>
+            <p>\( \text{Sol:} \)</p>
+            <p>1. \( f(\theta) = \sin \theta \), \( f'(\theta) = \cos \theta \)</p>
+            <p>2. 代入公式：</p>
+            \[ \frac{dy}{dx} = \frac{\sin \theta \cos \theta + \cos \theta \sin \theta}{-\sin \theta \sin \theta + \cos
+            \theta \cos \theta} = \frac{\sin 2\theta}{\cos 2\theta} = \tan 2\theta \]
+            <p>
+              3. 當 \( \theta = \frac{\pi}{4} \) 時，斜率 \( m = \tan(\frac{\pi}{2})
+              \)，表示該處有無窮大斜率（即垂直切線）。
+            </p>
+          </div>
+
+          <h3>特殊極座標圖形摘要</h3>
+          <div style="overflow: auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>圖形名稱</th>
+                  <th>方程式形式</th>
+                  <th>外觀特徵</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>蝸牛線 (Limaçons)</td>
+                  <td>\( r = a \pm b \cos \theta \)</td>
+                  <td>包含心臟線 (\(a=b\))、內環蝸牛線 (\(a &lt; b\))</td>
+                </tr>
+                <tr>
+                  <td>玫瑰線 (Rose Curves)</td>
+                  <td>\( r = a \sin n\theta \)</td>
+                  <td>\(n \ge 2\)，花瓣數量取決於 \(n\) 之奇偶</td>
+                </tr>
+                <tr>
+                  <td>雙紐線 (Lemniscates)</td>
+                  <td>\( r^2 = a^2 \cos 2\theta \)</td>
+                  <td>呈現「\(\infty\)」符號外觀</td>
+                </tr>
+                <tr>
+                  <td>圓 (Circles)</td>
+                  <td>\( r = a \cos \theta \)</td>
+                  <td>通過原點的圓形</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="10.5" class="card-header">10.5 Area and Arc Length in Polar Coordinates</h2>
+        <div>
+          <p>
+            在極座標系中，計算面積的基本單位是「扇形」而非直角座標中的「矩形」。圓心角為 \(\theta\)、半徑為 \(r\)
+            的扇形面積為 \( \frac{1}{2}r^2\theta \)。
+          </p>
+
+          <h3>極座標區域的面積 (Area of a Polar Region)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{極座標面積公式} \)</p>
+            <p>
+              若 \( f \) 在區間 \([\alpha, \beta]\) 上連續且非負，則由 \( r = f(\theta) \) 與射線 \( \theta = \alpha,
+              \theta = \beta \) 所圍成的區域面積為：
+            </p>
+            <div class="border">
+              \[ A = \int_{\alpha}^{\beta} \frac{1}{2} [f(\theta)]^2 \, d\theta = \int_{\alpha}^{\beta} \frac{1}{2} r^2
+              \, d\theta \]
+            </div>
+            <p><i>註：此公式僅在 \( 0 &lt; \beta - \alpha \le 2\pi \) 時有效。</i></p>
+          </div>
+
+          <div class="formula-dark wrap-text">
+            <p>\( \textbf{EX}\)</p>
+            <p>求 \( r = 3 \cos 3\theta \) 其中一個花瓣的面積。</p>
+            <p>\( \text{Sol:} \)</p>
+            <p>1. 確定範圍：右側花瓣對應 \( \theta \) 從 \( -\pi/6 \) 到 \( \pi/6 \)。</p>
+            <p>2. 代入積分：</p>
+            \[ A = \frac{1}{2} \int_{-\pi/6}^{\pi/6} (3 \cos 3\theta)^2 \, d\theta = \frac{9}{2} \int_{-\pi/6}^{\pi/6}
+            \frac{1 + \cos 6\theta}{2} \, d\theta \] \[ A = \frac{9}{4} \left[ \theta + \frac{\sin 6\theta}{6}
+            \right]_{-\pi/6}^{\pi/6} = \frac{9}{4} \left( \frac{\pi}{3} \right) = \frac{3\pi}{4} \]
+          </div>
+
+          <h3>極座標圖形的交點 (Points of Intersection)</h3>
+          <p>
+            由於極座標點的表示法不唯一（例如極點可以表示為 \((0, \theta)\)，其中 \(\theta\)
+            為任意角），聯立方程式未必能找出所有交點。
+          </p>
+          <ul>
+            <li>
+              <b>建議做法：</b> 除了聯立求解，應配合繪製圖形以確認是否有漏掉的交點（特別是通過極點的情況）[cite: 29]。
+            </li>
+            <li><b>同步點：</b> 只有在相同的 \(\theta\) 值下兩曲線相遇，聯立代數解才能直接求得[cite: 29]。</li>
+          </ul>
+
+          <h3>極座標形式的弧長 (Arc Length in Polar Form)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm 10.14} \quad \text{極座標曲線的弧長} \)</p>
+            <p>若 \( f' \) 在 \(\alpha \le \theta \le \beta\) 上連續，則曲線 \( r = f(\theta) \) 的長度為：</p>
+            <div class="border">
+              \[ s = \int_{\alpha}^{\beta} \sqrt{[f(\theta)]^2 + [f'(\theta)]^2} \, d\theta = \int_{\alpha}^{\beta}
+              \sqrt{r^2 + \left( \frac{dr}{d\theta} \right)^2} \, d\theta \]
+            </div>
+          </div>
+
+          <div class="formula-dark wrap-text">
+            <p>\( \textbf{EX} \)</p>
+            <p>求 \( r = 2 - 2\cos\theta \) 在 \( 0 \le \theta \le 2\pi \) 的全長。</p>
+            <p>\( \text{Sol:} \)</p>
+            <p>1. \( r = 2 - 2\cos\theta, \quad dr/d\theta = 2\sin\theta \)</p>
+            <p>
+              2. 計算根號項：\( \sqrt{(2-2\cos\theta)^2 + (2\sin\theta)^2} = \sqrt{8 - 8\cos\theta} =
+              \sqrt{16\sin^2(\theta/2)} = 4\sin(\theta/2) \)
+            </p>
+            \[ s = \int_{0}^{2\pi} 4\sin\left(\frac{\theta}{2}\right) \, d\theta = 8 \left[
+            -\cos\left(\frac{\theta}{2}\right) \right]_{0}^{2\pi} = 8(1+1) = 16 \]
+          </div>
+
+          <h3>旋轉曲面面積 (Area of a Surface of Revolution)</h3>
+          <div class="formula">
+            <p>\( \textbf{Thm} \quad \text{極座標形式的旋轉面積} \)</p>
+            <p>設 \( f' \) 連續，將 \( r = f(\theta) \) 繞指定軸旋轉所產生的曲面面積：</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>旋轉軸</th>
+                  <th>積分公式 (\( S = \dots \))</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>繞極軸 (Polar Axis)</b></td>
+                  <td>
+                    \( 2\pi \int_{\alpha}^{\beta} f(\theta) \sin\theta \sqrt{[f(\theta)]^2 + [f'(\theta)]^2} \, d\theta
+                    \)
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>繞直線 \( \theta = \frac{\pi}{2} \)</b></td>
+                  <td>
+                    \( 2\pi \int_{\alpha}^{\beta} f(\theta) \cos\theta \sqrt{[f(\theta)]^2 + [f'(\theta)]^2} \, d\theta
+                    \)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="formula-dark">
+            <p>\( \textbf{EX} \)</p>
+            <p>將圓 \( r = \cos\theta \) 繞 \( \theta = \pi/2 \) 旋轉，所得曲面面積為 \( \pi^2 \)</p>
           </div>
         </div>
       </section>
