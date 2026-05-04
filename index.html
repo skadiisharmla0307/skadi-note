@@ -81,6 +81,18 @@
         }
       }
     </style>
+    <!-- MathJax -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+          ]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
   <body>
@@ -157,168 +169,44 @@
     <main class="container col-md-12">
       <section class="card">
         <h2>Ciallo～(∠ · ω &lt; )⌒★</h2>
-        <p>可由右上選單或下方資訊欄前往各個科目頁面</p>
+        <p>可由右上選單前往各個科目頁面</p>
         <p>
           近期更新: <br />3/15 微積分 8.2 ~ 8.5、8.8 , 標籤縮放功能 <br />3/19 微積分 CH8 test<br />3/22 普物 CH23<br />4/12
           微積分 CH9<br />4/21 普物 CH24 ~26 <br />
-          <a class="nav-link" href="https://drive.google.com/file/d/1zWMW-M7If_MDHtrFHLXiOXKbvJ5Cfu5a/view?usp=sharing"
+          <a class="nav-link" title='需用google colab開啟' href="https://drive.google.com/file/d/1zWMW-M7If_MDHtrFHLXiOXKbvJ5Cfu5a/view?usp=sharing"
             >4/23 &gt;&gt;程式考試答案參考&lt;&lt;</a
-          >
+          >4/24 動力學 CH12 ~ 14
         </p>
       </section>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <a href="calculus.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other/bg_calculus.png" class="card-img" />
+      <!--
+      <section class="card">
+        <div style="max-width: 600px; margin: 20px auto; text-align: center; font-family: sans-serif">
+          <h1>數學函數計算器</h1>
 
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">微積分</h5>
-                    <p class="card-text small mb-0">節錄第四章至第五章的部分公式、證明以及例題</p>
-                  </div>
-                </div>
-              </div>
-            </a>
+          <form action="/calculate" method="post" style="margin-bottom: 20px">
+            <input
+              type="text"
+              name="formula"
+              placeholder="例如: x**2 + 5*x + 6"
+              style="padding: 10px; width: 60%"
+              required />
+            <button type="submit" style="padding: 10px 20px; cursor: pointer">計算並繪圖</button>
+          </form>
+
+          {% if result %}
+          <div style="border: 1px solid #ccc; padding: 20px; background: #fff; margin-top: 20px">
+            <h3>輸入函數：\( f(x) = {{ original_input }} \)</h3>
+            <p><strong>一階導數：</strong> \( f'(x) = {{ result }} \)</p>
+            <p><strong>正無窮極限 (收斂性)：</strong> \( \lim_{x \to \infty} f(x) = {{ limit_inf }} \)</p>
+            <p><strong>驻點 (f'(x)=0)：</strong> \( x \in {{ points }} \)</p>
+            <hr />
+            <img src="data:image/png;base64,{{ chart_url }}" alt="函數圖形" style="max-width: 100%" />
           </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="physics.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other/bg_404.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">普通物理</h5>
-                    <p class="card-text small mb-0">紀錄上課筆記與例題</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="p-experiment.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other/bg_404.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">普物實驗</h5>
-                    <p class="card-text small mb-0">紀錄實驗相關資訊</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="chemistry.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other/bg_chemistry.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">普通化學</h5>
-                    <p class="card-text small mb-0">化學課第7~10 20~21章的課程筆記整理</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="experiment.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other/bg_experiment.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">普化實驗</h5>
-                    <p class="card-text small mb-0">紀錄實驗課的實驗報告(僅預報)</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="energy.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other/bg_energy.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">能源工程概論</h5>
-                    <p class="card-text small mb-0">關於能源不同方面的介紹</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="statics.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other//bg_statics.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">靜力學</h5>
-                    <p class="card-text small mb-0">課程內容整理(範圍待定)</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="phoenix_code.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other//bg_phoenix.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">網頁程式設計</h5>
-                    <p class="card-text small mb-0">關於HTML與CSS標籤的整理</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="octave.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other//bg_octave.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">基礎程式設計</h5>
-                    <p class="card-text small mb-0">章節CH02到CH09的重要程式整理</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <a href="minerals.html" class="text-decoration-none text-white">
-              <div class="card shadow-sm border-0 p-0 overflow-hidden hover-zoom">
-                <img src="picture_other//bg_minerals.png" class="card-img" />
-
-                <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 p-3 bg-light bg-opacity-50">
-                    <h5 class="card-title mb-1">礦物與生活</h5>
-                    <p class="card-text small mb-0">礦物的基本介紹</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+          {% endif %}
         </div>
-      </div>
+      </section>
+      -->
+      
     </main>
 
     <footer class="footer">- skadi notes -</footer>
